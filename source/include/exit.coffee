@@ -1,0 +1,2 @@
+# exit(): void
+$.exit = -> ExitApp

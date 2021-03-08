@@ -1,0 +1,2 @@
+# beep(): void
+$.beep = -> SoundBeep
