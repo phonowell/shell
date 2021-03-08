@@ -1,4 +1,5 @@
 import '../source/index'
+$ = $
 
 $
   .on 'a', -> $.info $.now()
