@@ -20,15 +20,16 @@
   "homepage": "https://github.com/phonowell/shell",
   "keywords": [
     "ahk",
-    "auto hotkey",
+    "autohotkey",
     "coffee-ahk",
+    "jQuery",
     "js",
-    "shell",
-    "shim"
+    "lodash",
+    "shell"
   ],
   "license": "MIT",
   "main": "dist/index.ahk",
-  "name": "shell.ahk",
+  "name": "shell-ahk",
   "repository": {
     "type": "git",
     "url": "https://github.com/phonowell/shell.git"

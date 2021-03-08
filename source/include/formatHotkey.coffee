@@ -8,7 +8,7 @@ $.formatHotkey = (key) ->
   __key__ = $.replace __key__, '-', ''
   _list = $.split __key__, '+'
   for it in _list
-    __listkey__.Push it
+    $.push __listkey__, it
 
   # unfold
   __isAlt__ = false
@@ -29,7 +29,7 @@ $.formatHotkey = (key) ->
     if key == 'win'
       __isWin__ = true
       continue
-    __listResult__.Push key
+    $.push __listResult__, key
 
   __prefix__ = ''
   if __isAlt__ then __prefix__ = "#{__prefix__}!"

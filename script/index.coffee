@@ -1,4 +1,6 @@
-import '../source/index.ahk'
+import '../source/index'
 
-$.on 'alt + n', ->
-  $.alert $.reverse [1, 2, 3]
+$
+  .on 'a', -> $.info $.now()
+  .on 'b', -> $.trigger 'a'
+  .on 'c', -> $.off 'a'

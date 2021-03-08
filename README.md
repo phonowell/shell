@@ -1,7 +1,13 @@
-# js-shim
+# shell-ahk
 
-提供`javascript`部分功能模拟。
+`Lodash`/`jQuery` for `AHK`.
 
-## 使用
+## Usage
 
-引入[脚本](./source/index.ahk)即可。
+```shell
+npm i shell-ahk
+```
+
+```coffeescript
+import 'shell-ahk'
+```

@@ -13,7 +13,7 @@ $.press = (listInput...) ->
     __input__ = $.replace __input__, '-', ''
     __list__ = $.split __input__, '+'
     for it in __list__
-      __listKey__.Push it
+      $.push __listKey__, it
 
   # unfold
   __listResult__ = []
