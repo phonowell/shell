@@ -1,14 +1,13 @@
 # setInterval(callback: Function, time: number): string
 $.setInterval = (callback, time) ->
 
-  if ($.type callback) == 'function'
-    callback = callback.Bind()
+  if $.isFunction callback
+    callback = $.bind callback
 
-  $type = $.type time
-  unless $type == 'number'
-    throw new Error "setTimeout: invalid time type '#{$type}'"
+  unless $.isNumber time
+    throw new Error '$.setInterval: invalid type'
   unless time > 0
-    throw new Error "setTimeout: invalid time value '#{time}'"
+    throw new Error '$.setInterval: invalid value'
 
   `SetTimer, % callback, % time`
   return callback

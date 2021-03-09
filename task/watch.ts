@@ -7,7 +7,7 @@ import watch from 'fire-keeper/watch'
 class Compiler {
 
   isBusy = false
-  list: (string | Promise<unknown>)[] = []
+  list: (string | (() => Promise<unknown>))[] = []
 
   constructor() {
     setInterval(() => {
@@ -16,7 +16,7 @@ class Compiler {
   }
 
   add(
-    input: string | Promise<unknown>
+    input: string | (() => Promise<unknown>)
   ): void {
 
     if (!this.list.includes(input))
@@ -47,7 +47,7 @@ class Compiler {
     }
 
     if (input instanceof Function) {
-      input
+      input()
         .catch((e: Error) => {
           console.log(e.stack)
         })
@@ -57,6 +57,7 @@ class Compiler {
       return
     }
 
+    this.isBusy = false
     throw new Error('invalid type')
   }
 }
@@ -72,7 +73,7 @@ const main = (): void => {
   })
 
   watch('./source/**/*.coffee', () => {
-    compiler.add(build())
+    compiler.add(build)
   })
 }
 

@@ -9,6 +9,8 @@ $.type = (input) ->
 
   if IsObject input
     if input.Count() == input.Length()
+      unless input.Length() >= 0
+        return 'function'
       return 'array'
     return 'object'
 
