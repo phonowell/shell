@@ -1,7 +1,12 @@
-import '../source/index'
+import '../source/index.ahk'
 $ = $
 
-$
-  .on 'a', -> $.info $.now()
-  .on 'b', -> $.trigger 'a'
-  .on 'c', -> $.off 'a'
+$.on '1', ->
+
+  listA = [1, 2, 3]
+  listB = [4, 5, 6]
+
+  listC = $.concat listA, listB
+  $.push listC, 7, 8, 9
+
+  $.alert $.nth ($.reverse $.clone listC), 2

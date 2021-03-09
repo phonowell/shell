@@ -6,39 +6,39 @@ $.press = (listInput...) ->
     throw new Error '$.press: invalid key'
 
   # format
-  __listKey__ = []
-  for input in listInput
-    __input__ = $.toLowerCase input
-    __input__ = $.replace __input__, ' ', ''
-    __input__ = $.replace __input__, '-', ''
-    __list__ = $.split __input__, '+'
-    for it in __list__
-      $.push __listKey__, it
+  $listKey = []
+  for $input in listInput
+    $ipt = $.toLowerCase $input
+    $ipt = $.replace $ipt, ' ', ''
+    $ipt = $.replace $ipt, '-', ''
+    $list = $.split $ipt, '+'
+    for $it in $list
+      $.push $listKey, $it
 
   # unfold
-  __listResult__ = []
-  __len__ = $.length __listKey__
-  for key, i in __listKey__
+  $listResult = []
+  $len = $.length $listKey
+  for $key, $i in $listKey
     # last
-    if i == __len__ - 1
-      __listResult__[i] = $.split key, ':'
+    if $i == $len - 1
+      $listResult[$i] = $.split $key, ':'
       continue
     # other
-    if $.includes key, ':'
-      __listResult__[i] = $.split key, ':'
-      __listResult__[(__len__ - 1) * 2 - i] = $.split key, ':'
+    if $.includes $key, ':'
+      $listResult[$i] = $.split $key, ':'
+      $listResult[($len - 1) * 2 - $i] = $.split $key, ':'
     else
-      __listResult__[i] = [key, 'down']
-      __listResult__[(__len__ - 1) * 2 - i] = [key, 'up']
+      $listResult[$i] = [$key, 'down']
+      $listResult[($len - 1) * 2 - $i] = [$key, 'up']
 
   # alias & join
-  for it, i in __listResult__
-    if it[0] == 'win'
-      it[0] = 'lwin'
-    __listResult__[i] = $.trim "#{it[0]} #{it[1]}"
+  for $it, $i in $listResult
+    if $it[0] == 'win'
+      $it[0] = 'lwin'
+    $listResult[$i] = $.trim "#{$it[0]} #{$it[1]}"
 
   # execute
-  __output_as_string__ = ''
-  for it in __listResult__
-    __output_as_string__ = "#{__output_as_string__}{#{it}}"
-  `Send, % __output_as_string__`
+  $result = ''
+  for $it in $listResult
+    $result = "#{$result}{#{$it}}"
+  `Send, % $result`

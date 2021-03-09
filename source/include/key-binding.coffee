@@ -4,24 +4,24 @@ class KeyBindingShellX
   mapCallback: {}
 
   add: (key, callback) ->
-    [key, __name__] = $.split key, '.'
+    [key, $name] = $.split key, '.'
     @init key
-    $.push @mapCallback[key], [__name__, callback]
+    $.push @mapCallback[key], [$name, callback]
     return $
 
   fire: (key) ->
 
-    [key, __name__] = $.split ($.replace key, ':down', ''), '.'
+    [key, $name] = $.split ($.replace key, ':down', ''), '.'
 
-    unless __name__
-      for __item__ in @mapCallback[key]
-        __item__[1]()
+    unless $name
+      for $item in @mapCallback[key]
+        $item[1]()
       return $
 
-    for __item__ in @mapCallback[key]
-      unless __item__[0] == __name__
+    for $item in @mapCallback[key]
+      unless $item[0] == $name
         continue
-      __item__[1]()
+      $item[1]()
 
     return $
 
@@ -31,9 +31,9 @@ class KeyBindingShellX
       return $
     @mapCallback[key] = []
 
-    __fn__ = => @fire key
-    @mapBound[key] = __fn__
-    @on key, __fn__
+    $fn = => @fire key
+    @mapBound[key] = $fn
+    @on key, $fn
 
   off: (key, callback) ->
     key = $.formatHotkey key
@@ -47,25 +47,25 @@ class KeyBindingShellX
 
   remove: (key) ->
 
-    [key, __name__] = $.split key, '.'
+    [key, $name] = $.split key, '.'
 
-    unless __name__
+    unless $name
       @mapCallback[key] = ''
       @off key, @mapBound[key]
       return $
 
-    __listNew__ = []
-    for __item__ in @mapCallback[key]
-      if __item__[0] == __name__
+    $listNew = []
+    for $item in @mapCallback[key]
+      if $item[0] == $name
         continue
-      $.push __listNew__, __item__
+      $.push $listNew, $item
 
-    unless $.length __listNew__
+    unless $.length $listNew
       @mapCallback[key] = ''
       @off key, @mapBound[key]
       return $
 
-    @mapCallback[key] = __listNew__
+    @mapCallback[key] = $listNew
     return $
 
 keyBindingShell = new KeyBindingShellX()

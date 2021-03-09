@@ -1,5 +1,5 @@
 # alert(message: string): string
 $.alert = (message = '') ->
-  __msg__ = $.toString message
-  `MsgBox, % __msg__`
+  $msg = $.toString message
+  `MsgBox, % $msg`
   return message

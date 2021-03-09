@@ -1,20 +1,23 @@
 # take(list: unknown[], count: number = 1): unknown[]
 $.take = (list, count = 1) ->
 
-  __len__ = $.length list
-  unless __len__
+  unless $.isArray list
+    throw new Error '$.take: invalid type'
+
+  $len = $.length list
+  unless $len
     return []
 
   unless count >= 0
     return []
 
-  if count >= __len__
-    count = __len__
+  if count >= $len
+    count = $len
 
-  __listNew__ = []
-  for __item__, __i__ in list
-    if __i__ >= count + 1
+  $listNew = []
+  for $item, $i in list
+    if $i >= count
       break
-    $.push __listNew__, __item__
+    $.push $listNew, $item
 
-  return __listNew__
+  return $listNew

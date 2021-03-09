@@ -1,18 +1,18 @@
 # toString(input: unknown): string
 $.toString = (input) ->
 
-  __type__ = $.type input
+  $type = $.type input
 
-  if __type__ == 'array'
-    __result__ = ''
+  if $type == 'array'
+    $result = ''
     for key in input
-      __result__ = "#{__result__}, #{$.toString key}"
-    return "[#{$.trim __result__, ' ,'}]"
+      $result = "#{$result}, #{$.toString key}"
+    return "[#{$.trim $result, ' ,'}]"
 
-  else if __type__ == 'object'
-    __result__ = ''
+  else if $type == 'object'
+    $result = ''
     for key, value of input
-      __result__ = "#{__result__}, #{key}: #{$.toString value}"
-    return "{#{$.trim __result__, ' ,'}}"
+      $result = "#{$result}, #{key}: #{$.toString value}"
+    return "{#{$.trim $result, ' ,'}}"
 
   return input

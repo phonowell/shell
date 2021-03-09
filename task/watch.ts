@@ -1,3 +1,4 @@
+import build from './build'
 import c2a from 'coffee-ahk'
 import watch from 'fire-keeper/watch'
 
@@ -6,7 +7,7 @@ import watch from 'fire-keeper/watch'
 class Compiler {
 
   isBusy = false
-  list: string[] = []
+  list: (string | Promise<unknown>)[] = []
 
   constructor() {
     setInterval(() => {
@@ -15,11 +16,11 @@ class Compiler {
   }
 
   add(
-    path: string
+    input: string | Promise<unknown>
   ): void {
 
-    if (!this.list.includes(path))
-      this.list.push(path)
+    if (!this.list.includes(input))
+      this.list.push(input)
   }
 
   next(): void {
@@ -27,21 +28,40 @@ class Compiler {
     if (!this.list?.length) return
     if (this.isBusy) return
 
+    const input = this.list.shift()
+    if (!input) return
+
     this.isBusy = true
 
-    c2a(this.list.shift() as string, {
-      salt: 'genshin',
-    })
-      .catch(e => {
-        console.log(e.stack)
+    if (typeof input === 'string') {
+      c2a(input, {
+        salt: 'script',
       })
-      .finally(() => {
-        this.isBusy = false
-      })
+        .catch((e: Error) => {
+          console.log(e.stack)
+        })
+        .finally(() => {
+          this.isBusy = false
+        })
+      return
+    }
+
+    if (input instanceof Function) {
+      input
+        .catch((e: Error) => {
+          console.log(e.stack)
+        })
+        .finally(() => {
+          this.isBusy = false
+        })
+      return
+    }
+
+    throw new Error('invalid type')
   }
 }
 
-function main(): void {
+const main = (): void => {
 
   process.on('uncaughtException', e => console.error(e))
 
@@ -49,6 +69,10 @@ function main(): void {
 
   watch('./script/**/*.coffee', () => {
     compiler.add('./script/index.coffee')
+  })
+
+  watch('./source/**/*.coffee', () => {
+    compiler.add(build())
   })
 }
 

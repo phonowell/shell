@@ -2,42 +2,41 @@
 $.formatHotkey = (key) ->
 
   # format
-  __listkey__ = []
-  __key__ = $.toLowerCase key
-  __key__ = $.replace __key__, ' ', ''
-  __key__ = $.replace __key__, '-', ''
-  _list = $.split __key__, '+'
-  for it in _list
-    $.push __listkey__, it
+  $listKey = []
+  $key = $.toLowerCase key
+  $key = $.replace $key, ' ', ''
+  $key = $.replace $key, '-', ''
+  for $it in $.split $key, '+'
+    $.push $listKey, $it
 
   # unfold
-  __isAlt__ = false
-  __isCtrl__ = false
-  __isShift__ = false
-  __isWin__ = false
-  __listResult__ = []
-  for key in __listkey__
+  $isAlt = false
+  $isCtrl = false
+  $isShift = false
+  $isWin = false
+  $listResult = []
+  for key in $listKey
     if key == 'alt'
-      __isAlt__ = true
+      $isAlt = true
       continue
     if key == 'ctrl'
-      __isCtrl__ = true
+      $isCtrl = true
       continue
     if key == 'shift'
-      __isShift__ = true
+      $isShift = true
       continue
     if key == 'win'
-      __isWin__ = true
+      $isWin = true
       continue
-    $.push __listResult__, key
+    $.push $listResult, key
 
-  __prefix__ = ''
-  if __isAlt__ then __prefix__ = "#{__prefix__}!"
-  if __isCtrl__ then __prefix__ = "#{__prefix__}^"
-  if __isShift__ then __prefix__ = "#{__prefix__}+"
-  if __isWin__ then __prefix__ = "#{__prefix__}#"
+  $prefix = ''
+  if $isAlt then $prefix = "#{$prefix}!"
+  if $isCtrl then $prefix = "#{$prefix}^"
+  if $isShift then $prefix = "#{$prefix}+"
+  if $isWin then $prefix = "#{$prefix}#"
 
-  __result__ = ''
-  for it in __listResult__
-    __result__ = "#{__result__} & #{it}"
-  return $.replace "#{__prefix__}#{$.trim __result__, ' &'}", ':', ' '
+  $result = ''
+  for $it in $listResult
+    $result = "#{$result} & #{$it}"
+  return $.replace "#{$prefix}#{$.trim $result, ' &'}", ':', ' '
