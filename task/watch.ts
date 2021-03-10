@@ -1,6 +1,6 @@
+import $watch from 'fire-keeper/watch'
 import build from './build'
 import c2a from 'coffee-ahk'
-import watch from 'fire-keeper/watch'
 
 // function
 
@@ -68,11 +68,11 @@ const main = (): void => {
 
   const compiler = new Compiler()
 
-  watch('./script/**/*.coffee', () => {
+  $watch('./script/**/*.coffee', () => {
     compiler.add('./script/index.coffee')
   })
 
-  watch('./source/**/*.coffee', () => {
+  $watch('./source/**/*.coffee', () => {
     compiler.add(build)
   })
 }

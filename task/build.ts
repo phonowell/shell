@@ -1,4 +1,7 @@
-import $ from 'fire-keeper'
+import $copy_ from 'fire-keeper/copy_'
+import $read_ from 'fire-keeper/read_'
+import $remove_ from 'fire-keeper/remove_'
+import $write_ from 'fire-keeper/write_'
 import transpile from 'coffee-ahk'
 
 // variable
@@ -17,20 +20,20 @@ const main_ = async (): Promise<void> => {
   })
   await replace_()
 
-  await $.remove_('./dist')
-  await $.copy_(Path.ahk, './dist')
+  await $remove_('./dist')
+  await $copy_(Path.ahk, './dist')
 }
 
 const replace_ = async (): Promise<void> => {
 
   const content = (
-    await $.read_(Path.ahk) as string
+    await $read_(Path.ahk) as string
   ).toString()
 
   const cont = content
     .replace(/\$([\w\d]+)/g, '__$1__')
 
-  await $.write_(Path.ahk, cont)
+  await $write_(Path.ahk, cont)
 }
 
 // export

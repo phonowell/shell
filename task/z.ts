@@ -2,7 +2,7 @@ import c2a from 'coffee-ahk'
 
 // function
 
-async function main_(): Promise<void> {
+const main_ = async (): Promise<void> => {
 
   await c2a('./script/index.coffee', {
     salt: 'z',
