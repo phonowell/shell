@@ -49,7 +49,7 @@ $.head := $.first
 $.floor := Func("shell_72")
 $.formatHotkey := Func("shell_71")
 global __formatKeyFormatHotkey__ := Func("shell_70")
-global __setPrefixFormatHotkey__ := Func("shell_69")
+global __pickPrefixFormatHotkey__ := Func("shell_69")
 $.getColor := Func("shell_68")
 $.getPosition := Func("shell_67")
 $.getState := Func("shell_66")
@@ -129,7 +129,7 @@ $.trimStart := Func("shell_4")
 $.type := Func("shell_3")
 $.uniq := Func("shell_2")
 $.values := Func("shell_1")
-$.VERSION := "0.0.5"
+$.VERSION := "0.0.6"
 shell_1(input) {
   if !($.isObject.Call(input)) {
     throw Exception("$.values: invalid type")
@@ -761,42 +761,28 @@ shell_68(point := "") {
   return __result__
 }
 shell_69(listKey) {
-  __isAlt__ := false
-  __isCtrl__ := false
-  __isShift__ := false
-  __isWin__ := false
+  __prefix__ := ""
+  __listNew__ := []
   for __index_for__, __key__ in listKey {
     if (__key__ == "alt") {
-      __isAlt__ := true
+      __prefix__ := "" . (__prefix__) . "!"
       continue
     }
     if (__key__ == "ctrl") {
-      __isCtrl__ := true
+      __prefix__ := "" . (__prefix__) . "^"
       continue
     }
     if (__key__ == "shift") {
-      __isShift__ := true
+      __prefix__ := "" . (__prefix__) . "+"
       continue
     }
     if (__key__ == "win") {
-      __isWin__ := true
+      __prefix__ := "" . (__prefix__) . "#"
       continue
     }
+    $.push.Call(__listNew__, __key__)
   }
-  __prefix__ := ""
-  if (__isAlt__) {
-    __prefix__ := "" . (__prefix__) . "!"
-  }
-  if (__isCtrl__) {
-    __prefix__ := "" . (__prefix__) . "^"
-  }
-  if (__isShift__) {
-    __prefix__ := "" . (__prefix__) . "+"
-  }
-  if (__isWin__) {
-    __prefix__ := "" . (__prefix__) . "#"
-  }
-  return __prefix__
+  return [__prefix__, __listNew__]
 }
 shell_70(key) {
   __listKey__ := []
@@ -808,7 +794,9 @@ shell_70(key) {
 }
 shell_71(key) {
   __listKey__ := __formatKeyFormatHotkey__.Call(key)
-  __prefix__ := __setPrefixFormatHotkey__.Call(__listKey__)
+  __array__ := __pickPrefixFormatHotkey__.Call(__listKey__)
+  __prefix__ := __array__[1]
+  __listKey__ := __array__[2]
   __result__ := ""
   for __index_for__, __it__ in __listKey__ {
     __result__ := "" . (__result__) . " & " . (__it__) . ""

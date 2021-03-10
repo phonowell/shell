@@ -2,7 +2,7 @@
 $.formatHotkey = (key) ->
 
   $listKey = $formatKeyFormatHotkey key
-  $prefix = $setPrefixFormatHotkey $listKey
+  [$prefix, $listKey] = $pickPrefixFormatHotkey $listKey
 
   $result = ''
   for $it in $listKey
@@ -22,36 +22,29 @@ $formatKeyFormatHotkey = (key) ->
 
   return $listKey
 
-$setPrefixFormatHotkey = (listKey) ->
+$pickPrefixFormatHotkey = (listKey) ->
 
-  $isAlt = false
-  $isCtrl = false
-  $isShift = false
-  $isWin = false
+  $prefix = ''
+  $listNew = []
 
   for $key in listKey
 
     if $key == 'alt'
-      $isAlt = true
+      $prefix = "#{$prefix}!"
       continue
 
     if $key == 'ctrl'
-      $isCtrl = true
+      $prefix = "#{$prefix}^"
       continue
 
     if $key == 'shift'
-      $isShift = true
+      $prefix = "#{$prefix}+"
       continue
 
     if $key == 'win'
-      $isWin = true
+      $prefix = "#{$prefix}#"
       continue
 
-  $prefix = ''
+    $.push $listNew, $key
 
-  if $isAlt then $prefix = "#{$prefix}!"
-  if $isCtrl then $prefix = "#{$prefix}^"
-  if $isShift then $prefix = "#{$prefix}+"
-  if $isWin then $prefix = "#{$prefix}#"
-
-  return $prefix
+  return [$prefix, $listNew]
