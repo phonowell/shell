@@ -5,3 +5,5 @@ $.first = (list) ->
     throw new Error '$.first: invalid type'
 
   return list[0]
+
+$.head = $.first

@@ -1,0 +1,2 @@
+# noop(): void
+$.noop = -> return

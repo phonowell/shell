@@ -1,19 +1,10 @@
 # press(key...: string): void
 $.press = (listInput...) ->
 
-  # validate
-  unless $.length listInput
-    throw new Error '$.press: invalid key'
+  unless $validateInputPress listInput
+    return
 
-  # format
-  $listKey = []
-  for $input in listInput
-    $ipt = $.toLowerCase $input
-    $ipt = $.replace $ipt, ' ', ''
-    $ipt = $.replace $ipt, '-', ''
-    $list = $.split $ipt, '+'
-    for $it in $list
-      $.push $listKey, $it
+  $listKey = $formatInputPress listInput
 
   # unfold
   $listResult = []
@@ -42,3 +33,32 @@ $.press = (listInput...) ->
   for $it in $listResult
     $result = "#{$result}{#{$it}}"
   `Send, % $result`
+
+$formatInputPress = (listInput) ->
+
+  $listKey = []
+
+  for $input in listInput
+
+    $ipt = $.toLowerCase $input
+    $ipt = $.replace $ipt, ' ', ''
+    $ipt = $.replace $ipt, '-', ''
+
+    $.push $listKey, ($.split $ipt, '+')...
+
+  return $listKey
+
+$validateInputPress = (listInput) ->
+
+  unless $.length listInput
+    return false
+
+  $key = listInput[0]
+  if $.includes $key, '-button'
+    $key = $.replace $key, 'l-button', 'left'
+    $key = $.replace $key, 'm-button', 'middle'
+    $key = $.replace $key, 'r-button', 'right'
+    $.click $key
+    return false
+
+  return true
