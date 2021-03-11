@@ -4,6 +4,9 @@ $tDebounce = {}
 # debounce(time: number, callback: Function): Function
 $.debounce = (time, callback) ->
 
+  $validateType 'debounce', time, 'number'
+  $validateType 'debounce', callback, 'function'
+
   $iDebounce++
 
   return (index = $iDebounce) ->

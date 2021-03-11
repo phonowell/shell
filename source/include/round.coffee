@@ -1,2 +1,4 @@
 # round(n: number): number
-$.round = (n) -> return Round n
+$.round = (n) ->
+  $validateType 'round', n, 'number'
+  return Round n

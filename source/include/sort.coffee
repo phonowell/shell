@@ -1,8 +1,7 @@
 # sort(list: unknown[]): unknown[]
 $.sort = (list) ->
 
-  unless $.isArray list
-    throw new Error '$.sort: invalid type'
+  $validateType 'sort', list, 'array'
 
   $hasString = false
   for $item in list

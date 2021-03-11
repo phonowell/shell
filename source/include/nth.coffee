@@ -1,11 +1,8 @@
 # nth(list: unknown[], n = 0): unknown
 $.nth = (list, n = 0) ->
 
-  unless $.isArray list
-    throw new Error '$.nth: invalid type'
-
-  unless $.isNumber n
-    throw new Error '$.nth: invalid type'
+  $validateType 'nth', list, 'array'
+  $validateType 'nth', n, 'number'
 
   if n >= 0
     return list[n]

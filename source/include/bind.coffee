@@ -1,8 +1,7 @@
 # bind(callback: Function, ...args: unknown[]): Function
 $.bind = (callback, args...) ->
 
-  unless $.isFunction callback
-    throw new Error '$.bind: invalid type'
+  $validateType 'bind', callback, 'function'
 
   unless callback.Name
     unless $.length args

@@ -4,8 +4,7 @@ $indexOnce = 0
 # once(callback: Function): Function
 $.once = (callback) ->
 
-  unless $.isFunction callback
-    throw new Error '$.once: invalid type'
+  $validateType 'once', callback, 'function'
 
   $i = $indexOnce
   $indexOnce++

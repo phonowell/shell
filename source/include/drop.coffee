@@ -1,8 +1,8 @@
 # drop(list: unknown[], n = 1): unknown[]
 $.drop = (list, n = 1) ->
 
-  unless $.isArray list
-    throw new Error '$.drop: invalid type'
+  $validateType 'drop', list, 'array'
+  $validateType 'drop', n, 'number'
 
   $listNew = []
 

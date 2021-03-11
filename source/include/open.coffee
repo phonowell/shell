@@ -1,2 +1,4 @@
 # open(source: string): void
-$.open = (source) -> `Run, % source`
+$.open = (source) ->
+  $validateType 'open', source, 'string'
+  `Run, % source`

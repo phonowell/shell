@@ -1,8 +1,7 @@
 # join(list: unknown[], seperator: string): string
 $.join = (list, seperator = '') ->
 
-  unless $.isArray list
-    throw new Error '$.join: invalid type'
+  $validateType 'join', list, 'array'
 
   $result = ''
   for $item, $i in list

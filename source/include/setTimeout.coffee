@@ -1,8 +1,10 @@
 # setTimeout(callback: Function, time: number): string
 $.setTimeout = (callback, time) ->
 
-  if $.isFunction callback
-    callback = $.bind callback
+  $validateType 'setTimeout', callback, 'function'
+  $validateType 'setTimeout', time, 'number'
+
+  callback = $.bind callback
 
   unless $.isNumber time
     throw new Error '$.setTimeout: invalid type'

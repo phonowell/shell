@@ -1,8 +1,7 @@
 # values(input: {[key: string]: unknown}): unknown[]
 $.values = (input) ->
 
-  unless $.isObject input
-    throw new Error '$.values: invalid type'
+  $validateType 'values', input, 'object'
 
   $listResult = []
 

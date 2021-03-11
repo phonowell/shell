@@ -1,9 +1,6 @@
 # first(list: unknown[]): unknown
 $.first = (list) ->
-
-  unless $.isArray list
-    throw new Error '$.first: invalid type'
-
+  $validateType 'first', list, 'array'
   return list[0]
 
 $.head = $.first

@@ -7,6 +7,10 @@ $.range = (args...) ->
     when 3 then [$start, $end, $step] = args
     else throw new Error '$.range: invalid arguments'
 
+  $validateType 'range', $start, 'number'
+  $validateType 'range', $end, 'number'
+  $validateType 'range', $step, 'number'
+
   if $start == $end
     return [$start]
 

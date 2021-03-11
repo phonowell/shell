@@ -1,11 +1,11 @@
 # setInterval(callback: Function, time: number): string
 $.setInterval = (callback, time) ->
 
-  if $.isFunction callback
-    callback = $.bind callback
+  $validateType 'setInterval', callback, 'function'
+  $validateType 'setInterval', time, 'number'
 
-  unless $.isNumber time
-    throw new Error '$.setInterval: invalid type'
+  callback = $.bind callback
+
   unless time > 0
     throw new Error '$.setInterval: invalid value'
 

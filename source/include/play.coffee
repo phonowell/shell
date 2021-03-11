@@ -1,2 +1,4 @@
 # play(filename: string): void
-$.play = (filename) -> `SoundPlay, % filename`
+$.play = (filename) ->
+  $validateType 'play', filename, 'string'
+  `SoundPlay, % filename`

@@ -1,8 +1,7 @@
 # shuffle(list: unknown[]): unknown[]
 $.shuffle = (list) ->
 
-  unless $.isArray list
-    throw new Error '$.shuffle: invalid type'
+  $validateType 'shuffle', list, 'array'
 
   $string = $.join list, ','
   `Sort, $string, Random D,`

@@ -1,12 +1,14 @@
 # reverse(list: unknown[]): unknown[]
 $.reverse = (list) ->
 
-  unless $.isArray list
-    throw new Error '$.reverse: invalid type'
+  $validateType 'reverse', list, 'array'
 
   $len = $.length list
   $listNew = []
-  for $key, $i in list
-    $listNew[$len - 1 - $i] = $key
+  for $item, $i in list
+    $listNew[$len - 1 - $i] = $item
 
-  return $listNew
+  for $item, $i in $listNew
+    list[$i] = $item
+
+  return list

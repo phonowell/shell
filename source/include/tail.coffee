@@ -1,7 +1,4 @@
 # tail(list: unknown[]): unknown[]
 $.tail = (list) ->
-
-  unless $.isArray list
-    throw new Error '$.tail: invalid type'
-
+  $validateType 'tail', list, 'array'
   return $.drop list, 1

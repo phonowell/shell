@@ -1,2 +1,4 @@
 # floor(n: number): number
-$.floor = (n) -> return Floor n
+$.floor = (n) ->
+  $validateType 'floor', n, 'number'
+  return Floor n

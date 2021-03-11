@@ -1,8 +1,7 @@
 # uniq(list: unknown[]): unknown[]
 $.uniq = (list) ->
 
-  unless $.isArray list
-    throw new Error '$.uniq: invalid type'
+  $validateType 'uniq', list, 'array'
 
   $hasString = false
   for $item in list

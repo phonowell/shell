@@ -1,8 +1,7 @@
 # defer(callback: Function, ...args: unknown[]): string
 $.defer = (callback, args...) ->
 
-  unless $.isFunction callback
-    throw new Error '$.defer: invalid type'
+  $validateType 'defer', callback, 'function'
 
   return $.delay ->
     callback args...

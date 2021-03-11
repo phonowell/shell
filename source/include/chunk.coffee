@@ -1,8 +1,8 @@
 # chunk(list: unknown[], n = 1): unknown[][]
 $.chunk = (list, n = 1) ->
 
-  unless $.isArray list
-    throw new Error '$.chunk: invalid type'
+  $validateType 'chunk', list, 'array'
+  $validateType 'chunk', n, 'number'
 
   $listNew = []
 

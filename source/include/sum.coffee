@@ -1,8 +1,7 @@
 # sum(list: number[]): number
 $.sum = (list) ->
 
-  unless $.isArray list
-    throw new Error '$.sum: invalid type'
+  $validateType 'sum', list, 'array'
 
   $result = 0
   for $n in list

@@ -1,8 +1,7 @@
 # compact(list: unknown[]): unknown[]
 $.compact = (list) ->
 
-  unless $.isArray list
-    throw new Error '$.compact: invalid type'
+  $validateType 'compact', list, 'array'
 
   $listNew = []
   for $item in list

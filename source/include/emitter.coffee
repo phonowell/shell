@@ -4,6 +4,8 @@ class EmitterShellX
 
   emit: (key, args...) ->
 
+    $validateType 'emitter.emit', key, 'string'
+
     [$type, $name] = $.split key, '.'
 
     unless $type
@@ -23,6 +25,8 @@ class EmitterShellX
     return @
 
   off: (key) ->
+
+    $validateType 'emitter.off', key, 'string'
 
     [$type, $name] = $.split key, '.'
 
@@ -48,7 +52,12 @@ class EmitterShellX
     return @
 
   on: (key, callback) ->
+
+    $validateType 'emitter.on', key, 'string'
+    $validateType 'emitter.key', callback, 'function'
+
     [$type, $name] = $.split key, '.'
+    
     $.push @bus, [$type, $name, callback]
     return @
 

@@ -7,11 +7,8 @@ $.mixin = (args...) ->
     when 2 then [$target, $source] = args
     else throw new Error '$.mixin: invalid arguments'
 
-  unless $.isObject $target
-    throw new Error '$.mixin: invalid type'
-
-  unless $.isObject $source
-    throw new Error '$.mixin: invalid type'
+  $validateType 'mixin', $target, 'object'
+  $validateType 'mixin', $source, 'object'
 
   for $key, $value of $source
     $target[$key] = $value

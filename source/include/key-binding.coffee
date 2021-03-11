@@ -4,6 +4,9 @@ class KeyBindingShellX
   mapCallback: {}
 
   add: (key, callback) ->
+
+    $validateType 'keyBinding.add', callback, 'function'
+
     [key, $name] = $.split key, '.'
     @init key
     $.push @mapCallback[key], [$name, callback]
@@ -36,11 +39,17 @@ class KeyBindingShellX
     @on key, $fn
 
   off: (key, callback) ->
+
+    $validateType 'keyBinding.off', callback, 'function'
+
     key = $.formatHotkey key
     `Hotkey, % key, % callback, Off`
     return $
 
   on: (key, callback) ->
+
+    $validateType 'keyBinding.on', callback, 'function'
+
     key = $.formatHotkey key
     `Hotkey, % key, % callback, On`
     return $

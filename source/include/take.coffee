@@ -1,8 +1,8 @@
 # take(list: unknown[], count: number = 1): unknown[]
 $.take = (list, count = 1) ->
 
-  unless $.isArray list
-    throw new Error '$.take: invalid type'
+  $validateType 'take', list, 'array'
+  $validateType 'take', count, 'number'
 
   $len = $.length list
   unless $len

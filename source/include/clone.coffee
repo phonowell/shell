@@ -4,10 +4,7 @@ $.clone = (input) ->
   $type = $.type input
 
   if $type == 'array'
-    $listNew = []
-    for $item in input
-      $.push $listNew, $item
-    return $listNew
+    return $.slice input
 
   if $type == 'object'
     $mapNew = {}

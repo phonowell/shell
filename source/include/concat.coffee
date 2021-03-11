@@ -1,8 +1,7 @@
 # concat(list: unknown[], ...value: (unknown | unknown[])[]): unknown[]
 $.concat = (list, args...) ->
 
-  unless $.isArray list
-    throw new Error '$.concat: invalid type'
+  $validateType 'concat', list, 'array'
 
   $listNew = $.clone list
 
