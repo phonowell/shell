@@ -1,4 +1,4 @@
 # play(filename: string): void
 $.play = (filename) ->
-  $validateType 'play', filename, 'string'
+  $vt 'play', filename, 'string'
   `SoundPlay, % filename`

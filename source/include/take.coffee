@@ -1,8 +1,8 @@
 # take(list: unknown[], count: number = 1): unknown[]
 $.take = (list, count = 1) ->
 
-  $validateType 'take', list, 'array'
-  $validateType 'take', count, 'number'
+  $vt 'take', list, 'array'
+  $vt 'take', count, 'number'
 
   $len = $.length list
   unless $len

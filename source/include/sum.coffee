@@ -1,7 +1,7 @@
 # sum(list: number[]): number
 $.sum = (list) ->
 
-  $validateType 'sum', list, 'array'
+  $vt 'sum', list, 'array'
 
   $result = 0
   for $n in list

@@ -1,7 +1,7 @@
 # sort(list: unknown[]): unknown[]
 $.sort = (list) ->
 
-  $validateType 'sort', list, 'array'
+  $vt 'sort', list, 'array'
 
   $hasString = false
   for $item in list

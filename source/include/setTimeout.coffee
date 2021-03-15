@@ -1,8 +1,8 @@
 # setTimeout(callback: Function, time: number): string
 $.setTimeout = (callback, time) ->
 
-  $validateType 'setTimeout', callback, 'function'
-  $validateType 'setTimeout', time, 'number'
+  $vt 'setTimeout', callback, 'function'
+  $vt 'setTimeout', time, 'number'
 
   callback = $.bind callback
 

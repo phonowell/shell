@@ -40,8 +40,8 @@ $pickArgumentSlice = (args) ->
     when 2 then [$list, $start, $end] = [args[0], args[1], $.length args[0]]
     when 3 then [$list, $start, $end] = args
 
-  $validateType 'slice', $list, 'array'
-  $validateType 'slice', $start, 'number'
-  $validateType 'slice', $end, 'number'
+  $vt 'slice', $list, 'array'
+  $vt 'slice', $start, 'number'
+  $vt 'slice', $end, 'number'
 
   return [$list, $start, $end]

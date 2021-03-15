@@ -1,7 +1,7 @@
 # shuffle(list: unknown[]): unknown[]
 $.shuffle = (list) ->
 
-  $validateType 'shuffle', list, 'array'
+  $vt 'shuffle', list, 'array'
 
   $string = $.join list, ','
   `Sort, $string, Random D,`

@@ -5,7 +5,8 @@ class KeyBindingShellX
 
   add: (key, callback) ->
 
-    $validateType 'keyBinding.add', callback, 'function'
+    $vt 'keyBinding.add', key, 'string', 'number'
+    $vt 'keyBinding.add', callback, 'function'
 
     [key, $name] = $.split key, '.'
     @init key
@@ -13,6 +14,8 @@ class KeyBindingShellX
     return $
 
   fire: (key) ->
+
+    $vt 'keyBinding.fire', key, 'string', 'number'
 
     [key, $name] = $.split ($.replace key, ':down', ''), '.'
 
@@ -30,6 +33,8 @@ class KeyBindingShellX
 
   init: (key) ->
 
+    $vt 'keyBinding.init', key, 'string', 'number'
+
     if @mapCallback[key]
       return $
     @mapCallback[key] = []
@@ -40,7 +45,8 @@ class KeyBindingShellX
 
   off: (key, callback) ->
 
-    $validateType 'keyBinding.off', callback, 'function'
+    $vt 'keyBinding.off', key, 'string', 'number'
+    $vt 'keyBinding.off', key, callback, 'function'
 
     key = $.formatHotkey key
     `Hotkey, % key, % callback, Off`
@@ -48,13 +54,16 @@ class KeyBindingShellX
 
   on: (key, callback) ->
 
-    $validateType 'keyBinding.on', callback, 'function'
+    $vt 'keyBinding.on', key, 'string', 'number'
+    $vt 'keyBinding.on', callback, 'function'
 
     key = $.formatHotkey key
     `Hotkey, % key, % callback, On`
     return $
 
   remove: (key) ->
+
+    $vt 'keyBinding.remove', key, 'string', 'number'
 
     [key, $name] = $.split key, '.'
 

@@ -1,5 +1,4 @@
-# alert(message: string): string
-$.alert = (message = '') ->
-  $msg = $.toString message
+# alert(message...: unknown[]): void
+$.alert = (message...) ->
+  $msg = $.join ($.map message, (msg) -> return $.toString msg), ', '
   `MsgBox, % $msg`
-  return message

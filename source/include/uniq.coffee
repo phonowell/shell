@@ -1,7 +1,7 @@
 # uniq(list: unknown[]): unknown[]
 $.uniq = (list) ->
 
-  $validateType 'uniq', list, 'array'
+  $vt 'uniq', list, 'array'
 
   $hasString = false
   for $item in list

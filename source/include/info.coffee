@@ -7,7 +7,7 @@ $.info = (message, point = '') ->
   unless point
     point = $.getPosition()
 
-  $validateType 'info', point, 'array'
+  $vt 'info', point, 'array'
 
   $msg = $.toString message
   `ToolTip, % $msg, % point[1], % point[2]`

@@ -1,7 +1,7 @@
 # concat(list: unknown[], ...value: (unknown | unknown[])[]): unknown[]
 $.concat = (list, args...) ->
 
-  $validateType 'concat', list, 'array'
+  $vt 'concat', list, 'array'
 
   $listNew = $.clone list
 

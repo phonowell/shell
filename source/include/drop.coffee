@@ -1,8 +1,8 @@
 # drop(list: unknown[], n = 1): unknown[]
 $.drop = (list, n = 1) ->
 
-  $validateType 'drop', list, 'array'
-  $validateType 'drop', n, 'number'
+  $vt 'drop', list, 'array'
+  $vt 'drop', n, 'number'
 
   $listNew = []
 

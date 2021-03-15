@@ -1,7 +1,7 @@
 # compact(list: unknown[]): unknown[]
 $.compact = (list) ->
 
-  $validateType 'compact', list, 'array'
+  $vt 'compact', list, 'array'
 
   $listNew = []
   for $item in list

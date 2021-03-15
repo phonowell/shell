@@ -4,7 +4,7 @@ $indexOnce = 0
 # once(callback: Function): Function
 $.once = (callback) ->
 
-  $validateType 'once', callback, 'function'
+  $vt 'once', callback, 'function'
 
   $i = $indexOnce
   $indexOnce++

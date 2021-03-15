@@ -1,7 +1,7 @@
 # bind(callback: Function, ...args: unknown[]): Function
 $.bind = (callback, args...) ->
 
-  $validateType 'bind', callback, 'function'
+  $vt 'bind', callback, 'function'
 
   unless callback.Name
     unless $.length args

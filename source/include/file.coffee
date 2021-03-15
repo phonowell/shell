@@ -3,7 +3,7 @@ class FileShellX
   name: ''
 
   constructor: (name) ->
-    $validateType 'file.constructor', name, 'string'
+    $vt 'file.constructor', name, 'string'
     @name = name
 
   append: (content) ->

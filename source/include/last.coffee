@@ -1,4 +1,4 @@
 # last(list: unknown[]): unknown
 $.last = (list) ->
-  $validateType 'last', list, 'array'
+  $vt 'last', list, 'array'
   return list[($.length list) - 1]

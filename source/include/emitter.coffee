@@ -4,7 +4,7 @@ class EmitterShellX
 
   emit: (key, args...) ->
 
-    $validateType 'emitter.emit', key, 'string'
+    $vt 'emitter.emit', key, 'string'
 
     [$type, $name] = $.split key, '.'
 
@@ -26,7 +26,7 @@ class EmitterShellX
 
   off: (key) ->
 
-    $validateType 'emitter.off', key, 'string'
+    $vt 'emitter.off', key, 'string'
 
     [$type, $name] = $.split key, '.'
 
@@ -53,11 +53,11 @@ class EmitterShellX
 
   on: (key, callback) ->
 
-    $validateType 'emitter.on', key, 'string'
-    $validateType 'emitter.key', callback, 'function'
+    $vt 'emitter.on', key, 'string'
+    $vt 'emitter.on', callback, 'function'
 
     [$type, $name] = $.split key, '.'
-    
+
     $.push @bus, [$type, $name, callback]
     return @
 

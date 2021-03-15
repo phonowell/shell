@@ -1,4 +1,4 @@
 # open(source: string): void
 $.open = (source) ->
-  $validateType 'open', source, 'string'
+  $vt 'open', source, 'string'
   `Run, % source`

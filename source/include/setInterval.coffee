@@ -1,8 +1,8 @@
 # setInterval(callback: Function, time: number): string
 $.setInterval = (callback, time) ->
 
-  $validateType 'setInterval', callback, 'function'
-  $validateType 'setInterval', time, 'number'
+  $vt 'setInterval', callback, 'function'
+  $vt 'setInterval', time, 'number'
 
   callback = $.bind callback
 

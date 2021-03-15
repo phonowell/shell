@@ -1,8 +1,8 @@
 # nth(list: unknown[], n = 0): unknown
 $.nth = (list, n = 0) ->
 
-  $validateType 'nth', list, 'array'
-  $validateType 'nth', n, 'number'
+  $vt 'nth', list, 'array'
+  $vt 'nth', n, 'number'
 
   if n >= 0
     return list[n]

@@ -1,4 +1,4 @@
 # sleep(time: number): void
 $.sleep = (time) ->
-  $validateType 'sleep', time, 'number'
+  $vt 'sleep', time, 'number'
   `Sleep, % time`

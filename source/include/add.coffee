@@ -1,5 +1,6 @@
-# add(augend: number, addend: number): number
-$.add = (augend, addend) ->
-  $validateType 'add', augend, 'number'
-  $validateType 'add', addend, 'number'
-  return augend + addend
+# add(args...: number[]): number
+$.add = (args...) ->
+  $result = 0
+  for $arg in args
+    $result = $result + $arg
+  return $result

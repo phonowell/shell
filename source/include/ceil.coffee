@@ -1,4 +1,4 @@
 # ceil(n: number): number
 $.ceil = (n) ->
-  $validateType 'ceil', n, 'number'
+  $vt 'ceil', n, 'number'
   return Ceil n

@@ -1,8 +1,8 @@
 # chunk(list: unknown[], n = 1): unknown[][]
 $.chunk = (list, n = 1) ->
 
-  $validateType 'chunk', list, 'array'
-  $validateType 'chunk', n, 'number'
+  $vt 'chunk', list, 'array'
+  $vt 'chunk',  n, 'number'
 
   $listNew = []
 

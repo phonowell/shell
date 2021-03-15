@@ -5,8 +5,8 @@ $tsThrottle = {}
 # throttle(time: number, callback: Function): Function
 $.throttle = (time, callback) ->
 
-  $validateType 'throttle', time, 'number'
-  $validateType 'throttle', callback, 'function'
+  $vt 'throttle', time, 'number'
+  $vt 'throttle', callback, 'function'
 
   $iThrottle++
   $tsThrottle[$iThrottle] = 0

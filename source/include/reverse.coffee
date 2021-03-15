@@ -1,7 +1,7 @@
 # reverse(list: unknown[]): unknown[]
 $.reverse = (list) ->
 
-  $validateType 'reverse', list, 'array'
+  $vt 'reverse', list, 'array'
 
   $len = $.length list
   $listNew = []

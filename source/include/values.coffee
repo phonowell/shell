@@ -1,7 +1,7 @@
 # values(input: {[key: string]: unknown}): unknown[]
 $.values = (input) ->
 
-  $validateType 'values', input, 'object'
+  $vt 'values', input, 'object'
 
   $listResult = []
 
