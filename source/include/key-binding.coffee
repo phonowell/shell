@@ -48,7 +48,7 @@ class KeyBindingShellX
     $vt 'keyBinding.off', key, 'string', 'number'
     $vt 'keyBinding.off', key, callback, 'function'
 
-    key = $.formatHotkey key
+    key = $.formatHotkey $.replace key, ':down', ''
     `Hotkey, % key, % callback, Off`
     return $
 
@@ -57,7 +57,7 @@ class KeyBindingShellX
     $vt 'keyBinding.on', key, 'string', 'number'
     $vt 'keyBinding.on', callback, 'function'
 
-    key = $.formatHotkey key
+    key = $.formatHotkey $.replace key, ':down', ''
     `Hotkey, % key, % callback, On`
     return $
 

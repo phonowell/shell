@@ -137,7 +137,7 @@ $.type := Func("shell_4")
 $.uniq := Func("shell_3")
 global __vt__ := Func("shell_2")
 $.values := Func("shell_1")
-$.VERSION := "0.0.7"
+$.VERSION := "0.0.8"
 shell_1(input) {
   __vt__.Call("values", input, "object")
   __listResult__ := []
@@ -687,14 +687,14 @@ shell_53(this, key) {
 shell_54(this, key, callback) {
   __vt__.Call("keyBinding.on", key, "string", "number")
   __vt__.Call("keyBinding.on", callback, "function")
-  key := $.formatHotkey.Call(key)
+  key := $.replace.Call(($.formatHotkey.Call(key)), " down", "")
   Hotkey, % key, % callback, On
   return $
 }
 shell_55(this, key, callback) {
   __vt__.Call("keyBinding.off", key, "string", "number")
   __vt__.Call("keyBinding.off", key, callback, "function")
-  key := $.formatHotkey.Call(key)
+  key := $.replace.Call(($.formatHotkey.Call(key)), " down", "")
   Hotkey, % key, % callback, Off
   return $
 }
@@ -842,6 +842,9 @@ shell_73(point := "") {
   return __result__
 }
 shell_74(listKey) {
+  if (($.length.Call(listKey)) == 1) {
+    return ["", listKey]
+  }
   __prefix__ := ""
   __listNew__ := []
   for __index_for__, __key__ in listKey {
@@ -1185,10 +1188,27 @@ shell_116(input) {
   return input
 }
 
-$.on.Call("1", Func("script_2").Bind(n))
-script_1(n) {
-  $.alert.Call(n)
+$.on.Call("alt", Func("script_6"))
+$.on.Call("ctrl", Func("script_5"))
+$.on.Call("shift", Func("script_4"))
+$.on.Call("alt + 1", Func("script_3"))
+$.on.Call("ctrl + 1", Func("script_2"))
+$.on.Call("shift + 1", Func("script_1"))
+script_1() {
+  $.alert.Call("shift + 1")
 }
-script_2(n) {
-  $.each.Call([2, 3, 4], Func("script_1"))
+script_2() {
+  $.alert.Call("ctrl + 1")
+}
+script_3() {
+  $.alert.Call("alt + 1")
+}
+script_4() {
+  $.alert.Call("shift")
+}
+script_5() {
+  $.alert.Call("ctrl")
+}
+script_6() {
+  $.alert.Call("alt")
 }

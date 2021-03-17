@@ -24,6 +24,9 @@ $formatKeyFormatHotkey = (key) ->
 
 $pickPrefixFormatHotkey = (listKey) ->
 
+  if ($.length listKey) == 1
+    return ['', listKey]
+
   $prefix = ''
   $listNew = []
 
