@@ -1,8 +1,6 @@
-# setInterval(callback: Function, time: number): string
+# type Fn = () => unknown
+# setInterval(callback: Fn, time: number): string
 $.setInterval = (callback, time) ->
-
-  $vt 'setInterval', callback, 'function'
-  $vt 'setInterval', time, 'number'
 
   callback = $.bind callback
 

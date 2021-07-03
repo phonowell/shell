@@ -1,8 +1,4 @@
-# each(list: unknown[], callback: Function): void
+# each<T>(list: T[], callback: (item?: T, i?: number) => unknown): void
 $.each = (list, callback) ->
-
-  $vt 'each', list, 'array'
-  $vt 'each', callback, 'function'
-
   for $item, $i in list
     callback $item, $i

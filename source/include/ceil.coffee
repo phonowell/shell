@@ -1,4 +1,2 @@
 # ceil(n: number): number
-$.ceil = (n) ->
-  $vt 'ceil', n, 'number'
-  return Ceil n
+$.ceil = (n) -> return Ceil n

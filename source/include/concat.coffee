@@ -1,7 +1,5 @@
-# concat(list: unknown[], ...value: (unknown | unknown[])[]): unknown[]
+# concat<T>(list: T[], ...value: (T | T[])[]): T[]
 $.concat = (list, args...) ->
-
-  $vt 'concat', list, 'array'
 
   $listNew = $.clone list
 

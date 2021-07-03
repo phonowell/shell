@@ -1,4 +1,2 @@
 # sleep(time: number): void
-$.sleep = (time) ->
-  $vt 'sleep', time, 'number'
-  `Sleep, % time`
+$.sleep = (time) -> `Sleep, % time`

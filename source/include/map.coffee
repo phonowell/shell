@@ -1,8 +1,5 @@
-# map(list: unknown[], callback: Function): unknown[]
+# map<T>(list: T[], callback: (item?: T, i?: number) => unknown): unknown[]
 $.map = (list, callback) ->
-
-  $vt 'map', list, 'array'
-  $vt 'map', callback, 'function'
 
   $listResult = []
 

@@ -1,7 +1,5 @@
-# push(list: unknown[], ...value: unknown[]): unknown[]
+# push<T>(list: T[], ...value: T[]): T[]
 $.push = (list, args...) ->
-
-  $vt 'push', list, 'array'
 
   for $arg in args
     list.Push $arg

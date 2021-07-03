@@ -1,4 +1,4 @@
-# clone(input: unknown[] | {[key: string]: unknown}): input: unknown[] | {[key: string]: unknown}
+# clone<T = unknown[] | {[x: string]: unknown}>(input: T): T
 $.clone = (input) ->
 
   $type = $.type input

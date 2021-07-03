@@ -2,9 +2,7 @@ class FileShellX
 
   name: ''
 
-  constructor: (name) ->
-    $vt 'file.constructor', name, 'string'
-    @name = name
+  constructor: (name) -> @name = name
 
   append: (content) ->
     `FileAppend, % content, % this.name, UTF-8`

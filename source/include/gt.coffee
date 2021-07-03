@@ -1,2 +1,2 @@
-# gt(value: unknown, other: unknown): boolean
+# gt<T = number>(value: T, other: T): boolean
 $.gt = (value, other) -> return value > other

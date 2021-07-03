@@ -1,7 +1,5 @@
-# uniq(list: unknown[]): unknown[]
+# uniq<T>(list: T[]): T[]
 $.uniq = (list) ->
-
-  $vt 'uniq', list, 'array'
 
   $hasString = false
   for $item in list

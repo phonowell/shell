@@ -1,7 +1,5 @@
-# keys(input: {[key: string]: unknown}): string[]
+# keys(input: {[x: string]: unknown}): string[]
 $.keys = (input) ->
-
-  $vt 'keys', input, 'object'
 
   $listResult = []
 

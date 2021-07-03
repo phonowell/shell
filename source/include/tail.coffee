@@ -1,4 +1,2 @@
-# tail(list: unknown[]): unknown[]
-$.tail = (list) ->
-  $vt 'tail', list, 'array'
-  return $.drop list, 1
+# tail<T>(list: T[]): T[]
+$.tail = (list) -> return $.drop list, 1

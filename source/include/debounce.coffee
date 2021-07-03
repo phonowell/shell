@@ -1,11 +1,9 @@
 $iDebounce = 0
 $tDebounce = {}
 
-# debounce(time: number, callback: Function): Function
+# type Fn = () => unknown
+# debounce(time: number, callback: Fn): Fn
 $.debounce = (time, callback) ->
-
-  $vt 'debounce', time, 'number'
-  $vt 'debounce', callback, 'function'
 
   $iDebounce++
 

@@ -1,16 +1,14 @@
-# type Obj = {[key: string]: unknown}
-# mixin(target: Obj, source: Obj): Obj
+# type Obj = {[x: string]: unknown}
+# mixin(...args: Obj[]): Obj
 $.mixin = (args...) ->
 
-  switch $.length args
-    when 1 then [$target, $source] = [{}, args[0]]
-    when 2 then [$target, $source] = args
-    else throw new Error '$.mixin: invalid arguments'
+  unless $.length args
+    throw new Error '$.mixin: invalid arguments'
 
-  $vt 'mixin', $target, 'object'
-  $vt 'mixin', $source, 'object'
+  $result = args[0]
 
-  for $key, $value of $source
-    $target[$key] = $value
+  for $item in $.tail args
+    for $key, $value of $item
+      $result[$key] = $value
 
-  return $target
+  return $result

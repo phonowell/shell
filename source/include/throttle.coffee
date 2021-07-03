@@ -2,11 +2,9 @@ $iThrottle = 0
 $tThrottle = {}
 $tsThrottle = {}
 
-# throttle(time: number, callback: Function): Function
+# type Fn = () => unknown
+# throttle(time: number, callback: Fn): Fn
 $.throttle = (time, callback) ->
-
-  $vt 'throttle', time, 'number'
-  $vt 'throttle', callback, 'function'
 
   $iThrottle++
   $tsThrottle[$iThrottle] = 0

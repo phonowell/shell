@@ -1,8 +1,5 @@
-# chunk(list: unknown[], n = 1): unknown[][]
+# chunk<T>(list: T[], n = 1): T[][]
 $.chunk = (list, n = 1) ->
-
-  $vt 'chunk', list, 'array'
-  $vt 'chunk',  n, 'number'
 
   $listNew = []
 

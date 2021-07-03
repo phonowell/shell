@@ -1,2 +1,2 @@
-# eq(value: unknown, other: unknown): boolean
+# eq<T>(value: T, other: T): boolean
 $.eq = (value, other) -> return value == other

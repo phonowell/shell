@@ -4,8 +4,6 @@ class EmitterShellX
 
   emit: (key, args...) ->
 
-    $vt 'emitter.emit', key, 'string'
-
     [$type, $name] = $.split key, '.'
 
     unless $type
@@ -25,8 +23,6 @@ class EmitterShellX
     return @
 
   off: (key) ->
-
-    $vt 'emitter.off', key, 'string'
 
     [$type, $name] = $.split key, '.'
 
@@ -52,9 +48,6 @@ class EmitterShellX
     return @
 
   on: (key, callback) ->
-
-    $vt 'emitter.on', key, 'string'
-    $vt 'emitter.on', callback, 'function'
 
     [$type, $name] = $.split key, '.'
 

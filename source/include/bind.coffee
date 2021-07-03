@@ -1,7 +1,6 @@
-# bind(callback: Function, ...args: unknown[]): Function
+# type Fn = () => unknown
+# bind(callback: Fn, ...args: unknown[]): Fn
 $.bind = (callback, args...) ->
-
-  $vt 'bind', callback, 'function'
 
   unless callback.Name
     unless $.length args

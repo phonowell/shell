@@ -1,12 +1,9 @@
-# compact(list: unknown[]): unknown[]
+# compact<T>(list: T[]): T[]
 $.compact = (list) ->
-
-  $vt 'compact', list, 'array'
 
   $listNew = []
   for $item in list
-    unless $item
-      continue
+    unless $item then continue
     $.push $listNew, $item
 
   return $listNew

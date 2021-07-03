@@ -1,8 +1,5 @@
-# drop(list: unknown[], n = 1): unknown[]
+# drop<T>(list: T[], n = 1): T[]
 $.drop = (list, n = 1) ->
-
-  $vt 'drop', list, 'array'
-  $vt 'drop', n, 'number'
 
   $listNew = []
 

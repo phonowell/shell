@@ -1,4 +1,4 @@
-# slice(list: unknown[], start = 0, end = list.length): unknown[]
+# slice<T>(list: T[], start = 0, end = list.length): T[]
 $.slice = (args...) ->
 
   [$list, $start, $end] = $pickArgumentSlice args
@@ -39,9 +39,5 @@ $pickArgumentSlice = (args) ->
     when 1 then [$list, $start, $end] = [args[0], 0, $.length args[0]]
     when 2 then [$list, $start, $end] = [args[0], args[1], $.length args[0]]
     when 3 then [$list, $start, $end] = args
-
-  $vt 'slice', $list, 'array'
-  $vt 'slice', $start, 'number'
-  $vt 'slice', $end, 'number'
 
   return [$list, $start, $end]

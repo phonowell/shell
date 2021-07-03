@@ -1,8 +1,6 @@
-# setTimeout(callback: Function, time: number): string
+# type Fn = () => unknown
+# setTimeout(callback: Fn, time: number): string
 $.setTimeout = (callback, time) ->
-
-  $vt 'setTimeout', callback, 'function'
-  $vt 'setTimeout', time, 'number'
 
   callback = $.bind callback
 

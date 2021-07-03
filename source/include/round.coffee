@@ -1,4 +1,2 @@
 # round(n: number): number
-$.round = (n) ->
-  $vt 'round', n, 'number'
-  return Round n
+$.round = (n) -> return Round n

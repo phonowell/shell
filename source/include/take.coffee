@@ -1,8 +1,5 @@
-# take(list: unknown[], count: number = 1): unknown[]
+# take<T>(list: T[], count: number = 1): T[]
 $.take = (list, count = 1) ->
-
-  $vt 'take', list, 'array'
-  $vt 'take', count, 'number'
 
   $len = $.length list
   unless $len

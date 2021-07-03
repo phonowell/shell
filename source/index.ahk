@@ -34,7 +34,6 @@ $.exit := Func("shell_87")
 class FileShellX {
   name := ""
   __New(name) {
-    __vt__.Call("file.constructor", name, "string")
     this.name := name
   }
   append := Func("shell_86").Bind(this)
@@ -44,115 +43,107 @@ class FileShellX {
   save := Func("shell_82").Bind(this)
 }
 $.file := Func("shell_81")
-$.findColor := Func("shell_80")
-$.findImage := Func("shell_79")
-$.first := Func("shell_78")
+$.filter := Func("shell_80")
+$.findColor := Func("shell_79")
+$.findImage := Func("shell_78")
+$.first := Func("shell_77")
 $.head := $.first
-$.floor := Func("shell_77")
-$.formatHotkey := Func("shell_76")
-global __formatKeyFormatHotkey__ := Func("shell_75")
-global __pickPrefixFormatHotkey__ := Func("shell_74")
-$.getColor := Func("shell_73")
-$.getPosition := Func("shell_72")
-$.getState := Func("shell_71")
-$.gt := Func("shell_70")
-$.gte := Func("shell_69")
-$.i := Func("shell_68")
-$.includes := Func("shell_67")
-$.info := Func("shell_66")
-$.isArray := Func("shell_65")
-$.isFunction := Func("shell_64")
-$.isNumber := Func("shell_63")
-$.isObject := Func("shell_62")
-$.isString := Func("shell_61")
-$.join := Func("shell_60")
+$.floor := Func("shell_76")
+$.formatHotkey := Func("shell_75")
+global __formatKeyFormatHotkey__ := Func("shell_74")
+global __pickPrefixFormatHotkey__ := Func("shell_73")
+$.getColor := Func("shell_72")
+$.getPosition := Func("shell_71")
+$.getState := Func("shell_70")
+$.gt := Func("shell_69")
+$.gte := Func("shell_68")
+$.i := Func("shell_67")
+$.includes := Func("shell_66")
+$.info := Func("shell_65")
+$.isArray := Func("shell_64")
+$.isFunction := Func("shell_63")
+$.isNumber := Func("shell_62")
+$.isObject := Func("shell_61")
+$.isString := Func("shell_60")
+$.join := Func("shell_59")
 class KeyBindingShellX {
   mapBound := {}
   mapCallback := {}
-  add := Func("shell_59").Bind(this)
-  fire := Func("shell_58").Bind(this)
-  init := Func("shell_57").Bind(this)
-  off := Func("shell_55").Bind(this)
-  on := Func("shell_54").Bind(this)
-  remove := Func("shell_53").Bind(this)
+  add := Func("shell_58").Bind(this)
+  fire := Func("shell_57").Bind(this)
+  init := Func("shell_56").Bind(this)
+  off := Func("shell_54").Bind(this)
+  on := Func("shell_53").Bind(this)
+  remove := Func("shell_52").Bind(this)
 }
 global keyBindingShell := new KeyBindingShellX()
 $.off := keyBindingShell.remove
 $.on := keyBindingShell.add
 $.trigger := keyBindingShell.fire
-$.keys := Func("shell_52")
-$.last := Func("shell_51")
-$.length := Func("shell_50")
-$.lt := Func("shell_49")
-$.lte := Func("shell_48")
-$.map := Func("shell_47")
-$.mixin := Func("shell_46")
-$.mod := Func("shell_45")
-$.move := Func("shell_44")
-$.noop := Func("shell_43")
-$.now := Func("shell_42")
-$.nth := Func("shell_41")
+$.keys := Func("shell_51")
+$.last := Func("shell_50")
+$.length := Func("shell_49")
+$.lt := Func("shell_48")
+$.lte := Func("shell_47")
+$.map := Func("shell_46")
+$.mixin := Func("shell_45")
+$.mod := Func("shell_44")
+$.move := Func("shell_43")
+$.noop := Func("shell_42")
+$.now := Func("shell_41")
+$.nth := Func("shell_40")
 global __cacheOnce__ := {}
 global __indexOnce__ := 0
-$.once := Func("shell_40").Bind(args)
-$.open := Func("shell_38")
-$.play := Func("shell_37")
-$.press := Func("shell_36")
-global __formatInputPress__ := Func("shell_35")
-global __validateInputPress__ := Func("shell_34")
-$.push := Func("shell_33")
-$.random := Func("shell_32")
-$.range := Func("shell_31")
-$.reload := Func("shell_30")
-$.replace := Func("shell_29")
-$.reverse := Func("shell_28")
-$.round := Func("shell_27")
-$.setFixed := Func("shell_26")
-$.setInterval := Func("shell_25")
-$.setTimeout := Func("shell_24")
-$.shuffle := Func("shell_23").Bind(__split__)
-$.sleep := Func("shell_22")
-$.slice := Func("shell_21")
-global __pickArgumentSlice__ := Func("shell_20")
-$.sort := Func("shell_19")
-$.split := Func("shell_18")
-$.sum := Func("shell_17")
-$.suspend := Func("shell_16")
-$.tail := Func("shell_15")
-$.take := Func("shell_14")
+$.once := Func("shell_39").Bind(args)
+$.open := Func("shell_37")
+$.play := Func("shell_36")
+$.press := Func("shell_35")
+global __formatInputPress__ := Func("shell_34")
+global __validateInputPress__ := Func("shell_33")
+$.push := Func("shell_32")
+$.random := Func("shell_31")
+$.range := Func("shell_30")
+$.reload := Func("shell_29")
+$.replace := Func("shell_28")
+$.reverse := Func("shell_27")
+$.round := Func("shell_26")
+$.setFixed := Func("shell_25")
+$.setInterval := Func("shell_24")
+$.setTimeout := Func("shell_23")
+$.shuffle := Func("shell_22").Bind(__split__)
+$.sleep := Func("shell_21")
+$.slice := Func("shell_20")
+global __pickArgumentSlice__ := Func("shell_19")
+$.sort := Func("shell_18")
+$.split := Func("shell_17")
+$.sum := Func("shell_16")
+$.suspend := Func("shell_15")
+$.tail := Func("shell_14")
+$.take := Func("shell_13")
 global __iThrottle__ := 0
 global __tThrottle__ := {}
 global __tsThrottle__ := {}
-$.throttle := Func("shell_13")
-$.toLowerCase := Func("shell_10")
+$.throttle := Func("shell_12")
+$.toLowerCase := Func("shell_9")
 $.toLower := $.toLowerCase
-$.toString := Func("shell_9")
-$.toUpperCase := Func("shell_8")
+$.toString := Func("shell_8")
+$.toUpperCase := Func("shell_7")
 $.toUpper := $.toUpperCase
-$.trim := Func("shell_7")
-$.trimEnd := Func("shell_6")
-$.trimStart := Func("shell_5")
-$.type := Func("shell_4")
-$.uniq := Func("shell_3")
-global __vt__ := Func("shell_2")
+$.trim := Func("shell_6")
+$.trimEnd := Func("shell_5")
+$.trimStart := Func("shell_4")
+$.type := Func("shell_3")
+$.uniq := Func("shell_2")
 $.values := Func("shell_1")
-$.VERSION := "0.0.9"
+$.VERSION := "0.0.10"
 shell_1(input) {
-  __vt__.Call("values", input, "object")
   __listResult__ := []
   for __index_for__, __key__ in $.keys.Call(input) {
     $.push.Call(__listResult__, input[__ci_shell__.Call(__key__)])
   }
   return __listResult__
 }
-shell_2(name, target, type*) {
-  __type__ := $.type.Call(target)
-  if !($.includes.Call(type, __type__)) {
-    throw Exception("$." . (name) . ": invalid type '" . (__type__) . "'")
-  }
-}
-shell_3(list) {
-  __vt__.Call("uniq", list, "array")
+shell_2(list) {
   __hasString__ := false
   for __index_for__, __item__ in list {
     if (($.type.Call(__item__)) == "string") {
@@ -168,7 +159,7 @@ shell_3(list) {
   }
   return $.split.Call(__string__, ",")
 }
-shell_4(input) {
+shell_3(input) {
   if input is Number
     return "number"
   if (IsFunc(input)) {
@@ -185,20 +176,20 @@ shell_4(input) {
   }
   return "string"
 }
-shell_5(input, omitting := " `t") {
+shell_4(input, omitting := " `t") {
   return LTrim(input, omitting)
 }
-shell_6(input, omitting := " `t") {
+shell_5(input, omitting := " `t") {
   return RTrim(input, omitting)
 }
-shell_7(input, omitting := " `t") {
+shell_6(input, omitting := " `t") {
   return Trim(input, omitting)
 }
-shell_8(input) {
+shell_7(input) {
   StringUpper, __result__, input
   return __result__
 }
-shell_9(input) {
+shell_8(input) {
   __type__ := $.type.Call(input)
   if (__type__ == "array") {
     __result__ := ""
@@ -215,28 +206,24 @@ shell_9(input) {
   }
   return input
 }
-shell_10(input) {
+shell_9(input) {
   StringLower, __result__, input
   return __result__
 }
-shell_11(callback, index) {
+shell_10(callback, index) {
   callback.Call()
   __tsThrottle__[__ci_shell__.Call(index)] := $.now.Call()
 }
-shell_12(callback, time, index) {
+shell_11(callback, time, index) {
   $.clearTimeout.Call(__tThrottle__[__ci_shell__.Call(index)])
-  __tThrottle__[__ci_shell__.Call(index)] := $.setTimeout.Call(Func("shell_11").Bind(callback, index), __tsThrottle__[__ci_shell__.Call(index)] - $.now.Call() + time)
+  __tThrottle__[__ci_shell__.Call(index)] := $.setTimeout.Call(Func("shell_10").Bind(callback, index), __tsThrottle__[__ci_shell__.Call(index)] - $.now.Call() + time)
 }
-shell_13(time, callback) {
-  __vt__.Call("throttle", time, "number")
-  __vt__.Call("throttle", callback, "function")
+shell_12(time, callback) {
   __iThrottle__++
   __tsThrottle__[__ci_shell__.Call(__iThrottle__)] := 0
-  return Func("shell_12").Bind(callback, time, __iThrottle__)
+  return Func("shell_11").Bind(callback, time, __iThrottle__)
 }
-shell_14(list, count := 1) {
-  __vt__.Call("take", list, "array")
-  __vt__.Call("take", count, "number")
+shell_13(list, count := 1) {
   __len__ := $.length.Call(list)
   if !(__len__) {
     return []
@@ -257,11 +244,10 @@ shell_14(list, count := 1) {
   }
   return __listNew__
 }
-shell_15(list) {
-  __vt__.Call("tail", list, "array")
+shell_14(list) {
   return $.drop.Call(list, 1)
 }
-shell_16(isSuspended := "Toggle") {
+shell_15(isSuspended := "Toggle") {
   if (isSuspended != "Toggle") {
     if (isSuspended) {
       isSuspended := "On"
@@ -271,19 +257,17 @@ shell_16(isSuspended := "Toggle") {
   }
   Suspend, % isSuspended
 }
-shell_17(list) {
-  __vt__.Call("sum", list, "array")
+shell_16(list) {
   __result__ := 0
   for __index_for__, __n__ in list {
     __result__ := __result__ + __n__
   }
   return __result__
 }
-shell_18(input, delimiter) {
+shell_17(input, delimiter) {
   return StrSplit(input, delimiter)
 }
-shell_19(list) {
-  __vt__.Call("sort", list, "array")
+shell_18(list) {
   __hasString__ := false
   for __index_for__, __item__ in list {
     if (($.type.Call(__item__)) == "string") {
@@ -299,7 +283,7 @@ shell_19(list) {
   }
   return $.split.Call(__string__, ",")
 }
-shell_20(args) {
+shell_19(args) {
   switch $.length.Call(args) {
     case 1: {
       __array__ := [args[1], 0, $.length.Call(args[1])]
@@ -320,12 +304,9 @@ shell_20(args) {
       __end__ := __array__[3]
     }
   }
-  __vt__.Call("slice", __list__, "array")
-  __vt__.Call("slice", __start__, "number")
-  __vt__.Call("slice", __end__, "number")
   return [__list__, __start__, __end__]
 }
-shell_21(args*) {
+shell_20(args*) {
   __array__ := __pickArgumentSlice__.Call(args)
   __list__ := __array__[1]
   __start__ := __array__[2]
@@ -362,19 +343,15 @@ shell_21(args*) {
   }
   return __listNew__
 }
-shell_22(time) {
-  __vt__.Call("sleep", time, "number")
+shell_21(time) {
   Sleep, % time
 }
-shell_23(__split__, list) {
-  __vt__.Call("shuffle", list, "array")
+shell_22(__split__, list) {
   __string__ := $.join.Call(list, ",")
   Sort, __string__, Random D,
   return __split__.Call(__string__, ",")
 }
-shell_24(callback, time) {
-  __vt__.Call("setTimeout", callback, "function")
-  __vt__.Call("setTimeout", time, "number")
+shell_23(callback, time) {
   callback := $.bind.Call(callback)
   if !($.isNumber.Call(time)) {
     throw Exception("$.setTimeout: invalid type")
@@ -385,9 +362,7 @@ shell_24(callback, time) {
   SetTimer, % callback, % 0 - time
   return callback
 }
-shell_25(callback, time) {
-  __vt__.Call("setInterval", callback, "function")
-  __vt__.Call("setInterval", time, "number")
+shell_24(callback, time) {
   callback := $.bind.Call(callback)
   if !(time > 0) {
     throw Exception("$.setInterval: invalid value")
@@ -395,7 +370,7 @@ shell_25(callback, time) {
   SetTimer, % callback, % time
   return callback
 }
-shell_26(isFixed := "Toggle") {
+shell_25(isFixed := "Toggle") {
   if (isFixed != "Toggle") {
     if (isFixed) {
       isFixed := "On"
@@ -405,12 +380,10 @@ shell_26(isFixed := "Toggle") {
   }
   Winset AlwaysOnTop, % isFixed, A
 }
-shell_27(n) {
-  __vt__.Call("round", n, "number")
+shell_26(n) {
   return Round(n)
 }
-shell_28(list) {
-  __vt__.Call("reverse", list, "array")
+shell_27(list) {
   __len__ := $.length.Call(list)
   __listNew__ := []
   for __i__, __item__ in list {
@@ -423,13 +396,13 @@ shell_28(list) {
   }
   return list
 }
-shell_29(input, searchment, replacement, limit := -1) {
+shell_28(input, searchment, replacement, limit := -1) {
   return StrReplace(input, searchment, replacement, limit)
 }
-shell_30() {
+shell_29() {
   Reload
 }
-shell_31(args*) {
+shell_30(args*) {
   switch $.length.Call(args) {
     case 1: {
       __array__ := [0, args[1], 1]
@@ -453,9 +426,6 @@ shell_31(args*) {
       throw Exception("$.range: invalid arguments")
     }
   }
-  __vt__.Call("range", __start__, "number")
-  __vt__.Call("range", __end__, "number")
-  __vt__.Call("range", __step__, "number")
   if (__start__ == __end__) {
     return [__start__]
   }
@@ -471,20 +441,17 @@ shell_31(args*) {
   }
   return __listResult__
 }
-shell_32(min := 0, max := 1) {
-  __vt__.Call("random", min, "number")
-  __vt__.Call("random", max, "number")
+shell_31(min := 0, max := 1) {
   Random, __result__, min, max
   return __result__
 }
-shell_33(list, args*) {
-  __vt__.Call("push", list, "array")
+shell_32(list, args*) {
   for __index_for__, __arg__ in args {
     list.Push(__arg__)
   }
   return list
 }
-shell_34(listInput) {
+shell_33(listInput) {
   if !($.length.Call(listInput)) {
     return false
   }
@@ -498,7 +465,7 @@ shell_34(listInput) {
   }
   return true
 }
-shell_35(listInput) {
+shell_34(listInput) {
   __listKey__ := []
   for __index_for__, __input__ in listInput {
     __ipt__ := $.toLowerCase.Call(__input__)
@@ -508,7 +475,7 @@ shell_35(listInput) {
   }
   return __listKey__
 }
-shell_36(listInput*) {
+shell_35(listInput*) {
   if !(__validateInputPress__.Call(listInput)) {
     return
   }
@@ -542,15 +509,13 @@ shell_36(listInput*) {
   }
   Send, % __result__
 }
-shell_37(filename) {
-  __vt__.Call("play", filename, "string")
+shell_36(filename) {
   SoundPlay, % filename
 }
-shell_38(source) {
-  __vt__.Call("open", source, "string")
+shell_37(source) {
   Run, % source
 }
-shell_39(__i__, callback, args*) {
+shell_38(__i__, callback, args*) {
   if (__cacheOnce__[__ci_shell__.Call(__i__)][1]) {
     return __cacheOnce__[__ci_shell__.Call(__i__)][2]
   }
@@ -558,64 +523,44 @@ shell_39(__i__, callback, args*) {
   __cacheOnce__[__ci_shell__.Call(__i__)] := [true, __result__]
   return __result__
 }
-shell_40(args, callback) {
-  __vt__.Call("once", callback, "function")
+shell_39(args, callback) {
   __i__ := __indexOnce__
   __indexOnce__++
   __cacheOnce__[__ci_shell__.Call(__i__)] := [false, ""]
-  return Func("shell_39").Bind(__i__, callback)
+  return Func("shell_38").Bind(__i__, callback)
 }
-shell_41(list, n := 0) {
-  __vt__.Call("nth", list, "array")
-  __vt__.Call("nth", n, "number")
+shell_40(list, n := 0) {
   if (n >= 0) {
     return list[__ci_shell__.Call(n)]
   } else {
     return list[__ci_shell__.Call(($.length.Call(list)) + n)]
   }
 }
-shell_42() {
+shell_41() {
   return A_TickCount
 }
-shell_43() {
+shell_42() {
   return
 }
-shell_44(point := "", speed := 0) {
-  __vt__.Call("move", point, "array")
-  __vt__.Call("move", speed, "number")
+shell_43(point := "", speed := 0) {
   MouseMove, point[1], point[2], speed
 }
-shell_45(dividend, divisor) {
-  __vt__.Call("mod", dividend, "number")
-  __vt__.Call("mod", divisor, "number")
+shell_44(dividend, divisor) {
   return Mod(dividend, divisor)
 }
-shell_46(args*) {
-  switch $.length.Call(args) {
-    case 1: {
-      __array__ := [{}, args[1]]
-      __target__ := __array__[1]
-      __source__ := __array__[2]
-    }
-    case 2: {
-      __array__ := args
-      __target__ := __array__[1]
-      __source__ := __array__[2]
-    }
-    default: {
-      throw Exception("$.mixin: invalid arguments")
+shell_45(args*) {
+  if !($.length.Call(args)) {
+    throw Exception("$.mixin: invalid arguments")
+  }
+  __result__ := args[1]
+  for __index_for__, __item__ in $.tail.Call(args) {
+    for __key__, __value__ in __item__ {
+      __result__[__ci_shell__.Call(__key__)] := __value__
     }
   }
-  __vt__.Call("mixin", __target__, "object")
-  __vt__.Call("mixin", __source__, "object")
-  for __key__, __value__ in __source__ {
-    __target__[__ci_shell__.Call(__key__)] := __value__
-  }
-  return __target__
+  return __result__
 }
-shell_47(list, callback) {
-  __vt__.Call("map", list, "array")
-  __vt__.Call("map", callback, "function")
+shell_46(list, callback) {
   __listResult__ := []
   for __i__, __item__ in list {
     __i__ := __i__ - 1
@@ -623,13 +568,13 @@ shell_47(list, callback) {
   }
   return __listResult__
 }
-shell_48(value, other) {
+shell_47(value, other) {
   return value <= other
 }
-shell_49(value, other) {
+shell_48(value, other) {
   return value < other
 }
-shell_50(input) {
+shell_49(input) {
   __type__ := $.type.Call(input)
   switch __type__ {
     case "array": {
@@ -646,20 +591,17 @@ shell_50(input) {
     }
   }
 }
-shell_51(list) {
-  __vt__.Call("last", list, "array")
+shell_50(list) {
   return list[__ci_shell__.Call(($.length.Call(list)) - 1)]
 }
-shell_52(input) {
-  __vt__.Call("keys", input, "object")
+shell_51(input) {
   __listResult__ := []
   for __key__, __value__ in input {
     $.push.Call(__listResult__, __key__)
   }
   return $.sort.Call(__listResult__)
 }
-shell_53(this, key) {
-  __vt__.Call("keyBinding.remove", key, "string", "number")
+shell_52(this, key) {
   __array__ := $.split.Call(key, ".")
   key := __array__[1]
   __name__ := __array__[2]
@@ -683,35 +625,29 @@ shell_53(this, key) {
   this.mapCallback[__ci_shell__.Call(key)] := __listNew__
   return $
 }
-shell_54(this, key, callback) {
-  __vt__.Call("keyBinding.on", key, "string", "number")
-  __vt__.Call("keyBinding.on", callback, "function")
+shell_53(this, key, callback) {
   key := $.formatHotkey.Call($.replace.Call(key, ":down", ""))
   Hotkey, % key, % callback, On
   return $
 }
-shell_55(this, key, callback) {
-  __vt__.Call("keyBinding.off", key, "string", "number")
-  __vt__.Call("keyBinding.off", key, callback, "function")
+shell_54(this, key, callback) {
   key := $.formatHotkey.Call($.replace.Call(key, ":down", ""))
   Hotkey, % key, % callback, Off
   return $
 }
-shell_56(key, this) {
+shell_55(key, this) {
   this.fire.Call(key)
 }
-shell_57(this, key) {
-  __vt__.Call("keyBinding.init", key, "string", "number")
+shell_56(this, key) {
   if (this.mapCallback[__ci_shell__.Call(key)]) {
     return $
   }
   this.mapCallback[__ci_shell__.Call(key)] := []
-  __fn__ := Func("shell_56").Bind(key, this)
+  __fn__ := Func("shell_55").Bind(key, this)
   this.mapBound[__ci_shell__.Call(key)] := __fn__
   this.on.Call(key, __fn__)
 }
-shell_58(this, key) {
-  __vt__.Call("keyBinding.fire", key, "string", "number")
+shell_57(this, key) {
   __array__ := $.split.Call(($.replace.Call(key, ":down", "")), ".")
   key := __array__[1]
   __name__ := __array__[2]
@@ -729,9 +665,7 @@ shell_58(this, key) {
   }
   return $
 }
-shell_59(this, key, callback) {
-  __vt__.Call("keyBinding.add", key, "string", "number")
-  __vt__.Call("keyBinding.add", callback, "function")
+shell_58(this, key, callback) {
   __array__ := $.split.Call(key, ".")
   key := __array__[1]
   __name__ := __array__[2]
@@ -739,8 +673,7 @@ shell_59(this, key, callback) {
   $.push.Call(this.mapCallback[__ci_shell__.Call(key)], [__name__, callback])
   return $
 }
-shell_60(list, seperator := "") {
-  __vt__.Call("join", list, "array")
+shell_59(list, seperator := "") {
   __result__ := ""
   for __i__, __item__ in list {
     __i__ := __i__ - 1
@@ -752,54 +685,53 @@ shell_60(list, seperator := "") {
   }
   return __result__
 }
-shell_61(input) {
+shell_60(input) {
   __type__ := $.type.Call(input)
   if !(__type__ == "string") {
     return false
   }
   return true
 }
-shell_62(input) {
+shell_61(input) {
   __type__ := $.type.Call(input)
   if !(__type__ == "object") {
     return false
   }
   return true
 }
-shell_63(input) {
+shell_62(input) {
   __type__ := $.type.Call(input)
   if !(__type__ == "number") {
     return false
   }
   return true
 }
-shell_64(input) {
+shell_63(input) {
   __type__ := $.type.Call(input)
   if !(__type__ == "function") {
     return false
   }
   return true
 }
-shell_65(input) {
+shell_64(input) {
   __type__ := $.type.Call(input)
   if !(__type__ == "array") {
     return false
   }
   return true
 }
-shell_66(message, point := "") {
+shell_65(message, point := "") {
   if !(message) {
     return message
   }
   if !(point) {
     point := $.getPosition.Call()
   }
-  __vt__.Call("info", point, "array")
   __msg__ := $.toString.Call(message)
   ToolTip, % __msg__, % point[1], % point[2]
   return message
 }
-shell_67(input, needle) {
+shell_66(input, needle) {
   __type__ := $.type.Call(input)
   if (__type__ == "string" || __type__ == "number") {
     return (InStr(input, needle)) > 0
@@ -814,33 +746,32 @@ shell_67(input, needle) {
   }
   throw Exception("$.includes: invalid type '" . (__type__) . "'")
 }
-shell_68(message) {
+shell_67(message) {
   $.info.Call("[" . ($.now.Call()) . "] " . ($.toString.Call(message)) . "", [0, 0])
   return message
 }
-shell_69(value, other) {
+shell_68(value, other) {
   return value >= other
 }
-shell_70(value, other) {
+shell_69(value, other) {
   return value > other
 }
-shell_71(key) {
+shell_70(key) {
   key := $.formatHotkey.Call(key)
   return GetKeyState(key, "P")
 }
-shell_72() {
+shell_71() {
   MouseGetPos, __x__, __y__
   return [__x__, __y__]
 }
-shell_73(point := "") {
+shell_72(point := "") {
   if !(point) {
     point := $.getPosition.Call()
   }
-  __vt__.Call("getColor", point, "array")
   PixelGetColor, __result__, % point[1], % point[2], RGB
   return __result__
 }
-shell_74(listKey) {
+shell_73(listKey) {
   if (($.length.Call(listKey)) == 1) {
     return ["", listKey]
   }
@@ -867,7 +798,7 @@ shell_74(listKey) {
   }
   return [__prefix__, __listNew__]
 }
-shell_75(key) {
+shell_74(key) {
   __listKey__ := []
   __key__ := $.toLowerCase.Call(key)
   __key__ := $.replace.Call(__key__, " ", "")
@@ -875,7 +806,7 @@ shell_75(key) {
   $.push.Call(__listKey__, ($.split.Call(__key__, "+"))*)
   return __listKey__
 }
-shell_76(key) {
+shell_75(key) {
   __listKey__ := __formatKeyFormatHotkey__.Call(key)
   __array__ := __pickPrefixFormatHotkey__.Call(__listKey__)
   __prefix__ := __array__[1]
@@ -886,15 +817,13 @@ shell_76(key) {
   }
   return $.replace.Call("" . (__prefix__) . "" . ($.trim.Call(__result__, " &")) . "", ":", " ")
 }
-shell_77(n) {
-  __vt__.Call("floor", n, "number")
+shell_76(n) {
   return Floor(n)
 }
-shell_78(list) {
-  __vt__.Call("first", list, "array")
+shell_77(list) {
   return list[1]
 }
-shell_79(source, start := "", end := "") {
+shell_78(source, start := "", end := "") {
   if !(start) {
     start := [0, 0]
   }
@@ -904,7 +833,7 @@ shell_79(source, start := "", end := "") {
   ImageSearch __x__, __y__, start[1], start[2], end[1], end[2], % A_ScriptDir . "\\\" . source
   return [__x__, __y__]
 }
-shell_80(color, start := "", end := "", variation := 0) {
+shell_79(color, start := "", end := "", variation := 0) {
   if !(start) {
     start := [0, 0]
   }
@@ -913,6 +842,17 @@ shell_80(color, start := "", end := "", variation := 0) {
   }
   PixelSearch __x__, __y__, start[1], start[2], end[1], end[2], color, variation, Fast RGB
   return [__x__, __y__]
+}
+shell_80(list, callback) {
+  __listResult__ := []
+  for __i__, __item__ in list {
+    __i__ := __i__ - 1
+    if !(callback.Call(__item__, __i__)) {
+      continue
+    }
+    $.push.Call(__listResult__, __item__)
+  }
+  return __listResult__
 }
 shell_81(name) {
   return new FileShellX(name)
@@ -955,8 +895,6 @@ shell_89() {
   return new EmitterShellX
 }
 shell_90(this, key, callback) {
-  __vt__.Call("emitter.on", key, "string")
-  __vt__.Call("emitter.on", callback, "function")
   __array__ := $.split.Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
@@ -964,7 +902,6 @@ shell_90(this, key, callback) {
   return this
 }
 shell_91(this, key) {
-  __vt__.Call("emitter.off", key, "string")
   __array__ := $.split.Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
@@ -994,7 +931,6 @@ shell_91(this, key) {
   return this
 }
 shell_92(this, key, args*) {
-  __vt__.Call("emitter.emit", key, "string")
   __array__ := $.split.Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
@@ -1019,16 +955,12 @@ shell_92(this, key, args*) {
   return this
 }
 shell_93(list, callback) {
-  __vt__.Call("each", list, "array")
-  __vt__.Call("each", callback, "function")
   for __i__, __item__ in list {
     __i__ := __i__ - 1
     callback.Call(__item__, __i__)
   }
 }
 shell_94(list, n := 1) {
-  __vt__.Call("drop", list, "array")
-  __vt__.Call("drop", n, "number")
   __listNew__ := []
   for __i__, __item__ in list {
     __i__ := __i__ - 1
@@ -1043,8 +975,6 @@ shell_95(callback, args) {
   callback.Call(args*)
 }
 shell_96(callback, time, args*) {
-  __vt__.Call("delay", callback, "function")
-  __vt__.Call("delay", time, "number")
   __timer__ := $.setTimeout.Call(Func("shell_95").Bind(callback, args), time)
   return __timer__
 }
@@ -1052,7 +982,6 @@ shell_97(callback, args) {
   callback.Call(args*)
 }
 shell_98(callback, args*) {
-  __vt__.Call("defer", callback, "function")
   return $.delay.Call(Func("shell_97").Bind(callback, args), 1)
 }
 shell_99(callback, time, index) {
@@ -1060,13 +989,10 @@ shell_99(callback, time, index) {
   __tDebounce__[__ci_shell__.Call(index)] := $.setTimeout.Call(callback, time)
 }
 shell_100(time, callback) {
-  __vt__.Call("debounce", time, "number")
-  __vt__.Call("debounce", callback, "function")
   __iDebounce__++
   return Func("shell_99").Bind(callback, time, __iDebounce__)
 }
 shell_101(list, args*) {
-  __vt__.Call("concat", list, "array")
   __listNew__ := $.clone.Call(list)
   for __index_for__, __arg__ in args {
     __type__ := $.type.Call(__arg__)
@@ -1081,7 +1007,6 @@ shell_101(list, args*) {
   return __listNew__
 }
 shell_102(list) {
-  __vt__.Call("compact", list, "array")
   __listNew__ := []
   for __index_for__, __item__ in list {
     if !(__item__) {
@@ -1123,8 +1048,6 @@ shell_106(callback) {
   SetTimer, % callback, Delete
 }
 shell_107(list, n := 1) {
-  __vt__.Call("chunk", list, "array")
-  __vt__.Call("chunk", n, "number")
   __listNew__ := []
   __i__ := 0
   while (__i__ < ($.length.Call(list)) / n) {
@@ -1140,7 +1063,6 @@ shell_107(list, n := 1) {
   return __listNew__
 }
 shell_108(n) {
-  __vt__.Call("ceil", n, "number")
   return Ceil(n)
 }
 shell_109(block) {
@@ -1151,7 +1073,6 @@ shell_109(block) {
   BlockInput, Off
 }
 shell_110(callback, args*) {
-  __vt__.Call("bind", callback, "function")
   if !(callback.Name) {
     if !($.length.Call(args)) {
       return callback
@@ -1178,7 +1099,6 @@ shell_114(args*) {
   return __result__
 }
 shell_115(n) {
-  __vt__.Call("abs", n, "number")
   return Abs(n)
 }
 shell_116(input) {

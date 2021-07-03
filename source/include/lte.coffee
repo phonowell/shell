@@ -1,2 +1,2 @@
-# lte(value: unknown, other: unknown): boolean
+# lte<T = number>(value: T, other: T): boolean
 $.lte = (value, other) -> return value <= other

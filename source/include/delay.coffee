@@ -1,8 +1,6 @@
-# delay(callback: Function, time: number, ...args: unknown[]): string
+# type Fn = () => unknown
+# delay(callback: Fn, time: number, ...args: unknown[]): string
 $.delay = (callback, time, args...) ->
-
-  $vt 'delay', callback, 'function'
-  $vt 'delay', time, 'number'
 
   $timer = $.setTimeout ->
     callback args...

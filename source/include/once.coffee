@@ -1,10 +1,9 @@
 $cacheOnce = {}
 $indexOnce = 0
 
-# once(callback: Function): Function
+# type Fn = () => unknown
+# once(callback: Fn): Fn
 $.once = (callback) ->
-
-  $vt 'once', callback, 'function'
 
   $i = $indexOnce
   $indexOnce++

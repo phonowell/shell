@@ -1,7 +1,5 @@
-# sort(list: unknown[]): unknown[]
+# sort<T>(list: T[]): T[]
 $.sort = (list) ->
-
-  $vt 'sort', list, 'array'
 
   $hasString = false
   for $item in list

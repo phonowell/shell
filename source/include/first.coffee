@@ -1,6 +1,4 @@
-# first(list: unknown[]): unknown
-$.first = (list) ->
-  $vt 'first', list, 'array'
-  return list[0]
+# first<T>(list: T[]): T
+$.first = (list) -> return list[0]
 
 $.head = $.first

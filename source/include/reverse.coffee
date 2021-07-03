@@ -1,7 +1,5 @@
-# reverse(list: unknown[]): unknown[]
+# reverse<T>(list: T[]): T[]
 $.reverse = (list) ->
-
-  $vt 'reverse', list, 'array'
 
   $len = $.length list
   $listNew = []

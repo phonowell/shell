@@ -1,4 +1,2 @@
-# last(list: unknown[]): unknown
-$.last = (list) ->
-  $vt 'last', list, 'array'
-  return list[($.length list) - 1]
+# last<T>(list: T[]): T
+$.last = (list) -> return list[($.length list) - 1]

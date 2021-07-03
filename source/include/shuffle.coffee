@@ -1,8 +1,5 @@
-# shuffle(list: unknown[]): unknown[]
+# shuffle<T>(list: T[]): T[]
 $.shuffle = (list) ->
-
-  $vt 'shuffle', list, 'array'
-
   $string = $.join list, ','
   `Sort, $string, Random D,`
   return $split $string, ','

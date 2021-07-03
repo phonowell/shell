@@ -1,4 +1,2 @@
 # open(source: string): void
-$.open = (source) ->
-  $vt 'open', source, 'string'
-  `Run, % source`
+$.open = (source) -> `Run, % source`

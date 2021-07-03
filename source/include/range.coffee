@@ -7,10 +7,6 @@ $.range = (args...) ->
     when 3 then [$start, $end, $step] = args
     else throw new Error '$.range: invalid arguments'
 
-  $vt 'range', $start, 'number'
-  $vt 'range', $end, 'number'
-  $vt 'range', $step, 'number'
-
   if $start == $end
     return [$start]
 
