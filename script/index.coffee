@@ -1,10 +1,7 @@
 import '../source/index.ahk'
 $ = $
 
-$.on 'alt', -> $.alert 'alt'
-$.on 'ctrl', -> $.alert 'ctrl'
-$.on 'shift', -> $.alert 'shift'
+listA = [1, 2, 3]
+listB = $.map listA, (item) -> return item - 1
 
-$.on 'alt + 1', -> $.alert 'alt + 1'
-$.on 'ctrl + 1', -> $.alert 'ctrl + 1'
-$.on 'shift + 1', -> $.alert 'shift + 1'
+$.alert listB
