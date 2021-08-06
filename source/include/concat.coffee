@@ -9,7 +9,6 @@ $.concat = (list, args...) ->
     if $type == 'array'
       for $item in $arg
         $.push $listNew, $item
-    else
-      $.push $listNew, $arg
+    else $.push $listNew, $arg
 
   return $listNew

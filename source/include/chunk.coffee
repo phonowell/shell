@@ -2,14 +2,19 @@
 $.chunk = (list, n = 1) ->
 
   $listNew = []
+  $length = $.length list
 
   $i = 0
-  while $i < ($.length list) / n
+  while $i < $length / n
 
     $listTemp = []
     $j = 0
     while $j < n
-      $.push $listTemp, list[$i * n + $j]
+
+      $index = $i * n + $j
+      unless $index < $length then break
+
+      $.push $listTemp, list[$index]
       $j++
 
     $.push $listNew, $listTemp

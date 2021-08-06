@@ -90,11 +90,8 @@ const ask = async (
 const load = async (): Promise<string[]> => {
 
   $info().pause()
-  const listData = await Promise.all<string[]>(
-    (await $source_('./data/sync/**/*.yaml')).map(
-      source => $read_(source),
-    ),
-  )
+  const listSource = await $source_('./data/sync/**/*.yaml')
+  const listData = (await Promise.all<string[]>(listSource.map(source => $read_(source))))
   $info().resume()
 
   let result: string[] = []
@@ -115,13 +112,12 @@ const main = async (): Promise<void> => {
   // diff
   for (const line of data) {
 
-    const _list = line.split('@')
-    const [path, extra] = [_list[0], _list[1] || '']
+    const [path, extra] = line.split('@')
 
-    const _list2 = extra.split('/')
+    const list = (extra || '').split('/')
     const [namespace, version] = [
-      _list2[0] || 'default',
-      _list2[1] || 'latest',
+      list[0] || 'default',
+      list[1] || 'latest',
     ]
 
     const source = `./${path}`

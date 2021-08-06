@@ -4,8 +4,8 @@ import c2a from 'coffee-ahk'
 // variable
 
 const path = {
-  ahk: './source/index.ahk',
-  coffee: './source/index.coffee',
+  ahk: './test/index.ahk',
+  coffee: './test/index.coffee',
 } as const
 
 // function
@@ -15,8 +15,7 @@ const main = async () => {
   await c2a(path.coffee, { salt: 'shell' })
   await replace()
 
-  await $.remove_('./dist')
-  await $.copy_(path.ahk, './dist')
+  await $.exec_(`start ${path.ahk}`)
 }
 
 const replace = async () => {
