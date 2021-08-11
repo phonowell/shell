@@ -15,17 +15,17 @@ const main = async () => {
   await c2a(path.coffee, { salt: 'shell' })
   await replace()
 
-  await $.remove_('./dist')
-  await $.copy_(path.ahk, './dist')
+  await $.remove('./dist')
+  await $.copy(path.ahk, './dist')
 }
 
 const replace = async () => {
 
-  const content = (await $.read_<Buffer>(path.ahk))
+  const content = (await $.read<Buffer>(path.ahk))
     .toString()
     .replace(/\$([\w\d]+)/g, '__$1__')
 
-  await $.write_(path.ahk, content)
+  await $.write(path.ahk, content)
 }
 
 // export
