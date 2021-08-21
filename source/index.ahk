@@ -136,7 +136,7 @@ $.trimStart := Func("shell_4")
 $.type := Func("shell_3")
 $.uniq := Func("shell_2")
 $.values := Func("shell_1")
-$.VERSION := "0.0.12"
+$.VERSION := "0.0.13"
 shell_1(input) {
   __listResult__ := []
   for __index_for__, __key__ in $.keys.Call(input) {
@@ -674,7 +674,7 @@ shell_58(this, key, callback) {
   $.push.Call(this.mapCallback[__ci_shell__.Call(key)], [__name__, callback])
   return $
 }
-shell_59(list, seperator := "") {
+shell_59(list, seperator := ",") {
   __result__ := ""
   for __i__, __item__ in list {
     __i__ := __i__ - 1

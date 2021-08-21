@@ -1,5 +1,5 @@
 # join(list: unknown[], seperator: string): string
-$.join = (list, seperator = '') ->
+$.join = (list, seperator = ',') ->
 
   $result = ''
   for $item, $i in list

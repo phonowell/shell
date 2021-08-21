@@ -2,7 +2,7 @@ do ->
 
   list = [1, 2, 3]
   listA = $.clone list
-  unless ($.join listA) == '123'
+  unless ($.join listA, '') == '123'
     throw listA
 
 do ->
@@ -13,5 +13,5 @@ do ->
     c: 3
   }
   mapA = $.clone map
-  unless ($.join [mapA.a, mapA.b, mapA.c]) == '123'
+  unless ($.join [mapA.a, mapA.b, mapA.c], '') == '123'
     throw mapA
