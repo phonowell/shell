@@ -136,7 +136,7 @@ $.trimStart := Func("shell_4")
 $.type := Func("shell_3")
 $.uniq := Func("shell_2")
 $.values := Func("shell_1")
-$.VERSION := "0.0.13"
+$.VERSION := "0.0.14"
 shell_1(input) {
   __listResult__ := []
   for __index_for__, __key__ in $.keys.Call(input) {
