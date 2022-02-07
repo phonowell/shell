@@ -144,8 +144,9 @@ $.uniq := Func("shell_3")
 $.values := Func("shell_2")
 $.VERSION := "0.0.14"
 $.wait := Func("shell_1")
-shell_1(process, callback) {
-  WinWait, % process
+shell_1(target, callback) {
+  __target__ := "ahk_exe " . (target) . ""
+  WinWait, % __target__
   if !(($.type.Call(callback)) == "function") {
     return
   }
@@ -377,8 +378,9 @@ shell_24(callback, time) {
   SetTimer, % callback, % 0 - time
   return callback
 }
-shell_25(process, style) {
-  WinSet, Style, % style, % process
+shell_25(target, style) {
+  __target__ := "ahk_exe " . (target) . ""
+  WinSet, Style, % style, % __target__
 }
 shell_26(callback, time) {
   callback := $.bind.Call(callback)
@@ -731,8 +733,8 @@ shell_65(input) {
   }
   return true
 }
-shell_66(process) {
-  return WinExist("ahk_exe " . (process) . "")
+shell_66(target) {
+  return WinExist("ahk_exe " . (target) . "")
 }
 shell_67(input) {
   __type__ := $.type.Call(input)
@@ -741,8 +743,8 @@ shell_67(input) {
   }
   return true
 }
-shell_68(process) {
-  return WinActive("ahk_exe " . (process) . "")
+shell_68(target) {
+  return WinActive("ahk_exe " . (target) . "")
 }
 shell_69(message, point := "") {
   if !(message) {
@@ -1165,8 +1167,9 @@ shell_122(args*) {
   }
   return __result__
 }
-shell_123(process) {
-  WinActivate, % process
+shell_123(target) {
+  __target__ := "ahk_exe " . (target) . ""
+  WinActivate, % __target__
 }
 shell_124(n) {
   return Abs(n)

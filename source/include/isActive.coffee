@@ -1,2 +1,2 @@
-# isActive(process: string): boolean
-$.isActive = (process) -> return WinActive "ahk_exe #{process}"
+# isActive(target: string): boolean
+$.isActive = (target) -> return WinActive "ahk_exe #{target}"

@@ -1,2 +1,2 @@
-# isExisted(process): boolean
-$.isExisted = (process) -> return WinExist "ahk_exe #{process}"
+# isExisted(target): boolean
+$.isExisted = (target) -> return WinExist "ahk_exe #{target}"
