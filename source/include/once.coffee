@@ -12,8 +12,7 @@ $.once = (callback) ->
 
   return (args...) ->
 
-    if $cacheOnce[$i][0]
-      return $cacheOnce[$i][1]
+    if $cacheOnce[$i][0] then return $cacheOnce[$i][1]
 
     $result = callback args...
 

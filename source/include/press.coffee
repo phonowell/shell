@@ -1,8 +1,7 @@
 # press(key...: string): void
 $.press = (listInput...) ->
 
-  unless $validateInputPress listInput
-    return
+  unless $validateInputPress listInput then return
 
   $listKey = $formatInputPress listInput
 

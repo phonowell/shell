@@ -3,8 +3,7 @@ $.clone = (input) ->
 
   $type = $.type input
 
-  if $type == 'array'
-    return $.slice input
+  if $type == 'array' then return $.slice input
 
   if $type == 'object'
     $mapNew = {}

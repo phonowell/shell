@@ -4,13 +4,11 @@ $.type = (input) ->
   `if input is Number`
   `  return "number"`
 
-  if IsFunc input
-    return 'function'
+  if IsFunc input then return 'function'
 
   if IsObject input
     if input.Count() == input.Length()
-      unless input.Length() >= 0
-        return 'function'
+      unless input.Length() >= 0 then return 'function'
       return 'array'
     return 'object'
 

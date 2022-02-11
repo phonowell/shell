@@ -8,8 +8,7 @@ $.includes = (input, needle) ->
 
   if $type == 'array'
     for $it in input
-      if $it == needle
-        return true
+      if $it == needle then return true
     return false
 
   throw new Error "$.includes: invalid type '#{$type}'"

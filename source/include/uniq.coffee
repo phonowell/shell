@@ -9,8 +9,7 @@ $.uniq = (list) ->
 
   $string = $.join list, ','
 
-  if $hasString
-    `Sort, $string, C U D,`
+  if $hasString then `Sort, $string, C U D,`
   else `Sort, $string, N U D,`
 
   return $.split $string, ','

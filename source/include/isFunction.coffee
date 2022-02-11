@@ -1,6 +1,5 @@
 # isFunction(input: unknown): boolean
 $.isFunction = (input) ->
   $type = $.type input
-  unless $type == 'function'
-    return false
+  unless $type == 'function' then return false
   return true

@@ -4,8 +4,7 @@ $.setTimeout = (callback, time) ->
 
   callback = $.bind callback
 
-  unless $.isNumber time
-    throw new Error '$.setTimeout: invalid type'
+  unless $.isNumber time then throw new Error '$.setTimeout: invalid type'
 
   if time <= 0 then time = 1
 

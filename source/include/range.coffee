@@ -7,11 +7,9 @@ $.range = (args...) ->
     when 3 then [$start, $end, $step] = args
     else throw new Error '$.range: invalid arguments'
 
-  if $start == $end
-    return [$start]
+  if $start == $end then return [$start]
 
-  if $start > $end
-    return []
+  if $start > $end then return []
 
   $listResult = []
   $n = 0

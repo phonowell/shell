@@ -1,7 +1,11 @@
 import '../source/index.ahk'
 $ = $
 
-listA = [1, 2, 3]
-listB = $.map listA, (item) -> return item - 1
+do ->
 
-$.alert listB
+  name = 'notepad.exe'
+
+  $.on 'f1', $.minimizeAll
+  $.on 'f2', -> $minimizeAll 'undo'
+
+  $.on 'f12', $.reload

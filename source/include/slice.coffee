@@ -5,15 +5,11 @@ $.slice = (args...) ->
 
   $len = $.length $list
 
-  if $start > $len
-    $start = $len
-  if $start < 0
-    $start = $len + $start
+  if $start > $len then $start = $len
+  if $start < 0 then $start = $len + $start
 
-  if $end > $len
-    $end = $len
-  if $end < 0
-    $end = $len + $end
+  if $end > $len then $end = $len
+  if $end < 0 then $end = $len + $end
 
   $isReverse = false
   if $start > $end
@@ -28,9 +24,7 @@ $.slice = (args...) ->
     $.push $listNew, $list[$start + $n]
     $n++
 
-  if $isReverse
-    return $.reverse $listNew
-
+  if $isReverse then return $.reverse $listNew
   return $listNew
 
 $pickArgumentSlice = (args) ->

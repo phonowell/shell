@@ -1,6 +1,6 @@
 do ->
 
-  unless ($.type $.activate) == 'function' then throw 0
+  unless ($.type $.minimize) == 'function' then throw 0
 
   name = 'notepad.exe'
 
@@ -8,12 +8,11 @@ do ->
   $.open name
   $.wait name, ->
 
+    isActive = $.isActive name
+    unless isActive then throw 1
+
     $.minimize name
     isActive = $.isActive name
-    if isActive then throw 1
-
-    $.activate name
-    isActive = $.isActive name
-    unless isActive then throw 2
+    if isActive then throw 2
 
     $.close name

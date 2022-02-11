@@ -1,6 +1,5 @@
 # isString(input: unknown): boolean
 $.isString = (input) ->
   $type = $.type input
-  unless $type == 'string'
-    return false
+  unless $type == 'string' then return false
   return true

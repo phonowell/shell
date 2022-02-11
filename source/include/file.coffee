@@ -9,19 +9,16 @@ class FileShellX
     return content
 
   exist: ->
-    unless FileExist @name
-      return false
+    unless FileExist @name then return false
     return true
 
   delete: ->
-    unless @exist()
-      return @
+    unless @exist() then return @
     `FileDelete, % this.name`
     return @
 
   load: ->
-    unless @exist()
-      return ''
+    unless @exist() then return ''
     `FileRead, __result__, % this.name`
     return $.replace __result__, '\r', ''
 

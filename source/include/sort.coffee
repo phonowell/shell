@@ -9,8 +9,7 @@ $.sort = (list) ->
 
   $string = $.join list, ','
 
-  if $hasString
-    `Sort, $string, C D,`
+  if $hasString then `Sort, $string, C D,`
   else `Sort, $string, N D,`
 
   return $.split $string, ','

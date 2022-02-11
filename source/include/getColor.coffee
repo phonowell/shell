@@ -1,8 +1,7 @@
 # getColor(point?: Point): number
-$.getColor = (point = '') ->
+$.getColor = (p = '') ->
 
-  unless point
-    point = $.getPosition()
+  unless p then p = $.getPosition()
 
-  `PixelGetColor, __result__, % point[1], % point[2], RGB`
-  return __result__
+  `PixelGetColor, __result__, % p[1], % p[2], RGB`
+  return `__result__`
