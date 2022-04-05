@@ -1,11 +1,13 @@
 ### interface
 type Fn = () => unknown
+type Key = string
+type Name = string
 ###
 
 class KeyBindingShellX
 
-  mapBound: {}
-  mapCallback: {}
+  mapBound: {} # Record<Key, Fn>
+  mapCallback: {} # Record<Key, [Name, Fn]>
 
   # add(key: string, callback: Fn): void
   add: (key, callback) ->
@@ -18,15 +20,9 @@ class KeyBindingShellX
 
     [key, $name] = $.split ($.replace key, ':down', ''), '.'
 
-    unless $name
-      for $item in @mapCallback[key]
-        $item[1]()
-      return
-
-    for $item in @mapCallback[key]
-      unless $item[0] == $name then continue
-      $item[1]()
-      return
+    $list = @mapCallback[key]
+    if $name then $list = $.filter $list, (it) -> return it[0] == $name
+    $.forEach $list, (it) -> it[1]()
 
   # init(key: string): void
   init: (key) ->
@@ -58,7 +54,7 @@ class KeyBindingShellX
       @off key, @mapBound[key]
       return
 
-    $listNew = $.filter @mapCallback[key], ($item) -> $item[0] != $name
+    $listNew = $.filter @mapCallback[key], ($item) -> return $item[0] != $name
 
     unless $.length $listNew
       @mapCallback[key] = ''

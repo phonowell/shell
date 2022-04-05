@@ -1,11 +1,22 @@
 import '../source/index.ahk'
 $ = $
 
-do ->
+main = ->
 
-  name = 'notepad.exe'
+  $.on 'f2', -> $.alert 'f2'
+  $.on 'f2.text', -> $.alert 'f2.text'
+  $.trigger 'f2.text'
 
-  $.on 'f1', $.minimizeAll
-  $.on 'f2', -> $minimizeAll 'undo'
+  $.setTimeout ->
+    $.beep()
+    $.off 'f2.text'
+    $.trigger 'f2'
+  , 1e3
 
-  $.on 'f12', $.reload
+$.on 'f1', main
+$.on 'f4', ->
+  $.beep()
+  $.exit()
+$.on 'f5', ->
+  $.beep()
+  $.reload()
