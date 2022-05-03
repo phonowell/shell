@@ -1,13 +1,13 @@
-# includes(input: string | array, needle: string): boolean
-$.includes = (input, needle) ->
+# includes(ipt: string | array, needle: string): boolean
+$.includes = (ipt, needle) ->
 
-  $type = $.type input
+  $type = $.type ipt
 
   if $type == 'string' or $type == 'number'
-    return (InStr input, needle) > 0
+    return (InStr ipt, needle) > 0
 
   if $type == 'array'
-    for $it in input
+    for $it in ipt
       if $it == needle then return true
     return false
 

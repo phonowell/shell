@@ -1,3 +1,3 @@
-# trimEnd(input: string, omitting: string): string
-$.trimEnd = (input, omitting = ' \t') ->
-  return RTrim input, omitting
+# trimEnd(ipt: string, omitting: string): string
+$.trimEnd = (ipt, omitting = ' \t') ->
+  return RTrim ipt, omitting

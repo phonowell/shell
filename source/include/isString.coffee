@@ -1,5 +1,5 @@
-# isString(input: unknown): boolean
-$.isString = (input) ->
-  $type = $.type input
+# isString(ipt: unknown): boolean
+$.isString = (ipt) ->
+  $type = $.type ipt
   unless $type == 'string' then return false
   return true

@@ -1,10 +1,10 @@
-# length(input: string | array | object): number
-$.length = (input) ->
+# length(ipt: string | array | object): number
+$.length = (ipt) ->
 
-  $type = $.type input
+  $type = $.type ipt
 
   switch $type
-    when 'array' then return input.Length()
-    when 'object' then return input.Count()
-    when 'string' then return StrLen input
+    when 'array' then return ipt.Length()
+    when 'object' then return ipt.Count()
+    when 'string' then return StrLen ipt
     else throw new Error "$.length: invalid type '#{$type}'"

@@ -1,2 +1,2 @@
-# split(input: string, delimiter: string): string
-$.split = (input, delimiter) -> return StrSplit input, delimiter
+# split(ipt: string, delimiter: string): string
+$.split = (ipt, delimiter) -> return StrSplit ipt, delimiter

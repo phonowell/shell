@@ -1,13 +1,13 @@
-# clone<T = unknown[] | {[x: string]: unknown}>(input: T): T
-$.clone = (input) ->
+# clone<T = unknown[] | {[x: string]: unknown}>(ipt: T): T
+$.clone = (ipt) ->
 
-  $type = $.type input
+  $type = $.type ipt
 
-  if $type == 'array' then return $.slice input
+  if $type == 'array' then return $.slice ipt
 
   if $type == 'object'
     $mapNew = {}
-    for $key, $value of input
+    for $key, $value of ipt
       $mapNew[$key] = $value
     return $mapNew
 

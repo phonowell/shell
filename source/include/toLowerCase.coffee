@@ -1,6 +1,6 @@
-# toLowerCase(input: string): string
-$.toLowerCase = (input) ->
-  `StringLower, __result__, input`
+# toLowerCase(ipt: string): string
+$.toLowerCase = (ipt) ->
+  `StringLower, __result__, ipt`
   return __result__
 
 $.toLower = $.toLowerCase

@@ -1,9 +1,9 @@
-# values<T>(input: {[x: string]: T}): T[]
-$.values = (input) ->
+# values<T>(ipt: {[x: string]: T}): T[]
+$.values = (ipt) ->
 
   $listResult = []
 
-  for $key in $.keys input
-    $.push $listResult, input[$key]
+  for $key in $.keys ipt
+    $.push $listResult, ipt[$key]
 
   return $listResult

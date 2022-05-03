@@ -1,6 +1,6 @@
-# toUpperCase(input: string): string
-$.toUpperCase = (input) ->
-  `StringUpper, __result__, input`
+# toUpperCase(ipt: string): string
+$.toUpperCase = (ipt) ->
+  `StringUpper, __result__, ipt`
   return __result__
 
 $.toUpper = $.toUpperCase

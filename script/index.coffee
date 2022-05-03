@@ -1,17 +1,36 @@
+import 'include/head.ahk'
 import '../source/index.ahk'
 $ = $
 
 main = ->
 
-  $.on 'f2', -> $.alert 'f2'
-  $.on 'f2.text', -> $.alert 'f2.text'
-  $.trigger 'f2.text'
+  $.beep()
 
-  $.setTimeout ->
-    $.beep()
-    $.off 'f2.text'
-    $.trigger 'f2'
-  , 1e3
+  $.press 'w:down'
+  $.sleep 4e3
+  $.press 'w:up'
+
+  $.press 'a:down'
+  $.sleep 1e3
+  $.press 'a:up'
+
+  $.press 'w:down'
+  $.sleep 1e3
+  $.press 'w:up'
+
+  $.press 't'
+  $.sleep 10e3
+
+  $.press 'g'
+  $.sleep 200
+  $.press 's'
+  $.sleep 200
+  $.press 'e'
+  $.sleep 100
+  $.press 'e'
+
+  $.sleep 10e3
+  main()
 
 $.on 'f1', main
 $.on 'f4', ->
