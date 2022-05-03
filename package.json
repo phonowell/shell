@@ -4,7 +4,7 @@
     "url": "https://github.com/phonowell/shell/issues"
   },
   "dependencies": {
-    "coffee-ahk": "^0.0.42",
+    "coffee-ahk": "^0.0.42-fixed.1",
     "fire-keeper": "^0.0.199",
     "lodash": "^4.17.21",
     "ts-node": "^10.7.0",
@@ -41,5 +41,5 @@
     "watch": "npm run alice watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.17"
+  "version": "0.0.17-fixed.1"
 }

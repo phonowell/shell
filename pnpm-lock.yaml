@@ -5,14 +5,14 @@ specifiers:
   '@types/node': ^17.0.31
   '@typescript-eslint/eslint-plugin': ^5.22.0
   '@typescript-eslint/parser': ^5.22.0
-  coffee-ahk: ^0.0.42
+  coffee-ahk: ^0.0.42-fixed.1
   fire-keeper: ^0.0.199
   lodash: ^4.17.21
   ts-node: ^10.7.0
   typescript: ^4.6.4
 
 dependencies:
-  coffee-ahk: 0.0.42_@types+node@17.0.31
+  coffee-ahk: 0.0.42-fixed.1_@types+node@17.0.31
   fire-keeper: 0.0.199_typescript@4.6.4
   lodash: 4.17.21
   ts-node: 10.7.0_5f3e12794cebfbf3197131903b74d233
@@ -917,8 +917,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /coffee-ahk/0.0.42_@types+node@17.0.31:
-    resolution: {integrity: sha512-5ikMP2NZzD+h2gp2Oxo/TjkVy42nZe71nI+KTpEUjgWSouqScB4FxYzIpqstY5pWBXeO/usAtVmikx9DVj7Hkg==}
+  /coffee-ahk/0.0.42-fixed.1_@types+node@17.0.31:
+    resolution: {integrity: sha512-4hy2MeWVRIeldsugZFNy+wb5dOSXTqaJVylUg+zE61KyWbU9sfv5sbLXCvopibmhJIRLDZ1uNapfnzrgNwcm8A==}
     dependencies:
       coffeescript: 2.7.0
       cson: 7.20.0
