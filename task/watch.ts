@@ -1,6 +1,6 @@
-import $watch from 'fire-keeper/watch'
 import build from './build'
 import c2a from 'coffee-ahk'
+import watch from 'fire-keeper/dist/watch'
 
 // function
 
@@ -17,13 +17,11 @@ class Compiler {
 
   add(
     input: string | (() => Promise<unknown>)
-  ): void {
-
-    if (!this.list.includes(input))
-      this.list.push(input)
+  ) {
+    if (!this.list.includes(input)) this.list.push(input)
   }
 
-  next(): void {
+  next() {
 
     if (!this.list?.length) return
     if (this.isBusy) return
@@ -62,17 +60,17 @@ class Compiler {
   }
 }
 
-const main = (): void => {
+const main = () => {
 
   process.on('uncaughtException', e => console.error(e))
 
   const compiler = new Compiler()
 
-  $watch('./script/**/*.coffee', () => {
+  watch('./script/**/*.coffee', () => {
     compiler.add('./script/index.coffee')
   })
 
-  $watch('./source/**/*.coffee', () => {
+  watch('./source/**/*.coffee', () => {
     compiler.add(build)
   })
 }
