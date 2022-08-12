@@ -11,7 +11,6 @@ const path = {
 // function
 
 const main = async () => {
-
   await c2a(path.coffee, { salt: 'shell' })
   await replace()
 
@@ -19,7 +18,6 @@ const main = async () => {
 }
 
 const replace = async () => {
-
   const content = (await $.read<Buffer>(path.ahk))
     .toString()
     .replace(/\$([\w\d]+)/g, '__$1__')

@@ -5,7 +5,6 @@ import watch from 'fire-keeper/dist/watch'
 // function
 
 class Compiler {
-
   isBusy = false
   list: (string | (() => Promise<unknown>))[] = []
 
@@ -15,14 +14,11 @@ class Compiler {
     }, 1e3)
   }
 
-  add(
-    input: string | (() => Promise<unknown>)
-  ) {
+  add(input: string | (() => Promise<unknown>)) {
     if (!this.list.includes(input)) this.list.push(input)
   }
 
   next() {
-
     if (!this.list?.length) return
     if (this.isBusy) return
 
@@ -61,8 +57,7 @@ class Compiler {
 }
 
 const main = () => {
-
-  process.on('uncaughtException', e => console.error(e))
+  process.on('uncaughtException', (e) => console.error(e))
 
   const compiler = new Compiler()
 
