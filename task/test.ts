@@ -18,9 +18,9 @@ const main = async () => {
 }
 
 const replace = async () => {
-  const content = (await $.read<Buffer>(path.ahk))
-    .toString()
-    .replace(/\$([\w\d]+)/g, '__$1__')
+  const buffer = await $.read(path.ahk)
+  if (!buffer) return
+  const content = buffer.toString().replace(/\$([\w\d]+)/g, '__$1__')
 
   await $.write(path.ahk, content)
 }
