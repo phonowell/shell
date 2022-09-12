@@ -1,4 +1,4 @@
-class EmitterShellX
+class EmitterShell
 
   bus: []
 
@@ -6,18 +6,14 @@ class EmitterShellX
 
     [$type, $name] = $.split key, '.'
 
-    unless $type then return @
+    unless $type then return
 
-    unless $name
-      for $item in @bus
-        unless $item[0] == $type then continue
-        $item[2] args...
-      return @
+    if $name then $list = $.filter @bus, ($it) ->
+      return $it[0] == $type and $it[1] == $name
+    else $list = $.filter @bus, ($it) ->
+      return $it[0] == $type
 
-    for $item in @bus
-      unless $item[0] == $type and $item[1] == $name then continue
-      $item[2] args...
-    return @
+    $.map $list, ($it) -> $it[2] args...
 
   off: (key) ->
 
@@ -25,28 +21,15 @@ class EmitterShellX
 
     unless $type
       @bus = []
-      return @
+      return
 
-    unless $name
-      $busNew = []
-      for $item in @bus
-        if $item[0] == $type then continue
-        $.push $busNew, $item
-      @bus = $busNew
-      return @
-
-    $busNew = []
-    for $item in @bus
-      if $item[0] == $type and $item[1] == $name then continue
-      $.push $busNew, $item
-    @bus = $busNew
-    return @
+    if $name then @bus = $.filter @bus, ($it) ->
+      return !($it[0] == $type and $it[1] == $name)
+    else @bus = $.filter @bus, ($it) ->
+      return $it[0] != $type
 
   on: (key, callback) ->
-
     [$type, $name] = $.split key, '.'
-
     $.push @bus, [$type, $name, callback]
-    return @
 
-$.emitter = -> return new EmitterShellX
+$.emitter = -> return new EmitterShell

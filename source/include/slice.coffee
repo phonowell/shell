@@ -3,7 +3,11 @@ $.slice = (args...) ->
 
   [$list, $start, $end] = $pickArgumentSlice args
 
-  $len = $.length $list
+  $type = $.type $list
+  unless $type == 'array'
+    throw new Error "$.slice: invalid type '#{$type}'"
+
+  $len = $list.Length()
 
   if $start > $len then $start = $len
   if $start < 0 then $start = $len + $start
