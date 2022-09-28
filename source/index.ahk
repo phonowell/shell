@@ -27,7 +27,7 @@ $.drop := Func("shell_119")
 $.each := Func("shell_117")
 class EmitterShell {
   bus := []
-  emit := Func("shell_116").Bind(__filter__).Bind(this)
+  emit := Func("shell_116").Bind(this)
   off := Func("shell_111").Bind(this)
   on := Func("shell_108").Bind(this)
   once := Func("shell_107").Bind(this)
@@ -153,7 +153,7 @@ $.type := Func("shell_5")
 $.uniq := Func("shell_4")
 $.unshift := Func("shell_3")
 $.values := Func("shell_2")
-$.VERSION := "0.0.21"
+$.VERSION := "0.0.22"
 $.wait := Func("shell_1")
 shell_1(target, callback) {
   if !(target) {
@@ -1062,7 +1062,7 @@ shell_105(value, other) {
   return true
 }
 shell_106() {
-  return new EmitterShell
+  return new EmitterShell()
 }
 shell_107(this, key, callback) {
   __array__ := $.split.Call(key, ".")
@@ -1111,7 +1111,7 @@ shell_114(__type__, __it__) {
 shell_115(__type__, __name__, __it__) {
   return __it__[1] == __type__ && __it__[2] == __name__
 }
-shell_116(__filter__, this, key, args*) {
+shell_116(this, key, args*) {
   __array__ := $.split.Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
@@ -1124,7 +1124,7 @@ shell_116(__filter__, this, key, args*) {
     __list__ := $.filter.Call(this.bus, Func("shell_114").Bind(__type__))
   }
   $.forEach.Call(__list__, Func("shell_113").Bind(args))
-  this.bus := __filter__.Call(this.bus, Func("shell_112"))
+  this.bus := $.filter.Call(this.bus, Func("shell_112"))
 }
 shell_117(list, callback) {
   for __i__, __item__ in list {

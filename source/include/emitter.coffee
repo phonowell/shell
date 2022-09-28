@@ -21,7 +21,7 @@ class EmitterShell
       $it[2] args...
       if $it[3] == 1 then $it[3] = 2
 
-    @bus = $filter @bus, ($it) -> return $it[3] != 2
+    @bus = $.filter @bus, ($it) -> return $it[3] != 2
 
   # off(key: string): void
   off: (key) ->
@@ -47,4 +47,5 @@ class EmitterShell
     [$type, $name] = $.split key, '.'
     $.push @bus, [$type, $name, callback, 1]
 
-$.emitter = -> return new EmitterShell
+# $.emitter(): EmitterShell
+$.emitter = -> return new EmitterShell()
