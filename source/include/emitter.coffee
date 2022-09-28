@@ -1,7 +1,12 @@
+### interface
+type Item = [string, string, Fn, number]
+###
+
 class EmitterShell
 
-  bus: []
+  bus: [] # Item[]
 
+  # emit(key: string, ...args: unknown[]): void
   emit: (key, args...) ->
 
     [$type, $name] = $.split key, '.'
@@ -10,11 +15,15 @@ class EmitterShell
 
     if $name then $list = $.filter @bus, ($it) ->
       return $it[0] == $type and $it[1] == $name
-    else $list = $.filter @bus, ($it) ->
-      return $it[0] == $type
+    else $list = $.filter @bus, ($it) -> return $it[0] == $type
 
-    $.map $list, ($it) -> $it[2] args...
+    $.forEach $list, ($it) ->
+      $it[2] args...
+      if $it[3] == 1 then $it[3] = 2
 
+    @bus = $filter @bus, ($it) -> return $it[3] != 2
+
+  # off(key: string): void
   off: (key) ->
 
     [$type, $name] = $.split key, '.'
@@ -28,8 +37,14 @@ class EmitterShell
     else @bus = $.filter @bus, ($it) ->
       return $it[0] != $type
 
+  # on(key: string, callback: Fn): void
   on: (key, callback) ->
     [$type, $name] = $.split key, '.'
-    $.push @bus, [$type, $name, callback]
+    $.push @bus, [$type, $name, callback, 0]
+
+  # once(key: string, callback: Fn): void
+  once: (key, callback) ->
+    [$type, $name] = $.split key, '.'
+    $.push @bus, [$type, $name, callback, 1]
 
 $.emitter = -> return new EmitterShell
