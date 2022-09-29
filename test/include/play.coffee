@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.play) == 'function'
-    throw 0
+  unless $.isFunction $.play
+    throw new Error '$.play is not a function'

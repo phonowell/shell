@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.press) == 'function'
-    throw 0
+  unless $.isFunction $.press
+    throw new Error '$.press is not a function'

@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.getState) == 'function'
-    throw 0
+  unless $.isFunction $.getState
+    throw new Error '$.getState is not a function'

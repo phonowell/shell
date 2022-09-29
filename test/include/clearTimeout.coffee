@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.clearTimeout) == 'function'
-    throw 0
+  unless $.isFunction $.clearTimeout
+    throw new Error '$.clearTimeout is not a function'

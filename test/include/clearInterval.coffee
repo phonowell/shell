@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.clearInterval) == 'function'
-    throw 0
+  unless $.isFunction $.clearInterval
+    throw new Error '$.clearInterval is not a function'

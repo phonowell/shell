@@ -1,29 +1,30 @@
-class FileShellX
+class FileShell
 
-  name: ''
+  source: ''
 
-  constructor: (name) -> @name = name
+  constructor: (source) -> @source = source
 
-  append: (content) ->
-    `FileAppend, % content, % this.name, UTF-8`
-    return content
+  # append(content: string): void
+  append: (content) -> `FileAppend, % content, % this.source, UTF-8`
 
-  exist: ->
-    unless FileExist @name then return false
-    return true
+  # isExist(): boolean
+  isExist: -> return FileExist @source
 
-  delete: ->
-    unless @exist() then return @
-    `FileDelete, % this.name`
-    return @
-
-  load: ->
-    unless @exist() then return ''
-    `FileRead, __result__, % this.name`
+  # read(): string
+  read: ->
+    unless @isExist() then return ''
+    `FileRead, __result__, % this.source`
     return $.replace __result__, '\r', ''
 
-  save: (content) ->
+  # remove(): void
+  remove: ->
+    unless @isExist() then return
+    `FileDelete, % this.source`
+
+  # write(content: string): void
+  write: (content) ->
     @delete()
     return @append content
 
-$.file = (name) -> return new FileShellX name
+# file(source: string): FileShell
+$.file = (source) -> return new FileShell source

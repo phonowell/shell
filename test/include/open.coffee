@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.open) == 'function'
-    throw 0
+  unless $.isFunction $.open
+    throw '$.open is not a function'

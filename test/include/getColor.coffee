@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.getColor) == 'function'
-    throw 0
+  unless $.isFunction $.getColor
+    throw new Error '$.getColor is not a function'

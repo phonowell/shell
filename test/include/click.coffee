@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.click) == 'function'
-    throw 0
+  unless $.isFunction $.click
+    throw new Error '$.click is not a function'

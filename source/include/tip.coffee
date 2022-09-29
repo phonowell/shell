@@ -1,9 +1,7 @@
-# info(message: string, p?: Point): string
-$.info = (message, p = '') ->
+# tip<T extends string>(message: T, p?: Point): T
+$.tip = (message, p = '') ->
 
-  unless message
-    return message
-
+  unless message then return message
   unless p then p = $.getPosition()
 
   $msg = $.toString message

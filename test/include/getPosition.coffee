@@ -1,7 +1,7 @@
 do ->
 
-  unless ($.type $.getPosition) == 'function'
-    throw 0
+  unless $.isFunction $.getPosition
+    throw new Error '$.getPosition is not a function'
 
   $.move [100, 100]
   [x, y] = $.getPosition()

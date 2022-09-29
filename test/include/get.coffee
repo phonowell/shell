@@ -1,4 +1,4 @@
 do ->
 
-  unless ($.type $.get) == 'function'
-    throw 0
+  unless $.isFunction $.get
+    throw new Error '$.get is not a function'

@@ -16,13 +16,28 @@ const main = async () => {
 
   await $.remove('./dist')
   await $.copy(path.ahk, './dist')
+
+  await makeDoc()
+}
+
+const makeDoc = async()=>{
+  const listFn = (await $.glob('./source/include/*.coffee')).map($.getBasename)
+
+  const content = [
+    '# Functions',
+    '',
+    `\`${listFn.length}\` functions, at \`${new Date().toLocaleString()}\`.`,
+    ...listFn.map(fn=>`- [${fn}](../source/include/${fn}.coffee)`),
+  ]
+
+  await $.write('./doc/functions.md', content.join('\n'))
 }
 
 const replace = async () => {
   const buffer = await $.read(path.ahk)
   if (!buffer) return
-  const content = buffer.toString().replace(/\$([\w\d]+)/g, '__$1__')
 
+  const content = buffer.toString().replace(/\$([\w\d]+)/g, '__$1__')
   await $.write(path.ahk, content)
 }
 

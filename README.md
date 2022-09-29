@@ -5,9 +5,14 @@
 ## Usage
 
 ```shell
-npm i shell-ahk
+pnpm i shell-ahk
 ```
 
 ```coffeescript
 import 'shell-ahk'
+$.alert 'hello world'
 ```
+
+## Functions
+
+[Document](./doc/functions.md)
