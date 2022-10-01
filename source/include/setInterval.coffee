@@ -1,5 +1,4 @@
-# type Fn = () => unknown
-# setInterval(callback: Fn, time: number): string
+# setInterval(callback: Fn, time: number): number
 $.setInterval = (callback, time) ->
 
   callback = $.bind callback

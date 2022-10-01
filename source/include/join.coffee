@@ -1,4 +1,4 @@
-# join(list: unknown[], seperator: string): string
+# join(list: unknown[], seperator?: string): string
 $.join = (list, seperator = ',') ->
 
   $result = ''

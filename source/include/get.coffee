@@ -1,4 +1,4 @@
-# get(url, callback: (data: string) => unknown): void
+# get(url: string, callback: (data: string) => unknown): void
 $.get = (url, callback) ->
 
   try

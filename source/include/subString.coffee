@@ -1,4 +1,4 @@
-# subString(text: string, iStart: number, iEnd = 0): string
+# subString(text: string, iStart: number, iEnd?: number): string
 $.subString = (text, iStart, iEnd = 0) ->
 
   $type = $.type text

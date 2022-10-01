@@ -1,4 +1,4 @@
-# length(ipt: string | array | object): number
+# length(ipt: string | unknonw[] | object): number
 $.length = (ipt) ->
 
   $type = $.type ipt

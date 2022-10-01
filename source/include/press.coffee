@@ -1,4 +1,4 @@
-# press(key...: string): void
+# press(...key: string[]): void
 $.press = (listInput...) ->
 
   unless $validateInputPress listInput then return

@@ -1,4 +1,4 @@
-# includes(ipt: string | array, needle: string): boolean
+# includes(ipt: string | unknown[], needle: unknown): boolean
 $.includes = (ipt, needle) ->
 
   $type = $.type ipt

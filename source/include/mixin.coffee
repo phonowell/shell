@@ -1,5 +1,4 @@
-# type Obj = {[x: string]: unknown}
-# mixin(...args: Obj[]): Obj
+# mixin(...args: object[]): object
 $.mixin = (args...) ->
 
   unless $.length args

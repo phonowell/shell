@@ -1,4 +1,4 @@
-# map<T>(list: T[], callback: (item?: T, i?: number) => unknown): unknown[]
+# map<T, R>(list: T[], callback: (item: T, i?: number) => R): R[]
 $.map = (list, callback) ->
 
   $listResult = []
