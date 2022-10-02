@@ -1,3 +1,4 @@
+# @ts-check
 # values<T>(ipt: {[x: string]: T}): T[]
 $.values = (ipt) ->
 

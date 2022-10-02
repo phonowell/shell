@@ -1,3 +1,4 @@
+# @ts-check
 # sort<T>(list: T[]): T[]
 $.sort = (list) ->
 

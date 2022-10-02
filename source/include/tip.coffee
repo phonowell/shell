@@ -1,3 +1,4 @@
+# @ts-check
 # tip<T extends string>(message: T, p?: Point): T
 $.tip = (message, p = '') ->
 

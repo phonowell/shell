@@ -1,3 +1,4 @@
+# @ts-check
 # filter<T>(list: T[], callback: (item?: T, i?: number) => boolean): T[]
 $.filter = (list, callback) ->
 

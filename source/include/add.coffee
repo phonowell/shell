@@ -1,3 +1,4 @@
+# @ts-check
 # add(args...: number[]): number
 $.add = (args...) ->
   $result = 0

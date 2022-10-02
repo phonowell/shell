@@ -1,3 +1,4 @@
+# @ts-check
 # sum(list: number[]): number
 $.sum = (list) ->
 

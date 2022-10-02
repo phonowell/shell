@@ -1,3 +1,4 @@
+# @ts-check
 # getPosition(): Point
 $.getPosition = ->
   `MouseGetPos, __x__, __y__`

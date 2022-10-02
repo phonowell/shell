@@ -1,3 +1,4 @@
+# @ts-check
 # subString(text: string, iStart: number, iEnd?: number): string
 $.subString = (text, iStart, iEnd = 0) ->
 

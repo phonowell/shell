@@ -1,3 +1,4 @@
+# @ts-check
 # join(list: unknown[], seperator?: string): string
 $.join = (list, seperator = ',') ->
 

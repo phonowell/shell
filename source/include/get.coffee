@@ -1,3 +1,4 @@
+# @ts-check
 # get(url: string, callback: (data: string) => unknown): void
 $.get = (url, callback) ->
 

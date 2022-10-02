@@ -1,3 +1,4 @@
+# @ts-check
 # chunk<T>(list: T[], n = 1): T[][]
 $.chunk = (list, n = 1) ->
 

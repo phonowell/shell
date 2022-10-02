@@ -1,3 +1,4 @@
+# @ts-check
 # unshift<T>(list: T[], ...value: T[]): number
 $.unshift = (list, args...) ->
 

@@ -1,3 +1,4 @@
+# @ts-check
 # pop<T>(list: T[]): T
 $.pop = (list) ->
 

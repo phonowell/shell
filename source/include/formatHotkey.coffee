@@ -1,3 +1,4 @@
+# @ts-check
 # formatHotkey(key: string): string
 $.formatHotkey = (key) ->
 

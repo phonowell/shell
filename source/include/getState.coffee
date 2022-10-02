@@ -1,3 +1,4 @@
+# @ts-check
 # getState(key: string): string
 $.getState = (key) ->
   key = $.formatHotkey key

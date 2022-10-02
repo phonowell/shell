@@ -1,3 +1,4 @@
+# @ts-check
 # isObject(ipt: unknown): boolean
 $.isObject = (ipt) ->
   $type = $.type ipt

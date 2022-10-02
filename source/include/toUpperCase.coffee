@@ -1,3 +1,4 @@
+# @ts-check
 # toUpperCase(ipt: string): string
 $.toUpperCase = (ipt) ->
   `StringUpper, __result__, ipt`

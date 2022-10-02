@@ -1,3 +1,4 @@
+# @ts-check
 # mixin(...args: object[]): object
 $.mixin = (args...) ->
 

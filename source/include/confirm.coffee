@@ -1,3 +1,4 @@
+# @ts-check
 # confirm(text: string, callback: (result: boolean) => unknown): void
 $.confirm = (text, callback) ->
   ```

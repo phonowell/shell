@@ -1,3 +1,4 @@
+# @ts-check
 $cacheOnce = {}
 $indexOnce = 0
 

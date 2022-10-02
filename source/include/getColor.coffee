@@ -1,3 +1,4 @@
+# @ts-check
 # getColor(point?: Point): number
 $.getColor = (p = '') ->
 

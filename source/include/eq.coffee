@@ -1,3 +1,4 @@
+# @ts-check
 # eq<T>(value: T, other: T): boolean
 $eq = (value, other) ->
 

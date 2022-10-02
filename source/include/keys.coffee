@@ -1,3 +1,4 @@
+# @ts-check
 # keys(ipt: {[x: string]: unknown}): string[]
 $.keys = (ipt) ->
 

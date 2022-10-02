@@ -1,3 +1,4 @@
+# @ts-check
 # push<T>(list: T[], ...value: T[]): number
 $.push = (list, args...) ->
 

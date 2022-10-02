@@ -1,3 +1,4 @@
+# @ts-check
 # slice<T>(list: T[], start = 0, end = list.length): T[]
 $.slice = (args...) ->
 

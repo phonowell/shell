@@ -1,3 +1,4 @@
+# @ts-check
 $iDebounce = 0
 $tDebounce = {}
 

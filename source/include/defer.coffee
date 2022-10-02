@@ -1,3 +1,4 @@
+# @ts-check
 # type Fn = () => unknown
 # defer(callback: Fn, ...args: unknown[]): string
 $.defer = (callback, args...) ->

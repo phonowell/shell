@@ -1,3 +1,4 @@
+# @ts-check
 # uniq<T>(list: T[]): T[]
 $.uniq = (list) ->
 

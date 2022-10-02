@@ -1,3 +1,4 @@
+# @ts-check
 # isArray(ipt: unknown): ipt is unknown[]
 $.isArray = (ipt) ->
   $type = $.type ipt

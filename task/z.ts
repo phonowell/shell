@@ -1,11 +1,22 @@
 import $ from 'fire-keeper'
-import c2a from 'coffee-ahk'
+
+// variable
+
+const flag = '# @ts-check'
 
 // function
 
 const main = async () => {
-  await c2a('./script/index.coffee', { salt: 'z' })
-  await $.exec('start ./script/index.ahk')
+  const listSource = await $.glob('./source/**/*.coffee')
+  for (const source of listSource) {
+    const content = await $.read<string>(source)
+    if (!content) continue
+
+    const listContent = content.split('\n')
+    if (listContent[0] === flag) continue
+    listContent.unshift(flag)
+    await $.write(source, listContent.join('\n'))
+  }
 }
 
 // export

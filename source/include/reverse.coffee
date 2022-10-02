@@ -1,3 +1,4 @@
+# @ts-check
 # reverse<T>(list: T[]): T[]
 $.reverse = (list) ->
 

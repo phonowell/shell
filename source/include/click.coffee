@@ -1,3 +1,4 @@
+# @ts-check
 # click(key?: string): void
 $.click = (key = 'left') ->
 

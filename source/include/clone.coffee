@@ -1,3 +1,4 @@
+# @ts-check
 # clone<T = unknown[] | {[x: string]: unknown}>(ipt: T): T
 $.clone = (ipt) ->
 

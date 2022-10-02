@@ -1,3 +1,4 @@
+# @ts-check
 # press(...key: string[]): void
 $.press = (listInput...) ->
 

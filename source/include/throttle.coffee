@@ -1,3 +1,4 @@
+# @ts-check
 $iThrottle = 0
 $tThrottle = {}
 $tsThrottle = {}

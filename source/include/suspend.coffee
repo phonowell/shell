@@ -1,3 +1,4 @@
+# @ts-check
 # suspend(suspended?: boolean): void
 $.suspend = (isSuspended = 'Toggle') ->
 

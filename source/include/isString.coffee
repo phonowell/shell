@@ -1,3 +1,4 @@
+# @ts-check
 # isString(ipt: unknown): boolean
 $.isString = (ipt) ->
   $type = $.type ipt

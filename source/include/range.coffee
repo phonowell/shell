@@ -1,3 +1,4 @@
+# @ts-check
 # range(start = 0, end: number, step = 1): number[]
 $.range = (args...) ->
 

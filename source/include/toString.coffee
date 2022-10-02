@@ -1,3 +1,4 @@
+# @ts-check
 # toString(ipt: unknown): string
 $.toString = (ipt) ->
 

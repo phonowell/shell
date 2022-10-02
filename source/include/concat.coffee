@@ -1,3 +1,4 @@
+# @ts-check
 # concat<T>(list: T[], ...value: (T | T[])[]): T[]
 $.concat = (list, args...) ->
 

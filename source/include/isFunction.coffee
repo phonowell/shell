@@ -1,3 +1,4 @@
+# @ts-check
 # isFunction(ipt: unknown): ipt is Function
 $.isFunction = (ipt) ->
   $type = $.type ipt

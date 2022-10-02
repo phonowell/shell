@@ -1,3 +1,4 @@
+# @ts-check
 ### interface
 type Level = 'high' | 'low' | 'normal'
 ###

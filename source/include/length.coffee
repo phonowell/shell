@@ -1,3 +1,4 @@
+# @ts-check
 # length(ipt: string | unknonw[] | object): number
 $.length = (ipt) ->
 

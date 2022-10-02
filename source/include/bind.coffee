@@ -1,3 +1,4 @@
+# @ts-check
 # type Fn = () => unknown
 # bind(callback: Fn, ...args: unknown[]): Fn
 $.bind = (callback, args...) ->

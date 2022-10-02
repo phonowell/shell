@@ -1,3 +1,4 @@
+# @ts-check
 # findImage(
 #   source: string,
 #   start: Point = [0, 0],

@@ -1,3 +1,4 @@
+# @ts-check
 # take<T>(list: T[], count: number = 1): T[]
 $.take = (list, count = 1) ->
 

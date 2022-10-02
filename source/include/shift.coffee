@@ -1,3 +1,4 @@
+# @ts-check
 # shift<T>(list: T[]): T
 $.shift = (list) ->
 

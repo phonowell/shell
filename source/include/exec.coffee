@@ -1,3 +1,4 @@
+# @ts-check
 # exec(cmd: string | string[], callback?: (code: number) => void): void
 $.exec = ($input, $callback) ->
 

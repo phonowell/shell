@@ -1,3 +1,4 @@
+# @ts-check
 # setFixed(fixed?: boolean): void
 $.setFixed = (isFixed = 'Toggle') ->
 

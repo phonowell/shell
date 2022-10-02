@@ -1,3 +1,4 @@
+# @ts-check
 # setTimeout(callback: Fn, time: number): number
 $.setTimeout = (callback, time) ->
 

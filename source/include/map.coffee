@@ -1,3 +1,4 @@
+# @ts-check
 # map<T, R>(list: T[], callback: (item: T, i?: number) => R): R[]
 $.map = (list, callback) ->
 

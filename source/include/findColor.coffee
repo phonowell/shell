@@ -1,3 +1,4 @@
+# @ts-check
 # findColor(
 #   color: number,
 #   start: Point = [0, 0],

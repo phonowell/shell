@@ -1,3 +1,4 @@
+# @ts-check
 # blockInput(block: boolean): void
 $.blockInput = (block) ->
 

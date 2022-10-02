@@ -1,3 +1,4 @@
+# @ts-check
 ### interface
 type Item = [string, string, Fn, number]
 ###

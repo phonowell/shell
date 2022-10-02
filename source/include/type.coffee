@@ -1,3 +1,4 @@
+# @ts-check
 # type(ipt: unknown): 'array' | 'function' | 'number' | 'object' | 'string'
 $.type = (ipt) ->
 

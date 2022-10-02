@@ -1,3 +1,4 @@
+# @ts-check
 # isNumber(ipt: unknown): ipt is number
 $.isNumber = (ipt) ->
   $type = $.type ipt

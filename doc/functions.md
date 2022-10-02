@@ -1,6 +1,6 @@
 # Functions
 
-`101` functions, at `2022/9/29 17:33:07`.
+`101` functions, at `2022/10/2 12:52:39`.
 - [abs](../source/include/abs.coffee)
 - [add](../source/include/add.coffee)
 - [admin](../source/include/admin.coffee)

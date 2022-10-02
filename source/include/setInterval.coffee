@@ -1,3 +1,4 @@
+# @ts-check
 # setInterval(callback: Fn, time: number): number
 $.setInterval = (callback, time) ->
 

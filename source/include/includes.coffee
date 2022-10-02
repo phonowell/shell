@@ -1,3 +1,4 @@
+# @ts-check
 # includes(ipt: string | unknown[], needle: unknown): boolean
 $.includes = (ipt, needle) ->
 
