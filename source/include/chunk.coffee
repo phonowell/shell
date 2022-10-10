@@ -1,24 +1,32 @@
 # @ts-check
-# chunk<T>(list: T[], n = 1): T[][]
-$.chunk = (list, n = 1) ->
+
+import $length from './length'
+import $push from './push'
+
+###* chunk<T>(list: T[], n = 1): T[][]
+# @param {unknown[]} list
+# @param {number} n
+# @returns {unknown[][]}
+###
+export default (list, n = 1) ->
 
   $listNew = []
-  $length = $.length list
+  $len = $length list
 
   $i = 0
-  while $i < $length / n
+  while $i < $len / n
 
     $listTemp = []
     $j = 0
     while $j < n
 
       $index = $i * n + $j
-      unless $index < $length then break
+      unless $index < $len then break
 
-      $.push $listTemp, list[$index]
+      $push $listTemp, list[$index]
       $j++
 
-    $.push $listNew, $listTemp
+    $push $listNew, $listTemp
     $i++
 
   return $listNew

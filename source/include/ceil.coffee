@@ -1,3 +1,7 @@
 # @ts-check
-# ceil(n: number): number
-$.ceil = (n) -> return Ceil n
+
+###* ceil(n: number): number
+# @param {number} n
+# @returns {number}
+###
+export default (n) -> return Ceil n

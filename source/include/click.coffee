@@ -1,8 +1,14 @@
 # @ts-check
-# click(key?: string): void
-$.click = (key = 'left') ->
 
-  key = $.replace key, '-', ''
-  key = $.replace key, ':', ' '
+import $replace from './replace'
 
-  `Click, % key`
+###* click(key?: string): void
+# @param {string} [key]
+# @returns {void}
+###
+export default (key = 'left') ->
+
+  key = $replace key, '-', ''
+  key = $replace key, ':', ' '
+
+  Native 'Click, % key'

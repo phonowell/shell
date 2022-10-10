@@ -1,6 +1,11 @@
 # @ts-check
-# join(list: unknown[], seperator?: string): string
-$.join = (list, seperator = ',') ->
+
+###* join(list: unknown[], seperator?: string): string
+# @param {unknown[]} list
+# @param {string} [seperator]
+# @returns {string}
+###
+export default (list, seperator = ',') ->
 
   $result = ''
   for $item, $i in list

@@ -1,6 +1,11 @@
 # @ts-check
-# admin(): void
-$.admin = ->
+
+import exit from './exit'
+
+###* admin(): void
+# @returns {void}
+###
+export default ->
   if A_IsAdmin then return
-  `Run *RunAs "%A_ScriptFullPath%"`
-  $.exit()
+  Native 'Run *RunAs "%A_ScriptFullPath%"'
+  exit()

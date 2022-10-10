@@ -1,12 +1,21 @@
 # @ts-check
-# push<T>(list: T[], ...value: T[]): number
-$.push = (list, args...) ->
 
-  $type = $.type list
+import $getType from './getType'
+
+###* push<T>(list: T[], ...value: T[]): number
+# @param {unknown[]} list
+# @param {unknown[]} value
+# @returns {number}
+###
+$push = (list, value...) ->
+
+  $type = $getType list
   unless $type == 'array'
     throw new Error "$.push: invalid type '#{$type}'"
 
-  for $arg in args
-    list.Push $arg
+  for $v in value
+    list.Push $v
 
   return list.Length()
+
+export default $push

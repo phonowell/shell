@@ -1,9 +1,13 @@
 # @ts-check
-# blockInput(block: boolean): void
-$.blockInput = (block) ->
+
+###* blockInput(block: boolean): void
+# @param {boolean} block
+# @returns {void}
+###
+export default (block) ->
 
   if block
-    `BlockInput, On`
+    Native 'BlockInput, On'
     return
 
-  `BlockInput, Off`
+  Native 'BlockInput, Off'

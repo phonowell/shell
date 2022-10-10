@@ -1,3 +1,6 @@
 # @ts-check
-# exit(): void
-$.exit = -> ExitApp
+
+###* exit(): void
+# @returns {void}
+###
+export default -> ExitApp

@@ -10,7 +10,7 @@
     "@types/node": "^18.7.23",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
-    "coffee-ahk": "^0.0.44",
+    "coffee-ahk": "^0.0.46",
     "fire-keeper": "^0.0.208",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.1",

@@ -1,5 +1,9 @@
 # @ts-check
-# clearInterval(callback: Fn): void
-$.clearInterval = (callback) ->
+
+###* clearInterval(callback: Fn): void
+# @param {Function} callback
+# @returns {void}
+###
+export default (callback) ->
   unless callback then return
-  `SetTimer, % callback, Delete`
+  Native 'SetTimer, % callback, Delete'

@@ -1,3 +1,9 @@
 # @ts-check
-# tail<T>(list: T[]): T[]
-$.tail = (list) -> return $.drop list, 1
+
+import $drop from './drop'
+
+###* tail<T>(list: T[]): T[]
+# @param {unknown[]} list
+# @returns {unknown[]}
+###
+export default (list) -> return $drop list, 1

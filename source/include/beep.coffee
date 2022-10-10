@@ -1,3 +1,6 @@
 # @ts-check
-# beep(): void
-$.beep = -> SoundBeep
+
+###* beep(): void
+# @returns {void}
+###
+export default -> SoundBeep

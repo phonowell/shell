@@ -1,5 +1,9 @@
 # @ts-check
-# clearTimeout(callback: Fn): void
-$.clearTimeout = (callback) ->
+
+###* clearTimeout(callback: Fn): void
+# @param {Function} callback
+# @returns {void}
+###
+export default (callback) ->
   unless callback then return
-  `SetTimer, % callback, Delete`
+  Native 'setTimer, % callback, Delete'

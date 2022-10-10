@@ -1,8 +1,14 @@
 # @ts-check
-# length(ipt: string | unknonw[] | object): number
-$.length = (ipt) ->
 
-  $type = $.type ipt
+import getType from './getType'
+
+###* length(ipt: string | unknown[] | object): number
+# @param {string | unknown[] | object} ipt
+# @returns {number}
+###
+export default (ipt) ->
+
+  $type = getType ipt
 
   switch $type
     when 'array' then return ipt.Length()

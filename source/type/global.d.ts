@@ -1,4 +1,22 @@
+type StrReplace = (
+  text: string,
+  target: string,
+  replace: string,
+  limit?: number,
+) => string
+
 declare global {
+  interface Array<T> {
+    Push: <T>(...items: T[]) => void
+  }
+  interface Function {
+    Name: string
+    Bind: (...args: unknown[]) => Function
+  }
+  interface Object {
+    Count: () => number
+    Length: () => number
+  }
   const A_IsAdmin: boolean
   const A_ScreenHeight: number
   const A_ScreenWidth: number
@@ -13,8 +31,11 @@ declare global {
   const IsFunc: (ipt: unknown) => ipt is Function
   const IsObject: (ipt: unknown) => ipt is object
   const LTrim: (text: string, omit?: string) => string
+  const Native: (line: string) => void
   const RTrim: (text: string, omit?: string) => string
   const SoundBeep: () => void
+  const StrLen: (text: string) => number
+  const StrReplace: StrReplace
   const StrSplit: (text: string, delimiter: string) => string[]
   const SubStr: (text: string, start: number, end?: number) => string
   const Trim: (text: string, omit?: string) => string

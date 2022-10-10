@@ -1,8 +1,14 @@
 # @ts-check
-# clone<T = unknown[] | {[x: string]: unknown}>(ipt: T): T
-$.clone = (ipt) ->
 
-  $type = $.type ipt
+import getType from './getType'
+
+###* clone<T = unknown[] | {[x: string]: unknown}>(ipt: T): T
+# @param {unknown[] | {[x: string]: unknown}} ipt
+# @returns {unknown[] | {[x: string]: unknown}}
+###
+export default (ipt) ->
+
+  $type = getType ipt
 
   if $type == 'array' then return $.slice ipt
 

@@ -1,6 +1,6 @@
 # Functions
 
-`101` functions, at `2022/10/2 12:52:39`.
+`101` functions, at `2022/10/4 15:41:03`.
 - [abs](../source/include/abs.coffee)
 - [add](../source/include/add.coffee)
 - [admin](../source/include/admin.coffee)
@@ -39,6 +39,7 @@
 - [getColor](../source/include/getColor.coffee)
 - [getPosition](../source/include/getPosition.coffee)
 - [getState](../source/include/getState.coffee)
+- [getType](../source/include/getType.coffee)
 - [gt](../source/include/gt.coffee)
 - [gte](../source/include/gte.coffee)
 - [includes](../source/include/includes.coffee)
@@ -96,7 +97,6 @@
 - [trim](../source/include/trim.coffee)
 - [trimEnd](../source/include/trimEnd.coffee)
 - [trimStart](../source/include/trimStart.coffee)
-- [type](../source/include/type.coffee)
 - [uniq](../source/include/uniq.coffee)
 - [unshift](../source/include/unshift.coffee)
 - [values](../source/include/values.coffee)
