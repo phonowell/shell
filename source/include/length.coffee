@@ -1,6 +1,6 @@
 # @ts-check
 
-import getType from './getType'
+import $getType from './getType'
 
 ###* length(ipt: string | unknown[] | object): number
 # @param {string | unknown[] | object} ipt
@@ -8,7 +8,7 @@ import getType from './getType'
 ###
 export default (ipt) ->
 
-  $type = getType ipt
+  $type = $getType ipt
 
   switch $type
     when 'array' then return ipt.Length()

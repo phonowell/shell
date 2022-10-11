@@ -31,7 +31,7 @@ declare global {
   const IsFunc: (ipt: unknown) => ipt is Function
   const IsObject: (ipt: unknown) => ipt is object
   const LTrim: (text: string, omit?: string) => string
-  const Native: (line: string) => void
+  const Native: (line: string) => unknown
   const RTrim: (text: string, omit?: string) => string
   const SoundBeep: () => void
   const StrLen: (text: string) => number

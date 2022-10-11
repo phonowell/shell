@@ -1,7 +1,7 @@
 # @ts-check
 
-###* join(list: unknown[], seperator?: string): string
-# @param {unknown[]} list
+###* join(list: string[], seperator?: string): string
+# @param {string[]} list
 # @param {string} [seperator]
 # @returns {string}
 ###

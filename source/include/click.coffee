@@ -12,3 +12,4 @@ export default (key = 'left') ->
   key = $replace key, ':', ' '
 
   Native 'Click, % key'
+  return

@@ -1,5 +1,6 @@
 # @ts-check
 
+import $alert from './alert'
 import $tail from './tail'
 import $length from './length'
 

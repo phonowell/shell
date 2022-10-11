@@ -7,3 +7,4 @@
 export default (callback) ->
   unless callback then return
   Native 'SetTimer, % callback, Delete'
+  return

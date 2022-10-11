@@ -4,4 +4,4 @@
 # @param {number} n
 # @returns {number}
 ###
-export default (n) -> return Abs n
+export default (n) -> Abs n

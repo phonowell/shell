@@ -4,4 +4,4 @@
 # @param {number} n
 # @returns {number}
 ###
-export default (n) -> return Ceil n
+export default (n) -> Ceil n

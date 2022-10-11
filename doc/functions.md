@@ -1,6 +1,6 @@
 # Functions
 
-`101` functions, at `2022/10/4 15:41:03`.
+`101` functions, at `2022/10/11 下午5:08:37`.
 - [abs](../source/include/abs.coffee)
 - [add](../source/include/add.coffee)
 - [admin](../source/include/admin.coffee)

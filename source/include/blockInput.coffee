@@ -11,3 +11,4 @@ export default (block) ->
     return
 
   Native 'BlockInput, Off'
+  return
