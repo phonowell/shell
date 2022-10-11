@@ -3,11 +3,8 @@
 import $length from './length'
 import $push from './push'
 
-###* chunk<T>(list: T[], n = 1): T[][]
-# @param {unknown[]} list
-# @param {number} n
-# @returns {unknown[][]}
-###
+# chunk<T>(list: T[], n = 1): T[][]
+###* @type {import('@/type/module').Chunk} ###
 export default (list, n = 1) ->
 
   $listNew = []

@@ -1,3 +1,5 @@
 # @ts-check
+
 # now(): number
-$.now = -> return A_TickCount
+###* @type {import('@/type/module').Now} ###
+export default -> A_TickCount

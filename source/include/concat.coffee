@@ -1,15 +1,20 @@
 # @ts-check
-# concat<T>(list: T[], ...value: (T | T[])[]): T[]
-$.concat = (list, args...) ->
 
-  $listNew = $.clone list
+import $clone from './clone'
+import $isArray from './isArray'
+import $push from './push'
+
+# concat<T>(list: T[], ...value: (T | T[])[]): T[]
+###* @type {import('@/type/module').Concat} ###
+export default (list, args...) ->
+
+  $listNew = $clone list
 
   for $arg in args
-    $type = $.type $arg
 
-    if $type == 'array'
+    if $isArray $arg
       for $item in $arg
-        $.push $listNew, $item
-    else $.push $listNew, $arg
+        $push $listNew, $item
+    else $push $listNew, $arg
 
   return $listNew

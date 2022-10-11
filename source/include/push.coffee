@@ -2,12 +2,9 @@
 
 import $getType from './getType'
 
-###* push<T>(list: T[], ...value: T[]): number
-# @param {unknown[]} list
-# @param {unknown[]} value
-# @returns {number}
-###
-$push = (list, value...) ->
+# push<T>(list: T[], ...value: T[]): number
+###* @type {import('./push').Main} ###
+export default (list, value...) ->
 
   $type = $getType list
   unless $type == 'array'
@@ -17,5 +14,3 @@ $push = (list, value...) ->
     list.Push $v
 
   return list.Length()
-
-export default $push

@@ -1,3 +1,7 @@
 # @ts-check
+
+import $filter from './filter'
+
 # compact<T>(list: T[]): T[]
-$.compact = (list) -> return $.filter list, (it) -> return it
+###* @type {import('@/type/module').Compact} ###
+export default (list) -> $filter list, (it) -> !!it

@@ -1,22 +1,35 @@
 import $ from 'fire-keeper'
 
-// variable
-
-const flag = '# @ts-check'
-
 // function
 
 const main = async () => {
-  const listSource = await $.glob('./source/**/*.coffee')
-  for (const source of listSource) {
-    const content = await $.read<string>(source)
-    if (!content) continue
+  const listSource = await $.glob('./source/include/*.coffee')
+  const content = listSource
+    .map((source) => {
+      const basename = $.getBasename(source)
+      return [
+        `import $${basename} from './include/${basename}'`,
+        `$mixin $, ${basename}: $${basename}`,
+      ].join('\n')
+    })
+    .join('\n')
+  await $.write('./source/index.coffee', content)
+}
 
-    const listContent = content.split('\n')
-    if (listContent[0] === flag) continue
-    listContent.unshift(flag)
-    await $.write(source, listContent.join('\n'))
-  }
+const z = async () => {
+  const listSource = await $.glob('./source/include/*.coffee')
+  const content = listSource
+    .map((source) => {
+      const basename = $.getBasename(source)
+      return [
+        `declare module '@/include/${basename}' {`,
+        "  import Main from '@/type/method'",
+        '  export default Main',
+        '}',
+      ].join('\n')
+    })
+    .join('\n\n')
+  await $.write('./source/type/method.d.ts', content)
 }
 
 // export

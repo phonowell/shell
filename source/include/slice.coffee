@@ -1,10 +1,30 @@
 # @ts-check
+
+import $getType from './getType'
+import $length from './length'
+import $push from './push'
+import $reverse from './reverse'
+
+
+$pickArgumentSlice =
+# $pickArgumentSlice<T>(args: [T[], number?, number?]): [T[], number, number]
+###* @type {import('@/type/module').Slice2} ###
+(args) ->
+
+  switch $length args
+    when 1 then [$list, $start, $end] = [args[0], 0, $length args[0]]
+    when 2 then [$list, $start, $end] = [args[0], args[1], $length args[0]]
+    when 3 then [$list, $start, $end] = args
+
+  return [$list, $start, $end]
+
 # slice<T>(list: T[], start = 0, end = list.length): T[]
-$.slice = (args...) ->
+###* @type {import('@/type/module').Slice} ###
+export default (args...) ->
 
   [$list, $start, $end] = $pickArgumentSlice args
 
-  $type = $.type $list
+  $type = $getType $list
   unless $type == 'array'
     throw new Error "$.slice: invalid type '#{$type}'"
 
@@ -26,17 +46,8 @@ $.slice = (args...) ->
   $max = $end - $start
 
   while $n < $max
-    $.push $listNew, $list[$start + $n]
+    $push $listNew, $list[$start + $n]
     $n++
 
-  if $isReverse then return $.reverse $listNew
+  if $isReverse then return $reverse $listNew
   return $listNew
-
-$pickArgumentSlice = (args) ->
-
-  switch $.length args
-    when 1 then [$list, $start, $end] = [args[0], 0, $.length args[0]]
-    when 2 then [$list, $start, $end] = [args[0], args[1], $.length args[0]]
-    when 3 then [$list, $start, $end] = args
-
-  return [$list, $start, $end]

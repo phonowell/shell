@@ -1,13 +1,17 @@
 # @ts-check
+
+import $clearTimeout from './clearTimeout'
+import $setTimeout from './setTimeout'
+
 $iDebounce = 0
 $tDebounce = {}
 
-# type Fn = () => unknown
 # debounce(time: number, callback: Fn): Fn
-$.debounce = (time, callback) ->
+###* @type {import('@/type/module').Debounce} ###
+export default (time, callback) ->
 
   $iDebounce++
 
   return (index = $iDebounce) ->
-    $.clearTimeout $tDebounce[index]
-    $tDebounce[index] = $.setTimeout callback, time
+    $clearTimeout $tDebounce[index]
+    $tDebounce[index] = $setTimeout callback, time

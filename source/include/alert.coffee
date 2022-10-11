@@ -1,9 +1,10 @@
 # @ts-check
 
-###* alert(message: string): void
-# @param {string} message
-# @returns {void}
-###
+import $noop from './noop'
+
+# alert(message: string): void
+###* @type {import('@/type/module').Alert} ###
 export default (message) ->
+  $noop message
   Native 'MsgBox, % message'
   return

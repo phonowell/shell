@@ -1,9 +1,7 @@
 # @ts-check
 
-###* add(...args: number[]): number
-# @param {number[]} args
-# @returns {number}
-###
+# add(...args: number[]): number
+###* @type {import('@/type/module').Add} ###
 export default (args...) ->
   $result = 0
   for $arg in args

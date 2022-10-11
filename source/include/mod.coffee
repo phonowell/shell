@@ -1,3 +1,4 @@
 # @ts-check
 # mod(dividend: number, divisor: number): number
-$.mod = (dividend, divisor) -> return Mod dividend, divisor
+###* @type {import('@/type/module').Mod} ###
+export default (dividend, divisor) -> Mod dividend, divisor

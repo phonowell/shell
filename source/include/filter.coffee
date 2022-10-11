@@ -2,11 +2,8 @@
 
 import $push from './push'
 
-###* filter<T>(list: T[], callback: (item?: T, i?: number) => boolean): T[]
-# @param {unknown[]} list
-# @param {(item?: unknown, i?: number) => boolean} callback
-# @returns {unknown[]}
-###
+# filter<T>(list: T[], callback: (item?: T, i?: number) => boolean): T[]
+###* @type {import('@/type/module').Filter} ###
 export default (list, callback) ->
 
   $listResult = []

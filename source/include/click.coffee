@@ -2,10 +2,8 @@
 
 import $replace from './replace'
 
-###* click(key?: string): void
-# @param {string} [key]
-# @returns {void}
-###
+# click(key?: string): void
+###* @type {import('@/type/module').Click} ###
 export default (key = 'left') ->
 
   key = $replace key, '-', ''

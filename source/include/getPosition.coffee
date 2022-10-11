@@ -1,5 +1,8 @@
 # @ts-check
+
 # getPosition(): Point
-$.getPosition = ->
-  `MouseGetPos, __x__, __y__`
-  return `[__x__, __y__]`
+###* @type {import('@/type/module').GetPosition} ###
+export default ->
+  [$x, $y] = [0, 0]
+  Native 'MouseGetPos, $x, $y'
+  return [$x, $y]

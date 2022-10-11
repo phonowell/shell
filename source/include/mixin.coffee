@@ -1,13 +1,10 @@
 # @ts-check
 
-import $alert from './alert'
-import $tail from './tail'
 import $length from './length'
+import $tail from './tail'
 
-###* mixin(...args: object[]): object
-# @param {object[]} args
-# @returns {object}
-###
+# mixin(...args: object[]): object
+###* @type {import('@/type/module').Mixin} ###
 export default (args...) ->
 
   unless $length args

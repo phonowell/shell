@@ -1,7 +1,5 @@
 # @ts-check
 
-###* ceil(n: number): number
-# @param {number} n
-# @returns {number}
-###
+# ceil(n: number): number
+###* @type {import('@/type/module').Ceil} ###
 export default (n) -> Ceil n

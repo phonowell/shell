@@ -1,7 +1,5 @@
 # @ts-check
 
-###* abs(n: number): number
-# @param {number} n
-# @returns {number}
-###
+# abs(n: number): number
+###* @type {import('@/type/module').Abs} ###
 export default (n) -> Abs n

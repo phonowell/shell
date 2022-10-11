@@ -1,12 +1,17 @@
 # @ts-check
+
+import $bind from './bind'
+import $isNumber from './isNumber'
+
 # setTimeout(callback: Fn, time: number): number
-$.setTimeout = (callback, time) ->
+###* @type {import('@/type/module').SetTimeout} ###
+export default (callback, time) ->
 
-  callback = $.bind callback
+  callback = $bind callback
 
-  unless $.isNumber time then throw new Error '$.setTimeout: invalid type'
+  unless $isNumber time then throw new Error '$.setTimeout: invalid type'
 
   if time < 1 then time = 1
 
-  `SetTimer, % callback, % 0 - time`
+  Native 'SetTimer, % callback, % 0 - time'
   return callback

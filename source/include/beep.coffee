@@ -1,6 +1,5 @@
 # @ts-check
 
-###* beep(): void
-# @returns {void}
-###
+# beep(): void
+###* @type {import('@/type/module').Beep} ###
 export default -> SoundBeep

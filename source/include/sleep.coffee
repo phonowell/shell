@@ -1,5 +1,8 @@
 # @ts-check
+
 # sleep(time: number): void
-$.sleep = (time) ->
+###* @type {import('@/type/module').Sleep} *###
+export default (time) ->
   unless time > 0 then throw new Error '$.sleep: time is required'
-  `Sleep, % time`
+  Native 'Sleep, % time'
+  return

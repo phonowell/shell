@@ -2,11 +2,8 @@
 
 import $length from './length'
 
-###* bind(callback: Fn, ...args: unknown[]): Fn
-# @param {(...args: unknown[]) => unknown} callback
-# @param {unknown[]} args
-# @returns {(...args: unknown[]) => unknown}
-###
+# bind(callback: Fn, ...args: unknown[]): Fn
+###* @type {import('@/type/module').Bind} ###
 export default (callback, args...) ->
 
   unless callback.Name

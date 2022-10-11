@@ -1,9 +1,7 @@
 # @ts-check
 
-###* getType(ipt: unknown): 'array' | 'function' | 'number' | 'object' | 'string'
-# @param {unknown} ipt
-# @returns {'array' | 'function' | 'number' | 'object' | 'string'}
-###
+# getType(ipt: unknown): 'array' | 'function' | 'number' | 'object' | 'string'
+###* @type {import('./getType').Main} ###
 export default (ipt) ->
 
   Native 'if ipt is Number'

@@ -1,10 +1,16 @@
 # @ts-check
-# exec(cmd: string | string[], callback?: (code: number) => void): void
-$.exec = ($input, $callback) ->
 
-  if $.isString $input then $input = [$input]
-  $input = $.join $input, ' && '
+import $isString from './isString'
+import $join from './join'
+import $noop from './noop'
 
-  `RunWait, %comSpec% /c %$input%,, Hide UseErrorLevel`
+# exec(cmd: string | string[], callback?: (code: number | string) => void): void
+###* @type {import('@/type/module').Exec} ###
+export default ($input, $callback = $noop) ->
 
-  if $.isFunction $callback then $callback ErrorLevel
+  if $isString $input then $input = [$input]
+  $input = $join $input, ' && '
+
+  Native 'RunWait, %comSpec% /c %$input%,, Hide UseErrorLevel'
+
+  $callback ErrorLevel

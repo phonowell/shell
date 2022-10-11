@@ -1,9 +1,7 @@
 # @ts-check
 
-###* blockInput(block: boolean): void
-# @param {boolean} block
-# @returns {void}
-###
+# blockInput(block: boolean): void
+###* @type {import('@/type/module').BlockInput} ###
 export default (block) ->
 
   if block

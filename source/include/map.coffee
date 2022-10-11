@@ -2,11 +2,8 @@
 
 import $push from './push'
 
-###* map<T, R>(list: T[], callback: (item: T, i?: number) => R): R[]
-# @param {unknown[]} list
-# @param {(item: unknown, i?: number) => unknown} callback
-# @returns {unknown[]}
-###
+# map<T, R>(list: T[], callback: (item: T, i?: number) => R): R[]
+###* @type {import('@/type/module').Map} ###
 export default (list, callback) ->
 
   $listResult = []

@@ -11,7 +11,7 @@ declare global {
   }
   interface Function {
     Name: string
-    Bind: (...args: unknown[]) => Function
+    Bind: (...args: unknown[]) => (...args: unknown[]) => unknown
   }
   interface Object {
     Count: () => number
@@ -31,6 +31,7 @@ declare global {
   const IsFunc: (ipt: unknown) => ipt is Function
   const IsObject: (ipt: unknown) => ipt is object
   const LTrim: (text: string, omit?: string) => string
+  const Mod: (dividend: number, divisor: number) => number
   const Native: (line: string) => unknown
   const RTrim: (text: string, omit?: string) => string
   const SoundBeep: () => void

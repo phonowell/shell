@@ -1,21 +1,21 @@
 # @ts-check
 
-import getType from './getType'
+import $getType from './getType'
+import $isArray from './isArray'
+import $isObject from './isObject'
+import $slice from './slice'
 
-###* clone<T = unknown[] | {[x: string]: unknown}>(ipt: T): T
-# @param {unknown[] | {[x: string]: unknown}} ipt
-# @returns {unknown[] | {[x: string]: unknown}}
-###
+# clone<T = unknown[] | Record<string, unknown>>(ipt: T): T
+###* @type {import('@/type/module').Clone} ###
 export default (ipt) ->
 
-  $type = getType ipt
+  if $isArray ipt then return $slice ipt
 
-  if $type == 'array' then return $.slice ipt
-
-  if $type == 'object'
+  if $isObject ipt
+    ###* @type {Object} ###
     $mapNew = {}
     for $key, $value of ipt
       $mapNew[$key] = $value
     return $mapNew
 
-  throw new Error "$.clone: invalid type '#{$type}'"
+  throw new Error "$.clone: invalid type '#{$getType ipt}'"
