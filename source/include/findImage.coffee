@@ -1,16 +1,23 @@
 # @ts-check
+
+import $noop from './noop'
+
 # findImage(
 #   source: string,
 #   start: Point = [0, 0],
 #   end: Point = [A_ScreenWidth, A_ScreenHeight],
 # ): Point
-$.findImage = (
+###* @type {import('@/type/module').FindImage} ###
+export default (
   source
-  start = '', end = ''
+  start = [-1, -1], end = [-1, -1]
 ) ->
 
-  unless start then start = [0, 0]
-  unless end then end = [A_ScreenWidth, A_ScreenHeight]
+  unless (start[0] >= 0 and start[1] >= 0) then start = [0, 0]
+  unless (end[0] >= 0 and end[1] >= 0)
+    end = [A_ScreenWidth, A_ScreenHeight]
 
-  `ImageSearch __x__, __y__, start[1], start[2], end[1], end[2], % A_ScriptDir . "\\\" . source`
-  return `[__x__, __y__]`
+  [$x, $y] = [0, 0]
+  $noop source
+  Native 'ImageSearch $x, $y, start[1], start[2], end[1], end[2], % A_ScriptDir . "\\\" . source'
+  return [$x, $y]

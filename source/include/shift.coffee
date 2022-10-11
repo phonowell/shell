@@ -1,10 +1,14 @@
 # @ts-check
-# shift<T>(list: T[]): T
-$.shift = (list) ->
 
-  $type = $.type list
-  unless $type == 'array'
-    throw new Error "$.shift: invalid type '#{$type}'"
+import $getType from './getType'
+import $isArray from './isArray'
+
+# shift<T>(list: T[]): T
+###* @type {import('@/type/module').Shift} *###
+export default (list) ->
+
+  unless $isArray list
+    throw new Error "$.shift: invalid type '#{$getType list}'"
 
   $first = list[0]
   list.RemoveAt 1

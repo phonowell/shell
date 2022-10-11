@@ -1,3 +1,5 @@
 # @ts-check
+
 # floor(n: number): number
-$.floor = (n) -> return Floor n
+###* @type {import('@/type/module').Floor} ###
+export default (n) -> Floor n

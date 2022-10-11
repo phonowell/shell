@@ -1,3 +1,5 @@
 # @ts-check
+
 # lte<T = number>(value: T, other: T): boolean
-$.lte = (value, other) -> return value <= other
+###* @type {import('@/type/module').Lte} ###
+export default (value, other) -> value <= other

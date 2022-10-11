@@ -3,7 +3,7 @@
 import $getType from './getType'
 
 # push<T>(list: T[], ...value: T[]): number
-###* @type {import('./push').Main} ###
+###* @type {import('@/type/module').Push} ###
 export default (list, value...) ->
 
   $type = $getType list

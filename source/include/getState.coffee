@@ -1,5 +1,9 @@
 # @ts-check
+
+import $formatHotkey from './formatHotkey'
+
 # getState(key: string): string
-$.getState = (key) ->
-  key = $.formatHotkey key
+###* @type {import('@/type/module').GetState} *###
+export default (key) ->
+  key = $formatHotkey key
   return GetKeyState key, 'P'

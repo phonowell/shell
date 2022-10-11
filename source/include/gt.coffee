@@ -1,3 +1,5 @@
 # @ts-check
+
 # gt<T = number>(value: T, other: T): boolean
-$.gt = (value, other) -> return value > other
+###* @type {import('@/type/module').Gt} ###
+export default (value, other) -> value > other

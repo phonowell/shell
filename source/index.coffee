@@ -32,7 +32,6 @@ import $findColor from './include/findColor'
 import $findImage from './include/findImage'
 import $first from './include/first'
 import $floor from './include/floor'
-import $forEach from './include/forEach'
 import $formatHotkey from './include/formatHotkey'
 import $get from './include/get'
 import $getColor from './include/getColor'
@@ -136,7 +135,7 @@ $mixin $, findColor: $findColor
 $mixin $, findImage: $findImage
 $mixin $, first: $first
 $mixin $, floor: $floor
-$mixin $, forEach: $forEach
+$mixin $, forEach: $each
 $mixin $, formatHotkey: $formatHotkey
 $mixin $, get: $get
 $mixin $, getColor: $getColor
@@ -145,6 +144,7 @@ $mixin $, getState: $getState
 $mixin $, getType: $getType
 $mixin $, gt: $gt
 $mixin $, gte: $gte
+$mixin $, head: $first
 $mixin $, includes: $includes
 $mixin $, isArray: $isArray
 $mixin $, isFunction: $isFunction
@@ -193,8 +193,10 @@ $mixin $, tail: $tail
 $mixin $, take: $take
 $mixin $, throttle: $throttle
 $mixin $, tip: $tip
+$mixin $, toLower: $toLowerCase
 $mixin $, toLowerCase: $toLowerCase
 $mixin $, toString: $toString
+$mixin $, toUpper: $toUpperCase
 $mixin $, toUpperCase: $toUpperCase
 $mixin $, trim: $trim
 $mixin $, trimEnd: $trimEnd
@@ -202,5 +204,5 @@ $mixin $, trimStart: $trimStart
 $mixin $, uniq: $uniq
 $mixin $, unshift: $unshift
 $mixin $, values: $values
-$mixin $, version: $version
+$mixin $, VERSION: $version
 $mixin $, window: $window

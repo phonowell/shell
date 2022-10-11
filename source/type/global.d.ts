@@ -7,7 +7,10 @@ type StrReplace = (
 
 declare global {
   interface Array<T> {
+    InsertAt: <T>(index: number, ...value: T[]) => T[]
+    Pop: <T>() => T
     Push: <T>(...items: T[]) => void
+    RemoveAt: <T>(index: number, count?: number) => T | T[] | number
   }
   interface Function {
     Name: string
@@ -27,6 +30,7 @@ declare global {
   const ExitApp: () => void
   const FileExist: (source: string) => boolean
   const Floor: (n: number) => number
+  const GetKeyState: (key: string, mode: 'P') => string
   const InStr: (text: string, target: string) => number
   const IsFunc: (ipt: unknown) => ipt is Function
   const IsObject: (ipt: unknown) => ipt is object
@@ -34,6 +38,8 @@ declare global {
   const Mod: (dividend: number, divisor: number) => number
   const Native: (line: string) => unknown
   const RTrim: (text: string, omit?: string) => string
+  const Reload: () => void
+  const Round: (n: number) => number
   const SoundBeep: () => void
   const StrLen: (text: string) => number
   const StrReplace: StrReplace

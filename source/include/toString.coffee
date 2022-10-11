@@ -1,28 +1,31 @@
 # @ts-check
 
 import $getType from './getType'
+import $isArray from './isArray'
+import $isNumber from './isNumber'
+import $isObject from './isObject'
+import $isString from './isString'
 import $trim from './trim'
 
-###* toString(ipt: unknown): string
-# @param {unknown} ipt
-# @returns {string}
-###
-toString = (ipt) ->
+# toString(ipt: unknown): string
+###* @type {import('@/type/module').ToString} *###
+$toString = (ipt) ->
 
-  $type = $getType ipt
+  if ($isString ipt) or $isNumber ipt
+    return ipt
 
-  if $type == 'array'
+  if $isArray ipt
     $result = ''
     for key in ipt
-      $result = "#{$result}, #{toString key}"
+      $result = "#{$result}, #{$toString key}"
     return "[#{$trim $result, ' ,'}]"
 
-  else if $type == 'object'
+  if $isObject ipt
     $result = ''
     for key, value of ipt
-      $result = "#{$result}, #{key}: #{toString value}"
+      $result = "#{$result}, #{key}: #{$toString value}"
     return "{#{$trim $result, ' ,'}}"
 
-  return ipt
+  throw new Error("$toString: invalid type '#{$getType ipt}'")
 
-export default toString
+export default $toString

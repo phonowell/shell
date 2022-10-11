@@ -1,3 +1,5 @@
 # @ts-check
+
 # round(n: number): number
-$.round = (n) -> return Round n
+###* @type {import('@/type/module').Round} *###
+export default (n) -> Round n

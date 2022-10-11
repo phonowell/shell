@@ -1,6 +1,6 @@
 # Functions
 
-`102` functions, at `2022/10/11 下午10:14:41`.
+`101` functions, at `2022/10/12 上午12:01:22`.
 - [abs](../source/include/abs.coffee)
 - [add](../source/include/add.coffee)
 - [admin](../source/include/admin.coffee)
@@ -34,7 +34,6 @@
 - [findImage](../source/include/findImage.coffee)
 - [first](../source/include/first.coffee)
 - [floor](../source/include/floor.coffee)
-- [forEach](../source/include/forEach.coffee)
 - [formatHotkey](../source/include/formatHotkey.coffee)
 - [get](../source/include/get.coffee)
 - [getColor](../source/include/getColor.coffee)

@@ -1,9 +1,5 @@
 # @ts-check
 
-###* trim(ipt: string, omitting?: string): string
-# @param {string} ipt
-# @param {string} [omitting]
-# @returns {string}
-###
-export default (ipt, omitting = ' \t') ->
-  return Trim ipt, omitting
+# trim(ipt: string, omitting?: string): string
+###* @type {import('@/type/module').Trim} ###
+export default (ipt, omitting = ' \t') -> Trim ipt, omitting

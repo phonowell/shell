@@ -1,5 +1,5 @@
 # @ts-check
-# first<T>(list: T[]): T
-$.first = (list) -> return list[0]
 
-$.head = $.first
+# first<T>(list: T[]): T
+###* @type {import('@/type/module').First} ###
+export default (list) -> list[0]

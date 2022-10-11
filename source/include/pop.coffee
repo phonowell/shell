@@ -1,9 +1,13 @@
 # @ts-check
-# pop<T>(list: T[]): T
-$.pop = (list) ->
 
-  $type = $.type list
-  unless $type == 'array'
-    throw new Error "$.pop: invalid type '#{$type}'"
+import $getType from './getType'
+import $isArray from './isArray'
+
+# pop<T>(list: T[]): T
+###* @type {import('@/type/module').Pop} *###
+export default (list) ->
+
+  unless $isArray list
+    throw new Error "$.pop: invalid type '#{$getType list}'"
 
   return list.Pop()

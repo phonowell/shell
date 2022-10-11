@@ -1,31 +1,31 @@
 # @ts-check
-# formatHotkey(key: string): string
-$.formatHotkey = (key) ->
 
-  $listKey = $formatKeyFormatHotkey key
-  [$prefix, $listKey] = $pickPrefixFormatHotkey $listKey
+import $length from './length'
+import $push from './push'
+import $replace from './replace'
+import $split from './split'
+import $toLowerCase from './toLowerCase'
+import $trim from './trim'
 
-  $result = ''
-  for $it in $listKey
-    $result = "#{$result} & #{$it}"
-
-  return $.replace "#{$prefix}#{$.trim $result, ' &'}", ':', ' '
-
-$formatKeyFormatHotkey = (key) ->
+$formatKeyFormatHotkey =
+###* @type {import('@/type/module').FormatHotkey2} *###
+(key) ->
 
   $listKey = []
 
-  $key = $.toLowerCase key
-  $key = $.replace $key, ' ', ''
-  $key = $.replace $key, '-', ''
+  $key = $toLowerCase key
+  $key = $replace $key, ' ', ''
+  $key = $replace $key, '-', ''
 
-  $.push $listKey, ($.split $key, '+')...
+  $push $listKey, ($split $key, '+')...
 
   return $listKey
 
-$pickPrefixFormatHotkey = (listKey) ->
+$pickPrefixFormatHotkey =
+###* @type {import('@/type/module').FormatHotkey3} *###
+(listKey) ->
 
-  if ($.length listKey) == 1 then return ['', listKey]
+  if ($length listKey) == 1 then return ['', listKey]
 
   $prefix = ''
   $listNew = []
@@ -48,6 +48,19 @@ $pickPrefixFormatHotkey = (listKey) ->
       $prefix = "#{$prefix}#"
       continue
 
-    $.push $listNew, $key
+    $push $listNew, $key
 
   return [$prefix, $listNew]
+
+# formatHotkey(key: string): string
+###* @type {import('@/type/module').FormatHotkey} *###
+export default (key) ->
+
+  $listKey = $formatKeyFormatHotkey key
+  [$prefix, $listKey] = $pickPrefixFormatHotkey $listKey
+
+  $result = ''
+  for $it in $listKey
+    $result = "#{$result} & #{$it}"
+
+  return $replace "#{$prefix}#{$trim $result, ' &'}", ':', ' '

@@ -1,4 +1,5 @@
 # @ts-check
+
 # trimStart(ipt: string, omitting: string): string
-$.trimStart = (ipt, omitting = ' \t') ->
-  return LTrim ipt, omitting
+###* @type {import('@/type/module').TrimStart} ###
+export default (ipt, omitting = ' \t') -> LTrim ipt, omitting

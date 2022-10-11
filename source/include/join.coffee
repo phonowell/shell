@@ -1,10 +1,7 @@
 # @ts-check
 
-###* join(list: string[], seperator?: string): string
-# @param {string[]} list
-# @param {string} [seperator]
-# @returns {string}
-###
+# join(list: string[], seperator?: string): string
+###* @type {import('@/type/module').Join} ###
 export default (list, seperator = ',') ->
 
   $result = ''

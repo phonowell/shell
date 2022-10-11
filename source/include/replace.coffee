@@ -1,11 +1,6 @@
 # @ts-check
 
-###* replace(ipt: string, searchment: string, replacement: string, limit?: number): string
-# @param {string} ipt
-# @param {string} searchment
-# @param {string} replacement
-# @param {number} [limit]
-# @returns {string}
-###
+# replace(ipt: string, searchment: string, replacement: string, limit?: number): string
+###* @type {import('@/type/module').Replace} *###
 export default (ipt, searchment, replacement, limit = -1) ->
-  return StrReplace ipt, searchment, replacement, limit
+  StrReplace ipt, searchment, replacement, limit

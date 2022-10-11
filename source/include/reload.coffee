@@ -1,3 +1,5 @@
 # @ts-check
+
 # reload(): void
-$.reload = -> Reload
+###* @type {import('@/type/module').Reload} ###
+export default -> Reload

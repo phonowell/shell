@@ -1,7 +1,8 @@
 # @ts-check
-# toUpperCase(ipt: string): string
-$.toUpperCase = (ipt) ->
-  `StringUpper, __result__, ipt`
-  return __result__
 
-$.toUpper = $.toUpperCase
+# toUpperCase(ipt: string): string
+###* @type {import('@/type/module').ToUpperCase} ###
+export default (ipt) ->
+  $result = ipt
+  Native 'StringUpper, $result, ipt'
+  return $result

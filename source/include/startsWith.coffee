@@ -1,3 +1,5 @@
 # @ts-check
+
 # startsWith(text: string, string: string): boolean
-$.startsWith = (text, string) -> return (InStr text, string) == 1
+###* @type {import('@/type/module').StartsWith} ###
+export default (text, string) -> (InStr text, string) == 1

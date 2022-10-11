@@ -1,8 +1,12 @@
 # @ts-check
-# subString(text: string, iStart: number, iEnd?: number): string
-$.subString = (text, iStart, iEnd = 0) ->
 
-  $type = $.type text
+import $getType from './getType'
+
+# subString(text: string, iStart: number, iEnd?: number): string
+###* @type {import('@/type/module').SubString} *###
+export default (text, iStart, iEnd = 0) ->
+
+  $type = $getType text
   unless $type == 'string'
     throw new Error "$.subString: invalid type '#{$type}'"
 

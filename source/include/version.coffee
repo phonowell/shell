@@ -1,2 +1,2 @@
 # @ts-check
-$.VERSION = '0.0.23'
+export default '0.0.23'

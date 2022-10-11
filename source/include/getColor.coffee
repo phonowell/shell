@@ -1,8 +1,14 @@
 # @ts-check
+
+import $getPosition from './getPosition'
+
 # getColor(point?: Point): number
-$.getColor = (p = '') ->
+###* @type {import('@/type/module').GetColor} ###
+export default (p = [-1, -1]) ->
 
-  unless p then p = $.getPosition()
+  unless (p[0] >= 0 and p[1] >= 0)
+    p = $getPosition()
 
-  `PixelGetColor, __result__, % p[1], % p[2], RGB`
-  return `__result__`
+  $result = 0
+  Native 'PixelGetColor, $result, % p[1], % p[2], RGB'
+  return $result

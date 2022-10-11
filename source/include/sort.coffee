@@ -1,16 +1,12 @@
 # @ts-check
-# sort<T>(list: T[]): T[]
-$.sort = (list) ->
 
-  $hasString = false
-  for $item in list
-    if ($.type $item) == 'string'
-      $hasString = true
-      break
+import $join from './join'
+import $split from './split'
 
-  $string = $.join list, ','
-
-  if $hasString then `Sort, $string, C D,`
-  else `Sort, $string, N D,`
-
-  return $.split $string, ','
+# sort(list: string[]): string[]
+###* @type {import('@/type/module').Sort} ###
+export default (list) ->
+  $string = $join list, ','
+  Native 'Sort, $string, C D,'
+  # Native 'Sort, $string, N D,'
+  return $split $string, ','
