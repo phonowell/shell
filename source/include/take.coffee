@@ -1,8 +1,13 @@
 # @ts-check
-# take<T>(list: T[], count: number = 1): T[]
-$.take = (list, count = 1) ->
 
-  $len = $.length list
+import $length from './length'
+import $push from './push'
+
+# take<T>(list: T[], count: number = 1): T[]
+###* @type {import('@/type/module').Take} *###
+export default (list, count = 1) ->
+
+  $len = $length list
   unless $len then return []
 
   unless count >= 0 then return []
@@ -12,6 +17,6 @@ $.take = (list, count = 1) ->
   $listNew = []
   for $item, $i in list
     if $i >= count then break
-    $.push $listNew, $item
+    $push $listNew, $item
 
   return $listNew

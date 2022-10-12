@@ -1,9 +1,12 @@
 # @ts-check
-# setFixed(fixed?: boolean): void
-$.setFixed = (isFixed = 'Toggle') ->
+
+# setFixed(isFixed?: boolean): void
+###* @type {import('@/type/module').SetFixed} *###
+export default (isFixed = 'Toggle') ->
 
   if isFixed != 'Toggle'
     if isFixed then isFixed = 'On'
     else isFixed = 'Off'
 
-  `Winset AlwaysOnTop, % isFixed, A`
+  Native 'Winset AlwaysOnTop, % isFixed, A'
+  return

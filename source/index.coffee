@@ -26,7 +26,7 @@ import $emitter from './include/emitter2'
 import $eq from './include/eq'
 import $exec from './include/exec'
 import $exit from './include/exit'
-import $file from './include/file'
+import $file from './include/file2'
 import $filter from './include/filter'
 import $findColor from './include/findColor'
 import $findImage from './include/findImage'
@@ -100,6 +100,7 @@ import $values from './include/values'
 import $version from './include/version'
 import $window from './include/window'
 import './include/emitter'
+import './include/file'
 
 $ = {}
 

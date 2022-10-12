@@ -1,10 +1,11 @@
 # @ts-check
+
 $cacheOnce = {}
 $indexOnce = 0
 
-# type Fn = () => unknown
 # once(callback: Fn): Fn
-$.once = (callback) ->
+###* @type {import('@/type/module').Once} ###
+export default (callback) ->
 
   $i = $indexOnce
   $indexOnce++

@@ -1,3 +1,10 @@
 # @ts-check
+
+import $noop from './noop'
+
 # open(source: string): void
-$.open = (source) -> `Run, % source`
+###* @type {import('@/type/module').Open} ###
+export default (source) ->
+  $noop source
+  Native 'Run, % source'
+  return

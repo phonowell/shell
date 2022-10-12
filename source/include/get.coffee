@@ -1,6 +1,8 @@
 # @ts-check
+
 # get(url: string, callback: (data: string) => unknown): void
-$.get = (url, callback) ->
+###* @type {import('@/type/module').Get} *###
+export default (url, callback) ->
 
   try
     whr = ComObjCreate 'WinHttp.WinHttpRequest.5.1'
@@ -11,3 +13,5 @@ $.get = (url, callback) ->
 
   catch
     callback ''
+
+  return

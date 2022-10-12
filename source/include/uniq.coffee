@@ -1,16 +1,22 @@
 # @ts-check
-# uniq<T>(list: T[]): T[]
-$.uniq = (list) ->
+
+import $isString from './isString'
+import $join from './join'
+import $split from './split'
+
+# uniq(list: string[]): string[]
+###* @type {import('@/type/module').Uniq} *###
+export default (list) ->
 
   $hasString = false
   for $item in list
-    if ($.type $item) == 'string'
+    if $isString $item
       $hasString = true
       break
 
-  $string = $.join list, ','
+  $string = $join list, ','
 
-  if $hasString then `Sort, $string, C U D,`
-  else `Sort, $string, N U D,`
+  if $hasString then Native 'Sort, $string, C U D,'
+  else Native 'Sort, $string, N U D,'
 
-  return $.split $string, ','
+  return $split $string, ','

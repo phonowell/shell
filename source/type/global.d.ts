@@ -20,6 +20,7 @@ declare global {
     Count: () => number
     Length: () => number
   }
+
   const A_IsAdmin: boolean
   const A_ScreenHeight: number
   const A_ScreenWidth: number
@@ -46,6 +47,13 @@ declare global {
   const StrSplit: (text: string, delimiter: string) => string[]
   const SubStr: (text: string, start: number, end?: number) => string
   const Trim: (text: string, omit?: string) => string
+
+  const ComObjCreate: (target: string) => {
+    Open: Function
+    ResponseText: string
+    Send: Function
+    WaitForResponse: Function
+  }
 }
 
 export {}

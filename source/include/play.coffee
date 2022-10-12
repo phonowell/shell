@@ -1,3 +1,10 @@
 # @ts-check
+
+import $noop from './noop'
+
 # play(filename: string): void
-$.play = (filename) -> `SoundPlay, % filename`
+###* @type {import('@/type/module').Play} *###
+export default (filename) ->
+  $noop filename
+  Native 'SoundPlay, % filename'
+  return
