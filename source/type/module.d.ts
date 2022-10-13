@@ -1,5 +1,6 @@
-import { EmitterShell } from './emitter'
-import { FileShell } from './file'
+import { EmitterShell } from './emitterShell'
+import { FileShell } from './fileShell'
+import { WindowShell } from './windowShell'
 
 type Fn = (...args: unknown[]) => unknown
 type Point = [number, number]
@@ -35,7 +36,7 @@ export type FormatHotkey = (key: string) => string
 export type FormatHotkey2 = (key: string) => string[]
 export type FormatHotkey3 = (listLey: string[]) => [string, string[]]
 export type Get = (url: string, callback: (data: string) => unknown) => void
-export type GetColor = (point?: Point) => number
+export type GetColor = (point: Point | undefined) => number
 export type GetPosition = () => Point
 export type GetState = (key: string) => string
 export type Gt = <T = number>(value: T, other: T) => boolean
@@ -46,15 +47,15 @@ export type IsFunction = (ipt: unknown) => ipt is Fn
 export type IsNumber = (ipt: unknown) => ipt is number
 export type IsObject = (ipt: unknown) => ipt is Object
 export type IsString = (ipt: unknown) => ipt is string
-export type Join = (list: string[], seperator?: string) => string
 export type Keys = (ipt: Record<string, unknown>) => string[]
 export type Last = <T>(list: T[]) => T
+export type Length = (ipt: string | unknown[] | object) => number
 export type Lt = <T = number>(value: T, other: T) => boolean
 export type Lte = <T = number>(value: T, other: T) => boolean
 export type Map = <T, R>(list: T[], callback: (item: T, i?: number) => R) => R[]
 export type Mixin = (...args: object[]) => object
 export type Mod = (dividend: number, divisor: number) => number
-export type Move = (p: Point, speed?: number) => void
+export type Move = (p: Point | undefined, speed?: number) => void
 export type Noop = (...args: unknown[]) => void
 export type Now = () => number
 export type Nth = <T>(list: T[], n?: number) => T
@@ -77,7 +78,6 @@ export type Shift = <T>(list: T[]) => T
 export type Shuffle = (list: string[]) => string[]
 export type Sleep = (time: number) => void
 export type Slice = <T>(list: T[], start?: number, end?: number) => T[]
-export type Slice2 = <T>(args: [T[], number?, number?]) => [T[], number, number]
 export type Sort = (list: string[]) => string[]
 export type Split = (ipt: string, delimiter: string) => string[]
 export type StartsWith = (text: string, string: string) => boolean
@@ -86,7 +86,7 @@ export type Sum = (list: number[]) => number
 export type Suspend = (isSuspended?: boolean | 'Toggle' | 'On' | 'Off') => void
 export type Take = <T>(list: T[], count?: number) => T[]
 export type Throttle = (time: number, callback: Fn) => Fn
-export type Tip = <T extends string>(message: T, p?: Point) => T
+export type Tip = <T extends string>(message: T, p: Point | undefined) => T
 export type ToLowerCase = (ipt: string) => string
 export type ToString = (ipt: unknown) => string
 export type ToUpperCase = (ipt: string) => string
@@ -96,6 +96,7 @@ export type TrimStart = (ipt: string, omitting?: string) => string
 export type Uniq = (list: string[]) => string[]
 export type Unshift = <T>(list: T[], ...value: T[]) => number
 export type Values = <T>(ipt: { [x: string]: T }) => T[]
+export type Window = (source: string) => WindowShell
 
 export type Confirm = (
   text: string,
@@ -123,6 +124,11 @@ export type FindColor = (
   end?: Point,
   variation?: number,
 ) => Point
+
+export type Join = (
+  list: (string | number | boolean)[],
+  seperator?: string,
+) => string
 
 export type Replace = (
   ipt: string,

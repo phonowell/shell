@@ -1,11 +1,18 @@
+# @ts-check
+
+import $isFunction from '../../source/module/isFunction'
+import $isObject from '../../source/module/isObject'
+import $open from '../../source/module/open'
+import $window from '../../source/module/window'
+
 do ->
 
-  unless $.isFunction $.window
-    throw new Error '$.window is not a function'
+  unless $isFunction $window
+    throw new Error '$window is not a function'
 
-  w = $.window 'notepad.exe'
-  unless $.isObject w
-    throw new Error '$.window("notepad.exe") is not an object'
+  w = $window 'notepad.exe'
+  unless $isObject w
+    throw new Error '$window("notepad.exe") is not an object'
 
   for fn in [
     'blur'
@@ -25,20 +32,20 @@ do ->
     'show'
     'wait'
   ]
-    unless $.isFunction w[fn]
-      throw new Error "$.window('notepad.exe').#{fn} is not a function"
+    unless $isFunction w[fn]
+      throw new Error "$window('notepad.exe').#{fn} is not a function"
 
 do ->
 
   exe = 'notepad.exe'
-  w = $.window exe
+  w = $window exe
 
   w.close()
 
   if w.isExist()
     throw new Error "#{exe} is already running"
 
-  $.open exe
+  $open exe
 
   w.wait ->
     unless w.isExist()

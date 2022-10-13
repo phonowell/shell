@@ -23,4 +23,5 @@ coffeelint.json
 tsconfig.json
 tslint.json
 # inlcude
+!*.coffee
 !*.d.ts

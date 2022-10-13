@@ -11,7 +11,9 @@ const path = {
 // function
 
 const main = async () => {
-  await c2a(path.coffee, { salt: 'shell' })
+  await c2a(path.coffee, {
+    salt: 'shell',
+  })
   await replace()
 
   await $.exec(`start ${path.ahk}`)

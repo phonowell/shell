@@ -9,15 +9,10 @@ import $noop from './noop'
 #   variation = 0
 # ): Point
 ###* @type {import('@/type/module').FindColor} ###
-export default (
-  color
-  start = [-1, -1], end = [-1, -1]
-  variation = 0
-) ->
+export default (color, start, end, variation = 0) ->
 
-  unless (start[0] >= 0 and start[1] >= 0) then start = [0, 0]
-  unless (end[0] >= 0 and end[1] >= 0)
-    end = [A_ScreenWidth, A_ScreenHeight]
+  unless start then start = [0, 0]
+  unless end then end = [A_ScreenWidth, A_ScreenHeight]
 
   [$x, $y] = [0, 0]
   $noop color, variation

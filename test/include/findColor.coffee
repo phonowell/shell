@@ -1,4 +1,9 @@
+# @ts-check
+
+import $findColor from '../../source/module/findColor'
+import $isFunction from '../../source/module/isFunction'
+
 do ->
 
-  unless ($.type $.findColor) == 'function'
+  unless $isFunction $findColor
     throw 0

@@ -10,24 +10,32 @@ const path = {
 
 // function
 
-const main = async () => {
-  await c2a(path.coffee, { salt: 'shell' })
-  await replace()
-
-  await $.remove('./dist')
-  await $.copy(path.ahk, './dist')
-
-  await makeDoc()
+const copy = async () => {
+  await $.copy('./source/module/*', './dist/module')
+  await $.copy('./source/type/*', './dist/type')
 }
 
-const makeDoc = async()=>{
+const main = async () => {
+  await $.remove('./dist')
+  await makeAhk()
+  await makeDoc()
+  await copy()
+}
+
+const makeAhk = async () => {
+  await c2a(path.coffee, { salt: 'shell' })
+  await replace()
+  await $.copy(path.ahk, './dist')
+}
+
+const makeDoc = async () => {
   const listFn = (await $.glob('./source/include/*.coffee')).map($.getBasename)
 
   const content = [
     '# Functions',
     '',
     `\`${listFn.length}\` functions, at \`${new Date().toLocaleString()}\`.`,
-    ...listFn.map(fn=>`- [${fn}](../source/include/${fn}.coffee)`),
+    ...listFn.map((fn) => `- [${fn}](../source/include/${fn}.coffee)`),
   ]
 
   await $.write('./doc/functions.md', content.join('\n'))

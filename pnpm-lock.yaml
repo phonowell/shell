@@ -6,7 +6,7 @@ specifiers:
   '@types/node': ^18.8.4
   '@typescript-eslint/eslint-plugin': ^5.40.0
   '@typescript-eslint/parser': ^5.40.0
-  coffee-ahk: 0.0.48-fixed.2
+  coffee-ahk: 0.0.48-fixed.4
   fire-keeper: ^0.0.208
   lodash: ^4.17.21
   ts-node: ^10.9.1
@@ -18,7 +18,7 @@ devDependencies:
   '@types/node': 18.8.4
   '@typescript-eslint/eslint-plugin': 5.40.0_kl2bjyi6lumbcvyhc65fqrvclm
   '@typescript-eslint/parser': 5.40.0_typescript@4.8.4
-  coffee-ahk: 0.0.48-fixed.2
+  coffee-ahk: 0.0.48-fixed.4
   fire-keeper: 0.0.208
   lodash: 4.17.21
   ts-node: 10.9.1_4bng4z3ivtyurvigbbuvat2bkm
@@ -593,8 +593,8 @@ packages:
       mimic-response: 1.0.1
     dev: true
 
-  /coffee-ahk/0.0.48-fixed.2:
-    resolution: {integrity: sha512-XZOvHeCGkubcE2FqZKCt/XbAsyoudqAnZv+q08addHCQFrsVr91/ov7o0ni7KQ7sJjaqU5pyiJbsa2p/mhem6Q==}
+  /coffee-ahk/0.0.48-fixed.4:
+    resolution: {integrity: sha512-w4tRvEXVmL8zYGYnS81eMIOiLmnV/828x5NLAviM50o25x2MBtaMGYlntsbjd88ZufJn4FJ9ClKrVMEyCoqgYg==}
     dependencies:
       coffeescript: 2.7.0
       cson: 7.20.0

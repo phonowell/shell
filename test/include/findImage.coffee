@@ -1,4 +1,9 @@
+# @ts-check
+
+import $findImage from '../../source/module/findImage'
+import $isFunction from '../../source/module/isFunction'
+
 do ->
 
-  unless ($.type $.findImage) == 'function'
+  unless $isFunction $findImage
     throw 0

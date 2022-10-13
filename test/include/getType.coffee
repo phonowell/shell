@@ -1,25 +1,29 @@
+# @ts-check
+
+import $getType from '../../source/module/getType'
+
 do ->
 
-  type = $.type 42
+  type = $getType 42
   unless type == 'number' then throw new Error type
 
-  type = $.type $.type
+  type = $getType $getType
   unless type == 'function' then throw new Error type
 
-  type = $.type [1, 2, 3]
+  type = $getType [1, 2, 3]
   unless type == 'array' then throw new Error type
 
-  type = $.type {
+  type = $getType {
     a: 1
     b: 2
     c: 3
   }
   unless type == 'object' then throw new Error type
 
-  type = $.type {0: ''}
+  type = $getType {0: ''}
   unless type == 'object' then throw new Error type
 
-  type = $.type {
+  type = $getType {
     0: ''
     1: 'a'
     2: 'b'

@@ -47,6 +47,8 @@ declare global {
   const StrSplit: (text: string, delimiter: string) => string[]
   const SubStr: (text: string, start: number, end?: number) => string
   const Trim: (text: string, omit?: string) => string
+  const WinActive: (target: string) => boolean
+  const WinExist: (target: string) => boolean
 
   const ComObjCreate: (target: string) => {
     Open: Function

@@ -1,6 +1,8 @@
 # @ts-check
 
-# join(list: string[], seperator?: string): string
+import $toString from './toString'
+
+# join(list: (string | number | boolean)[], seperator?: string): string
 ###* @type {import('@/type/module').Join} ###
 export default (list, seperator = ',') ->
 
@@ -8,7 +10,7 @@ export default (list, seperator = ',') ->
   for $item, $i in list
 
     unless $i
-      $result = $item
+      $result = $toString $item
       continue
 
     $result = "#{$result}#{seperator}#{$item}"

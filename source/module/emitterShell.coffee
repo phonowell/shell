@@ -8,16 +8,16 @@ import $split from './split'
 
 class EmitterShell
 
-  ###* @type {import('@/type/emitter').Bus} ###
+  ###* @type {import('@/type/emitterShell').Bus} ###
   # bus: [] # Item[]
 
-  ###* @type {import('@/type/emitter').Constructor} ###
+  ###* @type {import('@/type/emitterShell').Constructor} ###
   constructor: ->
-    ###* @type {import('@/type/emitter').Bus} ###
+    ###* @type {import('@/type/emitterShell').Bus} ###
     @bus = []
 
   # emit(key: string, ...args: unknown[]): void
-  ###* @type {import('@/type/emitter').Emit} ###
+  ###* @type {import('@/type/emitterShell').Emit} ###
   emit: (key, args...) ->
 
     [$type, $name] = $split key, '.'
@@ -37,13 +37,13 @@ class EmitterShell
     return
 
   # off(key: string): void
-  ###* @type {import('@/type/emitter').Off} ###
+  ###* @type {import('@/type/emitterShell').Off} ###
   off: (key) ->
 
     [$type, $name] = $split key, '.'
 
     unless $type
-      ###* @type {import('@/type/emitter').Bus} ###
+      ###* @type {import('@/type/emitterShell').Bus} ###
       @bus = []
       return
 
@@ -53,14 +53,14 @@ class EmitterShell
     return
 
   # on(key: string, callback: Fn): void
-  ###* @type {import('@/type/emitter').On} ###
+  ###* @type {import('@/type/emitterShell').On} ###
   on: (key, callback) ->
     [$type, $name] = $split key, '.'
     $push @bus, [$type, $name, callback, 0]
     return
 
   # once(key: string, callback: Fn): void
-  ###* @type {import('@/type/emitter').Once} ###
+  ###* @type {import('@/type/emitterShell').Once} ###
   once: (key, callback) ->
     [$type, $name] = $split key, '.'
     $push @bus, [$type, $name, callback, 1]

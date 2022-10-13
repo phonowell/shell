@@ -1,6 +1,6 @@
 # !@ts-check
 
-import './file'
+import './fileShell'
 
 # file(source: string): FileShell
 ###* @type {import('@/type/module').File} *###

@@ -1,7 +1,7 @@
 # !@ts-check
 
-import './emitter'
+import './emitterShell'
 
-# $.emitter(): EmitterShell
+# emitter(): EmitterShell
 ###* @type {import('@/type/module').Emitter} *###
 export default -> new EmitterShell()

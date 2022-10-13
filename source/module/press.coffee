@@ -9,9 +9,8 @@ import $split from './split'
 import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
-$formatInputPress =
 ###* @type {import('@/type/module').Press2} *###
-(listInput) ->
+$formatInputPress = (listInput) ->
 
   $listKey = []
 
@@ -25,9 +24,8 @@ $formatInputPress =
 
   return $listKey
 
-$validateInputPress =
 ###* @type {import('@/type/module').Press3} *###
-(listInput) ->
+$validateInputPress = (listInput) ->
 
   unless $length listInput
     return false

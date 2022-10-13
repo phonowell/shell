@@ -1,13 +1,18 @@
+# @ts-check
+
+import $drop from '../../source/module/drop'
+import $join from '../../source/module/join'
+
 do ->
 
   list = [1, 2, 3, 4, 5]
 
-  listA = $.drop list
-  result = $.join listA, ''
+  listA = $drop list
+  result = $join listA, ''
   unless result == '2345'
     throw result
 
-  listB = $.drop list, 3
-  result = $.join listB, ''
+  listB = $drop list, 3
+  result = $join listB, ''
   unless result == '45'
     throw result

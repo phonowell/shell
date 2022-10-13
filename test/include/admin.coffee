@@ -1,4 +1,9 @@
+# @ts-check
+
+import $admin from '../../source/module/admin'
+import $isFunction from '../../source/module/isFunction'
+
 do ->
 
-  unless $.isfunction $.admin
+  unless $isFunction $admin
     throw '$.admin is not a function'

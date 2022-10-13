@@ -1,3 +1,8 @@
+# @ts-check
+
+import $compact from '../../source/module/compact'
+import $join from '../../source/module/join'
+
 do ->
 
   list = [
@@ -5,6 +10,6 @@ do ->
     false, true
     '', 'x'
   ]
-  listA = $.compact list
-  unless ($.join listA, '') == '11x'
+  listA = $compact list
+  unless ($join listA, '') == '11x'
     throw listA

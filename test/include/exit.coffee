@@ -1,4 +1,9 @@
+# @ts-check
+
+import $exit from '../../source/module/exit'
+import $isFunction from '../../source/module/isFunction'
+
 do ->
 
-  unless ($.type $.exit) == 'function'
+  unless $isFunction $exit
     throw 0

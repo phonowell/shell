@@ -1,11 +1,8 @@
-import 'include/head.ahk'
-import '../source/index.ahk'
+# @ts-check
+
+import './include/head.ahk'
+import '../dist/index.ahk'
+
 $ = $
 
-main = ->
-
-  $.exec 'npm run alice y', (code) ->
-    $.alert code
-    $.exit()
-
-$.on 'f1', main
+$.on 'f1', -> $.alert 1

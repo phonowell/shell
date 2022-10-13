@@ -1,4 +1,9 @@
+# @ts-check
+
+import $bind from '../../source/module/bind'
+import $isFunction from '../../source/module/isFunction'
+
 do ->
 
-  unless ($.type $.bind) == 'function'
+  unless $isFunction $bind
     throw 0
