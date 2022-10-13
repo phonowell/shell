@@ -3,7 +3,7 @@
 import $length from './length'
 
 # bind(callback: Fn, ...args: unknown[]): Fn
-###* @type {import('@/type/module').Bind} ###
+###* @type {import('../type/module').Bind} ###
 export default (callback, args...) ->
 
   unless callback.Name

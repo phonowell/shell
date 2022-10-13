@@ -29,13 +29,13 @@ const makeAhk = async () => {
 }
 
 const makeDoc = async () => {
-  const listFn = (await $.glob('./source/include/*.coffee')).map($.getBasename)
+  const listFn = (await $.glob('./source/module/*.coffee')).map($.getBasename)
 
   const content = [
     '# Functions',
     '',
-    `\`${listFn.length}\` functions, at \`${new Date().toLocaleString()}\`.`,
-    ...listFn.map((fn) => `- [${fn}](../source/include/${fn}.coffee)`),
+    `\`${listFn.length}\` functions, at \`${new Date().toString()}\`.`,
+    ...listFn.map((fn) => `- [${fn}](../source/module/${fn}.coffee)`),
   ]
 
   await $.write('./doc/functions.md', content.join('\n'))

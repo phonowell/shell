@@ -26,7 +26,7 @@ export type Delay = (callback: Fn, time: number, ...args: unknown[]) => Fn
 export type Drop = <T>(list: T[], n?: number) => T[]
 export type Echo = <T extends string>(message: T) => T
 export type Emitter = () => EmitterShell
-export type Eq = <T>(value: T, other: T) => boolean
+export type Eq = (value: unknown, other: unknown) => boolean
 export type Exit = () => void
 export type File = (source: string) => FileShell
 export type FindImage = (source: string, start?: Point, end?: Point) => Point
@@ -124,6 +124,10 @@ export type FindColor = (
   end?: Point,
   variation?: number,
 ) => Point
+
+export type GetType = (
+  ipt: unknown,
+) => 'array' | 'function' | 'number' | 'object' | 'string'
 
 export type Join = (
   list: (string | number | boolean)[],

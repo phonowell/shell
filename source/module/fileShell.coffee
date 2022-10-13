@@ -5,25 +5,25 @@ import $noop from './noop'
 
 class FileShell
 
-  ###* @type {import('@/type/fileShell').Source} ###
+  ###* @type {import('../type/fileShell').Source} ###
   source: ''
 
-  ###* @type {import('@/type/fileShell').Constructor} ###
+  ###* @type {import('../type/fileShell').Constructor} ###
   constructor: (source) -> @source = source
 
   # append(content: string): void
-  ###* @type {import('@/type/fileShell').Append} ###
+  ###* @type {import('../type/fileShell').Append} ###
   append: (content) ->
     $noop content
     Native 'FileAppend, % content, % this.source, UTF-8'
     return
 
   # isExist(): boolean
-  ###* @type {import('@/type/fileShell').IsExist} ###
+  ###* @type {import('../type/fileShell').IsExist} ###
   isExist: -> FileExist @source
 
   # read(): string
-  ###* @type {import('@/type/fileShell').Read} ###
+  ###* @type {import('../type/fileShell').Read} ###
   read: ->
     unless @isExist() then return ''
     $result = ''
@@ -31,14 +31,14 @@ class FileShell
     return $replace $result, '\r', ''
 
   # remove(): void
-  ###* @type {import('@/type/fileShell').Remove} ###
+  ###* @type {import('../type/fileShell').Remove} ###
   remove: ->
     unless @isExist() then return
     Native 'FileDelete, % this.source'
     return
 
   # write(content: string): void
-  ###* @type {import('@/type/fileShell').Write} ###
+  ###* @type {import('../type/fileShell').Write} ###
   write: (content) ->
     @remove()
     @append content

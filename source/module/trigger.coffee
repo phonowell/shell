@@ -2,5 +2,5 @@
 
 import $keyBindingShellX from './keyBindingShellX'
 
-###* @type {import('@/type/keyBindingShell').Fire} ###
+###* @type {import('../type/keyBindingShell').Fire} ###
 export default $keyBindingShellX.fire

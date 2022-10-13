@@ -4,7 +4,7 @@ import $getType from './getType'
 import $isArray from './isArray'
 
 # push<T>(list: T[], ...value: T[]): number
-###* @type {import('@/type/module').Push} ###
+###* @type {import('../type/module').Push} ###
 export default (list, value...) ->
 
   unless $isArray list

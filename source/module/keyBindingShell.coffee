@@ -11,13 +11,13 @@ import $split from './split'
 
 class KeyBindingShell
 
-  ###* @type {import('@/type/keyBindingShell').MapBound} ###
+  ###* @type {import('../type/keyBindingShell').MapBound} ###
   mapBound: {} # Record<Key, Fn>
-  ###* @type {import('@/type/keyBindingShell').MapCallback} ###
+  ###* @type {import('../type/keyBindingShell').MapCallback} ###
   mapCallback: {} # Record<Key, [Name, Fn]>
 
   # add(key: string, callback: Fn): void
-  ###* @type {import('@/type/keyBindingShell').Add} ###
+  ###* @type {import('../type/keyBindingShell').Add} ###
   add: (key, callback) ->
     [key, $name] = $split key, '.'
     @init key
@@ -25,7 +25,7 @@ class KeyBindingShell
     return
 
   # fire(key: string): void
-  ###* @type {import('@/type/keyBindingShell').Fire} ###
+  ###* @type {import('../type/keyBindingShell').Fire} ###
   fire: (key) ->
 
     [key, $name] = $split ($replace key, ':down', ''), '.'
@@ -35,7 +35,7 @@ class KeyBindingShell
     $forEach $list, (it) -> it[1]()
 
   # init(key: string): void
-  ###* @type {import('@/type/keyBindingShell').Init} ###
+  ###* @type {import('../type/keyBindingShell').Init} ###
   init: (key) ->
 
     if @mapCallback[key] then return
@@ -46,7 +46,7 @@ class KeyBindingShell
     @on key, $fn
 
   # off(key: string, callback: Fn): void
-  ###* @type {import('@/type/keyBindingShell').Off} ###
+  ###* @type {import('../type/keyBindingShell').Off} ###
   off: (key, callback) ->
     key = $formatHotkey $replace key, ':down', ''
     $noop callback
@@ -54,7 +54,7 @@ class KeyBindingShell
     return
 
   # on(key: string, callback: Fn): void
-  ###* @type {import('@/type/keyBindingShell').On} ###
+  ###* @type {import('../type/keyBindingShell').On} ###
   on: (key, callback) ->
     key = $formatHotkey $replace key, ':down', ''
     $noop callback
@@ -62,7 +62,7 @@ class KeyBindingShell
     return
 
   # remove(key: string): void
-  ###* @type {import('@/type/keyBindingShell').Remove} ###
+  ###* @type {import('../type/keyBindingShell').Remove} ###
   remove: (key) ->
 
     [key, $name] = $split key, '.'

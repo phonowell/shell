@@ -1861,7 +1861,8 @@ shell_211() {
   return Func("shell_210")
 }
 shell_212() {
-  return Reload
+  Reload
+  return
 }
 shell_213() {
   return Func("shell_212")
@@ -1985,7 +1986,8 @@ shell_240() {
   return Func("shell_239")
 }
 shell_241() {
-  return ExitApp
+  ExitApp
+  return
 }
 shell_242() {
   return Func("shell_241")
@@ -2038,7 +2040,8 @@ shell_252() {
   return Func("shell_251")
 }
 shell_253() {
-  return SoundBeep
+  SoundBeep
+  return
 }
 shell_254() {
   return Func("shell_253")

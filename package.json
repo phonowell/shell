@@ -10,7 +10,7 @@
     "@types/node": "^18.8.4",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
-    "coffee-ahk": "0.0.48-fixed.4",
+    "coffee-ahk": "0.0.48-fixed.8",
     "fire-keeper": "^0.0.208",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.1",
@@ -40,5 +40,5 @@
     "watch": "npm run alice watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.24-fixed.1"
+  "version": "0.0.24-fixed.2"
 }

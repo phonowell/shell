@@ -3,11 +3,11 @@ import $ from 'fire-keeper'
 // function
 
 const main = async () => {
-  const listSource = await $.glob('./test/include/*.coffee')
+  const listSource = await $.glob('./source/module/*.coffee')
   for (const source of listSource) {
     const content = await $.read<string>(source)
     if (!content) continue
-    await $.write(source, content.replace(/\/include\//g, '/module/'))
+    await $.write(source, content.replace(/import\('@/g, 'import(\'..'))
   }
 }
 

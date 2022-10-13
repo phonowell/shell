@@ -7,7 +7,7 @@ import $noop from './noop'
 #   start: Point = [0, 0],
 #   end: Point = [A_ScreenWidth, A_ScreenHeight],
 # ): Point
-###* @type {import('@/type/module').FindImage} ###
+###* @type {import('../type/module').FindImage} ###
 export default (source, start, end) ->
 
   unless start then start = [0, 0]

@@ -7,7 +7,7 @@ $iDebounce = 0
 $tDebounce = {}
 
 # debounce(time: number, callback: Fn): Fn
-###* @type {import('@/type/module').Debounce} ###
+###* @type {import('../type/module').Debounce} ###
 export default (time, callback) ->
 
   $iDebounce++

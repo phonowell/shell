@@ -6,7 +6,7 @@ import $push from './push'
 import $reverse from './reverse'
 
 # slice<T>(list: T[], start = 0, end = list.length): T[]
-###* @type {import('@/type/module').Slice} ###
+###* @type {import('../type/module').Slice} ###
 export default (list, start = 0, end = 0) ->
 
   unless $getType list

@@ -7,7 +7,7 @@ import $split from './split'
 import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
-###* @type {import('@/type/module').FormatHotkey} *###
+###* @type {import('../type/module').FormatHotkey} *###
 $formatKeyFormatHotkey = (key) ->
 
   $listKey = []
@@ -21,7 +21,7 @@ $formatKeyFormatHotkey = (key) ->
 
   return $listKey
 
-###* @type {import('@/type/module').FormatHotkey3} *###
+###* @type {import('../type/module').FormatHotkey3} *###
 $pickPrefixFormatHotkey = (listKey) ->
 
   if ($length listKey) == 1 then return ['', listKey]
@@ -52,7 +52,7 @@ $pickPrefixFormatHotkey = (listKey) ->
   return [$prefix, $listNew]
 
 # formatHotkey(key: string): string
-###* @type {import('@/type/module').FormatHotkey} *###
+###* @type {import('../type/module').FormatHotkey} *###
 export default (key) ->
 
   $listKey = $formatKeyFormatHotkey key

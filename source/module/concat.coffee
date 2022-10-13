@@ -5,7 +5,7 @@ import $isArray from './isArray'
 import $push from './push'
 
 # concat<T>(list: T[], ...value: (T | T[])[]): T[]
-###* @type {import('@/type/module').Concat} ###
+###* @type {import('../type/module').Concat} ###
 export default (list, args...) ->
 
   $listNew = $clone list
