@@ -88,6 +88,7 @@ export type Take = <T>(list: T[], count?: number) => T[]
 export type Throttle = (time: number, callback: Fn) => Fn
 export type Tip = <T extends string>(message: T, p: Point | undefined) => T
 export type ToLowerCase = (ipt: string) => string
+export type ToNumber = (ipt: unknown) => number
 export type ToString = (ipt: unknown) => string
 export type ToUpperCase = (ipt: string) => string
 export type Trim = (ipt: string, omitting?: string) => string

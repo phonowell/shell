@@ -1295,7 +1295,10 @@ shell_113() {
   return Func("shell_112")
 }
 shell_114(ipt) {
-  if ((__isString__.Call(ipt)) || __isNumber__.Call(ipt)) {
+  if (__isString__.Call(ipt)) {
+    return ipt
+  }
+  if (__isNumber__.Call(ipt)) {
     return ipt
   }
   if (__isArray__.Call(ipt)) {
@@ -1752,7 +1755,7 @@ shell_184() {
   return Func("shell_183")
 }
 shell_185() {
-  return "0.0.24"
+  return "0.0.25"
 }
 shell_186(ipt, omitting := " `t") {
   return LTrim(ipt, omitting)

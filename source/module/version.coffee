@@ -1,3 +1,3 @@
 # @ts-check
 
-export default '0.0.24'
+export default '0.0.25'

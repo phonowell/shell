@@ -98,7 +98,7 @@ class WindowShell
     Native 'Process, Priority, % this.exe, % level'
     return
 
-  # setStyle(style: string): void
+  # setStyle(style: string | number): void
   ###* @type {import('../type/windowShell').SetStyle} ###
   setStyle: (style) ->
     unless @isExist() then return

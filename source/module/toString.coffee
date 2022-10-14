@@ -11,8 +11,8 @@ import $trim from './trim'
 ###* @type {import('../type/module').ToString} *###
 $toString = (ipt) ->
 
-  if ($isString ipt) or $isNumber ipt
-    return ipt
+  if $isString ipt then return ipt
+  if $isNumber ipt then return ipt
 
   if $isArray ipt
     $result = ''

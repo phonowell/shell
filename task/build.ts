@@ -34,7 +34,7 @@ const makeDoc = async () => {
   const content = [
     '# Functions',
     '',
-    `\`${listFn.length}\` functions, at \`${new Date().toString()}\`.`,
+    `\`${listFn.length}\` functions, at \`${new Date().toISOString()}\`.`,
     ...listFn.map((fn) => `- [${fn}](../source/module/${fn}.coffee)`),
   ]
 

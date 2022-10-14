@@ -1,6 +1,6 @@
 # Functions
 
-`111` functions, at `Thu Oct 13 2022 17:58:31 GMT+0800 (中国标准时间)`.
+`112` functions, at `2022-10-14T07:42:32.012Z`.
 - [abs](../source/module/abs.coffee)
 - [add](../source/module/add.coffee)
 - [admin](../source/module/admin.coffee)
@@ -99,6 +99,7 @@
 - [tip](../source/module/tip.coffee)
 - [toLower](../source/module/toLower.coffee)
 - [toLowerCase](../source/module/toLowerCase.coffee)
+- [toNumber](../source/module/toNumber.coffee)
 - [toString](../source/module/toString.coffee)
 - [toUpper](../source/module/toUpper.coffee)
 - [toUpperCase](../source/module/toUpperCase.coffee)

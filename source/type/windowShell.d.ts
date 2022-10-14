@@ -16,7 +16,7 @@ export type Maximize = () => void
 export type Minimize = () => void
 export type Restore = () => void
 export type SetPriority = (level: Level) => void
-export type SetStyle = (style: string) => void
+export type SetStyle = (style: string | number) => void
 export type Show = () => void
 export type Wait = (callback: Fn) => void
 

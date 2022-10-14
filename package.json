@@ -40,5 +40,5 @@
     "watch": "npm run alice watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.24-fixed.2"
+  "version": "0.0.25"
 }
