@@ -2,8 +2,6 @@
 
 import $drop from './drop'
 
-###* tail<T>(list: T[]): T[]
-# @param {unknown[]} list
-# @returns {unknown[]}
-###
-export default (list) -> return $drop list, 1
+# tail<T>(list: T[]): T[]
+###* @type {import('../type/module').Tail} ###
+export default (list) -> $drop list, 1

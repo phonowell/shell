@@ -2,11 +2,8 @@
 
 import $length from './length'
 
-###* reverse<T>(list: T[]): T[]
-# @template T
-# @param {T[]} list
-# @returns {T[]}
-###
+# reverse<T>(list: T[]): T[]
+###* @type {import('../type/module').Reverse} ###
 export default (list) ->
 
   $len = $length list

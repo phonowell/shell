@@ -1,6 +1,6 @@
 # Functions
 
-`112` functions, at `2022-10-15T09:20:19.904Z`.
+`112` functions, at `2022-10-15T09:43:07.726Z`.
 - [abs](../source/module/abs.coffee)
 - [add](../source/module/add.coffee)
 - [admin](../source/module/admin.coffee)

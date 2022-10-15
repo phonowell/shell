@@ -70,6 +70,7 @@ export type Push = <T>(list: T[], ...value: T[]) => number
 export type Random = (min?: number, max?: number) => number
 export type Range = (...args: number[]) => number[]
 export type Reload = () => void
+export type Reverse = <T>(list: T[]) => T[]
 export type Round = (n: number) => number
 export type SetFixed = (isFixed?: boolean | 'Toggle' | 'On' | 'Off') => void
 export type SetInterval = (callback: Fn, time: number) => Fn
@@ -84,6 +85,7 @@ export type StartsWith = (text: string, string: string) => boolean
 export type SubString = (text: string, iStart: number, iEnd?: number) => string
 export type Sum = (list: number[]) => number
 export type Suspend = (isSuspended?: boolean | 'Toggle' | 'On' | 'Off') => void
+export type Tail = <T>(list: T[]) => T[]
 export type Take = <T>(list: T[], count?: number) => T[]
 export type Throttle = (time: number, callback: Fn) => Fn
 export type Tip = <T extends string>(message: T, p: Point | undefined) => T

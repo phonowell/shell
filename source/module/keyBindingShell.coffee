@@ -72,7 +72,7 @@ class KeyBindingShell
       @off key, @mapBound[key]
       return
 
-    $listNew = $filter @mapCallback[key], ($item) -> return $item[0] != $name
+    $listNew = $filter @mapCallback[key], ($item) -> $item[0] != $name
 
     unless $length $listNew
       @mapCallback[key] = undefined
