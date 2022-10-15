@@ -141,3 +141,8 @@ export type Replace = (
   replacement: string,
   limit?: number,
 ) => string
+
+export type ForEach = Each
+export type Head = First
+export type ToLower = ToLowerCase
+export type ToUpper = ToUpperCase

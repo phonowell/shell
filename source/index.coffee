@@ -94,6 +94,7 @@ import $throttle from './module/throttle'
 import $tip from './module/tip'
 import $toLower from './module/toLower'
 import $toLowerCase from './module/toLowerCase'
+import $toNumber from './module/toNumber'
 import $toString from './module/toString'
 import $toUpper from './module/toUpper'
 import $toUpperCase from './module/toUpperCase'
@@ -207,6 +208,7 @@ $mixin $, throttle: $throttle
 $mixin $, tip: $tip
 $mixin $, toLower: $toLower
 $mixin $, toLowerCase: $toLowerCase
+$mixin $, toNumber: $toNumber
 $mixin $, toString: $toString
 $mixin $, toUpper: $toUpper
 $mixin $, toUpperCase: $toUpperCase
