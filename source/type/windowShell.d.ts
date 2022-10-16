@@ -27,9 +27,9 @@ export type GetBounds = () => {
   height: number
 }
 
-export type WindowShell = {
+export class WindowShell {
   exe: Exe
-  constructor: Constructor
+  constructor(exe: string)
   blur: Blur
   close: Close
   focus: Focus

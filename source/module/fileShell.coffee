@@ -5,11 +5,10 @@ import $noop from './noop'
 
 class FileShell
 
-  ###* @type {import('../type/fileShell').Source} ###
-  source: ''
-
   ###* @type {import('../type/fileShell').Constructor} ###
-  constructor: (source) -> @source = source
+  constructor: (source) ->
+    ###* @type {import('../type/fileShell').Source} ###
+    @source = source
 
   # append(content: string): void
   ###* @type {import('../type/fileShell').Append} ###

@@ -4,11 +4,10 @@ import $noop from './noop'
 
 class WindowShell
 
-  ###* @type {import('../type/windowShell').Exe} ###
-  exe: ''
-
   ###* @type {import('../type/windowShell').Constructor} ###
-  constructor: (exe) -> @exe = "ahk_exe #{exe}"
+  constructor: (exe) ->
+    ###* @type {import('../type/windowShell').Exe} ###
+    @exe = "ahk_exe #{exe}"
 
   # blur(): void
   ###* @type {import('../type/windowShell').Blur} ###

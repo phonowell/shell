@@ -1,5 +1,6 @@
 # @ts-check
 
+import $delete from './delete'
 import $filter from './filter'
 import $forEach from './forEach'
 import $formatHotkey from './formatHotkey'
@@ -11,10 +12,12 @@ import $split from './split'
 
 class KeyBindingShell
 
-  ###* @type {import('../type/keyBindingShell').MapBound} ###
-  mapBound: {} # Record<Key, Fn>
-  ###* @type {import('../type/keyBindingShell').MapCallback} ###
-  mapCallback: {} # Record<Key, [Name, Fn]>
+  constructor: ->
+
+    ###* @type {import('../type/keyBindingShell').MapBound} ###
+    @mapBound = {} # Record<Key, Fn>
+    ###* @type {import('../type/keyBindingShell').MapCallback} ###
+    @mapCallback = {} # Record<Key, [Name, Fn]>
 
   # add(key: string, callback: Fn): void
   ###* @type {import('../type/keyBindingShell').Add} ###
@@ -39,7 +42,7 @@ class KeyBindingShell
   init: (key) ->
 
     if @mapCallback[key] then return
-    @mapCallback[key] = []
+    @mapCallback[key] = ['', $noop]
 
     $fn = => @fire key
     @mapBound[key] = $fn
@@ -68,14 +71,14 @@ class KeyBindingShell
     [key, $name] = $split key, '.'
 
     unless $name
-      @mapCallback[key] = undefined
+      $delete @mapCallback, key
       @off key, @mapBound[key]
       return
 
     $listNew = $filter @mapCallback[key], ($item) -> $item[0] != $name
 
     unless $length $listNew
-      @mapCallback[key] = undefined
+      $delete @mapCallback, key
       @off key, @mapBound[key]
       return
 

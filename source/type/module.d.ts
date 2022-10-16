@@ -23,6 +23,7 @@ export type Concat = <T>(list: T[], ...value: (T | T[])[]) => T[]
 export type Debounce = (time: number, callback: Fn) => Fn
 export type Defer = (callback: Fn, ...args: unknown[]) => Fn
 export type Delay = (callback: Fn, time: number, ...args: unknown[]) => Fn
+export type Delete = <T extends Object>(object: T, ...keys: (keyof T)[]) => void
 export type Drop = <T>(list: T[], n?: number) => T[]
 export type Echo = <T extends string>(message: T) => T
 export type Emitter = () => EmitterShell

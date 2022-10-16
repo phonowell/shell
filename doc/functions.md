@@ -1,6 +1,6 @@
 # Functions
 
-`112` functions, at `2022-10-15T09:54:31.162Z`.
+`113` functions, at `2022-10-16T07:05:07.874Z`.
 - [abs](../source/module/abs.coffee)
 - [add](../source/module/add.coffee)
 - [admin](../source/module/admin.coffee)
@@ -20,6 +20,7 @@
 - [debounce](../source/module/debounce.coffee)
 - [defer](../source/module/defer.coffee)
 - [delay](../source/module/delay.coffee)
+- [delete](../source/module/delete.coffee)
 - [drop](../source/module/drop.coffee)
 - [each](../source/module/each.coffee)
 - [echo](../source/module/echo.coffee)

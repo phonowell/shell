@@ -8,10 +8,6 @@ import $split from './split'
 
 class EmitterShell
 
-  ###* @type {import('../type/emitterShell').Bus} ###
-  # bus: [] # Item[]
-
-  ###* @type {import('../type/emitterShell').Constructor} ###
   constructor: ->
     ###* @type {import('../type/emitterShell').Bus} ###
     @bus = []
