@@ -4,7 +4,7 @@ import $getType from './getType'
 import $isArray from './isArray'
 
 # shift<T>(list: T[]): T
-###* @type {import('../type/module').Shift} *###
+###* @type import('../type/module').Shift} *###
 export default (list) ->
 
   unless $isArray list

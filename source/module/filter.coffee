@@ -3,7 +3,7 @@
 import $push from './push'
 
 # filter<T>(list: T[], callback: (item?: T, i?: number) => boolean): T[]
-###* @type {import('../type/module').Filter} ###
+###* @type import('../type/module').Filter ###
 export default (list, callback) ->
 
   $listResult = []

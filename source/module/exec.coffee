@@ -5,7 +5,7 @@ import $join from './join'
 import $noop from './noop'
 
 # exec(cmd: string | string[], callback?: (code: number | string) => void): void
-###* @type {import('../type/module').Exec} ###
+###* @type import('../type/module').Exec ###
 export default ($input, $callback = $noop) ->
 
   if $isString $input then $input = [$input]

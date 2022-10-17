@@ -4,13 +4,13 @@ import $noop from './noop'
 
 class WindowShell
 
-  ###* @type {import('../type/windowShell').Constructor} ###
+  ###* @type import('../type/windowShell').Constructor ###
   constructor: (exe) ->
-    ###* @type {import('../type/windowShell').Exe} ###
+    ###* @type import('../type/windowShell').WindowShell['exe'] ###
     @exe = "ahk_exe #{exe}"
 
   # blur(): void
-  ###* @type {import('../type/windowShell').Blur} ###
+  ###* @type import('../type/windowShell').WindowShell['blur'] ###
   blur: ->
     name = 'ahk_class Shell_TrayWnd'
     $noop name
@@ -18,102 +18,102 @@ class WindowShell
     return
 
   # close(): void
-  ###* @type {import('../type/windowShell').Close} ###
+  ###* @type import('../type/windowShell').WindowShell['close'] ###
   close: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinClose, % this.exe'
     return
 
   # focus(): void
-  ###* @type {import('../type/windowShell').Focus} ###
+  ###* @type import('../type/windowShell').WindowShell['focus'] ###
   focus: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinActivate, % this.exe'
     return
 
   # getBounds(): {x: number, y: number, width: number, height: number}
-  ###* @type {import('../type/windowShell').GetBounds} ###
+  ###* @type import('../type/windowShell').WindowShell['getBounds'] ###
   getBounds: ->
     [$x, $y, $w, $h] = [0, 0, 0, 0]
-    unless @isExist() then return {x: $x, y: $y, width: $w, height: $h}
+    unless @isExists() then return {x: $x, y: $y, width: $w, height: $h}
     Native 'WinGetPos, $x, $y, $w, $h, % this.exe'
     return {x: $x, y: $y, width: $w, height: $h}
 
   # hide(): void
-  ###* @type {import('../type/windowShell').Hide} ###
+  ###* @type import('../type/windowShell').WindowShell['hide'] ###
   hide: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinHide, % this.exe'
     return
 
   # isActive(): boolean
-  ###* @type {import('../type/windowShell').IsActive} ###
+  ###* @type import('../type/windowShell').WindowShell['isActive'] ###
   isActive: -> WinActive @exe
 
-  # isExist(): boolean
-  ###* @type {import('../type/windowShell').IsExist} ###
-  isExist: -> WinExist @exe
+  # isExists(): boolean
+  ###* @type import('../type/windowShell').WindowShell['isExists'] ###
+  isExists: -> WinExist @exe
 
   # isFullScreen(): boolean
-  ###* @type {import('../type/windowShell').IsFullScreen} ###
+  ###* @type import('../type/windowShell').WindowShell['isFullScreen'] ###
   isFullScreen: ->
-    unless @isExist() then return false
+    unless @isExists() then return false
     {x, y, width, height} = @getBounds()
     return x == 0 and y == 0 and width == A_ScreenWidth and height == A_ScreenHeight
 
   # kill(): void
-  ###* @type {import('../type/windowShell').Kill} ###
+  ###* @type import('../type/windowShell').WindowShell['kill'] ###
   kill: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinKill, % this.exe'
     return
 
   # maximize(): void
-  ###* @type {import('../type/windowShell').Maximize} ###
+  ###* @type import('../type/windowShell').WindowShell['maximize'] ###
   maximize: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinMaximize, % this.exe'
     return
 
   # minimize(): void
-  ###* @type {import('../type/windowShell').Minimize} ###
+  ###* @type import('../type/windowShell').WindowShell['minimize'] ###
   minimize: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinMinimize, % this.exe'
     return
 
   # restore(): void
-  ###* @type {import('../type/windowShell').Restore} ###
+  ###* @type import('../type/windowShell').WindowShell['restore'] ###
   restore: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinRestore, % this.exe'
     return
 
   # setPriority(level: Level): void
-  ###* @type {import('../type/windowShell').SetPriority} ###
+  ###* @type import('../type/windowShell').WindowShell['setPriority'] ###
   setPriority: (level) ->
-    unless @isExist() then return
+    unless @isExists() then return
     $noop level
     Native 'Process, Priority, % this.exe, % level'
     return
 
   # setStyle(style: string | number): void
-  ###* @type {import('../type/windowShell').SetStyle} ###
+  ###* @type import('../type/windowShell').WindowShell['setStyle'] ###
   setStyle: (style) ->
-    unless @isExist() then return
+    unless @isExists() then return
     $noop style
     Native 'WinSet, Style, % style, % this.exe'
     return
 
   # show(): void
-  ###* @type {import('../type/windowShell').Show} ###
+  ###* @type import('../type/windowShell').WindowShell['show'] ###
   show: ->
-    unless @isExist() then return
+    unless @isExists() then return
     Native 'WinShow, % this.exe'
     return
 
   # wait(callback: Fn): void
-  ###* @type {import('../type/windowShell').Wait} ###
+  ###* @type import('../type/windowShell').WindowShell['wait'] ###
   wait: (callback) ->
     Native 'WinWait, % this.exe'
     if callback then callback()

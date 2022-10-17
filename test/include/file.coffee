@@ -13,7 +13,7 @@ do ->
   unless $isObject f
     throw '$file() does not return an object'
 
-  for fn in ['append', 'isExist', 'read', 'remove', 'write']
+  for fn in ['append', 'isExists', 'read', 'remove', 'write']
     unless $isFunction f[fn]
       throw "$file() does not return an object with function #{fn}"
 
@@ -24,12 +24,12 @@ do ->
 
   f.remove()
 
-  if f.isExist()
+  if f.isExists()
     throw 'test.txt should not exist - 1'
 
   f.write text
 
-  unless f.isExist()
+  unless f.isExists()
     throw 'test.txt should exist'
 
   content = f.read()
@@ -37,5 +37,5 @@ do ->
     throw 'content is not correct'
 
   f.remove()
-  if f.isExist()
+  if f.isExists()
     throw 'test.txt should not exist - 2'

@@ -39,6 +39,8 @@ declare global {
   const IsFunc: (ipt: unknown) => ipt is Fn
   const IsObject: (ipt: unknown) => ipt is object
   const LTrim: (text: string, omit?: string) => string
+  const Max: (...numbers: number[]) => number
+  const Min: (...numbers: number[]) => number
   const Mod: (dividend: number, divisor: number) => number
   const Native: (line: string) => unknown
   const RTrim: (text: string, omit?: string) => string

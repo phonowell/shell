@@ -14,13 +14,13 @@ class KeyBindingShell
 
   constructor: ->
 
-    ###* @type {import('../type/keyBindingShell').MapBound} ###
+    ###* @type import('../type/keyBindingShell').KeyBindingShell['mapBound'] ###
     @mapBound = {} # Record<Key, Fn>
-    ###* @type {import('../type/keyBindingShell').MapCallback} ###
+    ###* @type import('../type/keyBindingShell').KeyBindingShell['mapCallback'] ###
     @mapCallback = {} # Record<Key, [Name, Fn]>
 
   # add(key: string, callback: Fn): void
-  ###* @type {import('../type/keyBindingShell').Add} ###
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['add'] ###
   add: (key, callback) ->
     [key, $name] = $split key, '.'
     @init key
@@ -28,7 +28,7 @@ class KeyBindingShell
     return
 
   # fire(key: string): void
-  ###* @type {import('../type/keyBindingShell').Fire} ###
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['fire'] ###
   fire: (key) ->
 
     [key, $name] = $split ($replace key, ':down', ''), '.'
@@ -38,18 +38,18 @@ class KeyBindingShell
     $forEach $list, (it) -> it[1]()
 
   # init(key: string): void
-  ###* @type {import('../type/keyBindingShell').Init} ###
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['init'] ###
   init: (key) ->
 
     if @mapCallback[key] then return
-    @mapCallback[key] = ['', $noop]
+    @mapCallback[key] = []
 
     $fn = => @fire key
     @mapBound[key] = $fn
     @on key, $fn
 
   # off(key: string, callback: Fn): void
-  ###* @type {import('../type/keyBindingShell').Off} ###
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['off'] ###
   off: (key, callback) ->
     key = $formatHotkey $replace key, ':down', ''
     $noop callback
@@ -57,7 +57,7 @@ class KeyBindingShell
     return
 
   # on(key: string, callback: Fn): void
-  ###* @type {import('../type/keyBindingShell').On} ###
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['on'] ###
   on: (key, callback) ->
     key = $formatHotkey $replace key, ':down', ''
     $noop callback
@@ -65,7 +65,7 @@ class KeyBindingShell
     return
 
   # remove(key: string): void
-  ###* @type {import('../type/keyBindingShell').Remove} ###
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['remove'] ###
   remove: (key) ->
 
     [key, $name] = $split key, '.'

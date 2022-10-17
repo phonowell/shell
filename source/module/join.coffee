@@ -3,7 +3,7 @@
 import $toString from './toString'
 
 # join(list: (string | number | boolean)[], seperator?: string): string
-###* @type {import('../type/module').Join} ###
+###* @type import('../type/module').Join ###
 export default (list, seperator = ',') ->
 
   $result = ''

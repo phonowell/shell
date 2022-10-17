@@ -1,17 +1,10 @@
 import { Fn } from './module'
 
-export type Bus = [string, string, Fn, number][]
-
-export type Emit = (key: string, ...args: unknown[]) => void
-export type Off = (key: string) => void
-export type On = (key: string, callback: Fn) => void
-export type Once = (key: string, callback: Fn) => void
-
 export class EmitterShell {
-  bus: Bus
+  bus: [string, string, Fn, number][]
   constructor()
-  emit: Emit
-  off: Off
-  on: On
-  once: Once
+  emit(key: string, ...args: unknown[]): void
+  off(key: string): void
+  on(key: string, callback: Fn): void
+  once(key: string, callback: Fn): void
 }

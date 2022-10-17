@@ -1,9 +1,8 @@
 # Functions
 
-`113` functions, at `2022-10-16T07:05:07.874Z`.
+`114` functions, at `2022-10-17T14:23:54.391Z`.
 - [abs](../source/module/abs.coffee)
 - [add](../source/module/add.coffee)
-- [admin](../source/module/admin.coffee)
 - [alert](../source/module/alert.coffee)
 - [beep](../source/module/beep.coffee)
 - [bind](../source/module/bind.coffee)
@@ -61,6 +60,8 @@
 - [lt](../source/module/lt.coffee)
 - [lte](../source/module/lte.coffee)
 - [map](../source/module/map.coffee)
+- [max](../source/module/max.coffee)
+- [min](../source/module/min.coffee)
 - [mixin](../source/module/mixin.coffee)
 - [mod](../source/module/mod.coffee)
 - [move](../source/module/move.coffee)

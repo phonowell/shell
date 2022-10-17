@@ -8,7 +8,7 @@ import $noop from './noop'
 #   end: Point = [A_ScreenWidth, A_ScreenHeight],
 #   variation = 0
 # ): Point
-###* @type {import('../type/module').FindColor} ###
+###* @type import('../type/module').FindColor ###
 export default (color, start, end, variation = 0) ->
 
   unless start then start = [0, 0]

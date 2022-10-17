@@ -2,24 +2,14 @@ import { Fn } from './module'
 
 type Item = [string, Fn]
 
-export type MapBound = Record<string, Fn>
-export type MapCallback = Record<string, Item>
-
-export type Add = (key: string, callback: Fn) => void
-export type Fire = (key: string) => void
-export type Init = (key: string) => void
-export type Off = (key: string, callback: Fn) => void
-export type On = (key: string, callback: Fn) => void
-export type Remove = (key: string) => void
-
 export class KeyBindingShell {
-  mapBound: MapBound
-  mapCallback: MapCallback
+  mapBound: Record<string, Fn>
+  mapCallback: Record<string, Item[]>
   constructor()
-  add: Add
-  fire: Fire
-  init: Init
-  off: Off
-  on: On
-  remove: Remove
+  add(key: string, callback: Fn): void
+  fire(key: string): void
+  init(key: string): void
+  off(key: string, callback: Fn): void
+  on(key: string, callback: Fn): void
+  remove(key: string): void
 }

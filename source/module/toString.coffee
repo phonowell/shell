@@ -8,7 +8,7 @@ import $isString from './isString'
 import $trim from './trim'
 
 # toString(ipt: unknown): string
-###* @type {import('../type/module').ToString} *###
+###* @type import('../type/module').ToString} *###
 $toString = (ipt) ->
 
   if $isString ipt then return ipt

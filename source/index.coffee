@@ -2,7 +2,6 @@
 
 import $abs from './module/abs'
 import $add from './module/add'
-import $admin from './module/admin'
 import $alert from './module/alert'
 import $beep from './module/beep'
 import $bind from './module/bind'
@@ -55,6 +54,8 @@ import $length from './module/length'
 import $lt from './module/lt'
 import $lte from './module/lte'
 import $map from './module/map'
+import $max from './module/max'
+import $min from './module/min'
 import $mixin from './module/mixin'
 import $mod from './module/mod'
 import $move from './module/move'
@@ -116,7 +117,6 @@ $ = {}
 $mixin $, VERSION: $version
 $mixin $, abs: $abs
 $mixin $, add: $add
-$mixin $, admin: $admin
 $mixin $, alert: $alert
 $mixin $, beep: $beep
 $mixin $, bind: $bind
@@ -169,6 +169,8 @@ $mixin $, length: $length
 $mixin $, lt: $lt
 $mixin $, lte: $lte
 $mixin $, map: $map
+$mixin $, max: $max
+$mixin $, min: $min
 $mixin $, mixin: $mixin
 $mixin $, mod: $mod
 $mixin $, move: $move

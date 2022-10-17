@@ -3,7 +3,7 @@
 import $getPosition from './getPosition'
 
 # getColor(point?: Point): number
-###* @type {import('../type/module').GetColor} ###
+###* @type import('../type/module').GetColor ###
 export default (p = undefined) ->
 
   unless p then p = $getPosition()

@@ -3,7 +3,7 @@
 import $replace from './replace'
 
 # click(key?: string): void
-###* @type {import('../type/module').Click} ###
+###* @type import('../type/module').Click ###
 export default (key = 'left') ->
 
   key = $replace key, '-', ''

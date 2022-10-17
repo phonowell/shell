@@ -2,5 +2,5 @@
 
 import $keyBindingShellX from './keyBindingShellX'
 
-###* @type {import('../type/keyBindingShell').Add} ###
+###* @type import('../type/keyBindingShell').Add ###
 export default $keyBindingShellX.add

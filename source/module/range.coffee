@@ -4,7 +4,7 @@ import $length from './length'
 import $push from './push'
 
 # range(start = 0, end: number, step = 1): number[]
-###* @type {import('../type/module').Range} ###
+###* @type import('../type/module').Range ###
 export default (args...) ->
 
   switch $length args

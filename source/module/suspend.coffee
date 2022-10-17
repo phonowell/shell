@@ -1,7 +1,7 @@
 # @ts-check
 
 # suspend(isSuspended?: boolean): void
-###* @type {import('../type/module').Suspend} *###
+###* @type import('../type/module').Suspend} *###
 export default (isSuspended = 'Toggle') ->
 
   if isSuspended != 'Toggle'

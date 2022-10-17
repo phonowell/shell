@@ -5,7 +5,7 @@ import $noop from './noop'
 import $toString from './toString'
 
 # tip<T extends string>(message: T, p?: Point): T
-###* @type {import('../type/module').Tip} ###
+###* @type import('../type/module').Tip ###
 export default (message, p = undefined) ->
 
   unless message then return message

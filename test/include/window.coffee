@@ -21,7 +21,7 @@ do ->
     'getBounds'
     'hide'
     'isActive'
-    'isExist'
+    'isExists'
     'isFullScreen'
     'kill'
     'maximize'
@@ -42,13 +42,13 @@ do ->
 
   w.close()
 
-  if w.isExist()
+  if w.isExists()
     throw new Error "#{exe} is already running"
 
   $open exe
 
   w.wait ->
-    unless w.isExist()
+    unless w.isExists()
       throw new Error "#{exe} is not running"
 
     unless w.isActive()

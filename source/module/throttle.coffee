@@ -9,7 +9,7 @@ $tThrottle = {}
 $tsThrottle = {}
 
 # throttle(time: number, callback: Fn): Fn
-###* @type {import('../type/module').Throttle} *###
+###* @type import('../type/module').Throttle} *###
 export default (time, callback) ->
 
   $iThrottle++

@@ -3,7 +3,7 @@
 import $length from './length'
 
 # reverse<T>(list: T[]): T[]
-###* @type {import('../type/module').Reverse} ###
+###* @type import('../type/module').Reverse ###
 export default (list) ->
 
   $len = $length list

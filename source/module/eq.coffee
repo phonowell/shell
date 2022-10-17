@@ -7,7 +7,7 @@ import $isObject from './isObject'
 import $length from './length'
 
 # eq(value: unknown, other: unknown): boolean
-###* @type {import('../type/module').Eq} ###
+###* @type import('../type/module').Eq ###
 $eq = (value, other) ->
 
   $typeA = $getType value

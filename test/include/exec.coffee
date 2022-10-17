@@ -6,4 +6,4 @@ import $isFunction from '../../source/module/isFunction'
 do ->
 
   unless $isFunction $exec
-    throw 0
+    throw '$.exec is not a function'

@@ -7,7 +7,6 @@ type Point = [number, number]
 
 export type Abs = (n: number) => number
 export type Add = (...args: number[]) => number
-export type Admin = () => void
 export type Alert = (message: string) => void
 export type Beep = () => void
 export type Bind = (callback: Fn, ...args: unknown[]) => Fn
@@ -54,6 +53,8 @@ export type Length = (ipt: string | unknown[] | object) => number
 export type Lt = <T = number>(value: T, other: T) => boolean
 export type Lte = <T = number>(value: T, other: T) => boolean
 export type Map = <T, R>(list: T[], callback: (item: T, i?: number) => R) => R[]
+export type Max = (list: number[]) => number
+export type Min = (list: number[]) => number
 export type Mixin = (...args: object[]) => object
 export type Mod = (dividend: number, divisor: number) => number
 export type Move = (p: Point | undefined, speed?: number) => void

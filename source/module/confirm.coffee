@@ -3,7 +3,7 @@
 import $noop from './noop'
 
 # confirm(text: string, callback: (result: boolean) => unknown): void
-###* @type {import('../type/module').Confirm} ###
+###* @type import('../type/module').Confirm ###
 export default (text, callback) ->
   $noop text, callback
   Native 'MsgBox, 0x4,, % text'

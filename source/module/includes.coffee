@@ -7,7 +7,7 @@ import $isString from './isString'
 import $toString from './toString'
 
 # includes(ipt: string | unknown[], needle: unknown): boolean
-###* @type {import('../type/module').Includes} ###
+###* @type import('../type/module').Includes ###
 export default (ipt, needle) ->
 
   $type = $getType ipt
