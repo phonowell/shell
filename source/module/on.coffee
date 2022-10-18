@@ -1,6 +1,6 @@
 # @ts-check
 
-import $keyBindingShellX from './keyBindingShellX'
+import $keyBindingXShell from './keyBindingXShell'
 
-###* @type import('../type/keyBindingShell').Add ###
-export default $keyBindingShellX.add
+###* @type import('../type/keyBindingShell').KeyBindingShell['on'] ###
+export default $keyBindingXShell.add

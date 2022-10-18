@@ -3,24 +3,24 @@
 import $length from './length'
 import $push from './push'
 
-# chunk<T>(list: T[], n = 1): T[][]
+# chunk<T>(list: T[], size = 1): T[][]
 ###* @type import('../type/module').Chunk ###
-export default (list, n = 1) ->
+export default ($list, $size = 1) ->
 
   $listNew = []
-  $len = $length list
+  $len = $length $list
 
   $i = 0
-  while $i < $len / n
+  while $i < $len / $size
 
     $listTemp = []
     $j = 0
-    while $j < n
+    while $j < $size
 
-      $index = $i * n + $j
+      $index = $i * $size + $j
       unless $index < $len then break
 
-      $push $listTemp, list[$index]
+      $push $listTemp, $list[$index]
       $j++
 
     $push $listNew, $listTemp

@@ -1,12 +1,9 @@
 # @ts-check
-
-import $abs from './module/abs'
 import $add from './module/add'
 import $alert from './module/alert'
 import $beep from './module/beep'
 import $bind from './module/bind'
 import $blockInput from './module/blockInput'
-import $ceil from './module/ceil'
 import $chunk from './module/chunk'
 import $clearInterval from './module/clearInterval'
 import $clearTimeout from './module/clearTimeout'
@@ -18,6 +15,7 @@ import $confirm from './module/confirm'
 import $debounce from './module/debounce'
 import $defer from './module/defer'
 import $delay from './module/delay'
+import $delete from './module/delete'
 import $drop from './module/drop'
 import $each from './module/each'
 import $echo from './module/echo'
@@ -30,7 +28,6 @@ import $filter from './module/filter'
 import $findColor from './module/findColor'
 import $findImage from './module/findImage'
 import $first from './module/first'
-import $floor from './module/floor'
 import $forEach from './module/forEach'
 import $formatHotkey from './module/formatHotkey'
 import $get from './module/get'
@@ -54,6 +51,7 @@ import $length from './module/length'
 import $lt from './module/lt'
 import $lte from './module/lte'
 import $map from './module/map'
+import $math from './module/math'
 import $max from './module/max'
 import $min from './module/min'
 import $mixin from './module/mixin'
@@ -75,7 +73,6 @@ import $range from './module/range'
 import $reload from './module/reload'
 import $replace from './module/replace'
 import $reverse from './module/reverse'
-import $round from './module/round'
 import $setFixed from './module/setFixed'
 import $setInterval from './module/setInterval'
 import $setTimeout from './module/setTimeout'
@@ -106,22 +103,13 @@ import $trimStart from './module/trimStart'
 import $uniq from './module/uniq'
 import $unshift from './module/unshift'
 import $values from './module/values'
-import $version from './module/version'
 import $window from './module/window'
-import './module/emitterShell'
-import './module/fileShell'
-import './module/windowShell'
-
 $ = {}
-
-$mixin $, VERSION: $version
-$mixin $, abs: $abs
 $mixin $, add: $add
 $mixin $, alert: $alert
 $mixin $, beep: $beep
 $mixin $, bind: $bind
 $mixin $, blockInput: $blockInput
-$mixin $, ceil: $ceil
 $mixin $, chunk: $chunk
 $mixin $, clearInterval: $clearInterval
 $mixin $, clearTimeout: $clearTimeout
@@ -133,6 +121,7 @@ $mixin $, confirm: $confirm
 $mixin $, debounce: $debounce
 $mixin $, defer: $defer
 $mixin $, delay: $delay
+$mixin $, delete: $delete
 $mixin $, drop: $drop
 $mixin $, each: $each
 $mixin $, echo: $echo
@@ -145,7 +134,6 @@ $mixin $, filter: $filter
 $mixin $, findColor: $findColor
 $mixin $, findImage: $findImage
 $mixin $, first: $first
-$mixin $, floor: $floor
 $mixin $, forEach: $forEach
 $mixin $, formatHotkey: $formatHotkey
 $mixin $, get: $get
@@ -169,6 +157,7 @@ $mixin $, length: $length
 $mixin $, lt: $lt
 $mixin $, lte: $lte
 $mixin $, map: $map
+$mixin $, math: $math
 $mixin $, max: $max
 $mixin $, min: $min
 $mixin $, mixin: $mixin
@@ -190,7 +179,6 @@ $mixin $, range: $range
 $mixin $, reload: $reload
 $mixin $, replace: $replace
 $mixin $, reverse: $reverse
-$mixin $, round: $round
 $mixin $, setFixed: $setFixed
 $mixin $, setInterval: $setInterval
 $mixin $, setTimeout: $setTimeout

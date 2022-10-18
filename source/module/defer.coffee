@@ -2,10 +2,10 @@
 
 import $delay from './delay'
 
-# defer(callback: Fn, ...args: unknown[]): Fn
+# defer(func: Fn, ...args: unknown[]): Fn
 ###* @type import('../type/module').Defer ###
-export default (callback, args...) ->
+export default ($func, $args...) ->
 
   return $delay ->
-    callback args...
+    $func $args...
   , 1

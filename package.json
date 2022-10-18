@@ -5,11 +5,11 @@
   },
   "description": "",
   "devDependencies": {
-    "@swc/core": "^1.3.6",
+    "@swc/core": "^1.3.9",
     "@types/lodash": "^4.14.186",
-    "@types/node": "^18.8.4",
-    "@typescript-eslint/eslint-plugin": "^5.40.0",
-    "@typescript-eslint/parser": "^5.40.0",
+    "@types/node": "^18.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "coffee-ahk": "0.0.48-fixed.8",
     "fire-keeper": "^0.0.208",
     "lodash": "^4.17.21",
@@ -40,5 +40,5 @@
     "watch": "npm run alice watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.27"
+  "version": "0.0.28"
 }

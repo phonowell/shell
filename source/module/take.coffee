@@ -4,7 +4,7 @@ import $length from './length'
 import $push from './push'
 
 # take<T>(list: T[], count: number = 1): T[]
-###* @type import('../type/module').Take} *###
+###* @type import('../type/module').Take} ###
 export default (list, count = 1) ->
 
   $len = $length list

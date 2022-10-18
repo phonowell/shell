@@ -9,7 +9,7 @@ import $split from './split'
 import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
-###* @type import('../type/module').Press2} *###
+###* @type import('../type/module').Press2} ###
 $formatInputPress = (listInput) ->
 
   $listKey = []
@@ -24,7 +24,7 @@ $formatInputPress = (listInput) ->
 
   return $listKey
 
-###* @type import('../type/module').Press3} *###
+###* @type import('../type/module').Press3} ###
 $validateInputPress = (listInput) ->
 
   unless $length listInput
@@ -41,7 +41,7 @@ $validateInputPress = (listInput) ->
   return true
 
 # press(...key: string[]): void
-###* @type import('../type/module').Press} *###
+###* @type import('../type/module').Press} ###
 export default (listInput...) ->
 
   unless $validateInputPress listInput then return

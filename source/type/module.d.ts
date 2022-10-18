@@ -1,6 +1,7 @@
 import { EmitterShell } from './emitterShell'
 import { FileShell } from './fileShell'
 import { WindowShell } from './windowShell'
+import { MathShell } from './mathShell'
 
 type Fn = (...args: unknown[]) => unknown
 type Point = [number, number]
@@ -12,16 +13,16 @@ export type Beep = () => void
 export type Bind = (callback: Fn, ...args: unknown[]) => Fn
 export type BlockInput = (block: boolean) => void
 export type Ceil = (n: number) => number
-export type Chunk = <T>(list: T[], n?: number) => T[][]
+export type Chunk = <T>(list: T[], size?: number) => T[][]
 export type ClearInterval = (callback: Fn) => void
 export type ClearTimeout = (callback: Fn) => void
 export type Click = (key?: string) => void
 export type Clone = <T = unknown[] | Object>(ipt: T) => T
 export type Compact = <T>(list: T[]) => T[]
-export type Concat = <T>(list: T[], ...value: (T | T[])[]) => T[]
-export type Debounce = (time: number, callback: Fn) => Fn
-export type Defer = (callback: Fn, ...args: unknown[]) => Fn
-export type Delay = (callback: Fn, time: number, ...args: unknown[]) => Fn
+export type Concat = <T>(list: T[], ...values: (T | T[])[]) => T[]
+export type Debounce = (func: Fn, wait: number) => Fn
+export type Defer = (func: Fn, ...args: unknown[]) => Fn
+export type Delay = (func: Fn, wait: number, ...args: unknown[]) => Fn
 export type Delete = <T extends Object>(object: T, ...keys: (keyof T)[]) => void
 export type Drop = <T>(list: T[], n?: number) => T[]
 export type Echo = <T extends string>(message: T) => T
@@ -53,6 +54,7 @@ export type Length = (ipt: string | unknown[] | object) => number
 export type Lt = <T = number>(value: T, other: T) => boolean
 export type Lte = <T = number>(value: T, other: T) => boolean
 export type Map = <T, R>(list: T[], callback: (item: T, i?: number) => R) => R[]
+export type Math = () => MathShell
 export type Max = (list: number[]) => number
 export type Min = (list: number[]) => number
 export type Mixin = (...args: object[]) => object
@@ -89,7 +91,7 @@ export type Sum = (list: number[]) => number
 export type Suspend = (isSuspended?: boolean | 'Toggle' | 'On' | 'Off') => void
 export type Tail = <T>(list: T[]) => T[]
 export type Take = <T>(list: T[], count?: number) => T[]
-export type Throttle = (time: number, callback: Fn) => Fn
+export type Throttle = (func: Fn, wait: number) => Fn
 export type Tip = <T extends string>(message: T, p: Point | undefined) => T
 export type ToLowerCase = (ipt: string) => string
 export type ToNumber = (ipt: unknown) => number

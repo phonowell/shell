@@ -1,6 +1,6 @@
 # @ts-check
 
-import $keyBindingShellX from './keyBindingShellX'
+import $keyBindingXShell from './keyBindingXShell'
 
-###* @type import('../type/keyBindingShell').Remove ###
-export default $keyBindingShellX.remove
+###* @type import('../type/keyBindingShell').KeyBindingShell['off'] ###
+export default $keyBindingXShell.remove

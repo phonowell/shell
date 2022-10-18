@@ -1,7 +1,7 @@
 # @ts-check
 
 # sum(list: number[]): number
-###* @type import('../type/module').Sum} *###
+###* @type import('../type/module').Sum} ###
 export default (list) ->
 
   $result = 0

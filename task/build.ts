@@ -17,6 +17,7 @@ const copy = async () => {
 
 const main = async () => {
   await $.remove('./dist')
+  await makeIndex()
   await makeAhk()
   await makeDoc()
   await copy()
@@ -39,6 +40,21 @@ const makeDoc = async () => {
   ]
 
   await $.write('./doc/functions.md', content.join('\n'))
+}
+
+const makeIndex = async () => {
+  const listFn = (await $.glob('./source/module/*.coffee')).map($.getBasename)
+  const listFnA = listFn.filter((name) => !name.endsWith('Shell'))
+
+  const content = [
+    '# @ts-check',
+    ...listFnA.map((name) => `import $${name} from './module/${name}'`),
+    // ...listFnB.map((name) => `import './module/${name}'`),
+    '$ = {}',
+    ...listFnA.map((name) => `$mixin $, ${name}: $${name}`),
+  ]
+
+  await $.write('./source/index.coffee', content.join('\n'))
 }
 
 const replace = async () => {

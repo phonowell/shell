@@ -11,12 +11,28 @@ const path = {
 // function
 
 const main = async () => {
+  await $.remove(path.ahk)
+  await makeIndex()
+  await makeAhk()
+  await $.exec(`start ${path.ahk}`)
+}
+
+const makeAhk = async () => {
   await c2a(path.coffee, {
     salt: 'shell',
   })
   await replace()
+}
 
-  await $.exec(`start ${path.ahk}`)
+const makeIndex = async () => {
+  const listFn = (await $.glob('./test/include/*.coffee')).map($.getBasename)
+
+  const content = [
+    '# @ts-check',
+    ...listFn.map((name) => `import './include/${name}'`),
+  ]
+
+  await $.write(path.coffee, content.join('\n'))
 }
 
 const replace = async () => {

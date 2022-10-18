@@ -4,17 +4,17 @@ import $clone from './clone'
 import $isArray from './isArray'
 import $push from './push'
 
-# concat<T>(list: T[], ...value: (T | T[])[]): T[]
+# concat<T>(list: T[], ...values: (T | T[])[]): T[]
 ###* @type import('../type/module').Concat ###
-export default (list, args...) ->
+export default ($list, $values...) ->
 
-  $listNew = $clone list
+  $listNew = $clone $list
 
-  for $arg in args
+  for $value in $values
 
-    if $isArray $arg
-      for $item in $arg
+    if $isArray $value
+      for $item in $value
         $push $listNew, $item
-    else $push $listNew, $arg
+    else $push $listNew, $value
 
   return $listNew
