@@ -4,7 +4,5 @@ import $isFunction from '../../source/module/isFunction'
 
 do ->
 
-  fn = -> ''
-
-  result = $isFunction fn
+  result = $isFunction $isFunction
   unless result then throw 1

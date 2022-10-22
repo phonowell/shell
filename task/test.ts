@@ -11,8 +11,9 @@ const path = {
 // function
 
 const main = async () => {
+  const target = $.toString($.argv()._[1] || '*')
   await $.remove(path.ahk)
-  await makeIndex()
+  await makeIndex(target)
   await makeAhk()
   await $.exec(`start ${path.ahk}`)
 }
@@ -24,8 +25,10 @@ const makeAhk = async () => {
   await replace()
 }
 
-const makeIndex = async () => {
-  const listFn = (await $.glob('./test/include/*.coffee')).map($.getBasename)
+const makeIndex = async (target: string) => {
+  const listFn = (await $.glob(`./test/include/${target}.coffee`)).map(
+    $.getBasename,
+  )
 
   const content = [
     '# @ts-check',

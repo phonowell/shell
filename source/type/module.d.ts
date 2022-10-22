@@ -54,7 +54,7 @@ export type Length = (ipt: string | unknown[] | object) => number
 export type Lt = <T = number>(value: T, other: T) => boolean
 export type Lte = <T = number>(value: T, other: T) => boolean
 export type Map = <T, R>(list: T[], callback: (item: T, i?: number) => R) => R[]
-export type Math = () => MathShell
+export type Math = MathShell
 export type Max = (list: number[]) => number
 export type Min = (list: number[]) => number
 export type Mixin = (...args: object[]) => object
