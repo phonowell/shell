@@ -6,4 +6,4 @@ import $isFunction from '../../source/module/isFunction'
 do ->
 
   unless $isFunction $exit
-    throw 0
+    throw '$.exit is not a function'

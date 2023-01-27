@@ -8,7 +8,7 @@ export default (callback, time) ->
 
   callback = $bind callback
 
-  unless time > 0 then throw new Error '$.setInterval: invalid value'
+  unless time > 0 then throw '$.setInterval: invalid value'
 
   Native 'SetTimer, % callback, % time'
   return callback

@@ -1,5 +1,5 @@
-import $ from 'fire-keeper'
 import c2a from 'coffee-ahk'
+import $ from 'fire-keeper'
 
 // variable
 
@@ -26,12 +26,19 @@ const makeAhk = async () => {
 }
 
 const makeIndex = async (target: string) => {
-  const listFn = (await $.glob(`./test/include/${target}.coffee`)).map(
-    $.getBasename,
-  )
+  const listFn = [
+    ...(
+      await $.glob([
+        `./test/include/${target}.coffee`,
+        '!./test/include/end.coffee',
+      ])
+    ).map($.getBasename),
+    'end',
+  ]
 
   const content = [
     '# @ts-check',
+    "import '../script/include/head.ahk'",
     ...listFn.map((name) => `import './include/${name}'`),
   ]
 

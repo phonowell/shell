@@ -26,10 +26,10 @@ class EmitterShell
 
     $each $list, ($it) ->
       $it[2] args...
-      if $it[3] == 1 then $it[3] = 2
+      if $it[3] == 'once' then $it[3] = 'expired'
       return
 
-    @bus = $filter @bus, ($it) -> $it[3] != 2
+    @bus = $filter @bus, ($it) -> $it[3] != 'expired'
     return
 
   # off(key: string): void
@@ -51,14 +51,14 @@ class EmitterShell
   ###* @type import('../type/emitterShell').EmitterShell['on'] ###
   on: (key, callback) ->
     [$type, $name] = $split key, '.'
-    $push @bus, [$type, $name, callback, 0]
+    $push @bus, [$type, $name, callback, 'always']
     return
 
   # once(key: string, callback: Fn): void
   ###* @type import('../type/emitterShell').EmitterShell['once'] ###
   once: (key, callback) ->
     [$type, $name] = $split key, '.'
-    $push @bus, [$type, $name, callback, 1]
+    $push @bus, [$type, $name, callback, 'once']
     return
 
 $noop EmitterShell

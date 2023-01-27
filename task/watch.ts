@@ -1,6 +1,7 @@
-import build from './build'
 import c2a from 'coffee-ahk'
 import watch from 'fire-keeper/dist/watch'
+
+import build from './build'
 
 // function
 
@@ -52,7 +53,7 @@ class Compiler {
     }
 
     this.isBusy = false
-    throw new Error('invalid type')
+    throw('invalid type')
   }
 }
 

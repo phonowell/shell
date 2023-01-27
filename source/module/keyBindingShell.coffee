@@ -15,9 +15,9 @@ class KeyBindingShell
   constructor: ->
 
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapBound'] ###
-    @mapBound = {} # Record<Key, Fn>
+    @mapBound = {} # Record<string, Fn>
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapCallback'] ###
-    @mapCallback = {} # Record<Key, [Name, Fn]>
+    @mapCallback = {} # Record<string, [Name, Fn]>
 
   # add(key: string, callback: Fn): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['add'] ###

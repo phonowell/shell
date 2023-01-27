@@ -10,7 +10,7 @@ import $reverse from './reverse'
 export default (list, start = 0, end = 0) ->
 
   unless $getType list
-    throw new Error "$.slice: invalid type '#{$getType list}'"
+    throw "$.slice: invalid type '#{$getType list}'"
 
   $len = $length list
   unless end then end = $len

@@ -8,7 +8,7 @@ export default (text, iStart, iEnd = 0) ->
 
   $type = $getType text
   unless $type == 'string'
-    throw new Error "$.subString: invalid type '#{$type}'"
+    throw "$.subString: invalid type '#{$type}'"
 
   if iEnd then $len = iEnd - iStart
   else $len = 0

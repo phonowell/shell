@@ -1,5 +1,5 @@
-import $ from 'fire-keeper'
 import c2a from 'coffee-ahk'
+import $ from 'fire-keeper'
 
 // variable
 

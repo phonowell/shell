@@ -1,7 +1,7 @@
 import { Fn } from './module'
 
 export class EmitterShell {
-  bus: [string, string, Fn, number][]
+  private bus: [string, string, Fn, 'always' | 'once' | 'expired'][]
   constructor()
   emit(key: string, ...args: unknown[]): void
   off(key: string): void

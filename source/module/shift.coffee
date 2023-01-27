@@ -8,7 +8,7 @@ import $isArray from './isArray'
 export default (list) ->
 
   unless $isArray list
-    throw new Error "$.shift: invalid type '#{$getType list}'"
+    throw "$.shift: invalid type '#{$getType list}'"
 
   $first = list[0]
   list.RemoveAt 1

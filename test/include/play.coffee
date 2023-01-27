@@ -6,4 +6,4 @@ import $play from '../../source/module/play'
 do ->
 
   unless $isFunction $play
-    throw new Error '$play is not a function'
+    throw '$play is not a function'

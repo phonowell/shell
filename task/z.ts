@@ -7,7 +7,7 @@ const main = async () => {
   for (const source of listSource) {
     const content = await $.read<string>(source)
     if (!content) continue
-    await $.write(source, content.replace(/import\('@/g, 'import(\'..'))
+    await $.write(source, content.replace(/import\('@/g, "import('.."))
   }
 }
 

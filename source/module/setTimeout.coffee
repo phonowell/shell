@@ -9,7 +9,7 @@ export default (callback, time) ->
 
   callback = $bind callback
 
-  unless $isNumber time then throw new Error '$.setTimeout: invalid type'
+  unless $isNumber time then throw '$.setTimeout: invalid type'
 
   if time < 1 then time = 1
 

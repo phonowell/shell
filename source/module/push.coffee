@@ -8,7 +8,7 @@ import $isArray from './isArray'
 export default (list, value...) ->
 
   unless $isArray list
-    throw new Error "$.push: invalid type '#{$getType list}'"
+    throw "$.push: invalid type '#{$getType list}'"
 
   for $v in value
     list.Push $v

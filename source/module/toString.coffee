@@ -26,6 +26,6 @@ $toString = (ipt) ->
       $result = "#{$result}, #{key}: #{$toString value}"
     return "{#{$trim $result, ' ,'}}"
 
-  throw new Error("$toString: invalid type '#{$getType ipt}'")
+  throw("$toString: invalid type '#{$getType ipt}'")
 
 export default $toString

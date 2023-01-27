@@ -8,7 +8,7 @@ import $tail from './tail'
 export default (args...) ->
 
   unless $length args
-    throw new Error '$.mixin: invalid arguments'
+    throw '$.mixin: invalid arguments'
 
   $result = args[0]
 

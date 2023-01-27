@@ -6,4 +6,4 @@ import $isFunction from '../../source/module/isFunction'
 do ->
 
   unless $isFunction $getState
-    throw new Error '$.getState is not a function'
+    throw '$.getState is not a function'

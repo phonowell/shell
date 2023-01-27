@@ -6,4 +6,4 @@ import $isFunction from '../../source/module/isFunction'
 do ->
 
   unless $isFunction $clearInterval
-    throw new Error '$.clearInterval is not a function'
+    throw '$.clearInterval is not a function'

@@ -13,4 +13,4 @@ export default (ipt) ->
   if $isObject ipt then return ipt.Count()
   if $isString ipt then return StrLen ipt
 
-  throw new Error "$.length: invalid type '#{$getType ipt}'"
+  throw "$.length: invalid type '#{$getType ipt}'"

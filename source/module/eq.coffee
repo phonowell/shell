@@ -34,6 +34,6 @@ $eq = (value, other) ->
       unless $eq $v, other[$k] then return false
     return true
 
-  throw new Error "$.eq: invalid type '#{$typeA}'"
+  throw "$.eq: invalid type '#{$typeA}'"
 
 export default $eq

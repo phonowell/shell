@@ -6,4 +6,4 @@ import $isFunction from '../../source/module/isFunction'
 do ->
 
   unless $isFunction $click
-    throw new Error '$.click is not a function'
+    throw '$.click is not a function'

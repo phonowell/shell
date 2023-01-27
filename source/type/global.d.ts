@@ -20,7 +20,7 @@ declare global {
   }
   interface Object {
     Count: () => number
-    Delete: (key: keyof Object) => void
+    Delete: (key: keyof object) => void
     Length: () => number
   }
 

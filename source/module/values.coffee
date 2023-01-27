@@ -10,7 +10,7 @@ export default (ipt) ->
 
   $type = $getType ipt
   unless $type == 'object'
-    throw new Error "$.values: invalid type '#{$type}'"
+    throw "$.values: invalid type '#{$type}'"
 
   $listResult = []
 

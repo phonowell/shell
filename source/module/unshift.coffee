@@ -8,7 +8,7 @@ import $isArray from './isArray'
 export default (list, args...) ->
 
   unless $isArray list
-    throw new Error "$.unshift: invalid type '#{$getType list}'"
+    throw "$.unshift: invalid type '#{$getType list}'"
 
   list.InsertAt 1, args...
 

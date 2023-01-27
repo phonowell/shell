@@ -1,7 +1,7 @@
 import { EmitterShell } from './emitterShell'
 import { FileShell } from './fileShell'
-import { WindowShell } from './windowShell'
 import { MathShell } from './mathShell'
+import { WindowShell } from './windowShell'
 
 type Fn = (...args: unknown[]) => unknown
 type Point = [number, number]
@@ -17,13 +17,13 @@ export type Chunk = <T>(list: T[], size?: number) => T[][]
 export type ClearInterval = (callback: Fn) => void
 export type ClearTimeout = (callback: Fn) => void
 export type Click = (key?: string) => void
-export type Clone = <T = unknown[] | Object>(ipt: T) => T
+export type Clone = <T = unknown[] | object>(ipt: T) => T
 export type Compact = <T>(list: T[]) => T[]
 export type Concat = <T>(list: T[], ...values: (T | T[])[]) => T[]
 export type Debounce = (func: Fn, wait: number) => Fn
 export type Defer = (func: Fn, ...args: unknown[]) => Fn
 export type Delay = (func: Fn, wait: number, ...args: unknown[]) => Fn
-export type Delete = <T extends Object>(object: T, ...keys: (keyof T)[]) => void
+export type Delete = <T extends object>(object: T, ...keys: (keyof T)[]) => void
 export type Drop = <T>(list: T[], n?: number) => T[]
 export type Echo = <T extends string>(message: T) => T
 export type Emitter = () => EmitterShell
@@ -46,7 +46,7 @@ export type Includes = (ipt: string | unknown[], needle: unknown) => boolean
 export type IsArray = (ipt: unknown) => ipt is unknown[]
 export type IsFunction = (ipt: unknown) => ipt is Fn
 export type IsNumber = (ipt: unknown) => ipt is number
-export type IsObject = (ipt: unknown) => ipt is Object
+export type IsObject = (ipt: unknown) => ipt is object
 export type IsString = (ipt: unknown) => ipt is string
 export type Keys = (ipt: Record<string, unknown>) => string[]
 export type Last = <T>(list: T[]) => T

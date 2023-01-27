@@ -8,11 +8,11 @@ import $window from '../../source/module/window'
 do ->
 
   unless $isFunction $window
-    throw new Error '$window is not a function'
+    throw '$window is not a function'
 
   w = $window 'notepad.exe'
   unless $isObject w
-    throw new Error '$window("notepad.exe") is not an object'
+    throw '$window("notepad.exe") is not an object'
 
   for fn in [
     'blur'
@@ -33,7 +33,7 @@ do ->
     'wait'
   ]
     unless $isFunction w[fn]
-      throw new Error "$window('notepad.exe').#{fn} is not a function"
+      throw "$window('notepad.exe').#{fn} is not a function"
 
 do ->
 
@@ -43,21 +43,21 @@ do ->
   w.close()
 
   if w.isExists()
-    throw new Error "#{exe} is already running"
+    throw "#{exe} is already running"
 
   $open exe
 
   w.wait ->
     unless w.isExists()
-      throw new Error "#{exe} is not running"
+      throw "#{exe} is not running"
 
     unless w.isActive()
-      throw new Error "#{exe} is not active"
+      throw "#{exe} is not active"
 
     w.blur()
 
     if w.isActive()
-      throw new Error "#{exe} is still active"
+      throw "#{exe} is still active"
 
     w.focus()
 
