@@ -153,12 +153,20 @@ class EmitterShell {
   once := Func("shell_42").Bind(this)
 }
 __rf_shell__.Call(__noop__, "#rf/shell/4").Call(EmitterShell)
+global __shell_module_10__ := (Func("shell_41")).Call()
+global __shell_module_14__ := (Func("shell_39")).Call()
+global __shell_module_16__ := (Func("shell_36")).Call()
+global __shell_module_21__ := (Func("shell_33")).Call()
+global __shell_module_47__ := (Func("shell_31")).Call()
+global __shell_module_88__ := (Func("shell_29")).Call()
+global __shell_module_90__ := (Func("shell_27")).Call()
 global __delete__ := __shell_module_17__
 __filter__ := __shell_module_26__
 global __forEach__ := __shell_module_30__
 global __formatHotkey__ := __shell_module_31__
 global __length__ := __shell_module_49__
 __noop__ := __shell_module_59__
+global __press__ := __shell_module_68__
 __push__ := __shell_module_69__
 __replace__ := __shell_module_73__
 __split__ := __shell_module_83__
@@ -167,29 +175,22 @@ class KeyBindingShell {
     this.mapBound := {}
     this.mapCallback := {}
   }
-  add := Func("shell_41").Bind(this)
-  fire := Func("shell_40").Bind(this)
-  init := Func("shell_37").Bind(this)
-  off := Func("shell_35").Bind(this)
-  on := Func("shell_34").Bind(this)
-  remove := Func("shell_33").Bind(this)
+  add := Func("shell_23").Bind(this)
+  fire := Func("shell_22").Bind(this)
+  init := Func("shell_19").Bind(this)
+  off := Func("shell_17").Bind(this)
+  on := Func("shell_16").Bind(this)
+  remove := Func("shell_15").Bind(this)
 }
 __rf_shell__.Call(__noop__, "#rf/shell/5").Call(KeyBindingShell)
-global __shell_module_10__ := (Func("shell_31")).Call()
-global __shell_module_14__ := (Func("shell_29")).Call()
-global __shell_module_16__ := (Func("shell_26")).Call()
-global __shell_module_21__ := (Func("shell_23")).Call()
-global __shell_module_47__ := (Func("shell_21")).Call()
-global __shell_module_88__ := (Func("shell_19")).Call()
-global __shell_module_90__ := (Func("shell_17")).Call()
-global __shell_module_106__ := (Func("shell_13")).Call()
-global __shell_module_12__ := (Func("shell_12")).Call()
-global __shell_module_15__ := (Func("shell_10")).Call()
-global __shell_module_56__ := (Func("shell_7")).Call()
-global __shell_module_62__ := (Func("shell_5")).Call()
-global __shell_module_63__ := (Func("shell_4")).Call()
-global __shell_module_98__ := (Func("shell_3")).Call()
-global __shell_module_104__ := (Func("shell_2")).Call()
+global __shell_module_12__ := (Func("shell_13")).Call()
+global __shell_module_15__ := (Func("shell_11")).Call()
+global __shell_module_56__ := (Func("shell_8")).Call()
+global __shell_module_104__ := (Func("shell_6")).Call()
+global __shell_module_106__ := (Func("shell_4")).Call()
+global __shell_module_62__ := (Func("shell_3")).Call()
+global __shell_module_63__ := (Func("shell_2")).Call()
+global __shell_module_98__ := (Func("shell_1")).Call()
 global __add__ := __shell_module_1__
 global __alert__ := __shell_module_2__
 global __beep__ := __shell_module_3__
@@ -257,7 +258,7 @@ global __once__ := __shell_module_64__
 global __open__ := __shell_module_65__
 global __play__ := __shell_module_66__
 global __pop__ := __shell_module_67__
-global __press__ := __shell_module_68__
+__press__ := __shell_module_68__
 __push__ := __shell_module_69__
 global __random__ := __shell_module_70__
 global __range__ := __shell_module_71__
@@ -401,7 +402,22 @@ __rf_shell__.Call(__mixin__, "#rf/shell/107").Call($, {uniq: __uniq__})
 __rf_shell__.Call(__mixin__, "#rf/shell/108").Call($, {unshift: __unshift__})
 __rf_shell__.Call(__mixin__, "#rf/shell/109").Call($, {values: __values__})
 __rf_shell__.Call(__mixin__, "#rf/shell/110").Call($, {window: __window__})
-shell_1(ipt) {
+shell_1() {
+  __keyBindingXShell__ := __shell_module_106__
+  return __keyBindingXShell__.fire
+}
+shell_2() {
+  __keyBindingXShell__ := __shell_module_106__
+  return __keyBindingXShell__.add
+}
+shell_3() {
+  __keyBindingXShell__ := __shell_module_106__
+  return __keyBindingXShell__.remove
+}
+shell_4() {
+  return new KeyBindingShell()
+}
+shell_5(ipt) {
   __type__ := __rf_shell__.Call(__getType__, "#rf/shell/111").Call(ipt)
   if !(__type__ == "object") {
     throw "$.values: invalid type '" . (__type__) . "'"
@@ -412,25 +428,13 @@ shell_1(ipt) {
   }
   return __listResult__
 }
-shell_2() {
+shell_6() {
   __getType__ := __shell_module_36__
   __keys__ := __shell_module_47__
   __push__ := __shell_module_69__
-  return Func("shell_1")
+  return Func("shell_5")
 }
-shell_3() {
-  __keyBindingXShell__ := __shell_module_106__
-  return __keyBindingXShell__.fire
-}
-shell_4() {
-  __keyBindingXShell__ := __shell_module_106__
-  return __keyBindingXShell__.add
-}
-shell_5() {
-  __keyBindingXShell__ := __shell_module_106__
-  return __keyBindingXShell__.remove
-}
-shell_6(args*) {
+shell_7(args*) {
   if !(__rf_shell__.Call(__length__, "#rf/shell/114").Call(args)) {
     throw "$.mixin: invalid arguments"
   }
@@ -442,22 +446,22 @@ shell_6(args*) {
   }
   return __result__
 }
-shell_7() {
+shell_8() {
   __length__ := __shell_module_49__
   __tail__ := __shell_module_88__
-  return Func("shell_6")
+  return Func("shell_7")
 }
-shell_8(__func__, __args__) {
+shell_9(__func__, __args__) {
   return __rf_shell__.Call(__func__, "#rf/shell/116").Call(__args__*)
 }
-shell_9(__func__, __args__*) {
-  return __rf_shell__.Call(__delay__, "#rf/shell/117").Call(Func("shell_8").Bind(__func__, __args__), 1)
+shell_10(__func__, __args__*) {
+  return __rf_shell__.Call(__delay__, "#rf/shell/117").Call(Func("shell_9").Bind(__func__, __args__), 1)
 }
-shell_10() {
+shell_11() {
   __delay__ := __shell_module_16__
-  return Func("shell_9")
+  return Func("shell_10")
 }
-shell_11(__list__, __values__*) {
+shell_12(__list__, __values__*) {
   __listNew__ := __rf_shell__.Call(__clone__, "#rf/shell/118").Call(__list__)
   for __index_for__, __value__ in __values__ {
     if (__rf_shell__.Call(__isArray__, "#rf/shell/119").Call(__value__)) {
@@ -470,194 +474,195 @@ shell_11(__list__, __values__*) {
   }
   return __listNew__
 }
-shell_12() {
+shell_13() {
   __clone__ := __shell_module_10__
   __isArray__ := __shell_module_41__
   __push__ := __shell_module_69__
-  return Func("shell_11")
+  return Func("shell_12")
 }
-shell_13() {
-  return new KeyBindingShell()
+shell_14(__name__, __item__) {
+  return __item__[1] != __name__
 }
-shell_14(__func__, __tsThrottle__, __index__) {
-  __rf_shell__.Call(__func__, "#rf/shell/122").Call()
-  __tsThrottle__[__ci_shell__.Call(__index__)] := __rf_shell__.Call(__now__, "#rf/shell/123").Call()
+shell_15(this, key) {
+  __array__ := __rf_shell__.Call(__split__, "#rf/shell/122").Call(key, ".")
+  key := __array__[1]
+  __name__ := __array__[2]
+  if !(__name__) {
+    __rf_shell__.Call(__delete__, "#rf/shell/123").Call(this.mapCallback, key)
+    __rf_shell__.Call(this.off, "#rf/shell/124").Call(key, this.mapBound[__ci_shell__.Call(key)])
+    return
+  }
+  __listNew__ := __rf_shell__.Call(__filter__, "#rf/shell/125").Call(this.mapCallback[__ci_shell__.Call(key)], Func("shell_14").Bind(__name__))
+  if !(__rf_shell__.Call(__length__, "#rf/shell/126").Call(__listNew__)) {
+    __rf_shell__.Call(__delete__, "#rf/shell/127").Call(this.mapCallback, key)
+    __rf_shell__.Call(this.off, "#rf/shell/128").Call(key, this.mapBound[__ci_shell__.Call(key)])
+    return
+  }
+  this.mapCallback[__ci_shell__.Call(key)] := __listNew__
+  return
 }
-shell_15(__tThrottle__, __func__, __tsThrottle__, __wait__, __index__) {
-  __rf_shell__.Call(__clearTimeout__, "#rf/shell/124").Call(__tThrottle__[__ci_shell__.Call(__index__)])
-  __tThrottle__[__ci_shell__.Call(__index__)] := __rf_shell__.Call(__setTimeout__, "#rf/shell/125").Call(Func("shell_14").Bind(__func__, __tsThrottle__, __index__), __tsThrottle__[__ci_shell__.Call(__index__)] - __rf_shell__.Call(__now__, "#rf/shell/126").Call() + __wait__)
+shell_16(this, key, callback) {
+  key := __rf_shell__.Call(__formatHotkey__, "#rf/shell/129").Call(__rf_shell__.Call(__replace__, "#rf/shell/130").Call(key, ":down", ""))
+  __rf_shell__.Call(__noop__, "#rf/shell/131").Call(callback)
+  Hotkey, % key, % callback, On
+  return
 }
-shell_16(__tsThrottle__, __tThrottle__, __func__, __wait__) {
+shell_17(this, key, callback) {
+  key := __rf_shell__.Call(__formatHotkey__, "#rf/shell/132").Call(__rf_shell__.Call(__replace__, "#rf/shell/133").Call(key, ":down", ""))
+  __rf_shell__.Call(__noop__, "#rf/shell/134").Call(callback)
+  Hotkey, % key, % callback, Off
+  return
+}
+shell_18(key, this) {
+  return __rf_shell__.Call(this.fire, "#rf/shell/135").Call(key)
+}
+shell_19(this, key) {
+  if (this.mapCallback[__ci_shell__.Call(key)]) {
+    return
+  }
+  this.mapCallback[__ci_shell__.Call(key)] := []
+  __fn__ := Func("shell_18").Bind(key, this)
+  this.mapBound[__ci_shell__.Call(key)] := __fn__
+  __rf_shell__.Call(this.on, "#rf/shell/136").Call(key, __fn__)
+}
+shell_20(it) {
+  return __rf_shell__.Call(it[2], "#rf/shell/137").Call()
+}
+shell_21(__name__, it) {
+  return it[1] == __name__
+}
+shell_22(this, key) {
+  __array__ := __rf_shell__.Call(__split__, "#rf/shell/138").Call((__rf_shell__.Call(__replace__, "#rf/shell/139").Call(key, ":down", "")), ".")
+  key := __array__[1]
+  __name__ := __array__[2]
+  __list__ := this.mapCallback[__ci_shell__.Call(key)]
+  if !(__rf_shell__.Call(__length__, "#rf/shell/140").Call(__list__)) {
+    __rf_shell__.Call(__press__, "#rf/shell/141").Call(key)
+    return
+  }
+  if (__name__) {
+    __list__ := __rf_shell__.Call(__filter__, "#rf/shell/142").Call(__list__, Func("shell_21").Bind(__name__))
+  }
+  __rf_shell__.Call(__forEach__, "#rf/shell/143").Call(__list__, Func("shell_20"))
+}
+shell_23(this, key, callback) {
+  __array__ := __rf_shell__.Call(__split__, "#rf/shell/144").Call(key, ".")
+  key := __array__[1]
+  __name__ := __array__[2]
+  __rf_shell__.Call(this.init, "#rf/shell/145").Call(key)
+  __rf_shell__.Call(__push__, "#rf/shell/146").Call(this.mapCallback[__ci_shell__.Call(key)], [__name__, callback])
+  return
+}
+shell_24(__func__, __tsThrottle__, __index__) {
+  __rf_shell__.Call(__func__, "#rf/shell/147").Call()
+  __tsThrottle__[__ci_shell__.Call(__index__)] := __rf_shell__.Call(__now__, "#rf/shell/148").Call()
+}
+shell_25(__tThrottle__, __func__, __tsThrottle__, __wait__, __index__) {
+  __rf_shell__.Call(__clearTimeout__, "#rf/shell/149").Call(__tThrottle__[__ci_shell__.Call(__index__)])
+  __tThrottle__[__ci_shell__.Call(__index__)] := __rf_shell__.Call(__setTimeout__, "#rf/shell/150").Call(Func("shell_24").Bind(__func__, __tsThrottle__, __index__), __tsThrottle__[__ci_shell__.Call(__index__)] - __rf_shell__.Call(__now__, "#rf/shell/151").Call() + __wait__)
+}
+shell_26(__tsThrottle__, __tThrottle__, __func__, __wait__) {
   __iThrottle__++
   __tsThrottle__[__ci_shell__.Call(__iThrottle__)] := 0
-  return Func("shell_15").Bind(__tThrottle__, __func__, __tsThrottle__, __wait__, __iThrottle__)
+  return Func("shell_25").Bind(__tThrottle__, __func__, __tsThrottle__, __wait__, __iThrottle__)
 }
-shell_17() {
+shell_27() {
   __clearTimeout__ := __shell_module_8__
   __now__ := __shell_module_60__
   __setTimeout__ := __shell_module_77__
   __iThrottle__ := 0
   __tThrottle__ := {}
   __tsThrottle__ := {}
-  return Func("shell_16").Bind(__tsThrottle__, __tThrottle__)
+  return Func("shell_26").Bind(__tsThrottle__, __tThrottle__)
 }
-shell_18(list) {
-  return __rf_shell__.Call(__drop__, "#rf/shell/127").Call(list, 1)
+shell_28(list) {
+  return __rf_shell__.Call(__drop__, "#rf/shell/152").Call(list, 1)
 }
-shell_19() {
+shell_29() {
   __drop__ := __shell_module_18__
-  return Func("shell_18")
+  return Func("shell_28")
 }
-shell_20(ipt) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/128").Call(ipt)
+shell_30(ipt) {
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/153").Call(ipt)
   if !(__type__ == "object") {
     throw "$.keys: invalid type '" . (__type__) . "'"
   }
   __listResult__ := []
   for __key__, __value__ in ipt {
-    __rf_shell__.Call(__push__, "#rf/shell/129").Call(__listResult__, __key__)
+    __rf_shell__.Call(__push__, "#rf/shell/154").Call(__listResult__, __key__)
   }
-  return __rf_shell__.Call(__sort__, "#rf/shell/130").Call(__listResult__)
+  return __rf_shell__.Call(__sort__, "#rf/shell/155").Call(__listResult__)
 }
-shell_21() {
+shell_31() {
   __getType__ := __shell_module_36__
   __push__ := __shell_module_69__
   __sort__ := __shell_module_82__
-  return Func("shell_20")
+  return Func("shell_30")
 }
-shell_22() {
+shell_32() {
   return new EmitterShell()
 }
-shell_23() {
-  return Func("shell_22")
+shell_33() {
+  return Func("shell_32")
 }
-shell_24(__func__, __args__) {
-  return __rf_shell__.Call(__func__, "#rf/shell/131").Call(__args__*)
+shell_34(__func__, __args__) {
+  return __rf_shell__.Call(__func__, "#rf/shell/156").Call(__args__*)
 }
-shell_25(__func__, __wait__, __args__*) {
-  __timer__ := __rf_shell__.Call(__setTimeout__, "#rf/shell/132").Call(Func("shell_24").Bind(__func__, __args__), __wait__)
+shell_35(__func__, __wait__, __args__*) {
+  __timer__ := __rf_shell__.Call(__setTimeout__, "#rf/shell/157").Call(Func("shell_34").Bind(__func__, __args__), __wait__)
   return __timer__
 }
-shell_26() {
+shell_36() {
   __setTimeout__ := __shell_module_77__
-  return Func("shell_25")
+  return Func("shell_35")
 }
-shell_27(__tDebounce__, __func__, __wait__, __index__) {
-  __rf_shell__.Call(__clearTimeout__, "#rf/shell/133").Call(__tDebounce__[__ci_shell__.Call(__index__)])
-  __tDebounce__[__ci_shell__.Call(__index__)] := __rf_shell__.Call(__setTimeout__, "#rf/shell/134").Call(__func__, __wait__)
+shell_37(__tDebounce__, __func__, __wait__, __index__) {
+  __rf_shell__.Call(__clearTimeout__, "#rf/shell/158").Call(__tDebounce__[__ci_shell__.Call(__index__)])
+  __tDebounce__[__ci_shell__.Call(__index__)] := __rf_shell__.Call(__setTimeout__, "#rf/shell/159").Call(__func__, __wait__)
 }
-shell_28(__tDebounce__, __func__, __wait__) {
+shell_38(__tDebounce__, __func__, __wait__) {
   __iDebounce__++
-  return Func("shell_27").Bind(__tDebounce__, __func__, __wait__, __iDebounce__)
+  return Func("shell_37").Bind(__tDebounce__, __func__, __wait__, __iDebounce__)
 }
-shell_29() {
+shell_39() {
   __clearTimeout__ := __shell_module_8__
   __setTimeout__ := __shell_module_77__
   __iDebounce__ := 0
   __tDebounce__ := {}
-  return Func("shell_28").Bind(__tDebounce__)
+  return Func("shell_38").Bind(__tDebounce__)
 }
-shell_30(ipt) {
-  if (__rf_shell__.Call(__isArray__, "#rf/shell/135").Call(ipt)) {
-    return __rf_shell__.Call(__slice__, "#rf/shell/136").Call(ipt)
+shell_40(ipt) {
+  if (__rf_shell__.Call(__isArray__, "#rf/shell/160").Call(ipt)) {
+    return __rf_shell__.Call(__slice__, "#rf/shell/161").Call(ipt)
   }
-  if (__rf_shell__.Call(__isObject__, "#rf/shell/137").Call(ipt)) {
+  if (__rf_shell__.Call(__isObject__, "#rf/shell/162").Call(ipt)) {
     __mapNew__ := {}
     for __key__, __value__ in ipt {
       __mapNew__[__ci_shell__.Call(__key__)] := __value__
     }
     return __mapNew__
   }
-  throw "$.clone: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/138").Call(ipt)) . "'"
+  throw "$.clone: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/163").Call(ipt)) . "'"
 }
-shell_31() {
+shell_41() {
   __getType__ := __shell_module_36__
   __isArray__ := __shell_module_41__
   __isObject__ := __shell_module_44__
   __slice__ := __shell_module_81__
-  return Func("shell_30")
-}
-shell_32(__name__, __item__) {
-  return __item__[1] != __name__
-}
-shell_33(this, key) {
-  __array__ := __rf_shell__.Call(__split__, "#rf/shell/139").Call(key, ".")
-  key := __array__[1]
-  __name__ := __array__[2]
-  if !(__name__) {
-    __rf_shell__.Call(__delete__, "#rf/shell/140").Call(this.mapCallback, key)
-    __rf_shell__.Call(this.off, "#rf/shell/141").Call(key, this.mapBound[__ci_shell__.Call(key)])
-    return
-  }
-  __listNew__ := __rf_shell__.Call(__filter__, "#rf/shell/142").Call(this.mapCallback[__ci_shell__.Call(key)], Func("shell_32").Bind(__name__))
-  if !(__rf_shell__.Call(__length__, "#rf/shell/143").Call(__listNew__)) {
-    __rf_shell__.Call(__delete__, "#rf/shell/144").Call(this.mapCallback, key)
-    __rf_shell__.Call(this.off, "#rf/shell/145").Call(key, this.mapBound[__ci_shell__.Call(key)])
-    return
-  }
-  this.mapCallback[__ci_shell__.Call(key)] := __listNew__
-  return
-}
-shell_34(this, key, callback) {
-  key := __rf_shell__.Call(__formatHotkey__, "#rf/shell/146").Call(__rf_shell__.Call(__replace__, "#rf/shell/147").Call(key, ":down", ""))
-  __rf_shell__.Call(__noop__, "#rf/shell/148").Call(callback)
-  Hotkey, % key, % callback, On
-  return
-}
-shell_35(this, key, callback) {
-  key := __rf_shell__.Call(__formatHotkey__, "#rf/shell/149").Call(__rf_shell__.Call(__replace__, "#rf/shell/150").Call(key, ":down", ""))
-  __rf_shell__.Call(__noop__, "#rf/shell/151").Call(callback)
-  Hotkey, % key, % callback, Off
-  return
-}
-shell_36(key, this) {
-  return __rf_shell__.Call(this.fire, "#rf/shell/152").Call(key)
-}
-shell_37(this, key) {
-  if (this.mapCallback[__ci_shell__.Call(key)]) {
-    return
-  }
-  this.mapCallback[__ci_shell__.Call(key)] := []
-  __fn__ := Func("shell_36").Bind(key, this)
-  this.mapBound[__ci_shell__.Call(key)] := __fn__
-  __rf_shell__.Call(this.on, "#rf/shell/153").Call(key, __fn__)
-}
-shell_38(it) {
-  return __rf_shell__.Call(it[2], "#rf/shell/154").Call()
-}
-shell_39(__name__, it) {
-  return it[1] == __name__
-}
-shell_40(this, key) {
-  __array__ := __rf_shell__.Call(__split__, "#rf/shell/155").Call((__rf_shell__.Call(__replace__, "#rf/shell/156").Call(key, ":down", "")), ".")
-  key := __array__[1]
-  __name__ := __array__[2]
-  __list__ := this.mapCallback[__ci_shell__.Call(key)]
-  if (__name__) {
-    __list__ := __rf_shell__.Call(__filter__, "#rf/shell/157").Call(__list__, Func("shell_39").Bind(__name__))
-  }
-  __rf_shell__.Call(__forEach__, "#rf/shell/158").Call(__list__, Func("shell_38"))
-}
-shell_41(this, key, callback) {
-  __array__ := __rf_shell__.Call(__split__, "#rf/shell/159").Call(key, ".")
-  key := __array__[1]
-  __name__ := __array__[2]
-  __rf_shell__.Call(this.init, "#rf/shell/160").Call(key)
-  __rf_shell__.Call(__push__, "#rf/shell/161").Call(this.mapCallback[__ci_shell__.Call(key)], [__name__, callback])
-  return
+  return Func("shell_40")
 }
 shell_42(this, key, callback) {
-  __array__ := __rf_shell__.Call(__split__, "#rf/shell/162").Call(key, ".")
-  __type__ := __array__[1]
-  __name__ := __array__[2]
-  __rf_shell__.Call(__push__, "#rf/shell/163").Call(this.bus, [__type__, __name__, callback, "once"])
-  return
-}
-shell_43(this, key, callback) {
   __array__ := __rf_shell__.Call(__split__, "#rf/shell/164").Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
-  __rf_shell__.Call(__push__, "#rf/shell/165").Call(this.bus, [__type__, __name__, callback, "always"])
+  __rf_shell__.Call(__push__, "#rf/shell/165").Call(this.bus, [__type__, __name__, callback, "once"])
+  return
+}
+shell_43(this, key, callback) {
+  __array__ := __rf_shell__.Call(__split__, "#rf/shell/166").Call(key, ".")
+  __type__ := __array__[1]
+  __name__ := __array__[2]
+  __rf_shell__.Call(__push__, "#rf/shell/167").Call(this.bus, [__type__, __name__, callback, "always"])
   return
 }
 shell_44(__type__, __it__) {
@@ -667,7 +672,7 @@ shell_45(__type__, __name__, __it__) {
   return !(__it__[1] == __type__ && __it__[2] == __name__)
 }
 shell_46(this, key) {
-  __array__ := __rf_shell__.Call(__split__, "#rf/shell/166").Call(key, ".")
+  __array__ := __rf_shell__.Call(__split__, "#rf/shell/168").Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
   if !(__type__) {
@@ -675,9 +680,9 @@ shell_46(this, key) {
     return
   }
   if (__name__) {
-    this.bus := __rf_shell__.Call(__filter__, "#rf/shell/167").Call(this.bus, Func("shell_45").Bind(__type__, __name__))
+    this.bus := __rf_shell__.Call(__filter__, "#rf/shell/169").Call(this.bus, Func("shell_45").Bind(__type__, __name__))
   } else {
-    this.bus := __rf_shell__.Call(__filter__, "#rf/shell/168").Call(this.bus, Func("shell_44").Bind(__type__))
+    this.bus := __rf_shell__.Call(__filter__, "#rf/shell/170").Call(this.bus, Func("shell_44").Bind(__type__))
   }
   return
 }
@@ -685,7 +690,7 @@ shell_47(__it__) {
   return __it__[4] != "expired"
 }
 shell_48(args, __it__) {
-  __rf_shell__.Call(__it__[3], "#rf/shell/169").Call(args*)
+  __rf_shell__.Call(__it__[3], "#rf/shell/171").Call(args*)
   if (__it__[4] == "once") {
     __it__[4] := "expired"
   }
@@ -698,36 +703,36 @@ shell_50(__type__, __name__, __it__) {
   return __it__[1] == __type__ && __it__[2] == __name__
 }
 shell_51(this, key, args*) {
-  __array__ := __rf_shell__.Call(__split__, "#rf/shell/170").Call(key, ".")
+  __array__ := __rf_shell__.Call(__split__, "#rf/shell/172").Call(key, ".")
   __type__ := __array__[1]
   __name__ := __array__[2]
   if !(__type__) {
     return
   }
   if (__name__) {
-    __list__ := __rf_shell__.Call(__filter__, "#rf/shell/171").Call(this.bus, Func("shell_50").Bind(__type__, __name__))
+    __list__ := __rf_shell__.Call(__filter__, "#rf/shell/173").Call(this.bus, Func("shell_50").Bind(__type__, __name__))
   } else {
-    __list__ := __rf_shell__.Call(__filter__, "#rf/shell/172").Call(this.bus, Func("shell_49").Bind(__type__))
+    __list__ := __rf_shell__.Call(__filter__, "#rf/shell/174").Call(this.bus, Func("shell_49").Bind(__type__))
   }
-  __rf_shell__.Call(__each__, "#rf/shell/173").Call(__list__, Func("shell_48").Bind(args))
-  this.bus := __rf_shell__.Call(__filter__, "#rf/shell/174").Call(this.bus, Func("shell_47"))
+  __rf_shell__.Call(__each__, "#rf/shell/175").Call(__list__, Func("shell_48").Bind(args))
+  this.bus := __rf_shell__.Call(__filter__, "#rf/shell/176").Call(this.bus, Func("shell_47"))
   return
 }
 shell_52(list) {
   __hasString__ := false
   for __index_for__, __item__ in list {
-    if (__rf_shell__.Call(__isString__, "#rf/shell/175").Call(__item__)) {
+    if (__rf_shell__.Call(__isString__, "#rf/shell/177").Call(__item__)) {
       __hasString__ := true
       break
     }
   }
-  __string__ := __rf_shell__.Call(__join__, "#rf/shell/176").Call(list, ",")
+  __string__ := __rf_shell__.Call(__join__, "#rf/shell/178").Call(list, ",")
   if (__hasString__) {
     Sort, __string__, C U D,
   } else {
     Sort, __string__, N U D,
   }
-  return __rf_shell__.Call(__split__, "#rf/shell/177").Call(__string__, ",")
+  return __rf_shell__.Call(__split__, "#rf/shell/179").Call(__string__, ",")
 }
 shell_53() {
   __isString__ := __shell_module_45__
@@ -736,9 +741,9 @@ shell_53() {
   return Func("shell_52")
 }
 shell_54(list) {
-  __string__ := __rf_shell__.Call(__join__, "#rf/shell/178").Call(list, ",")
+  __string__ := __rf_shell__.Call(__join__, "#rf/shell/180").Call(list, ",")
   Sort, __string__, C D,
-  return __rf_shell__.Call(__split__, "#rf/shell/179").Call(__string__, ",")
+  return __rf_shell__.Call(__split__, "#rf/shell/181").Call(__string__, ",")
 }
 shell_55() {
   __join__ := __shell_module_46__
@@ -746,10 +751,10 @@ shell_55() {
   return Func("shell_54")
 }
 shell_56(list, start := 0, end := 0) {
-  if !(__rf_shell__.Call(__getType__, "#rf/shell/180").Call(list)) {
-    throw "$.slice: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/181").Call(list)) . "'"
+  if !(__rf_shell__.Call(__getType__, "#rf/shell/182").Call(list)) {
+    throw "$.slice: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/183").Call(list)) . "'"
   }
-  __len__ := __rf_shell__.Call(__length__, "#rf/shell/182").Call(list)
+  __len__ := __rf_shell__.Call(__length__, "#rf/shell/184").Call(list)
   if !(end) {
     end := __len__
   }
@@ -776,11 +781,11 @@ shell_56(list, start := 0, end := 0) {
   __n__ := 0
   __max__ := end - start
   while (__n__ < __max__) {
-    __rf_shell__.Call(__push__, "#rf/shell/183").Call(__listNew__, list[__ci_shell__.Call(start + __n__)])
+    __rf_shell__.Call(__push__, "#rf/shell/185").Call(__listNew__, list[__ci_shell__.Call(start + __n__)])
     __n__++
   }
   if (__isReverse__) {
-    return __rf_shell__.Call(__reverse__, "#rf/shell/184").Call(__listNew__)
+    return __rf_shell__.Call(__reverse__, "#rf/shell/186").Call(__listNew__)
   }
   return __listNew__
 }
@@ -792,9 +797,9 @@ shell_57() {
   return Func("shell_56")
 }
 shell_58(list) {
-  __string__ := __rf_shell__.Call(__join__, "#rf/shell/185").Call(list, ",")
+  __string__ := __rf_shell__.Call(__join__, "#rf/shell/187").Call(list, ",")
   Sort, __string__, Random D,
-  return __rf_shell__.Call(__split__, "#rf/shell/186").Call(__string__, ",")
+  return __rf_shell__.Call(__split__, "#rf/shell/188").Call(__string__, ",")
 }
 shell_59() {
   __join__ := __shell_module_46__
@@ -802,8 +807,8 @@ shell_59() {
   return Func("shell_58")
 }
 shell_60(callback, time) {
-  callback := __rf_shell__.Call(__bind__, "#rf/shell/187").Call(callback)
-  if !(__rf_shell__.Call(__isNumber__, "#rf/shell/188").Call(time)) {
+  callback := __rf_shell__.Call(__bind__, "#rf/shell/189").Call(callback)
+  if !(__rf_shell__.Call(__isNumber__, "#rf/shell/190").Call(time)) {
     throw "$.setTimeout: invalid type"
   }
   if (time < 1) {
@@ -818,7 +823,7 @@ shell_61() {
   return Func("shell_60")
 }
 shell_62(callback, time) {
-  callback := __rf_shell__.Call(__bind__, "#rf/shell/189").Call(callback)
+  callback := __rf_shell__.Call(__bind__, "#rf/shell/191").Call(callback)
   if !(time > 0) {
     throw "$.setInterval: invalid value"
   }
@@ -830,21 +835,21 @@ shell_63() {
   return Func("shell_62")
 }
 shell_64(__validateInputPress__, __formatInputPress__, listInput*) {
-  if !(__rf_shell__.Call(__validateInputPress__, "#rf/shell/190").Call(listInput)) {
+  if !(__rf_shell__.Call(__validateInputPress__, "#rf/shell/192").Call(listInput)) {
     return
   }
-  __listKey__ := __rf_shell__.Call(__formatInputPress__, "#rf/shell/191").Call(listInput)
+  __listKey__ := __rf_shell__.Call(__formatInputPress__, "#rf/shell/193").Call(listInput)
   __listResult__ := []
-  __len__ := __rf_shell__.Call(__length__, "#rf/shell/192").Call(__listKey__)
+  __len__ := __rf_shell__.Call(__length__, "#rf/shell/194").Call(__listKey__)
   for __i__, __key__ in __listKey__ {
     __i__ := __i__ - 1
     if (__i__ == __len__ - 1) {
-      __listResult__[__ci_shell__.Call(__i__)] := __rf_shell__.Call(__split__, "#rf/shell/193").Call(__key__, ":")
+      __listResult__[__ci_shell__.Call(__i__)] := __rf_shell__.Call(__split__, "#rf/shell/195").Call(__key__, ":")
       continue
     }
-    if (__rf_shell__.Call(__includes__, "#rf/shell/194").Call(__key__, ":")) {
-      __listResult__[__ci_shell__.Call(__i__)] := __rf_shell__.Call(__split__, "#rf/shell/195").Call(__key__, ":")
-      __listResult__[__ci_shell__.Call((__len__ - 1) * 2 - __i__)] := __rf_shell__.Call(__split__, "#rf/shell/196").Call(__key__, ":")
+    if (__rf_shell__.Call(__includes__, "#rf/shell/196").Call(__key__, ":")) {
+      __listResult__[__ci_shell__.Call(__i__)] := __rf_shell__.Call(__split__, "#rf/shell/197").Call(__key__, ":")
+      __listResult__[__ci_shell__.Call((__len__ - 1) * 2 - __i__)] := __rf_shell__.Call(__split__, "#rf/shell/198").Call(__key__, ":")
     } else {
       __listResult__[__ci_shell__.Call(__i__)] := [__key__, "down"]
       __listResult__[__ci_shell__.Call((__len__ - 1) * 2 - __i__)] := [__key__, "up"]
@@ -855,7 +860,7 @@ shell_64(__validateInputPress__, __formatInputPress__, listInput*) {
     if (__it__[1] == "win") {
       __it__[1] := "lwin"
     }
-    __listResult__[__ci_shell__.Call(__i__)] := __rf_shell__.Call(__trim__, "#rf/shell/197").Call("" . (__it__[1]) . " " . (__it__[2]) . "")
+    __listResult__[__ci_shell__.Call(__i__)] := __rf_shell__.Call(__trim__, "#rf/shell/199").Call("" . (__it__[1]) . " " . (__it__[2]) . "")
   }
   __result__ := ""
   for __index_for__, __it__ in __listResult__ {
@@ -865,15 +870,15 @@ shell_64(__validateInputPress__, __formatInputPress__, listInput*) {
   return
 }
 shell_65(listInput) {
-  if !(__rf_shell__.Call(__length__, "#rf/shell/198").Call(listInput)) {
+  if !(__rf_shell__.Call(__length__, "#rf/shell/200").Call(listInput)) {
     return false
   }
   __key__ := listInput[1]
-  if (__rf_shell__.Call(__includes__, "#rf/shell/199").Call(__key__, "-button")) {
-    __key__ := __rf_shell__.Call(__replace__, "#rf/shell/200").Call(__key__, "l-button", "left")
-    __key__ := __rf_shell__.Call(__replace__, "#rf/shell/201").Call(__key__, "m-button", "middle")
-    __key__ := __rf_shell__.Call(__replace__, "#rf/shell/202").Call(__key__, "r-button", "right")
-    __rf_shell__.Call(__click__, "#rf/shell/203").Call(__key__)
+  if (__rf_shell__.Call(__includes__, "#rf/shell/201").Call(__key__, "-button")) {
+    __key__ := __rf_shell__.Call(__replace__, "#rf/shell/202").Call(__key__, "l-button", "left")
+    __key__ := __rf_shell__.Call(__replace__, "#rf/shell/203").Call(__key__, "m-button", "middle")
+    __key__ := __rf_shell__.Call(__replace__, "#rf/shell/204").Call(__key__, "r-button", "right")
+    __rf_shell__.Call(__click__, "#rf/shell/205").Call(__key__)
     return false
   }
   return true
@@ -881,10 +886,10 @@ shell_65(listInput) {
 shell_66(listInput) {
   __listKey__ := []
   for __index_for__, __input__ in listInput {
-    __ipt__ := __rf_shell__.Call(__toLowerCase__, "#rf/shell/204").Call(__input__)
-    __ipt__ := __rf_shell__.Call(__replace__, "#rf/shell/205").Call(__ipt__, " ", "")
-    __ipt__ := __rf_shell__.Call(__replace__, "#rf/shell/206").Call(__ipt__, "-", "")
-    __rf_shell__.Call(__push__, "#rf/shell/207").Call(__listKey__, (__rf_shell__.Call(__split__, "#rf/shell/208").Call(__ipt__, "+"))*)
+    __ipt__ := __rf_shell__.Call(__toLowerCase__, "#rf/shell/206").Call(__input__)
+    __ipt__ := __rf_shell__.Call(__replace__, "#rf/shell/207").Call(__ipt__, " ", "")
+    __ipt__ := __rf_shell__.Call(__replace__, "#rf/shell/208").Call(__ipt__, "-", "")
+    __rf_shell__.Call(__push__, "#rf/shell/209").Call(__listKey__, (__rf_shell__.Call(__split__, "#rf/shell/210").Call(__ipt__, "+"))*)
   }
   return __listKey__
 }
@@ -902,7 +907,7 @@ shell_67() {
   return Func("shell_64").Bind(__validateInputPress__, __formatInputPress__)
 }
 shell_68(key) {
-  key := __rf_shell__.Call(__formatHotkey__, "#rf/shell/209").Call(key)
+  key := __rf_shell__.Call(__formatHotkey__, "#rf/shell/211").Call(key)
   return GetKeyState(key, "P")
 }
 shell_69() {
@@ -910,12 +915,12 @@ shell_69() {
   return Func("shell_68")
 }
 shell_70(__input__, __callback__) {
-  if (__rf_shell__.Call(__isString__, "#rf/shell/210").Call(__input__)) {
+  if (__rf_shell__.Call(__isString__, "#rf/shell/212").Call(__input__)) {
     __input__ := [__input__]
   }
-  __input__ := __rf_shell__.Call(__join__, "#rf/shell/211").Call(__input__, " && ")
+  __input__ := __rf_shell__.Call(__join__, "#rf/shell/213").Call(__input__, " && ")
   RunWait, %comSpec% /c %__input__%,, Hide UseErrorLevel
-  __rf_shell__.Call(__callback__, "#rf/shell/212").Call(ErrorLevel)
+  __rf_shell__.Call(__callback__, "#rf/shell/214").Call(ErrorLevel)
 }
 shell_71() {
   __isString__ := __shell_module_45__
@@ -924,31 +929,31 @@ shell_71() {
   return Func("shell_70").Bind(__noop__)
 }
 shell_72(value, other) {
-  __typeA__ := __rf_shell__.Call(__getType__, "#rf/shell/213").Call(value)
-  __typeB__ := __rf_shell__.Call(__getType__, "#rf/shell/214").Call(other)
+  __typeA__ := __rf_shell__.Call(__getType__, "#rf/shell/215").Call(value)
+  __typeB__ := __rf_shell__.Call(__getType__, "#rf/shell/216").Call(other)
   if !(__typeA__ == __typeB__) {
     return false
   }
-  if (__rf_shell__.Call(__includes__, "#rf/shell/215").Call(["function", "number", "string"], __typeA__)) {
+  if (__rf_shell__.Call(__includes__, "#rf/shell/217").Call(["function", "number", "string"], __typeA__)) {
     return value == other
   }
-  __lengthA__ := __rf_shell__.Call(__length__, "#rf/shell/216").Call(value)
-  __lengthB__ := __rf_shell__.Call(__length__, "#rf/shell/217").Call(other)
+  __lengthA__ := __rf_shell__.Call(__length__, "#rf/shell/218").Call(value)
+  __lengthB__ := __rf_shell__.Call(__length__, "#rf/shell/219").Call(other)
   if !(__lengthA__ == __lengthB__) {
     return false
   }
-  if (__rf_shell__.Call(__isArray__, "#rf/shell/218").Call(value)) {
+  if (__rf_shell__.Call(__isArray__, "#rf/shell/220").Call(value)) {
     for __i__, __it__ in value {
       __i__ := __i__ - 1
-      if !(__rf_shell__.Call(__eq__, "#rf/shell/219").Call(__it__, other[__ci_shell__.Call(__i__)])) {
+      if !(__rf_shell__.Call(__eq__, "#rf/shell/221").Call(__it__, other[__ci_shell__.Call(__i__)])) {
         return false
       }
     }
     return true
   }
-  if (__rf_shell__.Call(__isObject__, "#rf/shell/220").Call(value)) {
+  if (__rf_shell__.Call(__isObject__, "#rf/shell/222").Call(value)) {
     for __k__, __v__ in value {
-      if !(__rf_shell__.Call(__eq__, "#rf/shell/221").Call(__v__, other[__ci_shell__.Call(__k__)])) {
+      if !(__rf_shell__.Call(__eq__, "#rf/shell/223").Call(__v__, other[__ci_shell__.Call(__k__)])) {
         return false
       }
     }
@@ -966,7 +971,7 @@ shell_73() {
   return __eq__
 }
 shell_74(message) {
-  __rf_shell__.Call(__tip__, "#rf/shell/222").Call("[" . (__rf_shell__.Call(__now__, "#rf/shell/223").Call()) . "] " . (__rf_shell__.Call(__toString__, "#rf/shell/224").Call(message)) . "", [0, 0])
+  __rf_shell__.Call(__tip__, "#rf/shell/224").Call("[" . (__rf_shell__.Call(__now__, "#rf/shell/225").Call()) . "] " . (__rf_shell__.Call(__toString__, "#rf/shell/226").Call(message)) . "", [0, 0])
   return message
 }
 shell_75() {
@@ -979,7 +984,7 @@ shell_76(n, _it, i) {
   return i >= n
 }
 shell_77(list, n := 1) {
-  return __rf_shell__.Call(__filter__, "#rf/shell/225").Call(list, Func("shell_76").Bind(n))
+  return __rf_shell__.Call(__filter__, "#rf/shell/227").Call(list, Func("shell_76").Bind(n))
 }
 shell_78() {
   __filter__ := __shell_module_26__
@@ -989,7 +994,7 @@ shell_79(it) {
   return !!it
 }
 shell_80(list) {
-  return __rf_shell__.Call(__filter__, "#rf/shell/226").Call(list, Func("shell_79"))
+  return __rf_shell__.Call(__filter__, "#rf/shell/228").Call(list, Func("shell_79"))
 }
 shell_81() {
   __filter__ := __shell_module_26__
@@ -1000,10 +1005,10 @@ shell_82(message, p := "") {
     return message
   }
   if !(p) {
-    p := __rf_shell__.Call(__getPosition__, "#rf/shell/227").Call()
+    p := __rf_shell__.Call(__getPosition__, "#rf/shell/229").Call()
   }
-  __msg__ := __rf_shell__.Call(__toString__, "#rf/shell/228").Call(message)
-  __rf_shell__.Call(__noop__, "#rf/shell/229").Call(__msg__)
+  __msg__ := __rf_shell__.Call(__toString__, "#rf/shell/230").Call(message)
+  __rf_shell__.Call(__noop__, "#rf/shell/231").Call(__msg__)
   ToolTip, % __msg__, % p[1], % p[2]
   return message
 }
@@ -1014,7 +1019,7 @@ shell_83() {
   return Func("shell_82")
 }
 shell_84(list, count := 1) {
-  __len__ := __rf_shell__.Call(__length__, "#rf/shell/230").Call(list)
+  __len__ := __rf_shell__.Call(__length__, "#rf/shell/232").Call(list)
   if !(__len__) {
     return []
   }
@@ -1030,7 +1035,7 @@ shell_84(list, count := 1) {
     if (__i__ >= count) {
       break
     }
-    __rf_shell__.Call(__push__, "#rf/shell/231").Call(__listNew__, __item__)
+    __rf_shell__.Call(__push__, "#rf/shell/233").Call(__listNew__, __item__)
   }
   return __listNew__
 }
@@ -1040,7 +1045,7 @@ shell_85() {
   return Func("shell_84")
 }
 shell_86(list) {
-  __len__ := __rf_shell__.Call(__length__, "#rf/shell/232").Call(list)
+  __len__ := __rf_shell__.Call(__length__, "#rf/shell/234").Call(list)
   __listNew__ := []
   for __i__, __item__ in list {
     __i__ := __i__ - 1
@@ -1057,7 +1062,7 @@ shell_87() {
   return Func("shell_86")
 }
 shell_88(args*) {
-  switch __rf_shell__.Call(__length__, "#rf/shell/233").Call(args) {
+  switch __rf_shell__.Call(__length__, "#rf/shell/235").Call(args) {
     case 1: {
       __array__ := [0, args[1], 1]
       __start__ := __array__[1]
@@ -1090,7 +1095,7 @@ shell_88(args*) {
   __n__ := 0
   __max__ := __end__ - __start__
   while (__n__ < __max__) {
-    __rf_shell__.Call(__push__, "#rf/shell/234").Call(__listResult__, __start__ + __step__ * __n__)
+    __rf_shell__.Call(__push__, "#rf/shell/236").Call(__listResult__, __start__ + __step__ * __n__)
     __n__++
   }
   return __listResult__
@@ -1104,7 +1109,7 @@ shell_90(list, n := 0) {
   if (n >= 0) {
     return list[__ci_shell__.Call(n)]
   } else {
-    return list[__ci_shell__.Call((__rf_shell__.Call(__length__, "#rf/shell/235").Call(list)) + n)]
+    return list[__ci_shell__.Call((__rf_shell__.Call(__length__, "#rf/shell/237").Call(list)) + n)]
   }
 }
 shell_91() {
@@ -1115,7 +1120,7 @@ shell_92(list, callback) {
   __listResult__ := []
   for __i__, __item__ in list {
     __i__ := __i__ - 1
-    __rf_shell__.Call(__push__, "#rf/shell/236").Call(__listResult__, __rf_shell__.Call(callback, "#rf/shell/237").Call(__item__, __i__))
+    __rf_shell__.Call(__push__, "#rf/shell/238").Call(__listResult__, __rf_shell__.Call(callback, "#rf/shell/239").Call(__item__, __i__))
   }
   return __listResult__
 }
@@ -1124,7 +1129,7 @@ shell_93() {
   return Func("shell_92")
 }
 shell_94(list) {
-  return list[__ci_shell__.Call((__rf_shell__.Call(__length__, "#rf/shell/238").Call(list)) - 1)]
+  return list[__ci_shell__.Call((__rf_shell__.Call(__length__, "#rf/shell/240").Call(list)) - 1)]
 }
 shell_95() {
   __length__ := __shell_module_49__
@@ -1135,7 +1140,7 @@ shell_96(list, seperator := ",") {
   for __i__, __item__ in list {
     __i__ := __i__ - 1
     if !(__i__) {
-      __result__ := __rf_shell__.Call(__toString__, "#rf/shell/239").Call(__item__)
+      __result__ := __rf_shell__.Call(__toString__, "#rf/shell/241").Call(__item__)
       continue
     }
     __result__ := "" . (__result__) . "" . (seperator) . "" . (__item__) . ""
@@ -1147,14 +1152,14 @@ shell_97() {
   return Func("shell_96")
 }
 shell_98(ipt, needle) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/240").Call(ipt)
-  if ((__rf_shell__.Call(__isString__, "#rf/shell/241").Call(ipt)) || __rf_shell__.Call(__isNumber__, "#rf/shell/242").Call(ipt)) {
-    if !(__rf_shell__.Call(__isString__, "#rf/shell/243").Call(needle)) {
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/242").Call(ipt)
+  if ((__rf_shell__.Call(__isString__, "#rf/shell/243").Call(ipt)) || __rf_shell__.Call(__isNumber__, "#rf/shell/244").Call(ipt)) {
+    if !(__rf_shell__.Call(__isString__, "#rf/shell/245").Call(needle)) {
       return false
     }
-    return (InStr((__rf_shell__.Call(__toString__, "#rf/shell/244").Call(ipt)), needle)) > 0
+    return (InStr((__rf_shell__.Call(__toString__, "#rf/shell/246").Call(ipt)), needle)) > 0
   }
-  if (__rf_shell__.Call(__isArray__, "#rf/shell/245").Call(ipt)) {
+  if (__rf_shell__.Call(__isArray__, "#rf/shell/247").Call(ipt)) {
     for __index_for__, __it__ in ipt {
       if (__it__ == needle) {
         return true
@@ -1173,18 +1178,18 @@ shell_99() {
   return Func("shell_98")
 }
 shell_100(__formatKeyFormatHotkey__, __pickPrefixFormatHotkey__, key) {
-  __listKey__ := __rf_shell__.Call(__formatKeyFormatHotkey__, "#rf/shell/246").Call(key)
-  __array__ := __rf_shell__.Call(__pickPrefixFormatHotkey__, "#rf/shell/247").Call(__listKey__)
+  __listKey__ := __rf_shell__.Call(__formatKeyFormatHotkey__, "#rf/shell/248").Call(key)
+  __array__ := __rf_shell__.Call(__pickPrefixFormatHotkey__, "#rf/shell/249").Call(__listKey__)
   __prefix__ := __array__[1]
   __listKey__ := __array__[2]
   __result__ := ""
   for __index_for__, __it__ in __listKey__ {
     __result__ := "" . (__result__) . " & " . (__it__) . ""
   }
-  return __rf_shell__.Call(__replace__, "#rf/shell/248").Call("" . (__prefix__) . "" . (__rf_shell__.Call(__trim__, "#rf/shell/249").Call(__result__, " &")) . "", ":", " ")
+  return __rf_shell__.Call(__replace__, "#rf/shell/250").Call("" . (__prefix__) . "" . (__rf_shell__.Call(__trim__, "#rf/shell/251").Call(__result__, " &")) . "", ":", " ")
 }
 shell_101(listKey) {
-  if ((__rf_shell__.Call(__length__, "#rf/shell/250").Call(listKey)) == 1) {
+  if ((__rf_shell__.Call(__length__, "#rf/shell/252").Call(listKey)) == 1) {
     return ["", listKey]
   }
   __prefix__ := ""
@@ -1206,18 +1211,18 @@ shell_101(listKey) {
       __prefix__ := "" . (__prefix__) . "#"
       continue
     }
-    __rf_shell__.Call(__push__, "#rf/shell/251").Call(__listNew__, __key__)
+    __rf_shell__.Call(__push__, "#rf/shell/253").Call(__listNew__, __key__)
   }
   return [__prefix__, __listNew__]
 }
 shell_102(key) {
   __listKey__ := []
-  __key__ := __rf_shell__.Call(__toLowerCase__, "#rf/shell/252").Call(key)
-  __key__ := __rf_shell__.Call(__replace__, "#rf/shell/253").Call(__key__, " ", "")
-  __key__ := __rf_shell__.Call(__replace__, "#rf/shell/254").Call(__key__, "-", "")
-  __listSplit__ := __rf_shell__.Call(__split__, "#rf/shell/255").Call(__key__, "+")
-  if (__rf_shell__.Call(__length__, "#rf/shell/256").Call(__listSplit__)) {
-    __rf_shell__.Call(__push__, "#rf/shell/257").Call(__listKey__, __listSplit__*)
+  __key__ := __rf_shell__.Call(__toLowerCase__, "#rf/shell/254").Call(key)
+  __key__ := __rf_shell__.Call(__replace__, "#rf/shell/255").Call(__key__, " ", "")
+  __key__ := __rf_shell__.Call(__replace__, "#rf/shell/256").Call(__key__, "-", "")
+  __listSplit__ := __rf_shell__.Call(__split__, "#rf/shell/257").Call(__key__, "+")
+  if (__rf_shell__.Call(__length__, "#rf/shell/258").Call(__listSplit__)) {
+    __rf_shell__.Call(__push__, "#rf/shell/259").Call(__listKey__, __listSplit__*)
   }
   return __listKey__
 }
@@ -1236,10 +1241,10 @@ shell_104(list, callback) {
   __listResult__ := []
   for __i__, __item__ in list {
     __i__ := __i__ - 1
-    if !(__rf_shell__.Call(callback, "#rf/shell/258").Call(__item__, __i__)) {
+    if !(__rf_shell__.Call(callback, "#rf/shell/260").Call(__item__, __i__)) {
       continue
     }
-    __rf_shell__.Call(__push__, "#rf/shell/259").Call(__listResult__, __item__)
+    __rf_shell__.Call(__push__, "#rf/shell/261").Call(__listResult__, __item__)
   }
   return __listResult__
 }
@@ -1249,7 +1254,7 @@ shell_105() {
 }
 shell_106(__list__, __size__ := 1) {
   __listNew__ := []
-  __len__ := __rf_shell__.Call(__length__, "#rf/shell/260").Call(__list__)
+  __len__ := __rf_shell__.Call(__length__, "#rf/shell/262").Call(__list__)
   __i__ := 0
   while (__i__ < __len__ / __size__) {
     __listTemp__ := []
@@ -1259,10 +1264,10 @@ shell_106(__list__, __size__ := 1) {
       if !(__index__ < __len__) {
         break
       }
-      __rf_shell__.Call(__push__, "#rf/shell/261").Call(__listTemp__, __list__[__ci_shell__.Call(__index__)])
+      __rf_shell__.Call(__push__, "#rf/shell/263").Call(__listTemp__, __list__[__ci_shell__.Call(__index__)])
       __j__++
     }
-    __rf_shell__.Call(__push__, "#rf/shell/262").Call(__listNew__, __listTemp__)
+    __rf_shell__.Call(__push__, "#rf/shell/264").Call(__listNew__, __listTemp__)
     __i__++
   }
   return __listNew__
@@ -1274,7 +1279,7 @@ shell_107() {
 }
 shell_108(callback, args*) {
   if !(callback.Name) {
-    if !(__rf_shell__.Call(__length__, "#rf/shell/263").Call(args)) {
+    if !(__rf_shell__.Call(__length__, "#rf/shell/265").Call(args)) {
       return callback
     }
     throw "$.bind: cannot bind a bound function"
@@ -1292,8 +1297,8 @@ shell_111() {
   return Func("shell_110")
 }
 shell_112(list, args*) {
-  if !(__rf_shell__.Call(__isArray__, "#rf/shell/264").Call(list)) {
-    throw "$.unshift: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/265").Call(list)) . "'"
+  if !(__rf_shell__.Call(__isArray__, "#rf/shell/266").Call(list)) {
+    throw "$.unshift: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/267").Call(list)) . "'"
   }
   list.InsertAt(1, args*)
   return list.Length()
@@ -1304,27 +1309,27 @@ shell_113() {
   return Func("shell_112")
 }
 shell_114(ipt) {
-  if (__rf_shell__.Call(__isString__, "#rf/shell/266").Call(ipt)) {
+  if (__rf_shell__.Call(__isString__, "#rf/shell/268").Call(ipt)) {
     return ipt
   }
-  if (__rf_shell__.Call(__isNumber__, "#rf/shell/267").Call(ipt)) {
+  if (__rf_shell__.Call(__isNumber__, "#rf/shell/269").Call(ipt)) {
     return ipt
   }
-  if (__rf_shell__.Call(__isArray__, "#rf/shell/268").Call(ipt)) {
+  if (__rf_shell__.Call(__isArray__, "#rf/shell/270").Call(ipt)) {
     __result__ := ""
     for __index_for__, key in ipt {
-      __result__ := "" . (__result__) . ", " . (__rf_shell__.Call(__toString__, "#rf/shell/269").Call(key)) . ""
+      __result__ := "" . (__result__) . ", " . (__rf_shell__.Call(__toString__, "#rf/shell/271").Call(key)) . ""
     }
-    return "[" . (__rf_shell__.Call(__trim__, "#rf/shell/270").Call(__result__, " ,")) . "]"
+    return "[" . (__rf_shell__.Call(__trim__, "#rf/shell/272").Call(__result__, " ,")) . "]"
   }
-  if (__rf_shell__.Call(__isObject__, "#rf/shell/271").Call(ipt)) {
+  if (__rf_shell__.Call(__isObject__, "#rf/shell/273").Call(ipt)) {
     __result__ := ""
     for key, value in ipt {
-      __result__ := "" . (__result__) . ", " . (key) . ": " . (__rf_shell__.Call(__toString__, "#rf/shell/272").Call(value)) . ""
+      __result__ := "" . (__result__) . ", " . (key) . ": " . (__rf_shell__.Call(__toString__, "#rf/shell/274").Call(value)) . ""
     }
-    return "{" . (__rf_shell__.Call(__trim__, "#rf/shell/273").Call(__result__, " ,")) . "}"
+    return "{" . (__rf_shell__.Call(__trim__, "#rf/shell/275").Call(__result__, " ,")) . "}"
   }
-  throw ("__toString__: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/274").Call(ipt)) . "'")
+  throw ("__toString__: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/276").Call(ipt)) . "'")
 }
 shell_115() {
   __getType__ := __shell_module_36__
@@ -1337,8 +1342,8 @@ shell_115() {
   return __toString__
 }
 shell_116(list) {
-  if !(__rf_shell__.Call(__isArray__, "#rf/shell/275").Call(list)) {
-    throw "$.shift: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/276").Call(list)) . "'"
+  if !(__rf_shell__.Call(__isArray__, "#rf/shell/277").Call(list)) {
+    throw "$.shift: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/278").Call(list)) . "'"
   }
   __first__ := list[1]
   list.RemoveAt(1)
@@ -1350,8 +1355,8 @@ shell_117() {
   return Func("shell_116")
 }
 shell_118(list, value*) {
-  if !(__rf_shell__.Call(__isArray__, "#rf/shell/277").Call(list)) {
-    throw "$.push: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/278").Call(list)) . "'"
+  if !(__rf_shell__.Call(__isArray__, "#rf/shell/279").Call(list)) {
+    throw "$.push: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/280").Call(list)) . "'"
   }
   for __index_for__, __v__ in value {
     list.Push(__v__)
@@ -1364,8 +1369,8 @@ shell_119() {
   return Func("shell_118")
 }
 shell_120(list) {
-  if !(__rf_shell__.Call(__isArray__, "#rf/shell/279").Call(list)) {
-    throw "$.pop: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/280").Call(list)) . "'"
+  if !(__rf_shell__.Call(__isArray__, "#rf/shell/281").Call(list)) {
+    throw "$.pop: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/282").Call(list)) . "'"
   }
   return list.Pop()
 }
@@ -1378,16 +1383,16 @@ shell_122() {
   return new MathShell()
 }
 shell_123(ipt) {
-  if (__rf_shell__.Call(__isArray__, "#rf/shell/281").Call(ipt)) {
+  if (__rf_shell__.Call(__isArray__, "#rf/shell/283").Call(ipt)) {
     return ipt.Length()
   }
-  if (__rf_shell__.Call(__isObject__, "#rf/shell/282").Call(ipt)) {
+  if (__rf_shell__.Call(__isObject__, "#rf/shell/284").Call(ipt)) {
     return ipt.Count()
   }
-  if (__rf_shell__.Call(__isString__, "#rf/shell/283").Call(ipt)) {
+  if (__rf_shell__.Call(__isString__, "#rf/shell/285").Call(ipt)) {
     return StrLen(ipt)
   }
-  throw "$.length: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/284").Call(ipt)) . "'"
+  throw "$.length: invalid type '" . (__rf_shell__.Call(__getType__, "#rf/shell/286").Call(ipt)) . "'"
 }
 shell_124() {
   __getType__ := __shell_module_36__
@@ -1405,66 +1410,66 @@ shell_126() {
 shell_127(this, callback) {
   WinWait, % this.exe
   if (callback) {
-    __rf_shell__.Call(callback, "#rf/shell/285").Call()
+    __rf_shell__.Call(callback, "#rf/shell/287").Call()
   }
   return
 }
 shell_128(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/286").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/288").Call()) {
     return
   }
   WinShow, % this.exe
   return
 }
 shell_129(this, style) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/287").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/289").Call()) {
     return
   }
-  __rf_shell__.Call(__noop__, "#rf/shell/288").Call(style)
+  __rf_shell__.Call(__noop__, "#rf/shell/290").Call(style)
   WinSet, Style, % style, % this.exe
   return
 }
 shell_130(this, level) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/289").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/291").Call()) {
     return
   }
-  __rf_shell__.Call(__noop__, "#rf/shell/290").Call(level)
+  __rf_shell__.Call(__noop__, "#rf/shell/292").Call(level)
   Process, Priority, % this.exe, % level
   return
 }
 shell_131(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/291").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/293").Call()) {
     return
   }
   WinRestore, % this.exe
   return
 }
 shell_132(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/292").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/294").Call()) {
     return
   }
   WinMinimize, % this.exe
   return
 }
 shell_133(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/293").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/295").Call()) {
     return
   }
   WinMaximize, % this.exe
   return
 }
 shell_134(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/294").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/296").Call()) {
     return
   }
   WinKill, % this.exe
   return
 }
 shell_135(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/295").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/297").Call()) {
     return false
   }
-  __object__ := __rf_shell__.Call(this.getBounds, "#rf/shell/296").Call()
+  __object__ := __rf_shell__.Call(this.getBounds, "#rf/shell/298").Call()
   x := __object__["x"]
   y := __object__["y"]
   width := __object__["width"]
@@ -1478,7 +1483,7 @@ shell_137(this) {
   return WinActive(this.exe)
 }
 shell_138(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/297").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/299").Call()) {
     return
   }
   WinHide, % this.exe
@@ -1490,21 +1495,21 @@ shell_139(this) {
   __y__ := __array__[2]
   __w__ := __array__[3]
   __h__ := __array__[4]
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/298").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/300").Call()) {
     return {x: __x__, y: __y__, width: __w__, height: __h__}
   }
   WinGetPos, __x__, __y__, __w__, __h__, % this.exe
   return {x: __x__, y: __y__, width: __w__, height: __h__}
 }
 shell_140(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/299").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/301").Call()) {
     return
   }
   WinActivate, % this.exe
   return
 }
 shell_141(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/300").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/302").Call()) {
     return
   }
   WinClose, % this.exe
@@ -1512,7 +1517,7 @@ shell_141(this) {
 }
 shell_142(this) {
   name := "ahk_class Shell_TrayWnd"
-  __rf_shell__.Call(__noop__, "#rf/shell/301").Call(name)
+  __rf_shell__.Call(__noop__, "#rf/shell/303").Call(name)
   WinActivate, % name
   return
 }
@@ -1535,30 +1540,30 @@ shell_148(this, __n__) {
   return Abs(__n__)
 }
 shell_149(this, content) {
-  __rf_shell__.Call(this.remove, "#rf/shell/302").Call()
-  __rf_shell__.Call(this.append, "#rf/shell/303").Call(content)
+  __rf_shell__.Call(this.remove, "#rf/shell/304").Call()
+  __rf_shell__.Call(this.append, "#rf/shell/305").Call(content)
   return
 }
 shell_150(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/304").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/306").Call()) {
     return
   }
   FileDelete, % this.source
   return
 }
 shell_151(this) {
-  if !(__rf_shell__.Call(this.isExists, "#rf/shell/305").Call()) {
+  if !(__rf_shell__.Call(this.isExists, "#rf/shell/307").Call()) {
     return ""
   }
   __result__ := ""
   FileRead, __result__, % this.source
-  return __rf_shell__.Call(__replace__, "#rf/shell/306").Call(__result__, "`r", "")
+  return __rf_shell__.Call(__replace__, "#rf/shell/308").Call(__result__, "`r", "")
 }
 shell_152(this) {
   return FileExist(this.source)
 }
 shell_153(this, content) {
-  __rf_shell__.Call(__noop__, "#rf/shell/307").Call(content)
+  __rf_shell__.Call(__noop__, "#rf/shell/309").Call(content)
   FileAppend, % content, % this.source, UTF-8
   return
 }
@@ -1571,7 +1576,7 @@ shell_155() {
   return __toLowerCase__
 }
 shell_156(text, iStart, iEnd := 0) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/308").Call(text)
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/310").Call(text)
   if !(__type__ == "string") {
     throw "$.subString: invalid type '" . (__type__) . "'"
   }
@@ -1592,7 +1597,7 @@ shell_157() {
 }
 shell_158(__min__ := 0, __max__ := 1) {
   __result__ := 0
-  __rf_shell__.Call(__noop__, "#rf/shell/309").Call(__min__, __max__)
+  __rf_shell__.Call(__noop__, "#rf/shell/311").Call(__min__, __max__)
   Random, __result__, __min__, __max__
   return __result__
 }
@@ -1601,7 +1606,7 @@ shell_159() {
   return Func("shell_158")
 }
 shell_160(filename) {
-  __rf_shell__.Call(__noop__, "#rf/shell/310").Call(filename)
+  __rf_shell__.Call(__noop__, "#rf/shell/312").Call(filename)
   SoundPlay, % filename
   return
 }
@@ -1610,7 +1615,7 @@ shell_161() {
   return Func("shell_160")
 }
 shell_162(source) {
-  __rf_shell__.Call(__noop__, "#rf/shell/311").Call(source)
+  __rf_shell__.Call(__noop__, "#rf/shell/313").Call(source)
   Run, % source
   return
 }
@@ -1622,7 +1627,7 @@ shell_164(p := "", speed := 0) {
   if !(p) {
     return
   }
-  __rf_shell__.Call(__noop__, "#rf/shell/312").Call(speed)
+  __rf_shell__.Call(__noop__, "#rf/shell/314").Call(speed)
   MouseMove, p[1], p[2], speed
   return
 }
@@ -1631,7 +1636,7 @@ shell_165() {
   return Func("shell_164")
 }
 shell_166(ipt) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/313").Call(ipt)
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/315").Call(ipt)
   if !(__type__ == "string") {
     return false
   }
@@ -1642,7 +1647,7 @@ shell_167() {
   return Func("shell_166")
 }
 shell_168(ipt) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/314").Call(ipt)
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/316").Call(ipt)
   if !(__type__ == "object") {
     return false
   }
@@ -1653,7 +1658,7 @@ shell_169() {
   return Func("shell_168")
 }
 shell_170(ipt) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/315").Call(ipt)
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/317").Call(ipt)
   if !(__type__ == "number") {
     return false
   }
@@ -1664,7 +1669,7 @@ shell_171() {
   return Func("shell_170")
 }
 shell_172(ipt) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/316").Call(ipt)
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/318").Call(ipt)
   if !(__type__ == "function") {
     return false
   }
@@ -1675,7 +1680,7 @@ shell_173() {
   return Func("shell_172")
 }
 shell_174(ipt) {
-  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/317").Call(ipt)
+  __type__ := __rf_shell__.Call(__getType__, "#rf/shell/319").Call(ipt)
   if !(__type__ == "array") {
     return false
   }
@@ -1691,7 +1696,7 @@ shell_176() {
 }
 shell_177(p := "") {
   if !(p) {
-    p := __rf_shell__.Call(__getPosition__, "#rf/shell/318").Call()
+    p := __rf_shell__.Call(__getPosition__, "#rf/shell/320").Call()
   }
   __result__ := 0
   PixelGetColor, __result__, % p[1], % p[2], RGB
@@ -1715,7 +1720,7 @@ shell_180(source, start, end) {
   __array__ := [0, 0]
   __x__ := __array__[1]
   __y__ := __array__[2]
-  __rf_shell__.Call(__noop__, "#rf/shell/319").Call(source)
+  __rf_shell__.Call(__noop__, "#rf/shell/321").Call(source)
   ImageSearch __x__, __y__, start[1], start[2], end[1], end[2], % A_ScriptDir . "\\\" . source
   return [__x__, __y__]
 }
@@ -1733,7 +1738,7 @@ shell_182(color, start, end, variation := 0) {
   __array__ := [0, 0]
   __x__ := __array__[1]
   __y__ := __array__[2]
-  __rf_shell__.Call(__noop__, "#rf/shell/320").Call(color, variation)
+  __rf_shell__.Call(__noop__, "#rf/shell/322").Call(color, variation)
   PixelSearch __x__, __y__, start[1], start[2], end[1], end[2], color, variation, Fast RGB
   return [__x__, __y__]
 }
@@ -1742,7 +1747,7 @@ shell_183() {
   return Func("shell_182")
 }
 shell_184(text, callback) {
-  __rf_shell__.Call(__noop__, "#rf/shell/321").Call(text, callback)
+  __rf_shell__.Call(__noop__, "#rf/shell/323").Call(text, callback)
   MsgBox, 0x4,, % text
   IfMsgBox Yes
     callback.Call(true)
@@ -1755,8 +1760,8 @@ shell_185() {
   return Func("shell_184")
 }
 shell_186(key := "left") {
-  key := __rf_shell__.Call(__replace__, "#rf/shell/322").Call(key, "-", "")
-  key := __rf_shell__.Call(__replace__, "#rf/shell/323").Call(key, ":", " ")
+  key := __rf_shell__.Call(__replace__, "#rf/shell/324").Call(key, "-", "")
+  key := __rf_shell__.Call(__replace__, "#rf/shell/325").Call(key, ":", " ")
   Click, % key
   return
 }
@@ -1765,7 +1770,7 @@ shell_187() {
   return Func("shell_186")
 }
 shell_188(message) {
-  __rf_shell__.Call(__noop__, "#rf/shell/324").Call(message)
+  __rf_shell__.Call(__noop__, "#rf/shell/326").Call(message)
   MsgBox, % message
   return
 }
@@ -1890,7 +1895,7 @@ shell_218(__cacheOnce__, __i__, callback, args*) {
   if (__cacheOnce__[__ci_shell__.Call(__i__)][1]) {
     return __cacheOnce__[__ci_shell__.Call(__i__)][2]
   }
-  __result__ := __rf_shell__.Call(callback, "#rf/shell/325").Call(args*)
+  __result__ := __rf_shell__.Call(callback, "#rf/shell/327").Call(args*)
   __cacheOnce__[__ci_shell__.Call(__i__)] := [true, __result__]
   return __result__
 }
@@ -1995,9 +2000,9 @@ shell_243(url, callback) {
     whr.Open("GET", url, true)
     whr.Send()
     whr.WaitForResponse()
-    __rf_shell__.Call(callback, "#rf/shell/326").Call(whr.ResponseText)
+    __rf_shell__.Call(callback, "#rf/shell/328").Call(whr.ResponseText)
   } catch {
-    __rf_shell__.Call(callback, "#rf/shell/327").Call("")
+    __rf_shell__.Call(callback, "#rf/shell/329").Call("")
   }
   return
 }
@@ -2020,7 +2025,7 @@ shell_248() {
 shell_249(list, callback) {
   for __i__, __item__ in list {
     __i__ := __i__ - 1
-    __rf_shell__.Call(callback, "#rf/shell/328").Call(__item__, __i__)
+    __rf_shell__.Call(callback, "#rf/shell/330").Call(__item__, __i__)
   }
   return
 }

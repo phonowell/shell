@@ -6,6 +6,7 @@ import $forEach from './forEach'
 import $formatHotkey from './formatHotkey'
 import $length from './length'
 import $noop from './noop'
+import $press from './press'
 import $push from './push'
 import $replace from './replace'
 import $split from './split'
@@ -34,6 +35,10 @@ class KeyBindingShell
     [key, $name] = $split ($replace key, ':down', ''), '.'
 
     $list = @mapCallback[key]
+    unless $length $list
+      $press key
+      return
+
     if $name then $list = $filter $list, (it) -> it[0] == $name
     $forEach $list, (it) -> it[1]()
 
