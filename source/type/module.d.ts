@@ -39,7 +39,7 @@ export type FormatHotkey3 = (listLey: string[]) => [string, string[]]
 export type Get = (url: string, callback: (data: string) => unknown) => void
 export type GetColor = (point: Point | undefined) => number
 export type GetPosition = () => Point
-export type GetState = (key: string) => string
+export type GetState = (key: string) => boolean
 export type Gt = <T = number>(value: T, other: T) => boolean
 export type Gte = <T = number>(value: T, other: T) => boolean
 export type Includes = (ipt: string | unknown[], needle: unknown) => boolean
