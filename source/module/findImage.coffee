@@ -2,11 +2,6 @@
 
 import $noop from './noop'
 
-# findImage(
-#   source: string,
-#   start: Point = [0, 0],
-#   end: Point = [A_ScreenWidth, A_ScreenHeight],
-# ): Point
 ###* @type import('../type/module').FindImage ###
 export default (source, start, end) ->
 

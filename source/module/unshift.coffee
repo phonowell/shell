@@ -3,8 +3,7 @@
 import $getType from './getType'
 import $isArray from './isArray'
 
-# unshift<T>(list: T[], ...value: T[]): number
-###* @type import('../type/module').Unshift} ###
+###* @type import('../type/module').Unshift ###
 export default (list, args...) ->
 
   unless $isArray list

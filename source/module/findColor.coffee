@@ -2,12 +2,6 @@
 
 import $noop from './noop'
 
-# findColor(
-#   color: number,
-#   start: Point = [0, 0],
-#   end: Point = [A_ScreenWidth, A_ScreenHeight],
-#   variation = 0
-# ): Point
 ###* @type import('../type/module').FindColor ###
 export default (color, start, end, variation = 0) ->
 

@@ -3,7 +3,6 @@
 import $length from './length'
 import $tail from './tail'
 
-# mixin(...args: object[]): object
 ###* @type import('../type/module').Mixin ###
 export default (args...) ->
 

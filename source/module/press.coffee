@@ -1,6 +1,7 @@
 # @ts-check
 
 import $click from './click'
+import $createList from './createList'
 import $includes from './includes'
 import $length from './length'
 import $push from './push'
@@ -9,10 +10,11 @@ import $split from './split'
 import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
-###* @type import('../type/module').Press2} ###
-$formatInputPress = (listInput) ->
+$formatInputPress =
+###* @type import('../type/module').Press1 ###
+(listInput) ->
 
-  $listKey = []
+  $listKey = $createList 'string'
 
   for $input in listInput
 
@@ -24,8 +26,9 @@ $formatInputPress = (listInput) ->
 
   return $listKey
 
-###* @type import('../type/module').Press3} ###
-$validateInputPress = (listInput) ->
+$validateInputPress =
+###* @type import('../type/module').Press2 ###
+(listInput) ->
 
   unless $length listInput
     return false
@@ -40,8 +43,7 @@ $validateInputPress = (listInput) ->
 
   return true
 
-# press(...key: string[]): void
-###* @type import('../type/module').Press} ###
+###* @type import('../type/module').Press3 ###
 export default (listInput...) ->
 
   unless $validateInputPress listInput then return

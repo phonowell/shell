@@ -20,7 +20,7 @@ declare global {
   }
   interface Object {
     Count: () => number
-    Delete: (key: keyof object) => void
+    Delete: (key: string | number) => void
     Length: () => number
   }
 
@@ -34,7 +34,7 @@ declare global {
   const ExitApp: () => void
   const FileExist: (source: string) => boolean
   const Floor: (n: number) => number
-  const GetKeyState: (key: string, mode: 'P') => string
+  const GetKeyState: (key: string, mode: 'P') => boolean
   const InStr: (text: string, target: string) => number
   const IsFunc: (ipt: unknown) => ipt is Fn
   const IsObject: (ipt: unknown) => ipt is object

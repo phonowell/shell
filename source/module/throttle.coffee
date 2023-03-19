@@ -8,8 +8,7 @@ $iThrottle = 0
 $tThrottle = {}
 $tsThrottle = {}
 
-# throttle(func: Fn, wait: number): Fn
-###* @type import('../type/module').Throttle} ###
+###* @type import('../type/module').Throttle ###
 export default ($func, $wait) ->
 
   $iThrottle++

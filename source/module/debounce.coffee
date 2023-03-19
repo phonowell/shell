@@ -6,7 +6,6 @@ import $setTimeout from './setTimeout'
 $iDebounce = 0
 $tDebounce = {}
 
-# debounce(func: Fn, wait: number): Fn
 ###* @type import('../type/module').Debounce ###
 export default ($func, $wait) ->
 

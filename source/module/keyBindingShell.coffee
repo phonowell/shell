@@ -4,6 +4,8 @@ import $delete from './delete'
 import $filter from './filter'
 import $forEach from './forEach'
 import $formatHotkey from './formatHotkey'
+import $isFunction from './isFunction'
+import $isString from './isString'
 import $length from './length'
 import $noop from './noop'
 import $press from './press'
@@ -16,19 +18,19 @@ class KeyBindingShell
   constructor: ->
 
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapBound'] ###
-    @mapBound = {} # Record<string, Fn>
+    @mapBound = {}
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapCallback'] ###
-    @mapCallback = {} # Record<string, [Name, Fn]>
+    @mapCallback = {}
 
-  # add(key: string, callback: Fn): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['add'] ###
-  add: (key, callback) ->
-    [key, $name] = $split key, '.'
-    @init key
-    $push @mapCallback[key], [$name, callback]
+  add: (args...) ->
+
+    [$key, $name, $callback] = @pickArgs args
+
+    @init $key
+    $push @mapCallback[$key], [$name, $callback]
     return
 
-  # fire(key: string): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['fire'] ###
   fire: (key) ->
 
@@ -42,7 +44,6 @@ class KeyBindingShell
     if $name then $list = $filter $list, (it) -> it[0] == $name
     $forEach $list, (it) -> it[1]()
 
-  # init(key: string): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['init'] ###
   init: (key) ->
 
@@ -53,7 +54,14 @@ class KeyBindingShell
     @mapBound[key] = $fn
     @on key, $fn
 
-  # off(key: string, callback: Fn): void
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['isTuple3'] ###
+  isTuple3: (ipt) ->
+    unless ($length ipt) == 3 then return false
+    unless $isString ipt[0] then return false
+    unless $isString ipt[1] then return false
+    unless $isFunction ipt[2] then return false
+    return true
+
   ###* @type import('../type/keyBindingShell').KeyBindingShell['off'] ###
   off: (key, callback) ->
     key = $formatHotkey $replace key, ':down', ''
@@ -61,7 +69,6 @@ class KeyBindingShell
     Native 'Hotkey, % key, % callback, Off'
     return
 
-  # on(key: string, callback: Fn): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['on'] ###
   on: (key, callback) ->
     key = $formatHotkey $replace key, ':down', ''
@@ -69,7 +76,11 @@ class KeyBindingShell
     Native 'Hotkey, % key, % callback, On'
     return
 
-  # remove(key: string): void
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['pickArgs'] ###
+  pickArgs: (args) ->
+    if @isTuple3 args then return args
+    return [args[0], {}, args[1]]
+
   ###* @type import('../type/keyBindingShell').KeyBindingShell['remove'] ###
   remove: (key) ->
 

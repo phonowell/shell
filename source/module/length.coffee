@@ -5,8 +5,7 @@ import $isArray from './isArray'
 import $isObject from './isObject'
 import $isString from './isString'
 
-# length(ipt: string | unknown[] | object): number
-###* @type import('../type/module').Length} ###
+###* @type import('../type/module').Length ###
 export default (ipt) ->
 
   if $isArray ipt then return ipt.Length()
