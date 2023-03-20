@@ -1,6 +1,5 @@
 # @ts-check
 
-import $forEach from './forEach'
 import $getType from './getType'
 import $isArray from './isArray'
 import $isNumber from './isNumber'
@@ -17,7 +16,8 @@ $toString =
 
   if $isArray ipt
     $result = ''
-    $forEach ipt, (it) -> $result = "#{$result}, #{$toString it}"
+    for it in ipt
+      $result = "#{$result}, #{$toString it}"
     return "[#{$trim $result, ' ,'}]"
 
   if $isObject ipt
