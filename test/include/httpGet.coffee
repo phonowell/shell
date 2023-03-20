@@ -1,9 +1,9 @@
 # @ts-check
 
-import $get from '../../source/module/get'
+import $httpGet from '../../source/module/httpGet'
 import $isFunction from '../../source/module/isFunction'
 
 do ->
 
-  unless $isFunction $get
+  unless $isFunction $httpGet
     throw '$.get is not a function'

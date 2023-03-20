@@ -12,6 +12,7 @@ import $clone from './module/clone'
 import $compact from './module/compact'
 import $concat from './module/concat'
 import $confirm from './module/confirm'
+import $createList from './module/createList'
 import $debounce from './module/debounce'
 import $defer from './module/defer'
 import $delay from './module/delay'
@@ -30,7 +31,6 @@ import $findImage from './module/findImage'
 import $first from './module/first'
 import $forEach from './module/forEach'
 import $formatHotkey from './module/formatHotkey'
-import $get from './module/get'
 import $getColor from './module/getColor'
 import $getPosition from './module/getPosition'
 import $getState from './module/getState'
@@ -38,6 +38,7 @@ import $getType from './module/getType'
 import $gt from './module/gt'
 import $gte from './module/gte'
 import $head from './module/head'
+import $httpGet from './module/httpGet'
 import $includes from './module/includes'
 import $isArray from './module/isArray'
 import $isFunction from './module/isFunction'
@@ -67,6 +68,7 @@ import $open from './module/open'
 import $play from './module/play'
 import $pop from './module/pop'
 import $press from './module/press'
+import $preventInput from './module/preventInput'
 import $push from './module/push'
 import $random from './module/random'
 import $range from './module/range'
@@ -94,6 +96,7 @@ import $toLower from './module/toLower'
 import $toLowerCase from './module/toLowerCase'
 import $toNumber from './module/toNumber'
 import $toString from './module/toString'
+import $toTuple from './module/toTuple'
 import $toUpper from './module/toUpper'
 import $toUpperCase from './module/toUpperCase'
 import $trigger from './module/trigger'
@@ -118,6 +121,7 @@ $mixin $, clone: $clone
 $mixin $, compact: $compact
 $mixin $, concat: $concat
 $mixin $, confirm: $confirm
+$mixin $, createList: $createList
 $mixin $, debounce: $debounce
 $mixin $, defer: $defer
 $mixin $, delay: $delay
@@ -136,7 +140,6 @@ $mixin $, findImage: $findImage
 $mixin $, first: $first
 $mixin $, forEach: $forEach
 $mixin $, formatHotkey: $formatHotkey
-$mixin $, get: $get
 $mixin $, getColor: $getColor
 $mixin $, getPosition: $getPosition
 $mixin $, getState: $getState
@@ -144,6 +147,7 @@ $mixin $, getType: $getType
 $mixin $, gt: $gt
 $mixin $, gte: $gte
 $mixin $, head: $head
+$mixin $, httpGet: $httpGet
 $mixin $, includes: $includes
 $mixin $, isArray: $isArray
 $mixin $, isFunction: $isFunction
@@ -173,6 +177,7 @@ $mixin $, open: $open
 $mixin $, play: $play
 $mixin $, pop: $pop
 $mixin $, press: $press
+$mixin $, preventInput: $preventInput
 $mixin $, push: $push
 $mixin $, random: $random
 $mixin $, range: $range
@@ -200,6 +205,7 @@ $mixin $, toLower: $toLower
 $mixin $, toLowerCase: $toLowerCase
 $mixin $, toNumber: $toNumber
 $mixin $, toString: $toString
+$mixin $, toTuple: $toTuple
 $mixin $, toUpper: $toUpper
 $mixin $, toUpperCase: $toUpperCase
 $mixin $, trigger: $trigger

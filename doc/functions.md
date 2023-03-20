@@ -1,6 +1,6 @@
 # Functions
 
-`111` functions, at `2023-02-12T07:30:22.245Z`.
+`114` functions, at `2023-03-20T06:31:08.989Z`.
 - [add](../source/module/add.coffee)
 - [alert](../source/module/alert.coffee)
 - [beep](../source/module/beep.coffee)
@@ -14,6 +14,7 @@
 - [compact](../source/module/compact.coffee)
 - [concat](../source/module/concat.coffee)
 - [confirm](../source/module/confirm.coffee)
+- [createList](../source/module/createList.coffee)
 - [debounce](../source/module/debounce.coffee)
 - [defer](../source/module/defer.coffee)
 - [delay](../source/module/delay.coffee)
@@ -34,7 +35,6 @@
 - [first](../source/module/first.coffee)
 - [forEach](../source/module/forEach.coffee)
 - [formatHotkey](../source/module/formatHotkey.coffee)
-- [get](../source/module/get.coffee)
 - [getColor](../source/module/getColor.coffee)
 - [getPosition](../source/module/getPosition.coffee)
 - [getState](../source/module/getState.coffee)
@@ -42,6 +42,7 @@
 - [gt](../source/module/gt.coffee)
 - [gte](../source/module/gte.coffee)
 - [head](../source/module/head.coffee)
+- [httpGet](../source/module/httpGet.coffee)
 - [includes](../source/module/includes.coffee)
 - [isArray](../source/module/isArray.coffee)
 - [isFunction](../source/module/isFunction.coffee)
@@ -74,6 +75,7 @@
 - [play](../source/module/play.coffee)
 - [pop](../source/module/pop.coffee)
 - [press](../source/module/press.coffee)
+- [preventInput](../source/module/preventInput.coffee)
 - [push](../source/module/push.coffee)
 - [random](../source/module/random.coffee)
 - [range](../source/module/range.coffee)
@@ -101,6 +103,7 @@
 - [toLowerCase](../source/module/toLowerCase.coffee)
 - [toNumber](../source/module/toNumber.coffee)
 - [toString](../source/module/toString.coffee)
+- [toTuple](../source/module/toTuple.coffee)
 - [toUpper](../source/module/toUpper.coffee)
 - [toUpperCase](../source/module/toUpperCase.coffee)
 - [trigger](../source/module/trigger.coffee)
