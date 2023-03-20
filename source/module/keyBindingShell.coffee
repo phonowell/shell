@@ -15,6 +15,8 @@ class KeyBindingShell
 
   constructor: ->
 
+    ###* @type import('../type/keyBindingShell').KeyBindingShell['mapBound'] ###
+    @mapBound = {}
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapCallback'] ###
     @mapCallback = {}
 
@@ -23,7 +25,13 @@ class KeyBindingShell
 
     [$key, $name] = $split key, '.'
 
-    unless @mapCallback[$key] then @mapCallback[$key] = []
+    # init
+    unless @mapCallback[$key]
+      @mapCallback[$key] = []
+
+      $fn = => @fire key
+      @mapBound[$key] = $fn
+      @register $key, $fn, on
 
     # Item: [Name, Fn]
     $push @mapCallback[$key], [$name, callback]
@@ -50,20 +58,6 @@ class KeyBindingShell
     unless prefix then return $key
     return "#{prefix}#{$key}"
 
-  ###* @type import('../type/keyBindingShell').KeyBindingShell['off'] ###
-  off: (key, callback) ->
-    $key = @formatKey key, '~'
-    $noop $key, callback
-    Native 'Hotkey, % $key, % callback, Off'
-    return
-
-  ###* @type import('../type/keyBindingShell').KeyBindingShell['on'] ###
-  on: (key, callback) ->
-    $key = @formatKey key, '~'
-    $noop $key, callback
-    Native 'Hotkey, % $key, % callback, On'
-    return
-
   ###* @type import('../type/keyBindingShell').KeyBindingShell['prevent'] ###
   prevent: (key, isPrevented) ->
 
@@ -77,6 +71,19 @@ class KeyBindingShell
 
     return
 
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['register'] ###
+  register: (key, callback, action) ->
+
+    $key = @formatKey key, '~'
+    $noop $key, callback
+
+    if action
+      Native 'Hotkey, % $key, % callback, On'
+    else
+      Native 'Hotkey, % $key, % callback, Off'
+
+    return
+
   ###* @type import('../type/keyBindingShell').KeyBindingShell['remove'] ###
   remove: (key) ->
 
@@ -84,6 +91,7 @@ class KeyBindingShell
 
     unless $name
       $delete @mapCallback, $key
+      @register $key, @mapBound[$key], off
       return
 
     $listNew = $filter @mapCallback[$key], ($item) -> $item[0] != $name
@@ -91,6 +99,7 @@ class KeyBindingShell
     # if no callback left, delete key from mapCallback
     unless $length $listNew
       $delete @mapCallback, $key
+      @register $key, @mapBound[$key], off
       return
 
     @mapCallback[$key] = $listNew
