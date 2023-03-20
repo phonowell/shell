@@ -127,14 +127,16 @@ export type Move = (p: Point | undefined, speed?: number) => void
 export type Noop = (...args: unknown[]) => void
 export type Now = () => number
 export type Nth = <T>(list: T[], n?: number) => T
+export type Off = (key: string) => void
 export type Once = (callback: Fn) => Fn
+export type On = (key: string, callback: Fn) => void
 export type Open = (source: string) => void
 export type Play = (filename: string) => void
 export type Pop = <T>(list: T[]) => T
 export type Press1 = (listInput: string[]) => string[]
 export type Press2 = (listInput: string[]) => boolean
 export type Press3 = (...key: string[]) => void
-export type PreventInput = (isPrevented: boolean) => void
+export type PreventInput = (key: string, isPrevented: boolean) => void
 export type Push = <T>(list: T[], ...value: T[]) => number
 export type Random = (min?: number, max?: number) => number
 export type Range = (...args: number[]) => number[]

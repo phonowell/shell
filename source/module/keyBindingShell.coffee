@@ -1,12 +1,9 @@
 # @ts-check
 
-import $delete from './delete'
 import $filter from './filter'
 import $forEach from './forEach'
 import $formatHotkey from './formatHotkey'
-import $length from './length'
 import $noop from './noop'
-import $press from './press'
 import $push from './push'
 import $replace from './replace'
 import $split from './split'
@@ -43,13 +40,8 @@ class KeyBindingShell
     [$key, $name] = $split ($replace key, ':down', ''), '.'
 
     $list = @mapCallback[$key]
-    unless $length $list
-      # ensure the key can be triggered as itself
-      # when there is no callback bound to it
-      $press $key
-      return
-
     if $name then $list = $filter $list, (it) -> it[0] == $name
+
     $forEach $list, (it) -> it[1]()
 
   ###* @type import('../type/keyBindingShell').KeyBindingShell['formatKey'] ###
@@ -90,18 +82,10 @@ class KeyBindingShell
     [$key, $name] = $split key, '.'
 
     unless $name
-      $delete @mapCallback, $key
-      @register $key, @mapBound[$key], off
+      @mapCallback[$key] = []
       return
 
     $listNew = $filter @mapCallback[$key], ($item) -> $item[0] != $name
-
-    # if no callback left, delete key from mapCallback
-    unless $length $listNew
-      $delete @mapCallback, $key
-      @register $key, @mapBound[$key], off
-      return
-
     @mapCallback[$key] = $listNew
     return
 
