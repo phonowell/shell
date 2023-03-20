@@ -12,7 +12,6 @@ export class KeyBindingShell {
   private formatKey(key: Key, prefix?: '~' | ''): Key
   off(key: Key, callback: Fn): void
   on(key: Key, callback: Fn): void
-  permit(key: Key): void
-  prevent(key: Key): void
+  prevent(key: Key, isPrevented: boolean): void
   remove(key: Key): void
 }

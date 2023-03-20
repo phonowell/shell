@@ -13,7 +13,7 @@ export type Add = (...args: number[]) => number
 export type Alert = (message: string) => void
 export type Beep = () => void
 export type Bind = (callback: Fn, ...args: unknown[]) => Fn
-export type BlockInput = (block: boolean) => void
+export type BlockInput = (isBlocked: boolean) => void
 export type Ceil = (n: number) => number
 export type Chunk = <T>(list: T[], size?: number) => T[][]
 export type ClearInterval = (callback: Fn) => void
@@ -134,6 +134,7 @@ export type Pop = <T>(list: T[]) => T
 export type Press1 = (listInput: string[]) => string[]
 export type Press2 = (listInput: string[]) => boolean
 export type Press3 = (...key: string[]) => void
+export type PreventInput = (isPrevented: boolean) => void
 export type Push = <T>(list: T[], ...value: T[]) => number
 export type Random = (min?: number, max?: number) => number
 export type Range = (...args: number[]) => number[]

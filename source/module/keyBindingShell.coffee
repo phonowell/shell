@@ -25,6 +25,7 @@ class KeyBindingShell
 
     unless @mapCallback[$key] then @mapCallback[$key] = []
 
+    # Item: [Name, Fn]
     $push @mapCallback[$key], [$name, callback]
     return
 
@@ -63,18 +64,17 @@ class KeyBindingShell
     Native 'Hotkey, % $key, % callback, On'
     return
 
-  ###* @type import('../type/keyBindingShell').KeyBindingShell['permit'] ###
-  permit: (key) ->
-    $key = @formatKey key
-    $noop $key
-    Native 'Hotkey, % $key, % $noop, Off'
-    return
-
   ###* @type import('../type/keyBindingShell').KeyBindingShell['prevent'] ###
-  prevent: (key) ->
+  prevent: (key, isPrevented) ->
+
     $key = @formatKey key
     $noop $key
-    Native 'Hotkey, % $key, % $noop, On'
+
+    if isPrevented
+      Native 'Hotkey, % $key, % $noop, On'
+    else
+      Native 'Hotkey, % $key, % $noop, Off'
+
     return
 
   ###* @type import('../type/keyBindingShell').KeyBindingShell['remove'] ###
@@ -88,6 +88,7 @@ class KeyBindingShell
 
     $listNew = $filter @mapCallback[$key], ($item) -> $item[0] != $name
 
+    # if no callback left, delete key from mapCallback
     unless $length $listNew
       $delete @mapCallback, $key
       return
