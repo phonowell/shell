@@ -20,15 +20,9 @@ class KeyBindingShell
   ###* @type import('../type/keyBindingShell').KeyBindingShell['add'] ###
   add: (key, callback) ->
 
-    [$key, $name] = $split key, '.'
+    [$key, $name] = $split ($replace key, ':down', ''), '.'
 
-    # init
-    unless @mapCallback[$key]
-      @mapCallback[$key] = []
-
-      $fn = => @fire key
-      @mapBound[$key] = $fn
-      @register $key, $fn, on
+    @register $key, on
 
     # Item: [Name, Fn]
     $push @mapCallback[$key], [$name, callback]
@@ -50,36 +44,51 @@ class KeyBindingShell
     unless prefix then return $key
     return "#{prefix}#{$key}"
 
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['prepare'] ###
+  prepare: (key) ->
+
+    if @mapCallback[key] then return
+
+    @mapBound[key] = => @fire key
+    @mapCallback[key] = []
+    return
+
   ###* @type import('../type/keyBindingShell').KeyBindingShell['prevent'] ###
   prevent: (key, isPrevented) ->
 
+    @prepare key
+
+    $callback = @mapBound[key]
     $key = @formatKey key
-    $noop $key
+    $noop $callback, $key
 
     if isPrevented
-      Native 'Hotkey, % $key, % $noop, On'
+      Native 'Hotkey, % $key, % $callback, On'
     else
-      Native 'Hotkey, % $key, % $noop, Off'
+      Native 'Hotkey, % $key, % $callback, Off'
 
     return
 
   ###* @type import('../type/keyBindingShell').KeyBindingShell['register'] ###
-  register: (key, callback, action) ->
+  register: (key, action) ->
 
+    @prepare key
+
+    $callback = @mapBound[key]
     $key = @formatKey key, '~'
-    $noop $key, callback
+    $noop $callback, $key
 
     if action
-      Native 'Hotkey, % $key, % callback, On'
+      Native 'Hotkey, % $key, % $callback, On'
     else
-      Native 'Hotkey, % $key, % callback, Off'
+      Native 'Hotkey, % $key, % $callback, Off'
 
     return
 
   ###* @type import('../type/keyBindingShell').KeyBindingShell['remove'] ###
   remove: (key) ->
 
-    [$key, $name] = $split key, '.'
+    [$key, $name] = $split ($replace key, ':down', ''), '.'
 
     unless $name
       @mapCallback[$key] = []

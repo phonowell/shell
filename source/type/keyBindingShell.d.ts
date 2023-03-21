@@ -11,7 +11,8 @@ export class KeyBindingShell {
   add(key: Key, callback: Fn): void
   fire(key: Key): void
   private formatKey(key: Key, prefix?: '~' | ''): Key
+  private prepare(key: Key): void
   prevent(key: Key, isPrevented: boolean): void
-  register(key: Key, callback: Fn, action: boolean): void
+  register(key: Key, action: boolean): void
   remove(key: Key): void
 }
