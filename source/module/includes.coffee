@@ -6,7 +6,6 @@ import $isNumber from './isNumber'
 import $isString from './isString'
 import $toString from './toString'
 
-# includes(ipt: string | unknown[], needle: unknown): boolean
 ###* @type import('../type/module').Includes ###
 export default (ipt, needle) ->
 

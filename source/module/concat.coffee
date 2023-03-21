@@ -4,7 +4,6 @@ import $clone from './clone'
 import $isArray from './isArray'
 import $push from './push'
 
-# concat<T>(list: T[], ...values: (T | T[])[]): T[]
 ###* @type import('../type/module').Concat ###
 export default ($list, $values...) ->
 

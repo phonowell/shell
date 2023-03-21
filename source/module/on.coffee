@@ -2,5 +2,5 @@
 
 import $keyBindingXShell from './keyBindingXShell'
 
-###* @type import('../type/keyBindingShell').KeyBindingShell['on'] ###
+###* @type import('../type/module').On ###
 export default $keyBindingXShell.add

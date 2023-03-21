@@ -4,7 +4,6 @@ import $getType from './getType'
 import $push from './push'
 import $sort from './sort'
 
-# keys(ipt: Record<string, unknown>): string[]
 ###* @type import('../type/module').Keys ###
 export default (ipt) ->
 

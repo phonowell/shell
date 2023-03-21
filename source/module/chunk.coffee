@@ -3,7 +3,6 @@
 import $length from './length'
 import $push from './push'
 
-# chunk<T>(list: T[], size = 1): T[][]
 ###* @type import('../type/module').Chunk ###
 export default ($list, $size = 1) ->
 

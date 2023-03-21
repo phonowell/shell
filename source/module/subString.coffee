@@ -2,8 +2,7 @@
 
 import $getType from './getType'
 
-# subString(text: string, iStart: number, iEnd?: number): string
-###* @type import('../type/module').SubString} ###
+###* @type import('../type/module').SubString ###
 export default (text, iStart, iEnd = 0) ->
 
   $type = $getType text

@@ -3,7 +3,6 @@
 import $bind from './bind'
 import $isNumber from './isNumber'
 
-# setTimeout(callback: Fn, time: number): number
 ###* @type import('../type/module').SetTimeout ###
 export default (callback, time) ->
 

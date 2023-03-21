@@ -1,10 +1,9 @@
 # @ts-check
 
-# blockInput(block: boolean): void
 ###* @type import('../type/module').BlockInput ###
-export default (block) ->
+export default (isBlocked) ->
 
-  if block
+  if isBlocked
     Native 'BlockInput, On'
     return
 

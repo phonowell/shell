@@ -7,17 +7,17 @@ import $isObject from './isObject'
 import $isString from './isString'
 import $trim from './trim'
 
-# toString(ipt: unknown): string
-###* @type import('../type/module').ToString} ###
-$toString = (ipt) ->
+$toString =
+###* @type import('../type/module').ToString ###
+(ipt) ->
 
   if $isString ipt then return ipt
-  if $isNumber ipt then return ipt
+  if $isNumber ipt then return "#{ipt}"
 
   if $isArray ipt
     $result = ''
-    for key in ipt
-      $result = "#{$result}, #{$toString key}"
+    for it in ipt
+      $result = "#{$result}, #{$toString it}"
     return "[#{$trim $result, ' ,'}]"
 
   if $isObject ipt
@@ -26,6 +26,6 @@ $toString = (ipt) ->
       $result = "#{$result}, #{key}: #{$toString value}"
     return "{#{$trim $result, ' ,'}}"
 
-  throw("$toString: invalid type '#{$getType ipt}'")
+  throw "$toString: invalid type '#{$getType ipt}'"
 
 export default $toString

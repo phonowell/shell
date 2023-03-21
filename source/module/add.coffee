@@ -1,6 +1,5 @@
 # @ts-check
 
-# add(...args: number[]): number
 ###* @type import('../type/module').Add ###
 export default (args...) ->
   $result = 0

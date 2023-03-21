@@ -1,9 +1,9 @@
 # @ts-check
 
+import $createList from './createList'
 import $length from './length'
 import $push from './push'
 
-# range(start = 0, end: number, step = 1): number[]
 ###* @type import('../type/module').Range ###
 export default (args...) ->
 
@@ -17,7 +17,7 @@ export default (args...) ->
 
   if $start > $end then return []
 
-  $listResult = []
+  $listResult = $createList 'number'
   $n = 0
   $max = $end - $start
 

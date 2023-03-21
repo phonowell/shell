@@ -4,8 +4,7 @@ import $isString from './isString'
 import $join from './join'
 import $split from './split'
 
-# uniq(list: string[]): string[]
-###* @type import('../type/module').Uniq} ###
+###* @type import('../type/module').Uniq ###
 export default (list) ->
 
   $hasString = false

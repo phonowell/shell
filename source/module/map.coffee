@@ -2,7 +2,6 @@
 
 import $push from './push'
 
-# map<T, R>(list: T[], callback: (item: T, i?: number) => R): R[]
 ###* @type import('../type/module').Map ###
 export default (list, callback) ->
 

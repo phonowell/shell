@@ -1,7 +1,6 @@
 # @ts-check
 
-# get(url: string, callback: (data: string) => unknown): void
-###* @type import('../type/module').Get} ###
+###* @type import('../type/module').HttpGet ###
 export default (url, callback) ->
 
   try

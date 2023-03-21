@@ -12,7 +12,6 @@ class EmitterShell
     ###* @type import('../type/emitterShell').EmitterShell['bus'] ###
     @bus = []
 
-  # emit(key: string, ...args: unknown[]): void
   ###* @type import('../type/emitterShell').EmitterShell['emit'] ###
   emit: (key, args...) ->
 
@@ -32,7 +31,6 @@ class EmitterShell
     @bus = $filter @bus, ($it) -> $it[3] != 'expired'
     return
 
-  # off(key: string): void
   ###* @type import('../type/emitterShell').EmitterShell['off'] ###
   off: (key) ->
 
@@ -47,14 +45,12 @@ class EmitterShell
     else @bus = $filter @bus, ($it) -> $it[0] != $type
     return
 
-  # on(key: string, callback: Fn): void
   ###* @type import('../type/emitterShell').EmitterShell['on'] ###
   on: (key, callback) ->
     [$type, $name] = $split key, '.'
     $push @bus, [$type, $name, callback, 'always']
     return
 
-  # once(key: string, callback: Fn): void
   ###* @type import('../type/emitterShell').EmitterShell['once'] ###
   once: (key, callback) ->
     [$type, $name] = $split key, '.'

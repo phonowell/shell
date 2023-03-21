@@ -1,7 +1,6 @@
 # @ts-check
 
-# setFixed(isFixed?: boolean): void
-###* @type import('../type/module').SetFixed} ###
+###* @type import('../type/module').SetFixed ###
 export default (isFixed = 'Toggle') ->
 
   if isFixed != 'Toggle'

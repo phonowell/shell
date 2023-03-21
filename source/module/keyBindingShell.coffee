@@ -1,12 +1,9 @@
 # @ts-check
 
-import $delete from './delete'
 import $filter from './filter'
 import $forEach from './forEach'
 import $formatHotkey from './formatHotkey'
-import $length from './length'
 import $noop from './noop'
-import $press from './press'
 import $push from './push'
 import $replace from './replace'
 import $split from './split'
@@ -16,78 +13,89 @@ class KeyBindingShell
   constructor: ->
 
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapBound'] ###
-    @mapBound = {} # Record<string, Fn>
+    @mapBound = {}
     ###* @type import('../type/keyBindingShell').KeyBindingShell['mapCallback'] ###
-    @mapCallback = {} # Record<string, [Name, Fn]>
+    @mapCallback = {}
 
-  # add(key: string, callback: Fn): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['add'] ###
   add: (key, callback) ->
-    [key, $name] = $split key, '.'
-    @init key
-    $push @mapCallback[key], [$name, callback]
+
+    [$key, $name] = $split ($replace key, ':down', ''), '.'
+
+    @register $key, on
+
+    # Item: [Name, Fn]
+    $push @mapCallback[$key], [$name, callback]
     return
 
-  # fire(key: string): void
   ###* @type import('../type/keyBindingShell').KeyBindingShell['fire'] ###
   fire: (key) ->
 
-    [key, $name] = $split ($replace key, ':down', ''), '.'
+    [$key, $name] = $split ($replace key, ':down', ''), '.'
 
-    $list = @mapCallback[key]
-    unless $length $list
-      $press key
-      return
-
+    $list = @mapCallback[$key]
     if $name then $list = $filter $list, (it) -> it[0] == $name
+
     $forEach $list, (it) -> it[1]()
 
-  # init(key: string): void
-  ###* @type import('../type/keyBindingShell').KeyBindingShell['init'] ###
-  init: (key) ->
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['formatKey'] ###
+  formatKey: (key, prefix = '') ->
+    $key = $formatHotkey $replace key, ':down', ''
+    unless prefix then return $key
+    return "#{prefix}#{$key}"
+
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['prepare'] ###
+  prepare: (key) ->
 
     if @mapCallback[key] then return
+
+    @mapBound[key] = => @fire key
     @mapCallback[key] = []
-
-    $fn = => @fire key
-    @mapBound[key] = $fn
-    @on key, $fn
-
-  # off(key: string, callback: Fn): void
-  ###* @type import('../type/keyBindingShell').KeyBindingShell['off'] ###
-  off: (key, callback) ->
-    key = $formatHotkey $replace key, ':down', ''
-    $noop callback
-    Native 'Hotkey, % key, % callback, Off'
     return
 
-  # on(key: string, callback: Fn): void
-  ###* @type import('../type/keyBindingShell').KeyBindingShell['on'] ###
-  on: (key, callback) ->
-    key = $formatHotkey $replace key, ':down', ''
-    $noop callback
-    Native 'Hotkey, % key, % callback, On'
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['prevent'] ###
+  prevent: (key, isPrevented) ->
+
+    @prepare key
+
+    $callback = @mapBound[key]
+    $key = @formatKey key
+    $noop $callback, $key
+
+    if isPrevented
+      Native 'Hotkey, % $key, % $callback, On'
+    else
+      Native 'Hotkey, % $key, % $callback, Off'
+
     return
 
-  # remove(key: string): void
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['register'] ###
+  register: (key, action) ->
+
+    @prepare key
+
+    $callback = @mapBound[key]
+    $key = @formatKey key, '~'
+    $noop $callback, $key
+
+    if action
+      Native 'Hotkey, % $key, % $callback, On'
+    else
+      Native 'Hotkey, % $key, % $callback, Off'
+
+    return
+
   ###* @type import('../type/keyBindingShell').KeyBindingShell['remove'] ###
   remove: (key) ->
 
-    [key, $name] = $split key, '.'
+    [$key, $name] = $split ($replace key, ':down', ''), '.'
 
     unless $name
-      $delete @mapCallback, key
-      @off key, @mapBound[key]
+      @mapCallback[$key] = []
       return
 
-    $listNew = $filter @mapCallback[key], ($item) -> $item[0] != $name
-
-    unless $length $listNew
-      $delete @mapCallback, key
-      @off key, @mapBound[key]
-      return
-
-    @mapCallback[key] = $listNew
+    $listNew = $filter @mapCallback[$key], ($item) -> $item[0] != $name
+    @mapCallback[$key] = $listNew
     return
 
 $noop KeyBindingShell

@@ -1,5 +1,6 @@
 # @ts-check
 
+import $createList from './createList'
 import $length from './length'
 import $push from './push'
 import $replace from './replace'
@@ -7,10 +8,11 @@ import $split from './split'
 import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
-###* @type import('../type/module').FormatHotkey} ###
-$formatKeyFormatHotkey = (key) ->
+$formatKeyFormatHotkey =
+###* @type import('../type/module').FormatHotkey1 ###
+(key) ->
 
-  $listKey = []
+  $listKey = $createList 'string'
 
   $key = $toLowerCase key
   $key = $replace $key, ' ', ''
@@ -21,13 +23,14 @@ $formatKeyFormatHotkey = (key) ->
 
   return $listKey
 
-###* @type import('../type/module').FormatHotkey3} ###
-$pickPrefixFormatHotkey = (listKey) ->
+$pickPrefixFormatHotkey =
+###* @type import('../type/module').FormatHotkey2 ###
+(listKey) ->
 
   if ($length listKey) == 1 then return ['', listKey]
 
   $prefix = ''
-  $listNew = []
+  $listNew = $createList 'string'
 
   for $key in listKey
 
@@ -51,8 +54,7 @@ $pickPrefixFormatHotkey = (listKey) ->
 
   return [$prefix, $listNew]
 
-# formatHotkey(key: string): string
-###* @type import('../type/module').FormatHotkey} ###
+###* @type import('../type/module').FormatHotkey3 ###
 export default (key) ->
 
   $listKey = $formatKeyFormatHotkey key

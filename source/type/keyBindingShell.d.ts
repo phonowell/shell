@@ -1,15 +1,18 @@
 import { Fn } from './module'
 
-type Item = [string, Fn]
+type Item = [Name, Fn]
+type Key = string
+type Name = string
 
 export class KeyBindingShell {
-  mapBound: Record<string, Fn>
-  mapCallback: Record<string, Item[]>
+  mapBound: Record<Key, Fn>
+  mapCallback: Record<Name, Item[]>
   constructor()
-  add(key: string, callback: Fn): void
-  fire(key: string): void
-  init(key: string): void
-  off(key: string, callback: Fn): void
-  on(key: string, callback: Fn): void
-  remove(key: string): void
+  add(key: Key, callback: Fn): void
+  fire(key: Key): void
+  private formatKey(key: Key, prefix?: '~' | ''): Key
+  private prepare(key: Key): void
+  prevent(key: Key, isPrevented: boolean): void
+  register(key: Key, action: boolean): void
+  remove(key: Key): void
 }

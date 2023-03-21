@@ -2,8 +2,7 @@
 
 import $bind from './bind'
 
-# setInterval(callback: Fn, time: number): number
-###* @type import('../type/module').SetInterval} ###
+###* @type import('../type/module').SetInterval ###
 export default (callback, time) ->
 
   callback = $bind callback

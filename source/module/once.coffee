@@ -3,7 +3,6 @@
 $cacheOnce = {}
 $indexOnce = 0
 
-# once(callback: Fn): Fn
 ###* @type import('../type/module').Once ###
 export default (callback) ->
 
