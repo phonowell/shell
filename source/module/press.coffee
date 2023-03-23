@@ -11,7 +11,7 @@ import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
 $formatInputPress =
-###* @type import('../type/module').Press ###
+###* @type import('../type/module').Press1 ###
 (listInput) ->
 
   $listKey = $createList 'string'
@@ -43,7 +43,7 @@ $validateInputPress =
 
   return true
 
-###* @type import('../type/module').Press3 ###
+###* @type import('../type/module').Press ###
 export default (listInput...) ->
 
   unless $validateInputPress listInput then return
