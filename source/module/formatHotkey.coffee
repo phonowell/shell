@@ -9,7 +9,7 @@ import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
 $formatKeyFormatHotkey =
-###* @type import('../type/module').FormatHotkey ###
+###* @type import('../type/module').FormatHotkey1 ###
 (key) ->
 
   $listKey = $createList 'string'
@@ -54,7 +54,7 @@ $pickPrefixFormatHotkey =
 
   return [$prefix, $listNew]
 
-###* @type import('../type/module').FormatHotkey3 ###
+###* @type import('../type/module').FormatHotkey ###
 export default (key) ->
 
   $listKey = $formatKeyFormatHotkey key

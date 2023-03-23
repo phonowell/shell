@@ -84,9 +84,9 @@ export type FindImage = (source: string, start?: Point, end?: Point) => Point
 export type First = <T>(list: T[]) => T
 export type Floor = (n: number) => number
 export type ForEach = Each
-export type FormatHotkey = (key: string) => string[]
+export type FormatHotkey1 = (key: string) => string[]
 export type FormatHotkey2 = (listKey: string[]) => [string, string[]]
-export type FormatHotkey3 = (key: string) => string
+export type FormatHotkey = (key: string) => string
 export type GetColor = (point: Point | undefined) => number
 export type GetPosition = () => Point
 export type GetState = (key: string) => boolean
@@ -133,9 +133,9 @@ export type On = (key: string, callback: Fn) => void
 export type Open = (source: string) => void
 export type Play = (filename: string) => void
 export type Pop = <T>(list: T[]) => T
-export type Press = (listInput: string[]) => string[]
+export type Press1 = (listInput: string[]) => string[]
 export type Press2 = (listInput: string[]) => boolean
-export type Press3 = (...key: string[]) => void
+export type Press = (...key: string[]) => void
 export type PreventInput = (key: string, isPrevented: boolean) => void
 export type Push = <T>(list: T[], ...value: T[]) => number
 export type Random = (min?: number, max?: number) => number
