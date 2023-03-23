@@ -11,7 +11,7 @@ import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
 $formatInputPress =
-###* @type import('../type/module').Press1 ###
+###* @type import('../type/module').Press ###
 (listInput) ->
 
   $listKey = $createList 'string'

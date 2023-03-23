@@ -9,7 +9,7 @@ import $toLowerCase from './toLowerCase'
 import $trim from './trim'
 
 $formatKeyFormatHotkey =
-###* @type import('../type/module').FormatHotkey1 ###
+###* @type import('../type/module').FormatHotkey ###
 (key) ->
 
   $listKey = $createList 'string'
