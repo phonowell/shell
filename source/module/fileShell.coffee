@@ -5,7 +5,9 @@ import $noop from './noop'
 
 class FileShell
 
+  ###* @type import('../type/fileShell').Constructor ###
   constructor: (source) ->
+
     ###* @type import('../type/fileShell').FileShell['source'] ###
     @source = source
 

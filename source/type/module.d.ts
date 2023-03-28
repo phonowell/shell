@@ -89,8 +89,9 @@ export type FormatHotkey2 = (listKey: string[]) => [string, string[]]
 export type FormatHotkey = (key: string) => string
 export type GetColor = (point: Point | undefined) => number
 export type GetPosition = () => Point
-export type GetState = (key: string) => boolean
 export type HttpGet = (url: string, callback: (data: string) => unknown) => void
+export type IsKeyBound = (key: string) => boolean
+export type IsPressing = (key: string) => boolean
 
 export type GetType = (
   ipt: unknown,
@@ -136,7 +137,7 @@ export type Pop = <T>(list: T[]) => T
 export type Press1 = (listInput: string[]) => string[]
 export type Press2 = (listInput: string[]) => boolean
 export type Press = (...key: string[]) => void
-export type PreventInput = (key: string, isPrevented: boolean) => void
+export type PreventDefaultKey = (key: string, isPrevented: boolean) => void
 export type Push = <T>(list: T[], ...value: T[]) => number
 export type Random = (min?: number, max?: number) => number
 export type Range = (...args: number[]) => number[]

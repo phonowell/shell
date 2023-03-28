@@ -9,6 +9,7 @@ import $split from './split'
 class EmitterShell
 
   constructor: ->
+  
     ###* @type import('../type/emitterShell').EmitterShell['bus'] ###
     @bus = []
 

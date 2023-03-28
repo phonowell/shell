@@ -6,6 +6,7 @@ class WindowShell
 
   ###* @type import('../type/windowShell').Constructor ###
   constructor: (exe) ->
+  
     ###* @type import('../type/windowShell').WindowShell['exe'] ###
     @exe = "ahk_exe #{exe}"
 
