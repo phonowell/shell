@@ -33,7 +33,6 @@ import $forEach from './module/forEach'
 import $formatHotkey from './module/formatHotkey'
 import $getColor from './module/getColor'
 import $getPosition from './module/getPosition'
-import $getState from './module/getState'
 import $getType from './module/getType'
 import $gt from './module/gt'
 import $gte from './module/gte'
@@ -42,8 +41,10 @@ import $httpGet from './module/httpGet'
 import $includes from './module/includes'
 import $isArray from './module/isArray'
 import $isFunction from './module/isFunction'
+import $isKeyBound from './module/isKeyBound'
 import $isNumber from './module/isNumber'
 import $isObject from './module/isObject'
+import $isPressing from './module/isPressing'
 import $isString from './module/isString'
 import $join from './module/join'
 import $keys from './module/keys'
@@ -68,7 +69,7 @@ import $open from './module/open'
 import $play from './module/play'
 import $pop from './module/pop'
 import $press from './module/press'
-import $preventInput from './module/preventInput'
+import $preventDefaultKey from './module/preventDefaultKey'
 import $push from './module/push'
 import $random from './module/random'
 import $range from './module/range'
@@ -142,7 +143,6 @@ $mixin $, forEach: $forEach
 $mixin $, formatHotkey: $formatHotkey
 $mixin $, getColor: $getColor
 $mixin $, getPosition: $getPosition
-$mixin $, getState: $getState
 $mixin $, getType: $getType
 $mixin $, gt: $gt
 $mixin $, gte: $gte
@@ -151,8 +151,10 @@ $mixin $, httpGet: $httpGet
 $mixin $, includes: $includes
 $mixin $, isArray: $isArray
 $mixin $, isFunction: $isFunction
+$mixin $, isKeyBound: $isKeyBound
 $mixin $, isNumber: $isNumber
 $mixin $, isObject: $isObject
+$mixin $, isPressing: $isPressing
 $mixin $, isString: $isString
 $mixin $, join: $join
 $mixin $, keys: $keys
@@ -177,7 +179,7 @@ $mixin $, open: $open
 $mixin $, play: $play
 $mixin $, pop: $pop
 $mixin $, press: $press
-$mixin $, preventInput: $preventInput
+$mixin $, preventDefaultKey: $preventDefaultKey
 $mixin $, push: $push
 $mixin $, random: $random
 $mixin $, range: $range

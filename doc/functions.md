@@ -1,6 +1,6 @@
 # Functions
 
-`114` functions, at `2023-03-23T14:10:51.038Z`.
+`115` functions, at `2023-03-28T13:23:27.411Z`.
 - [add](../source/module/add.coffee)
 - [alert](../source/module/alert.coffee)
 - [beep](../source/module/beep.coffee)
@@ -37,7 +37,6 @@
 - [formatHotkey](../source/module/formatHotkey.coffee)
 - [getColor](../source/module/getColor.coffee)
 - [getPosition](../source/module/getPosition.coffee)
-- [getState](../source/module/getState.coffee)
 - [getType](../source/module/getType.coffee)
 - [gt](../source/module/gt.coffee)
 - [gte](../source/module/gte.coffee)
@@ -46,8 +45,10 @@
 - [includes](../source/module/includes.coffee)
 - [isArray](../source/module/isArray.coffee)
 - [isFunction](../source/module/isFunction.coffee)
+- [isKeyBound](../source/module/isKeyBound.coffee)
 - [isNumber](../source/module/isNumber.coffee)
 - [isObject](../source/module/isObject.coffee)
+- [isPressing](../source/module/isPressing.coffee)
 - [isString](../source/module/isString.coffee)
 - [join](../source/module/join.coffee)
 - [keyBindingShell](../source/module/keyBindingShell.coffee)
@@ -75,7 +76,7 @@
 - [play](../source/module/play.coffee)
 - [pop](../source/module/pop.coffee)
 - [press](../source/module/press.coffee)
-- [preventInput](../source/module/preventInput.coffee)
+- [preventDefaultKey](../source/module/preventDefaultKey.coffee)
 - [push](../source/module/push.coffee)
 - [random](../source/module/random.coffee)
 - [range](../source/module/range.coffee)
