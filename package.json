@@ -50,5 +50,5 @@
     "watch": "pnpm alice watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.34"
+  "version": "0.0.35"
 }

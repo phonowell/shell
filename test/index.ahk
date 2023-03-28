@@ -28,9 +28,9 @@ global __shell_module_22__ := (Func("shell_314")).Call()
 global __shell_module_27__ := (Func("shell_312")).Call()
 global __shell_module_30__ := (Func("shell_310")).Call()
 global __shell_module_35__ := (Func("shell_308")).Call()
-global __shell_module_40__ := (Func("shell_306")).Call()
-global __shell_module_41__ := (Func("shell_304")).Call()
-global __shell_module_42__ := (Func("shell_302")).Call()
+global __shell_module_39__ := (Func("shell_306")).Call()
+global __shell_module_40__ := (Func("shell_304")).Call()
+global __shell_module_41__ := (Func("shell_302")).Call()
 global __shell_module_49__ := (Func("shell_300")).Call()
 global __shell_module_50__ := (Func("shell_298")).Call()
 global __shell_module_52__ := (Func("shell_296")).Call()
@@ -55,9 +55,9 @@ global __first__ := __shell_module_35__
 (Func("shell_266")).Call()
 global __getType__ := __shell_module_27__
 (Func("shell_265")).Call()
-global __gt__ := __shell_module_40__
+global __gt__ := __shell_module_39__
 (Func("shell_264")).Call()
-global __gte__ := __shell_module_41__
+global __gte__ := __shell_module_40__
 (Func("shell_263")).Call()
 global __lt__ := __shell_module_49__
 (Func("shell_262")).Call()
@@ -80,8 +80,8 @@ global __shell_module_26__ := (Func("shell_246")).Call()
 global __shell_module_33__ := (Func("shell_244")).Call()
 global __shell_module_34__ := (Func("shell_242")).Call()
 global __shell_module_38__ := (Func("shell_240")).Call()
-global __shell_module_44__ := (Func("shell_238")).Call()
-global __shell_module_45__ := (Func("shell_236")).Call()
+global __shell_module_43__ := (Func("shell_238")).Call()
+global __shell_module_44__ := (Func("shell_236")).Call()
 global __shell_module_46__ := (Func("shell_234")).Call()
 global __shell_module_57__ := (Func("shell_232")).Call()
 global __shell_module_62__ := (Func("shell_230")).Call()
@@ -166,14 +166,14 @@ __isFunction__ := __shell_module_3__
 global __getPosition__ := __shell_module_38__
 __isFunction__ := __shell_module_3__
 (Func("shell_187")).Call()
-global __httpGet__ := __shell_module_42__
+global __httpGet__ := __shell_module_41__
 __isFunction__ := __shell_module_3__
 (Func("shell_186")).Call()
-global __isArray__ := __shell_module_44__
+global __isArray__ := __shell_module_43__
 (Func("shell_185")).Call()
 __isFunction__ := __shell_module_3__
 (Func("shell_184")).Call()
-global __isNumber__ := __shell_module_45__
+global __isNumber__ := __shell_module_44__
 (Func("shell_183")).Call()
 global __isObject__ := __shell_module_26__
 (Func("shell_182")).Call()
@@ -191,7 +191,7 @@ global __move__ := __shell_module_57__
 __isFunction__ := __shell_module_3__
 __noop__ := __shell_module_58__
 (Func("shell_177")).Call()
-__isNumber__ := __shell_module_45__
+__isNumber__ := __shell_module_44__
 global __now__ := __shell_module_59__
 (Func("shell_176")).Call()
 __isFunction__ := __shell_module_3__
@@ -253,7 +253,7 @@ global __shell_module_8__ := (Func("shell_132")).Call()
 global __shell_module_9__ := (Func("shell_130")).Call()
 global __shell_module_32__ := (Func("shell_128")).Call()
 global __shell_module_36__ := (Func("shell_126")).Call()
-global __shell_module_43__ := (Func("shell_122")).Call()
+global __shell_module_42__ := (Func("shell_122")).Call()
 global __shell_module_48__ := (Func("shell_120")).Call()
 global __shell_module_60__ := (Func("shell_118")).Call()
 global __shell_module_72__ := (Func("shell_116")).Call()
@@ -278,7 +278,7 @@ global __formatHotkey__ := __shell_module_36__
 (Func("shell_103")).Call()
 (Func("shell_102")).Call()
 (Func("shell_101")).Call()
-global __includes__ := __shell_module_43__
+global __includes__ := __shell_module_42__
 (Func("shell_100")).Call()
 (Func("shell_99")).Call()
 __join__ := __shell_module_8__
@@ -298,7 +298,7 @@ global __shell_module_21__ := (Func("shell_89")).Call()
 global __shell_module_24__ := (Func("shell_86")).Call()
 global __shell_module_28__ := (Func("shell_84")).Call()
 global __shell_module_29__ := (Func("shell_82")).Call()
-global __shell_module_39__ := (Func("shell_80")).Call()
+global __shell_module_45__ := (Func("shell_80")).Call()
 global __shell_module_65__ := (Func("shell_78")).Call()
 global __shell_module_76__ := (Func("shell_74")).Call()
 global __shell_module_77__ := (Func("shell_72")).Call()
@@ -335,8 +335,8 @@ global __eq__ := __shell_module_28__
 global __exec__ := __shell_module_29__
 __isFunction__ := __shell_module_3__
 (Func("shell_51")).Call()
-global __getState__ := __shell_module_39__
 __isFunction__ := __shell_module_3__
+global __isPressing__ := __shell_module_45__
 (Func("shell_50")).Call()
 __isFunction__ := __shell_module_3__
 global __press__ := __shell_module_65__
@@ -570,7 +570,7 @@ shell_26(__list__, __values__*) {
 }
 shell_27() {
   __clone__ := __shell_module_13__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   __push__ := __shell_module_66__
   return Func("shell_26")
 }
@@ -681,7 +681,7 @@ shell_45(__slice__, ipt) {
 }
 shell_46() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   __isObject__ := __shell_module_26__
   __slice__ := __shell_module_77__
   return Func("shell_45").Bind(__slice__)
@@ -698,8 +698,8 @@ shell_49() {
   }
 }
 shell_50() {
-  if !(__rf_shell__.Call(__isFunction__, "#rf/shell/82").Call(__getState__)) {
-    throw "$.getState is not a function"
+  if !(__rf_shell__.Call(__isFunction__, "#rf/shell/82").Call(__isPressing__)) {
+    throw "$.isPressing is not a function"
   }
 }
 shell_51() {
@@ -917,7 +917,7 @@ shell_73(callback, time) {
 }
 shell_74() {
   __bind__ := __shell_module_5__
-  __isNumber__ := __shell_module_45__
+  __isNumber__ := __shell_module_44__
   return Func("shell_73")
 }
 shell_75(__validateInputPress__, __formatInputPress__, __trim__, listInput*) {
@@ -982,7 +982,7 @@ shell_77(__createList__, __toLowerCase__, listInput) {
 shell_78() {
   __click__ := __shell_module_12__
   __createList__ := __shell_module_78__
-  __includes__ := __shell_module_43__
+  __includes__ := __shell_module_42__
   __length__ := __shell_module_23__
   __push__ := __shell_module_66__
   __replace__ := __shell_module_67__
@@ -1050,8 +1050,8 @@ shell_83(value, other) {
 }
 shell_84() {
   __getType__ := __shell_module_27__
-  __includes__ := __shell_module_43__
-  __isArray__ := __shell_module_44__
+  __includes__ := __shell_module_42__
+  __isArray__ := __shell_module_43__
   __isObject__ := __shell_module_26__
   __length__ := __shell_module_23__
   __eq__ := Func("shell_83")
@@ -1309,8 +1309,8 @@ shell_121(ipt, needle) {
 }
 shell_122() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
-  __isNumber__ := __shell_module_45__
+  __isArray__ := __shell_module_43__
+  __isNumber__ := __shell_module_44__
   __isString__ := __shell_module_46__
   __toString__ := __shell_module_73__
   return Func("shell_121")
@@ -1669,7 +1669,7 @@ shell_156(list, args*) {
 }
 shell_157() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   return Func("shell_156")
 }
 shell_158(__trim__, ipt) {
@@ -1697,8 +1697,8 @@ shell_158(__trim__, ipt) {
 }
 shell_159() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
-  __isNumber__ := __shell_module_45__
+  __isArray__ := __shell_module_43__
+  __isNumber__ := __shell_module_44__
   __isObject__ := __shell_module_26__
   __isString__ := __shell_module_46__
   __trim__ := __shell_module_80__
@@ -1715,7 +1715,7 @@ shell_160(list) {
 }
 shell_161() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   return Func("shell_160")
 }
 shell_162(list, value*) {
@@ -1729,7 +1729,7 @@ shell_162(list, value*) {
 }
 shell_163() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   return Func("shell_162")
 }
 shell_164(list) {
@@ -1740,7 +1740,7 @@ shell_164(list) {
 }
 shell_165() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   return Func("shell_164")
 }
 shell_166() {
@@ -1778,7 +1778,7 @@ shell_171(ipt) {
 }
 shell_172() {
   __getType__ := __shell_module_27__
-  __isArray__ := __shell_module_44__
+  __isArray__ := __shell_module_43__
   __isObject__ := __shell_module_26__
   __isString__ := __shell_module_46__
   return Func("shell_171")

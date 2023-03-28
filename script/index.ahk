@@ -52,148 +52,148 @@ class KeyBindingShell {
   __New() {
     this.mapBound := {}
     this.mapCallback := {}
+    this.mapPrevented := {}
   }
   add := Func("script_22").Bind(this)
   fire := Func("script_21").Bind(this)
-  formatKey := Func("script_18").Bind(this)
-  prepare := Func("script_17").Bind(this)
-  prevent := Func("script_15").Bind(this)
-  register := Func("script_14").Bind(this)
-  remove := Func("script_13").Bind(this)
+  formatKey := Func("script_19").Bind(this)
+  getListItem := Func("script_18").Bind(this)
+  prepare := Func("script_16").Bind(this)
+  prevent := Func("script_14").Bind(this)
+  register := Func("script_13").Bind(this)
+  remove := Func("script_12").Bind(this)
 }
 __rf_script__.Call($noop, "#rf/script/1").Call(KeyBindingShell)
-global __script_module_7__ := (Func("script_11")).Call()
-global __script_module_2__ := (Func("script_10")).Call()
-global __script_module_3__ := (Func("script_9")).Call()
-global __script_module_5__ := (Func("script_8")).Call()
+global __script_module_7__ := (Func("script_10")).Call()
+global __script_module_2__ := (Func("script_9")).Call()
+global __script_module_3__ := (Func("script_8")).Call()
+global __script_module_5__ := (Func("script_7")).Call()
 global $exit := __script_module_1__
 global $off := __script_module_2__
 global $on := __script_module_3__
 global $press := __script_module_4__
-global $preventInput := __script_module_5__
+global $preventDefaultKey := __script_module_5__
 global $reload := __script_module_6__
-(Func("script_7")).Call()
+(Func("script_6")).Call()
 script_1() {
-  __rf_script__.Call($off, "#rf/script/2").Call("1")
-  __rf_script__.Call($preventInput, "#rf/script/3").Call("1", false)
+  return __rf_script__.Call($preventDefaultKey, "#rf/script/2").Call("1", false)
 }
 script_2() {
-  return __rf_script__.Call($press, "#rf/script/4").Call("2")
+  return __rf_script__.Call($preventDefaultKey, "#rf/script/3").Call("1", true)
 }
 script_3() {
-  __rf_script__.Call($on, "#rf/script/5").Call("1", Func("script_2"))
-  __rf_script__.Call($preventInput, "#rf/script/6").Call("1", true)
+  return __rf_script__.Call($off, "#rf/script/4").Call("1")
 }
 script_4() {
-  return __rf_script__.Call($off, "#rf/script/7").Call("1")
+  return __rf_script__.Call($press, "#rf/script/5").Call("2")
 }
 script_5() {
-  return __rf_script__.Call($press, "#rf/script/8").Call("2")
+  return __rf_script__.Call($on, "#rf/script/6").Call("1", Func("script_4"))
 }
 script_6() {
-  return __rf_script__.Call($on, "#rf/script/9").Call("1", Func("script_5"))
+  __rf_script__.Call($on, "#rf/script/7").Call("f4", $exit)
+  __rf_script__.Call($on, "#rf/script/8").Call("f5", $reload)
+  __rf_script__.Call($on, "#rf/script/9").Call("f2", Func("script_5"))
+  __rf_script__.Call($on, "#rf/script/10").Call("f3", Func("script_3"))
+  __rf_script__.Call($on, "#rf/script/11").Call("f6", Func("script_2"))
+  __rf_script__.Call($on, "#rf/script/12").Call("f7", Func("script_1"))
 }
 script_7() {
-  __rf_script__.Call($on, "#rf/script/10").Call("f4", $exit)
-  __rf_script__.Call($on, "#rf/script/11").Call("f5", $reload)
-  __rf_script__.Call($on, "#rf/script/12").Call("f2", Func("script_6"))
-  __rf_script__.Call($on, "#rf/script/13").Call("f3", Func("script_4"))
-  __rf_script__.Call($on, "#rf/script/14").Call("f6", Func("script_3"))
-  __rf_script__.Call($on, "#rf/script/15").Call("f7", Func("script_1"))
-}
-script_8() {
   $keyBindingXShell := __script_module_7__
   return $keyBindingXShell.prevent
 }
-script_9() {
+script_8() {
   $keyBindingXShell := __script_module_7__
   return $keyBindingXShell.add
 }
-script_10() {
+script_9() {
   $keyBindingXShell := __script_module_7__
   return $keyBindingXShell.remove
 }
-script_11() {
+script_10() {
   return new KeyBindingShell()
 }
-script_12($name, $item) {
+script_11($name, $item) {
   return $item[1] != $name
 }
-script_13(this, key) {
-  __array__ := __rf_script__.Call($split, "#rf/script/16").Call((__rf_script__.Call($replace, "#rf/script/17").Call(key, ":down", "")), ".")
+script_12(this, keyMixed) {
+  __array__ := __rf_script__.Call($split, "#rf/script/13").Call((__rf_script__.Call($replace, "#rf/script/14").Call(keyMixed, ":down", "")), ".")
   $key := __array__[1]
   $name := __array__[2]
   if !($name) {
     this.mapCallback[__ci_script__.Call($key)] := []
     return
   }
-  $listNew := __rf_script__.Call($filter, "#rf/script/18").Call(this.mapCallback[__ci_script__.Call($key)], Func("script_12").Bind($name))
+  $listNew := __rf_script__.Call($filter, "#rf/script/15").Call(this.mapCallback[__ci_script__.Call($key)], Func("script_11").Bind($name))
   this.mapCallback[__ci_script__.Call($key)] := $listNew
   return
 }
-script_14(this, key, action) {
-  __rf_script__.Call(this.prepare, "#rf/script/19").Call(key)
+script_13(this, key) {
+  __rf_script__.Call(this.prepare, "#rf/script/16").Call(key)
   $callback := this.mapBound[__ci_script__.Call(key)]
-  $key := __rf_script__.Call(this.formatKey, "#rf/script/20").Call(key, "~")
-  __rf_script__.Call($noop, "#rf/script/21").Call($callback, $key)
-  if (action) {
-    Hotkey, % $key, % $callback, On
-  } else {
-    Hotkey, % $key, % $callback, Off
+  $key := __rf_script__.Call(this.formatKey, "#rf/script/17").Call(key, "~")
+  if (this.mapPrevented[__ci_script__.Call(key)]) {
+    $key := __rf_script__.Call(this.formatKey, "#rf/script/18").Call(key)
   }
+  __rf_script__.Call($noop, "#rf/script/19").Call($callback, $key)
+  Hotkey, % $key, % $callback, On
   return
 }
-script_15(this, key, isPrevented) {
-  __rf_script__.Call(this.prepare, "#rf/script/22").Call(key)
+script_14(this, key, isPrevented) {
+  __rf_script__.Call(this.prepare, "#rf/script/20").Call(key)
+  this.mapPrevented[__ci_script__.Call(key)] := isPrevented
   $callback := this.mapBound[__ci_script__.Call(key)]
-  $key := __rf_script__.Call(this.formatKey, "#rf/script/23").Call(key)
-  __rf_script__.Call($noop, "#rf/script/24").Call($callback, $key)
+  $key := __rf_script__.Call(this.formatKey, "#rf/script/21").Call(key, "~")
   if (isPrevented) {
-    Hotkey, % $key, % $callback, On
-  } else {
-    Hotkey, % $key, % $callback, Off
+    $key := __rf_script__.Call(this.formatKey, "#rf/script/22").Call(key)
   }
+  __rf_script__.Call($noop, "#rf/script/23").Call($callback, $key)
+  Hotkey, % $key, % $callback, On
   return
 }
-script_16(key, this) {
-  return __rf_script__.Call(this.fire, "#rf/script/25").Call(key)
+script_15(key, this) {
+  return __rf_script__.Call(this.fire, "#rf/script/24").Call(key)
 }
-script_17(this, key) {
+script_16(this, key) {
   if (this.mapCallback[__ci_script__.Call(key)]) {
     return
   }
-  this.mapBound[__ci_script__.Call(key)] := Func("script_16").Bind(key, this)
+  this.mapBound[__ci_script__.Call(key)] := Func("script_15").Bind(key, this)
   this.mapCallback[__ci_script__.Call(key)] := []
+  this.mapPrevented[__ci_script__.Call(key)] := false
   return
 }
-script_18(this, key, prefix := "") {
-  $key := __rf_script__.Call($formatHotkey, "#rf/script/26").Call(__rf_script__.Call($replace, "#rf/script/27").Call(key, ":down", ""))
+script_17($name, it) {
+  return it[1] == $name
+}
+script_18(this, keyMixed) {
+  __array__ := __rf_script__.Call($split, "#rf/script/25").Call((__rf_script__.Call($replace, "#rf/script/26").Call(keyMixed, ":down", "")), ".")
+  $key := __array__[1]
+  $name := __array__[2]
+  $list := this.mapCallback[__ci_script__.Call($key)]
+  if ($name) {
+    $list := __rf_script__.Call($filter, "#rf/script/27").Call($list, Func("script_17").Bind($name))
+  }
+  return $list
+}
+script_19(this, key, prefix := "") {
+  $key := __rf_script__.Call($formatHotkey, "#rf/script/28").Call(__rf_script__.Call($replace, "#rf/script/29").Call(key, ":down", ""))
   if !(prefix) {
     return $key
   }
   return "" . (prefix) . "" . ($key) . ""
 }
-script_19(it) {
-  return __rf_script__.Call(it[2], "#rf/script/28").Call()
+script_20(it) {
+  return __rf_script__.Call(it[2], "#rf/script/30").Call()
 }
-script_20($name, it) {
-  return it[1] == $name
+script_21(this, keyMixed) {
+  return __rf_script__.Call($forEach, "#rf/script/31").Call((__rf_script__.Call(this.getListItem, "#rf/script/32").Call(keyMixed)), Func("script_20"))
 }
-script_21(this, key) {
-  __array__ := __rf_script__.Call($split, "#rf/script/29").Call((__rf_script__.Call($replace, "#rf/script/30").Call(key, ":down", "")), ".")
+script_22(this, keyMixed, callback) {
+  __array__ := __rf_script__.Call($split, "#rf/script/33").Call((__rf_script__.Call($replace, "#rf/script/34").Call(keyMixed, ":down", "")), ".")
   $key := __array__[1]
   $name := __array__[2]
-  $list := this.mapCallback[__ci_script__.Call($key)]
-  if ($name) {
-    $list := __rf_script__.Call($filter, "#rf/script/31").Call($list, Func("script_20").Bind($name))
-  }
-  __rf_script__.Call($forEach, "#rf/script/32").Call($list, Func("script_19"))
-}
-script_22(this, key, callback) {
-  __array__ := __rf_script__.Call($split, "#rf/script/33").Call((__rf_script__.Call($replace, "#rf/script/34").Call(key, ":down", "")), ".")
-  $key := __array__[1]
-  $name := __array__[2]
-  __rf_script__.Call(this.register, "#rf/script/35").Call($key, true)
+  __rf_script__.Call(this.register, "#rf/script/35").Call($key)
   __rf_script__.Call($push, "#rf/script/36").Call(this.mapCallback[__ci_script__.Call($key)], [$name, callback])
   return
 }
