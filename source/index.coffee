@@ -42,6 +42,7 @@ import $includes from './module/includes'
 import $isArray from './module/isArray'
 import $isFunction from './module/isFunction'
 import $isKeyBound from './module/isKeyBound'
+import $isKeyPreventedDefault from './module/isKeyPreventedDefault'
 import $isNumber from './module/isNumber'
 import $isObject from './module/isObject'
 import $isPressing from './module/isPressing'
@@ -152,6 +153,7 @@ $mixin $, includes: $includes
 $mixin $, isArray: $isArray
 $mixin $, isFunction: $isFunction
 $mixin $, isKeyBound: $isKeyBound
+$mixin $, isKeyPreventedDefault: $isKeyPreventedDefault
 $mixin $, isNumber: $isNumber
 $mixin $, isObject: $isObject
 $mixin $, isPressing: $isPressing

@@ -14,6 +14,7 @@ export class KeyBindingShell {
   fire(keyMixed: KeyMixed): void
   private formatKey(key: Key, prefix?: '~' | ''): Key
   getListItem(keyMixed: KeyMixed): Item[]
+  isPrevented(key: Key): boolean
   private prepare(key: Key): void
   prevent(key: Key, isPrevented: boolean): void
   register(key: Key): void

@@ -51,6 +51,9 @@ class KeyBindingShell
 
     return $list
 
+  ###* @type import('../type/keyBindingShell').KeyBindingShell['isPrevented'] ###
+  isPrevented: (key) -> @mapPrevented[key] == true
+
   ###* @type import('../type/keyBindingShell').KeyBindingShell['prepare'] ###
   prepare: (key) ->
 

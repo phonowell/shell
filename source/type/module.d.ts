@@ -91,6 +91,7 @@ export type GetColor = (point: Point | undefined) => number
 export type GetPosition = () => Point
 export type HttpGet = (url: string, callback: (data: string) => unknown) => void
 export type IsKeyBound = (key: string) => boolean
+export type IsKeyPreventedDefault = (key: string) => boolean
 export type IsPressing = (key: string) => boolean
 
 export type GetType = (

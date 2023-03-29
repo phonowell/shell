@@ -1,6 +1,6 @@
 # Functions
 
-`115` functions, at `2023-03-28T13:23:27.411Z`.
+`116` functions, at `2023-03-29T12:09:16.756Z`.
 - [add](../source/module/add.coffee)
 - [alert](../source/module/alert.coffee)
 - [beep](../source/module/beep.coffee)
@@ -46,6 +46,7 @@
 - [isArray](../source/module/isArray.coffee)
 - [isFunction](../source/module/isFunction.coffee)
 - [isKeyBound](../source/module/isKeyBound.coffee)
+- [isKeyPreventedDefault](../source/module/isKeyPreventedDefault.coffee)
 - [isNumber](../source/module/isNumber.coffee)
 - [isObject](../source/module/isObject.coffee)
 - [isPressing](../source/module/isPressing.coffee)
