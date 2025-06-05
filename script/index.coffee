@@ -2,12 +2,12 @@
 
 import './include/head.ahk'
 
-import $exit from '../dist/module/exit'
-import $off from '../dist/module/off'
-import $on from '../dist/module/on'
-import $press from '../dist/module/press'
-import $preventDefaultKey from '../dist/module/preventDefaultKey'
-import $reload from '../dist/module/reload'
+import $exit from '../src/exit'
+import $off from '../src/off'
+import $on from '../src/on'
+import $press from '../src/press'
+import $preventDefaultKey from '../src/preventDefaultKey'
+import $reload from '../src/reload'
 
 do ->
 

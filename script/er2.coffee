@@ -1,3 +1,5 @@
+# @ts-check
+
 import 'include/head.ahk'
 import '../source/index.ahk'
 $ = $

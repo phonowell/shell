@@ -1,26 +1,13 @@
-import $ from 'fire-keeper'
-
-// function
-
-type DeepExtract<T> = T extends (...args: any[]) => infer R
-  ? (
-      ...args: { [K in keyof Parameters<T>]: DeepExtract<Parameters<T>[K]> }
-    ) => DeepExtract<R>
-  : T extends Array<infer U>
-  ? { [K in keyof T]: DeepExtract<T[K]> }
-  : T extends object
-  ? { [K in keyof T]: DeepExtract<T[K]> }
-  : T
-
-function toTuple<T extends any[]>(
-  arr: [...T],
-): { [K in keyof T]: DeepExtract<T[K]> } {
-  return arr
-}
+import { copy, getBasename, glob } from 'fire-keeper'
 
 const main = async () => {
-  const a = toTuple([1, 2, 1, 'string'])
-}
+  const list = await glob('./test/*.coffee')
 
-// export
+  for (const src of list) {
+    const basename = getBasename(src)
+    await copy(src, './src', {
+      filename: `${basename}.test.coffee`,
+    })
+  }
+}
 export default main
