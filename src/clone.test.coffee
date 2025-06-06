@@ -1,6 +1,6 @@
 # @ts-check
 
-import $clone from '../src/clone'
+import $clone from '../dist/clone'
 
 # Test 1: Array cloning (most common use case)
 do ->

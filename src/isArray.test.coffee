@@ -1,6 +1,6 @@
 # @ts-check
 
-import $isArray from '../src/isArray'
+import $isArray from '../dist/isArray'
 
 # Test non-empty array
 list = [1, 2, 3]

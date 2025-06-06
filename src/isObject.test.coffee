@@ -1,6 +1,6 @@
 # @ts-check
 
-import $isObject from '../src/isObject'
+import $isObject from '../dist/isObject'
 
 # Test basic object
 map = { a: 1 }

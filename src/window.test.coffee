@@ -1,9 +1,9 @@
 # @ts-check
 
-import $isFunction from '../src/isFunction'
-import $isObject from '../src/isObject'
-import $open from '../src/open'
-import $window from '../src/window'
+import $isFunction from '../dist/isFunction'
+import $isObject from '../dist/isObject'
+import $open from '../dist/open'
+import $window from '../dist/window'
 
 do ->
 

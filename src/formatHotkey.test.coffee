@@ -1,6 +1,6 @@
 # @ts-check
 
-import $formatHotkey from '../src/formatHotkey'
+import $formatHotkey from '../dist/formatHotkey'
 
 # Test 1: Single modifier keys (basic functionality)
 do ->

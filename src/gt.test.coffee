@@ -1,6 +1,6 @@
 # @ts-check
 
-import $gt from '../src/gt'
+import $gt from '../dist/gt'
 
 # Test basic greater than functionality
 result = $gt 2, 1

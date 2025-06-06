@@ -1,7 +1,7 @@
 # @ts-check
 
-import $isFunction from '../src/isFunction'
-import $max from '../src/max'
+import $isFunction from '../dist/isFunction'
+import $max from '../dist/max'
 
 # Test function existence
 unless $isFunction $max

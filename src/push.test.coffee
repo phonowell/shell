@@ -1,6 +1,6 @@
 # @ts-check
 
-import $push from '../src/push'
+import $push from '../dist/push'
 
 # Test 1: Basic functionality - push single element
 list = [0]

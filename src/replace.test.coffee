@@ -1,6 +1,6 @@
 # @ts-check
 
-import $replace from '../src/replace'
+import $replace from '../dist/replace'
 
 # Test 1: Basic functionality - single character replacement
 result = $replace 'hello', 'l', 'x'

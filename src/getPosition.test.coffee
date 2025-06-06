@@ -1,8 +1,8 @@
 # @ts-check
 
-import $getPosition from '../src/getPosition'
-import $isFunction from '../src/isFunction'
-import $move from '../src/move'
+import $getPosition from '../dist/getPosition'
+import $isFunction from '../dist/isFunction'
+import $move from '../dist/move'
 
 unless $isFunction $getPosition
   throw new Error 'getPosition should be a function'

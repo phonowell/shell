@@ -1,6 +1,6 @@
 # @ts-check
 
-import $eq from '../src/eq'
+import $eq from '../dist/eq'
 
 # Test 1: Primitive values (numbers)
 do ->

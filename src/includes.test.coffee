@@ -1,6 +1,6 @@
 # @ts-check
 
-import $includes from '../src/includes'
+import $includes from '../dist/includes'
 
 do -> # array tests - most common use case
   list = [1, 2, 3]

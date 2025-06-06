@@ -1,6 +1,6 @@
 # @ts-check
 
-import $toUpper from '../src/toUpper'
+import $toUpper from '../dist/toUpper'
 
 # Test 1: Basic functionality - convert lowercase string to uppercase
 lower = 'hello'

@@ -1,6 +1,6 @@
 # @ts-check
 
-import $take from '../src/take'
+import $take from '../dist/take'
 
 # Test 1: Basic functionality - take first N elements
 list = [1, 2, 3, 4, 5]

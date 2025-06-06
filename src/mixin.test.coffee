@@ -1,9 +1,9 @@
 # @ts-check
 
-import $join from '../src/join'
-import $keys from '../src/keys'
-import $mixin from '../src/mixin'
-import $values from '../src/values'
+import $join from '../dist/join'
+import $keys from '../dist/keys'
+import $mixin from '../dist/mixin'
+import $values from '../dist/values'
 
 # Test basic mixin functionality - merge multiple objects
 mapA = { a: 1 }

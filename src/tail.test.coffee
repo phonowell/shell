@@ -1,6 +1,6 @@
 # @ts-check
 
-import $tail from '../src/tail'
+import $tail from '../dist/tail'
 
 # Test 1: Basic functionality - tail of array with multiple elements
 list = [1, 2, 3, 4, 5]

@@ -1,7 +1,7 @@
 # @ts-check
 
-import $isFunction from '../src/isFunction'
-import $min from '../src/min'
+import $isFunction from '../dist/isFunction'
+import $min from '../dist/min'
 
 # Test function existence
 unless $isFunction $min

@@ -1,6 +1,6 @@
 # @ts-check
 
-import $filter from '../src/filter'
+import $filter from '../dist/filter'
 
 # Test 1: Basic filtering (exclude specific value)
 do ->

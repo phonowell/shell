@@ -1,6 +1,6 @@
 # @ts-check
 
-import $concat from '../src/concat'
+import $concat from '../dist/concat'
 
 # Test 1: Basic array concatenation
 do ->

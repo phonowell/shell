@@ -1,6 +1,6 @@
 # @ts-check
 
-import $sort from '../src/sort'
+import $sort from '../dist/sort'
 
 # Test 4: Sort strings
 strings = ['banana', 'apple', 'cherry', 'date']

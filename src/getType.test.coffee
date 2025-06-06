@@ -1,6 +1,6 @@
 # @ts-check
 
-import $getType from '../src/getType'
+import $getType from '../dist/getType'
 
 # Test 1: Primitive types (most common)
 do ->

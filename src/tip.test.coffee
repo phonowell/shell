@@ -1,6 +1,6 @@
 # @ts-check
 
-import $tip from '../src/tip'
+import $tip from '../dist/tip'
 
 # Test 1: Basic functionality - tip should return the input value unchanged (identity function)
 message = 'hello world'

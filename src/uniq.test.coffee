@@ -1,6 +1,6 @@
 # @ts-check
 
-import $uniq from '../src/uniq'
+import $uniq from '../dist/uniq'
 
 # Test 7: String array with duplicates
 strings = ['a', 'b', 'a', 'c', 'b']

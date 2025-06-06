@@ -1,7 +1,7 @@
 # @ts-check
 
-import $join from '../src/join'
-import $map from '../src/map'
+import $join from '../dist/join'
+import $map from '../dist/map'
 
 # Basic functionality test - most important
 # Test basic mapping with transformation function

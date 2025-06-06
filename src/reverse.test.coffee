@@ -1,6 +1,6 @@
 # @ts-check
 
-import $reverse from '../src/reverse'
+import $reverse from '../dist/reverse'
 
 # Test 1: Basic functionality - reverse array with multiple elements
 list = [1, 2, 3, 4]

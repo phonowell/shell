@@ -1,7 +1,7 @@
 # @ts-check
 
-import $echo from '../src/echo'
-import $isFunction from '../src/isFunction'
+import $echo from '../dist/echo'
+import $isFunction from '../dist/isFunction'
 
 unless $isFunction $echo
   throw new Error 'echo should be a function'

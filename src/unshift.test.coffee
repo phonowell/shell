@@ -1,6 +1,6 @@
 # @ts-check
 
-import $unshift from '../src/unshift'
+import $unshift from '../dist/unshift'
 
 # Test 1: Basic functionality - unshift single element to array
 list = [0]

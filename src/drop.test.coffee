@@ -1,6 +1,6 @@
 # @ts-check
 
-import $drop from '../src/drop'
+import $drop from '../dist/drop'
 
 list = [1, 2, 3, 4, 5]
 

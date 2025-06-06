@@ -1,8 +1,8 @@
 # @ts-check
 
-import $chunk from '../src/chunk'
-import $join from '../src/join'
-import $map from '../src/map'
+import $chunk from '../dist/chunk'
+import $join from '../dist/join'
+import $map from '../dist/map'
 
 # Basic functionality test - most important
 # Test chunking array into groups of 4

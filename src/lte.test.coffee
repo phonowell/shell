@@ -1,6 +1,6 @@
 # @ts-check
 
-import $lte from '../src/lte'
+import $lte from '../dist/lte'
 
 # Test basic less than: 1 <= 2 should be true
 result = $lte 1, 2

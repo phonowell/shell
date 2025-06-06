@@ -1,6 +1,6 @@
 # @ts-check
 
-import $first from '../src/first'
+import $first from '../dist/first'
 
 # Test 1: Basic first element retrieval
 do ->

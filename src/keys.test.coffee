@@ -1,7 +1,7 @@
 # @ts-check
 
-import $join from '../src/join'
-import $keys from '../src/keys'
+import $join from '../dist/join'
+import $keys from '../dist/keys'
 
 # Test basic object with string keys
 map = {

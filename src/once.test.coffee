@@ -1,6 +1,6 @@
 # @ts-check
 
-import $once from '../src/once'
+import $once from '../dist/once'
 
 # Test basic once functionality - function executes only once
 map = { n: 0 }

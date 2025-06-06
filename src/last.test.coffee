@@ -1,6 +1,6 @@
 # @ts-check
 
-import $last from '../src/last'
+import $last from '../dist/last'
 
 # Test basic functionality - get last element of array
 list = [1, 2, 3]

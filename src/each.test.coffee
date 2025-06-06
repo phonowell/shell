@@ -1,6 +1,6 @@
 # @ts-check
 
-import $each from '../src/each'
+import $each from '../dist/each'
 
 # Test 1: Basic iteration with index and value
 do ->

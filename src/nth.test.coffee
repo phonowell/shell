@@ -1,6 +1,6 @@
 # @ts-check
 
-import $nth from '../src/nth'
+import $nth from '../dist/nth'
 
 list = [0, 1, 2, 3]
 

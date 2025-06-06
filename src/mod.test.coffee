@@ -1,6 +1,6 @@
 # @ts-check
 
-import $mod from '../src/mod'
+import $mod from '../dist/mod'
 
 # Test basic modulo: 5 % 2 = 1
 n = $mod 5, 2

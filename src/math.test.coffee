@@ -1,7 +1,7 @@
 # @ts-check
 
-import $math from '../src/math'
-import $isFunction from '../src/isFunction'
+import $math from '../dist/math'
+import $isFunction from '../dist/isFunction'
 
 # Test that all expected math functions exist
 for fn in [

@@ -1,6 +1,6 @@
 # @ts-check
 
-import $head from '../src/head'
+import $head from '../dist/head'
 
 # Test basic functionality - get first element of array
 result = $head [1, 2, 3]

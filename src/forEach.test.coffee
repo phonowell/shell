@@ -1,6 +1,6 @@
 # @ts-check
 
-import $forEach from '../src/forEach'
+import $forEach from '../dist/forEach'
 
 # Test 1: Basic iteration with side effects
 do ->

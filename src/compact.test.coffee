@@ -1,6 +1,6 @@
 # @ts-check
 
-import $compact from '../src/compact'
+import $compact from '../dist/compact'
 
 # Test 1: Basic falsy value removal (core functionality)
 do ->

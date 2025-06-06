@@ -1,6 +1,6 @@
 # @ts-check
 
-import $add from '../src/add'
+import $add from '../dist/add'
 
 # 核心功能测试 - 多参数相加
 result = $add 1, 2, 3

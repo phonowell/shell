@@ -1,10 +1,10 @@
 # @ts-check
 
-import $defer from '../src/defer'
-import $emitter from '../src/emitter'
-import $isFunction from '../src/isFunction'
-import $isObject from '../src/isObject'
-import $getType from '../src/getType'
+import $defer from '../dist/defer'
+import $emitter from '../dist/emitter'
+import $isFunction from '../dist/isFunction'
+import $isObject from '../dist/isObject'
+import $getType from '../dist/getType'
 
 do ->
 

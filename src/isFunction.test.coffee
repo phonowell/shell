@@ -1,6 +1,6 @@
 # @ts-check
 
-import $isFunction from '../src/isFunction'
+import $isFunction from '../dist/isFunction'
 
 # Test with imported function
 result = $isFunction $isFunction

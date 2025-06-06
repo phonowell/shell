@@ -1,7 +1,7 @@
 # @ts-check
 
-import $values from '../src/values'
-import $includes from '../src/includes'
+import $values from '../dist/values'
+import $includes from '../dist/includes'
 
 # Test 1: Basic functionality - extract values from simple object
 obj = {a: 1, b: 2, c: 3}

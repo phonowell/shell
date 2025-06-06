@@ -1,6 +1,6 @@
 # @ts-check
 
-import $join from '../src/join'
+import $join from '../dist/join'
 
 # Test default separator (comma)
 list = [1, 2, 3, 4, 5]

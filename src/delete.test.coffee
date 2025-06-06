@@ -1,6 +1,6 @@
 # @ts-check
 
-import $delete from '../src/delete'
+import $delete from '../dist/delete'
 
 # Test 1: Single property deletion (basic functionality)
 do ->

@@ -1,8 +1,8 @@
 # @ts-check
 
-import $file from '../src/file'
-import $isFunction from '../src/isFunction'
-import $isObject from '../src/isObject'
+import $file from '../dist/file'
+import $isFunction from '../dist/isFunction'
+import $isObject from '../dist/isObject'
 
 do ->
 

@@ -1,6 +1,6 @@
 # @ts-check
 
-import $slice from '../src/slice'
+import $slice from '../dist/slice'
 
 # Test 1: Basic functionality - slice with start and end indices
 list = [0, 1, 2, 3, 4]

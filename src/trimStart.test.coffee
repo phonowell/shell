@@ -1,6 +1,6 @@
 # @ts-check
 
-import $trimStart from '../src/trimStart'
+import $trimStart from '../dist/trimStart'
 
 # Test 1: Basic functionality - trim leading spaces only
 leading = '  hello'

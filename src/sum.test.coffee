@@ -1,6 +1,6 @@
 # @ts-check
 
-import $sum from '../src/sum'
+import $sum from '../dist/sum'
 
 # Test 1: Basic functionality - sum of positive numbers
 numbers = [1, 2, 3, 4, 5]

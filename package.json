@@ -5,8 +5,8 @@
   },
   "description": "",
   "devDependencies": {
-    "@swc/core": "^1.11.29",
-    "@types/node": "^22.15.29",
+    "@swc/core": "^1.11.31",
+    "@types/node": "^22.15.30",
     "@types/react": "^17.0.59",
     "@types/react-dom": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
@@ -24,13 +24,23 @@
     "globals": "^16.2.0",
     "prettier": "^3.5.3",
     "radash": "^12.1.0",
-    "terser": "^5.40.0",
+    "terser": "^5.41.0",
     "ts-morph": "^26.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "unplugin-auto-import": "^19.3.0",
+    "web-vitals": "^5.0.2"
   },
   "homepage": "https://github.com/phonowell/shell",
-  "keywords": ["ahk", "autohotkey", "coffee-ahk", "jQuery", "js", "lodash", "shell"],
+  "keywords": [
+    "ahk",
+    "autohotkey",
+    "coffee-ahk",
+    "jQuery",
+    "js",
+    "lodash",
+    "shell"
+  ],
   "license": "MIT",
   "main": "dist/index.ahk",
   "name": "shell-ahk",
@@ -45,5 +55,8 @@
     "watch": "pnpm alice watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.36"
+  "version": "0.0.36",
+  "dependencies": {
+    "clsx": "^2.1.1"
+  }
 }

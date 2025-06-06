@@ -1,6 +1,6 @@
 # @ts-check
 
-import $gte from '../src/gte'
+import $gte from '../dist/gte'
 
 # Test basic greater than functionality
 result = $gte 2, 1

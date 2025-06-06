@@ -1,6 +1,6 @@
 # @ts-check
 
-import $subString from '../src/subString'
+import $subString from '../dist/subString'
 
 string = 'string'
 

@@ -1,6 +1,6 @@
 # @ts-check
 
-import $isString from '../src/isString'
+import $isString from '../dist/isString'
 
 # Test basic string
 result = $isString 'aloha'

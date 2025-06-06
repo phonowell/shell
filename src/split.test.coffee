@@ -1,6 +1,6 @@
 # @ts-check
 
-import $split from '../src/split'
+import $split from '../dist/split'
 
 # Test 1: Basic functionality - split string with delimiter
 result = $split 'a,b,c', ','

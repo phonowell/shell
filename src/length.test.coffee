@@ -1,6 +1,6 @@
 # @ts-check
 
-import $length from '../src/length'
+import $length from '../dist/length'
 
 # Test basic array length
 do ->

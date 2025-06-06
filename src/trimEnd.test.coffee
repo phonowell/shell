@@ -1,6 +1,6 @@
 # @ts-check
 
-import $trimEnd from '../src/trimEnd'
+import $trimEnd from '../dist/trimEnd'
 
 # Test 1: Basic functionality - trim trailing spaces only
 trailing = 'hello  '

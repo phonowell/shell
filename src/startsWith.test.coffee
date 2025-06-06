@@ -1,6 +1,6 @@
 # @ts-check
 
-import $startsWith from '../src/startsWith'
+import $startsWith from '../dist/startsWith'
 
 # Test 1: Basic functionality - string starts with given prefix
 string = 'string'

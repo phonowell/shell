@@ -1,6 +1,6 @@
 # @ts-check
 
-import $range from '../src/range'
+import $range from '../dist/range'
 
 do ->
   # Test 1: Basic functionality - simple range

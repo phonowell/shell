@@ -1,6 +1,6 @@
 # @ts-check
 
-import $shift from '../src/shift'
+import $shift from '../dist/shift'
 
 # Test 1: Basic functionality - shift from non-empty array
 list = [0, 1, 2]

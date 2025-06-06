@@ -1,6 +1,6 @@
 # @ts-check
 
-import $toString from '../src/toString'
+import $toString from '../dist/toString'
 
 # Test 1: Basic functionality - string input should return as-is
 unless ($toString 'a') == 'a'

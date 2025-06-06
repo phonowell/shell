@@ -1,6 +1,6 @@
 # @ts-check
 
-import $isNumber from '../src/isNumber'
+import $isNumber from '../dist/isNumber'
 
 # Test positive integer
 result = $isNumber 1

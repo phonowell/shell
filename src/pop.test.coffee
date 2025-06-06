@@ -1,6 +1,6 @@
 # @ts-check
 
-import $pop from '../src/pop'
+import $pop from '../dist/pop'
 
 # Test 1: Basic functionality - pop from non-empty array
 list = [0, 1, 2]

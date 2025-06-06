@@ -1,6 +1,6 @@
 # @ts-check
 
-import $trim from '../src/trim'
+import $trim from '../dist/trim'
 
 # Test 1: Basic functionality - trim spaces from both ends
 spaced = '  hello world  '
