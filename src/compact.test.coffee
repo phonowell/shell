@@ -9,7 +9,7 @@ do ->
   result = $compact list
 
   # Should keep only truthy values: [1, true, 'x']
-  unless result.length == 3 and result[0] == 1 and result[1] == true and result[2] == 'x'
+  unless result.Length() == 3 and result[0] == 1 and result[1] == true and result[2] == 'x'
     throw new Error "Basic compact failed: expected [1, true, 'x'], got #{result}"
 
 # Test 2: All falsy values
@@ -18,7 +18,7 @@ do ->
   result = $compact list
 
   # Should return empty array
-  unless result.length == 0
+  unless result.Length() == 0
     throw new Error "All falsy compact failed: expected [], got #{result}"
 
 # Test 3: All truthy values
@@ -27,5 +27,5 @@ do ->
   result = $compact list
 
   # Should keep all values
-  unless result.length == 5
+  unless result.Length() == 5
     throw new Error "All truthy compact failed: expected length 5, got #{result.length}"

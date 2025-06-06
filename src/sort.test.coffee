@@ -15,6 +15,6 @@ unless sortedStrings[0] == 'apple' and sortedStrings[3] == 'date'
 emptyList = []
 emptySorted = $sort emptyList
 
-unless emptySorted.length == 0
+unless emptySorted.Length() == 0
   throw new Error "Expected empty array, got length #{emptySorted.length}"
 

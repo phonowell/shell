@@ -23,7 +23,7 @@ do ->
   $forEach list, (value, index) -> result.push "#{index}:#{value}"
 
   # Should provide both value and index to callback
-  unless result.length == 3 and result[0] == '0:a' and result[1] == '1:b' and result[2] == '2:c'
+  unless result.Length() == 3 and result[0] == '0:a' and result[1] == '1:b' and result[2] == '2:c'
     throw new Error "Index forEach failed: expected ['0:a', '1:b', '2:c'], got #{result}"
 
 # Test 3: Empty array iteration

@@ -12,7 +12,7 @@ do ->
   $each list, (value, index) -> result.push "#{index}:#{value}"
 
   # Should iterate through all elements with correct index and value
-  unless result.length == 4 and
+  unless result.Length() == 4 and
       result[0] == '0:1' and
       result[1] == '1:2' and
       result[2] == '2:3' and
@@ -28,7 +28,7 @@ do ->
   $each list, (value, index) -> doubled[index] = value * 2
 
   # Should access all elements and modify external array
-  unless doubled.length == 3 and doubled[0] == 2 and doubled[1] == 4 and doubled[2] == 6
+  unless doubled.Length() == 3 and doubled[0] == 2 and doubled[1] == 4 and doubled[2] == 6
     throw new Error "External modification failed: expected [2, 4, 6], got #{doubled}"
 
 # Test 3: Empty array iteration

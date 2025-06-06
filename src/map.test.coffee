@@ -14,7 +14,7 @@ unless result == '2,3,4'
 # Edge case tests
 # Test with empty array
 emptyResult = $map [], (n) -> n + 1
-unless Array.isArray(emptyResult) and emptyResult.length == 0
+unless Array.isArray(emptyResult) and emptyResult.Length() == 0
   throw new Error "Empty array test failed"
 
 # Test with different transformation functions
@@ -25,5 +25,5 @@ unless $join(stringResult) == $join(expected)
 
 # Test with single element
 singleResult = $map [5], (n) -> n * 2
-unless singleResult.length == 1 and singleResult[0] == 10
+unless singleResult.Length() == 1 and singleResult[0] == 10
   throw new Error "Single element test failed"

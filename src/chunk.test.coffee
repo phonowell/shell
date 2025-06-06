@@ -22,12 +22,12 @@ unless singleResult == '1,2,3'
 
 # Test with chunk size larger than array
 largeChunk = $chunk [1, 2], 5
-unless largeChunk.length == 1 and largeChunk[0].length == 2
+unless largeChunk.Length() == 1 and largeChunk[0].Length() == 2
   throw new Error "Large chunk size test failed"
 
 # Test with empty array
 emptyChunk = $chunk [], 3
-unless Array.isArray(emptyChunk) and emptyChunk.length == 0
+unless Array.isArray(emptyChunk) and emptyChunk.Length() == 0
   throw new Error "Empty array test failed"
 
 # Test with exact division

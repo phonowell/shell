@@ -8,7 +8,7 @@ list = [1, 2, 3, 4]
 reversed = $reverse list
 
 # Should return reversed array
-unless reversed.length == 4 then throw new Error "Expected length 4, got #{reversed.length}"
+unless reversed.Length() == 4 then throw new Error "Expected length 4, got #{reversed.length}"
 unless reversed[0] == 4 and
     reversed[1] == 3 and
     reversed[2] == 2 and
@@ -23,7 +23,7 @@ unless list[0] == 1 and list[1] == 2 and list[2] == 3 and list[3] == 4
 singleList = [42]
 singleReversed = $reverse singleList
 
-unless singleReversed.length == 1
+unless singleReversed.Length() == 1
   throw new Error "Expected length 1, got #{singleReversed.length}"
 unless singleReversed[0] == 42 then throw new Error "Expected [42], got [#{singleReversed}]"
 
@@ -32,7 +32,7 @@ unless singleReversed[0] == 42 then throw new Error "Expected [42], got [#{singl
 emptyList = []
 emptyReversed = $reverse emptyList
 
-unless emptyReversed.length == 0
+unless emptyReversed.Length() == 0
   throw new Error "Expected empty array, got length #{emptyReversed.length}"
 
 # Test 5: Array with duplicate elements
