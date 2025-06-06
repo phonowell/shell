@@ -2,13 +2,14 @@
 
 import $lte from '../src/lte'
 
-do ->
+# Test basic less than: 1 <= 2 should be true
+result = $lte 1, 2
+unless result then throw new Error 'Expected 1 <= 2 to be true'
 
-  result = $lte 1, 2
-  unless result then throw 0
+# Test equal values: 1 <= 1 should be true
+result = $lte 1, 1
+unless result then throw new Error 'Expected 1 <= 1 to be true'
 
-  result = $lte 2, 1
-  if result then throw 1
-
-  result = $lte 1, 1
-  unless result then throw 2
+# Test greater than: 2 <= 1 should be false
+result = $lte 2, 1
+if result then throw new Error 'Expected 2 <= 1 to be false'

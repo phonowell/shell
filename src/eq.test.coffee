@@ -2,53 +2,42 @@
 
 import $eq from '../src/eq'
 
+# Test 1: Primitive values (numbers)
 do ->
+  # Equal numbers should return true
+  unless $eq 1, 1
+    throw new Error "Equal numbers failed"
 
-  a = 1
-  b = 1
+  # Different numbers should return false
+  if $eq 1, 2
+    throw new Error "Different numbers should not be equal"
 
-  unless $eq a, b
-    throw 0
-
-  c = 2
-
-  if $eq a, c
-    throw 1
-
+# Test 2: String comparison
 do ->
+  # Equal strings should return true
+  unless $eq 'hello', 'hello'
+    throw new Error "Equal strings failed"
 
-  stringA = 'hello'
-  stringB = 'hello'
+  # Different strings should return false
+  if $eq 'hello', 'aloha'
+    throw new Error "Different strings should not be equal"
 
-  unless $eq stringA, stringB
-    throw 0
-
-  stringC = 'aloha'
-
-  if $eq stringA, stringC
-    throw 1
-
+# Test 3: Array deep comparison
 do ->
+  # Arrays with same content should be equal
+  unless $eq [1, 2], [1, 2]
+    throw new Error "Equal arrays failed"
 
-  listA = [1, 2]
-  listB = [1, 2]
+  # Arrays with different content should not be equal
+  if $eq [1, 2], [1, 2, 3]
+    throw new Error "Different arrays should not be equal"
 
-  unless $eq listA, listB
-    throw 0
-
-  listC = [1, 2, 3]
-
-  if $eq listA, listC
-    throw 1
-
+# Test 4: Object deep comparison
 do ->
+  # Objects with same properties should be equal
+  unless $eq { a: 1, b: 2 }, { a: 1, b: 2 }
+    throw new Error "Equal objects failed"
 
-  mapA = a: 1, b: 2
-  mapB = a: 1, b: 2
-
-  unless $eq mapA, mapB
-    throw 0
-
-  mapC = a: 1, b: 2, c: 3
-  if $eq mapA, mapC
-    throw 1
+  # Objects with different properties should not be equal
+  if $eq { a: 1, b: 2 }, { a: 1, b: 2, c: 3 }
+    throw new Error "Different objects should not be equal"

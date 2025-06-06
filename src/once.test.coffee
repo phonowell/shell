@@ -2,16 +2,23 @@
 
 import $once from '../src/once'
 
-do ->
+# Test basic once functionality - function executes only once
+map = { n: 0 }
+add = $once -> map.n += 1
 
-  map = {
-    n: 0
-  }
+# First call should execute
+add()
+unless map.n == 1 then throw new Error 'Expected function to execute on first call'
 
-  add = $once -> map.n += 1
+# Second call should not execute
+add()
+unless map.n == 1 then throw new Error 'Expected function to not execute on second call'
 
-  add()
-  unless map.n == 1 then throw 0
+# Test return value is cached
+getValue = $once -> 42
 
-  add()
-  unless map.n == 1 then throw 1
+result1 = getValue()
+result2 = getValue()
+
+unless result1 == 42 and result2 == 42
+  throw new Error 'Expected cached return value to be consistent'

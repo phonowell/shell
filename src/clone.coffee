@@ -5,7 +5,7 @@ import $isArray from './isArray'
 import $isObject from './isObject'
 import $slice from './slice'
 
-###* @type import('./clone').Clone ###
+###* @type {import('./clone').Clone} ###
 export default (ipt) ->
 
   if $isArray ipt then return $slice ipt

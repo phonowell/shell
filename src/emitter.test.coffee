@@ -21,7 +21,7 @@ do ->
 do ->
 
   emitter = $emitter()
-  map = a: 0
+  map = { a: 0 }
   emitter.on 'test', -> map.a++
 
   emitter.emit 'test'
@@ -40,7 +40,7 @@ do ->
 do ->
 
   emitter = $emitter()
-  map = a: 0
+  map = { a: 0 }
   emitter.on 'test.a', -> map.a++
 
   emitter.emit 'test'
@@ -66,7 +66,7 @@ do ->
 do ->
 
   emitter = $emitter()
-  map = a: 0
+  map = { a: 0 }
   emitter.once 'test', -> map.a++
 
   emitter.emit 'test'

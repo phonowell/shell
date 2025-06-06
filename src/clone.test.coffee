@@ -1,22 +1,33 @@
 # @ts-check
 
 import $clone from '../src/clone'
-import $join from '../src/join'
 
+# Test 1: Array cloning (most common use case)
 do ->
+  original = [1, 2, 3]
+  cloned = $clone original
 
-  list = [1, 2, 3]
-  listA = $clone list
-  unless ($join listA, '') == '123'
-    throw ($join listA, '')
+  # Verify values are copied correctly
+  unless cloned[0] == 1 and cloned[1] == 2 and cloned[2] == 3
+    throw new Error "Array values not cloned correctly"
 
+  # Verify it's a new reference (shallow clone test)
+  unless cloned != original
+    throw new Error "Array not properly cloned - same reference"
+
+# Test 2: Object cloning (second most common use case)
 do ->
-
-  map = {
+  original = {
     a: 1
     b: 2
     c: 3
   }
-  mapA = $clone map
-  unless ($join [mapA.a, mapA.b, mapA.c], '') == '123'
-    throw mapA
+  cloned = $clone original
+
+  # Verify properties are copied correctly
+  unless cloned.a == 1 and cloned.b == 2 and cloned.c == 3
+    throw new Error "Object properties not cloned correctly"
+
+  # Verify it's a new reference
+  unless cloned != original
+    throw new Error "Object not properly cloned - same reference"

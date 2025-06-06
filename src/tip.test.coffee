@@ -1,14 +1,8 @@
 # @ts-check
 
-import $isFunction from '../src/isFunction'
 import $tip from '../src/tip'
 
-do ->
-
-  unless $isFunction $tip
-    throw new Error '$.tip is not a function'
-
-  message = 'hello world'
-  result = $tip message
-  unless result == message
-    throw new Error "$.tip did not return the expected value: #{result}"
+# Test 1: Basic functionality - tip should return the input value unchanged (identity function)
+message = 'hello world'
+result = $tip message
+unless result == message then throw new Error "Expected '#{message}', got '#{result}'"

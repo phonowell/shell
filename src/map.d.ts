@@ -1,4 +1,4 @@
-export type Map<T = unknown, R = unknown> = (
+export type Map = <T = unknown, R = unknown>(
   list: T[],
   callback: (item: T, i?: number) => R,
 ) => R[]

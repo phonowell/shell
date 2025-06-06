@@ -5,10 +5,7 @@ import $length from './length'
 import $push from './push'
 import $reverse from './reverse'
 
-###*
-@template T
-@type import('./slice').Slice<T>
-###
+###* @type import('./slice').Slice ###
 export default (list, start = 0, end = 0) ->
 
   unless $getType list
@@ -28,7 +25,7 @@ export default (list, start = 0, end = 0) ->
     $isReverse = true
     [start, end] = [end, start]
 
-  ###* @type {T[]} ###
+  ###* @type typeof list ###
   $listNew = []
   $n = 0
   $max = end - start

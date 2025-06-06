@@ -5,11 +5,11 @@ import $isArray from './isArray'
 import $push from './push'
 
 ###* @type import('./concat').Concat ###
-export default ($list, $values...) ->
+export default (list, values...) ->
 
-  $listNew = $clone $list
+  $listNew = $clone list
 
-  for $value in $values
+  for $value in values
 
     if $isArray $value
       for $item in $value

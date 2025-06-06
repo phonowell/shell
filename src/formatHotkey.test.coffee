@@ -2,37 +2,34 @@
 
 import $formatHotkey from '../src/formatHotkey'
 
+# Test 1: Single modifier keys (basic functionality)
 do ->
-
-  key = 'alt + f4'
-  result = $formatHotkey key
+  # Alt modifier should become !
+  result = $formatHotkey 'alt + f4'
   unless result == '!f4'
-    throw result
+    throw new Error "Alt modifier failed: expected '!f4', got '#{result}'"
 
 do ->
-
-  key = 'ctrl + f5'
-  result = $formatHotkey key
+  # Ctrl modifier should become ^
+  result = $formatHotkey 'ctrl + f5'
   unless result == '^f5'
-    throw result
+    throw new Error "Ctrl modifier failed: expected '^f5', got '#{result}'"
 
 do ->
-
-  key = 'shift + a'
-  result = $formatHotkey key
+  # Shift modifier should become +
+  result = $formatHotkey 'shift + a'
   unless result == '+a'
-    throw result
+    throw new Error "Shift modifier failed: expected '+a', got '#{result}'"
 
 do ->
-
-  key = 'win + r'
-  result = $formatHotkey key
+  # Win modifier should become #
+  result = $formatHotkey 'win + r'
   unless result == '#r'
-    throw result
+    throw new Error "Win modifier failed: expected '#r', got '#{result}'"
 
+# Test 2: Multiple modifier combination (complex case)
 do ->
-
-  key = 'alt + ctrl + shift + win + esc'
-  result = $formatHotkey key
+  # All modifiers in standard order: alt + ctrl + shift + win
+  result = $formatHotkey 'alt + ctrl + shift + win + esc'
   unless result == '!^+#esc'
-    throw result
+    throw new Error "Multiple modifiers failed: expected '!^+#esc', got '#{result}'"

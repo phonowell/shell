@@ -2,13 +2,10 @@
 
 import $push from './push'
 
-###*
-@template R
-@type import('./map').Map
-###
+###* @type import('./map').Map ###
 export default (list, callback) ->
 
-  ###* @type R[] ###
+  ###* @type ReturnType<callback>[] ###
   $listResult = []
 
   for $item, $i in list

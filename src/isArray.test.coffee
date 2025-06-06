@@ -2,12 +2,25 @@
 
 import $isArray from '../src/isArray'
 
-do ->
+# Test non-empty array
+list = [1, 2, 3]
+result = $isArray list
+unless result then throw new Error 'Expected [1,2,3] to be identified as array'
 
-  list = []
-  result = $isArray list
-  unless list then throw 1
+# Test empty array
+list = []
+result = $isArray list
+unless result then throw new Error 'Expected [] to be identified as array'
 
-  list = [1, 2, 3]
-  result = $isArray list
-  unless result then throw 2
+# Test non-array values
+result = $isArray 'string'
+if result then throw new Error 'Expected string to not be identified as array'
+
+result = $isArray 42
+if result then throw new Error 'Expected number to not be identified as array'
+
+result = $isArray null
+if result then throw new Error 'Expected null to not be identified as array'
+
+result = $isArray undefined
+if result then throw new Error 'Expected undefined to not be identified as array'

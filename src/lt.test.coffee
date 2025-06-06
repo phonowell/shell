@@ -2,13 +2,14 @@
 
 import $lt from '../src/lt'
 
-do ->
+# Test basic less than: 1 < 2 should be true
+result = $lt 1, 2
+unless result then throw new Error 'Expected 1 < 2 to be true'
 
-  result = $lt 1, 2
-  unless result then throw 0
+# Test equal values: 1 < 1 should be false
+result = $lt 1, 1
+if result then throw new Error 'Expected 1 < 1 to be false'
 
-  result = $lt 2, 1
-  if result then throw 1
-
-  result = $lt 1, 1
-  if result then throw 2
+# Test greater than: 2 < 1 should be false
+result = $lt 2, 1
+if result then throw new Error 'Expected 2 < 1 to be false'

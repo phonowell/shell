@@ -15,10 +15,6 @@ declare global {
     Push: <T>(...items: T[]) => void
     RemoveAt: <T>(index: number, count?: number) => T | T[] | number
   }
-  interface Function {
-    Name: string
-    Bind: (...args: unknown[]) => (...args: unknown[]) => unknown
-  }
   interface Object {
     Count: () => number
     Delete: (key: string | number) => void

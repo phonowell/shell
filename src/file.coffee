@@ -3,4 +3,4 @@
 import './fileShell'
 
 ###* @type import('./file').File ###
-export default ($source) -> new FileShell $source
+export default (source) -> new FileShell source

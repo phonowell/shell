@@ -5,21 +5,21 @@ import $noop from './noop'
 class MathShell
 
   ###* @type import('./mathShell').MathShell['abs'] ###
-  abs: ($n) -> Abs $n
+  abs: (n) -> Abs n
 
   ###* @type import('./mathShell').MathShell['ceil'] ###
-  ceil: ($n) -> Ceil $n
+  ceil: (n) -> Ceil n
 
   ###* @type import('./mathShell').MathShell['floor'] ###
-  floor: ($n) -> Floor $n
+  floor: (n) -> Floor n
 
   ###* @type import('./mathShell').MathShell['max'] ###
-  max: ($number...) -> Max $number...
+  max: (numbers...) -> Max numbers...
 
   ###* @type import('./mathShell').MathShell['min'] ###
-  min: ($number...) -> Min $number...
+  min: (numbers...) -> Min numbers...
 
   ###* @type import('./mathShell').MathShell['round'] ###
-  round: ($n) -> Round $n
+  round: (n) -> Round n
 
 $noop MathShell

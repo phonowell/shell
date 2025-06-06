@@ -3,28 +3,25 @@
 import $length from './length'
 import $push from './push'
 
-###*
-@template T
-@type import('./chunk').Chunk<T>
-###
-export default ($list, $size = 1) ->
+###* @type import('./chunk').Chunk ###
+export default (list, size = 1) ->
 
-  ###* @type {T[][]} ###
+  ###* @type (typeof list)[] ###
   $listNew = []
-  $len = $length $list
+  $len = $length list
 
   $i = 0
-  while $i < $len / $size
+  while $i < $len / size
 
-    ###* @type {T[]} ###
+    ###* @type typeof list ###
     $listTemp = []
     $j = 0
-    while $j < $size
+    while $j < size
 
-      $index = $i * $size + $j
+      $index = $i * size + $j
       unless $index < $len then break
 
-      $push $listTemp, $list[$index]
+      $push $listTemp, list[$index]
       $j++
 
     $push $listNew, $listTemp

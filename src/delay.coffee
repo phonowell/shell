@@ -3,10 +3,10 @@
 import $setTimeout from './setTimeout'
 
 ###* @type import('./delay').Delay ###
-export default ($func, $wait, $args...) ->
+export default (func, wait, args...) ->
 
   $timer = $setTimeout ->
-    $func $args...
-  , $wait
+    func args...
+  , wait
 
   return $timer
