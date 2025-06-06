@@ -1,56 +1,21 @@
 import c2a from 'coffee-ahk'
-import $ from 'fire-keeper'
+import { argv, exec, move, remove } from 'fire-keeper'
 
-// variable
-
-const path = {
-  ahk: './test/index.ahk',
-  coffee: './test/index.coffee',
-} as const
-
-// function
-
-const main = async () => {
-  const target = $.toString($.argv()._[1] || '*')
-  await $.remove(path.ahk)
-  await makeIndex(target)
-  await makeAhk()
-  await $.exec(`start ${path.ahk}`)
-}
-
-const makeAhk = async () => {
-  await c2a(path.coffee, {
+const compile = async (source: string) => {
+  await c2a(`./src/${source}.coffee`, {
     salt: 'shell',
   })
-  await replace()
+  await move(`./src/${source}.ahk`, './temp')
 }
 
-const makeIndex = async (target: string) => {
-  const listFn = [
-    ...(
-      await $.glob([
-        `./test/include/${target}.coffee`,
-        '!./test/include/end.coffee',
-      ])
-    ).map($.getBasename),
-    'end',
-  ]
+const main = async () => {
+  const target = ((await argv())._[1] ?? '').toString().trim()
+  if (!target) throw new Error('Please specify a target, e.g. `pnpm test add`')
 
-  const content = [
-    '# @ts-check',
-    "import '../script/include/head.ahk'",
-    ...listFn.map((name) => `import './include/${name}'`),
-  ]
+  await remove('./temp')
 
-  await $.write(path.coffee, content.join('\n'))
-}
-
-const replace = async () => {
-  const buffer = await $.read(path.ahk)
-  if (!buffer) return
-  const content = buffer.toString().replace(/\$([\w\d]+)/g, '__$1__')
-
-  await $.write(path.ahk, content)
+  await compile(target)
+  await exec(`start ./temp/${target}.ahk`)
 }
 
 // export

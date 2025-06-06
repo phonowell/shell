@@ -42,17 +42,15 @@
     "shell"
   ],
   "license": "MIT",
-  "main": "dist/index.ahk",
   "name": "shell-ahk",
   "repository": {
     "type": "git",
     "url": "https://github.com/phonowell/shell.git"
   },
   "scripts": {
-    "build": "pnpm alice build",
+    "build": "pnpm task build",
     "task": "ts-node --project task/tsconfig.json --swc task/index.ts",
-    "test": "pnpm alice test",
-    "watch": "pnpm alice watch"
+    "test": "pnpm task test"
   },
   "url": "https://github.com/phonowell/shell",
   "version": "0.0.36",

@@ -1,4 +1,5 @@
 # @ts-check
+import '../scripts/head.ahk'
 
 import $defer from '../dist/defer'
 import $emitter from '../dist/emitter'

@@ -1,4 +1,5 @@
 # @ts-check
+import '../scripts/head.ahk'
 
 import $values from '../dist/values'
 import $includes from '../dist/includes'

@@ -1,4 +1,5 @@
 # @ts-check
+import '../scripts/head.ahk'
 
 import $formatHotkey from '../dist/formatHotkey'
 

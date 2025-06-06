@@ -1,4 +1,5 @@
 # @ts-check
+import '../scripts/head.ahk'
 
 import $getPosition from '../dist/getPosition'
 import $isFunction from '../dist/isFunction'
