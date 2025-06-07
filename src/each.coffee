@@ -1,7 +1,7 @@
 # @ts-check
 
 ###* @type import('./each').Each ###
-export default (list, callback) ->
+export default (list, cb) ->
   for $item, $i in list
-    callback $item, $i
+    cb $item, $i
   return

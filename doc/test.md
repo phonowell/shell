@@ -1,52 +1,52 @@
-- [ ] add
+- [x] add
 - [ ] chunk
 - [ ] clone
 - [ ] compact
-- [ ] concat
-- [ ] delete
+- [x] concat
+- [x] delete
 - [ ] drop
-- [ ] each
+- [x] each
 - [ ] echo
 - [ ] emitter
 - [ ] eq
 - [ ] file
 - [ ] filter
 - [ ] first
-- [ ] forEach
+- [x] forEach
 - [ ] formatHotkey
 - [ ] getPosition
-- [ ] getType
-- [ ] gt
-- [ ] gte
-- [ ] head
+- [x] getType
+- [x] gt
+- [x] gte
+- [x] head
 - [ ] includes
-- [ ] isArray
-- [ ] isFunction
-- [ ] isNumber
-- [ ] isObject
-- [ ] isString
-- [ ] join
-- [ ] keys
-- [ ] last
-- [ ] length
-- [ ] lt
-- [ ] lte
+- [x] isArray
+- [x] isFunction
+- [x] isNumber
+- [x] isObject
+- [x] isString
+- [x] join
+- [x] keys
+- [x] last
+- [x] length
+- [x] lt
+- [x] lte
 - [ ] map
 - [ ] math
-- [ ] max
-- [ ] min
+- [x] max
+- [x] min
 - [ ] mixin
 - [ ] mod
 - [ ] move
-- [ ] nth
+- [x] nth
 - [ ] once
-- [ ] pop
-- [ ] push
+- [x] pop
+- [x] push
 - [ ] range
 - [ ] replace
 - [ ] reverse
 - [ ] shift
-- [ ] slice
+- [x] slice
 - [ ] sort
 - [ ] split
 - [ ] startsWith
@@ -55,15 +55,15 @@
 - [ ] tail
 - [ ] take
 - [ ] tip
-- [ ] toLower
-- [ ] toLowerCase
-- [ ] toNumber
-- [ ] toString
-- [ ] toUpper
-- [ ] toUpperCase
-- [ ] trim
-- [ ] trimEnd
-- [ ] trimStart
+- [x] toLower
+- [x] toLowerCase
+- [x] toNumber
+- [x] toString
+- [x] toUpper
+- [x] toUpperCase
+- [x] trim
+- [x] trimEnd
+- [x] trimStart
 - [ ] uniq
 - [ ] unshift
 - [ ] values

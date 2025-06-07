@@ -20,11 +20,13 @@ result = $isNumber 3.14
 unless result then throw new Error 'Expected 3.14 to be identified as number'
 
 # Test non-number values
+# equals 42
 result = $isNumber '42'
-if result then throw new Error 'Expected string "42" to not be identified as number'
+unless result then throw new Error 'Expected string "42" to be identified as number'
 
+# equals 1
 result = $isNumber true
-if result then throw new Error 'Expected boolean to not be identified as number'
+unless result then throw new Error 'Expected boolean to be identified as number'
 
 result = $isNumber []
 if result then throw new Error 'Expected array to not be identified as number'

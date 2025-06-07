@@ -1,14 +1,11 @@
 # @ts-check
 
-import $length from './length'
-import $push from './push'
-
 ###* @type import('./chunk').Chunk ###
 export default (list, size = 1) ->
 
   ###* @type (typeof list)[] ###
   $listNew = []
-  $len = $length list
+  $len = list.Length()
 
   $i = 0
   while $i < $len / size
@@ -21,10 +18,10 @@ export default (list, size = 1) ->
       $index = $i * size + $j
       unless $index < $len then break
 
-      $push $listTemp, list[$index]
+      $listTemp.Push list[$index]
       $j++
 
-    $push $listNew, $listTemp
+    $listNew.Push $listTemp
     $i++
 
   return $listNew

@@ -23,7 +23,7 @@ do ->
   expected = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   unless result.Length() == 9
     throw new Error "Mixed concat failed: wrong length #{result.length}"
-  for i in [0...9]
+  for i in [0, 1, 2, 3, 4, 5, 6, 7, 8]
     unless result[i] == expected[i]
       throw new Error "Mixed concat failed at index #{i}: expected #{expected[i]}, got #{result[i]}"
 

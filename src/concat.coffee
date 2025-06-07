@@ -2,7 +2,6 @@
 
 import $clone from './clone'
 import $isArray from './isArray'
-import $push from './push'
 
 ###* @type import('./concat').Concat ###
 export default (list, values...) ->
@@ -13,7 +12,7 @@ export default (list, values...) ->
 
     if $isArray $value
       for $item in $value
-        $push $listNew, $item
-    else $push $listNew, $value
+        $listNew.Push $item
+    else $listNew.Push $value
 
   return $listNew

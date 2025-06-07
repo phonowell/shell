@@ -1,11 +1,9 @@
 # @ts-check
 
-import $length from './length'
-
 ###* @type import('./reverse').Reverse ###
 export default (list) ->
 
-  $len = $length list
+  $len = list.Length()
   $listNew = []
   for $item, $i in list
     $listNew[$len - 1 - $i] = $item

@@ -4,7 +4,6 @@ import $filter from './filter'
 import $forEach from './forEach'
 import $formatHotkey from './formatHotkey'
 import $noop from './noop'
-import $push from './push'
 import $replace from './replace'
 import $split from './split'
 
@@ -29,7 +28,7 @@ class KeyBindingShell
     @register $key
 
     # Item: [Name, Fn]
-    $push @mapCallback[$key], [$name, callback]
+    @mapCallback[$key].Push [$name, callback]
     return
 
   ###* @type import('./keyBindingShell').KeyBindingShell['fire'] ###

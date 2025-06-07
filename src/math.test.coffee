@@ -14,7 +14,7 @@ for fn in [
   'min'
 ]
   unless $isFunction $math[fn]
-    throw new Error "$.math.#{fn} is not a function"
+    throw new Error "math.#{fn} is not a function"
 
 # Test basic functionality of core functions
 

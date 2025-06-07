@@ -1,17 +1,15 @@
 # @ts-check
 
 import $getType from './getType'
-import $length from './length'
-import $push from './push'
 import $reverse from './reverse'
 
 ###* @type import('./slice').Slice ###
 export default (list, start = 0, end = 0) ->
 
-  unless $getType list
-    throw new Error "$.slice: invalid type '#{$getType list}'"
+  unless ($getType list) == 'array'
+    throw new Error "slice: Expected an array, got #{ $getType list }"
 
-  $len = $length list
+  $len = list.Length()
   unless end then end = $len
 
   if start > $len then start = $len
@@ -31,7 +29,7 @@ export default (list, start = 0, end = 0) ->
   $max = end - start
 
   while $n < $max
-    $push $listNew, list[start + $n]
+    $listNew.Push list[start + $n]
     $n++
 
   if $isReverse then return $reverse $listNew

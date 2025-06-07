@@ -1,7 +1,5 @@
 # @ts-check
 
-import $length from './length'
-import $push from './push'
 import $replace from './replace'
 import $split from './split'
 import $toLowerCase from './toLowerCase'
@@ -19,7 +17,7 @@ $formatKeyFormatHotkey =
   $key = $replace $key, '-', ''
 
   $listSplit = $split $key, '+'
-  if $length $listSplit then $push $listKey, $listSplit...
+  if $listSplit.Length() then $listKey.Push $listSplit...
 
   return $listKey
 
@@ -27,7 +25,7 @@ $pickPrefixFormatHotkey =
 ###* @type import('./formatHotkey').FormatHotkey2 ###
 (listKey) ->
 
-  if ($length listKey) == 1 then return ['', listKey]
+  if listKey.Length() == 1 then return ['', listKey]
 
   $prefix = ''
   ###* @type string[] ###
@@ -51,7 +49,7 @@ $pickPrefixFormatHotkey =
       $prefix = "#{$prefix}#"
       continue
 
-    $push $listNew, $key
+    $listNew.Push $key
 
   return [$prefix, $listNew]
 

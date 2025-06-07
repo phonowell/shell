@@ -1,4 +1,4 @@
 # @ts-check
 
 ###* @type import('./trim').Trim ###
-export default (ipt, omitting = ' \t') -> Trim ipt, omitting
+export default (ipt, omitting = ' \n\r\t') -> Trim ipt, omitting

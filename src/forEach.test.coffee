@@ -2,29 +2,34 @@
 import '../scripts/head.ahk'
 
 import $forEach from '../dist/forEach'
+import $join from '../dist/join'
+import $toString from '../dist/toString'
 
 # Test 1: Basic iteration with side effects
 do ->
   list = [1, 2, 3]
-  sum = 0
+  sum = {
+    value: 0
+  }
 
-  $forEach list, (value) -> sum += value
+  $forEach list, (value) -> sum.value += value
 
   # Should iterate through all elements and accumulate sum
-  unless sum == 6
-    throw new Error "Basic forEach failed: expected sum 6, got #{sum}"
+  unless sum.value == 6
+    throw new Error "Basic forEach failed: expected sum 6, got #{sum.value}"
 
 # Test 2: Iteration with index parameter
 do ->
-  list = ['a', 'b', 'c']
+  list = [1, 2, 3, 4]
   ###* @type string[] ###
   result = []
 
-  $forEach list, (value, index) -> result.push "#{index}:#{value}"
+  $forEach list, (value, index) -> result.Push "#{index}:#{value}"
+  resultString = $join result, '|'
 
-  # Should provide both value and index to callback
-  unless result.Length() == 3 and result[0] == '0:a' and result[1] == '1:b' and result[2] == '2:c'
-    throw new Error "Index forEach failed: expected ['0:a', '1:b', '2:c'], got #{result}"
+  # Should iterate through all elements with correct index and value
+  unless result.Length() == 4 and resultString == '0:1|1:2|2:3|3:4'
+    throw new Error "Test 1: Basic each failed: expected ['0:1', '1:2', '2:3', '3:4'], got #{$toString result}"
 
 # Test 3: Empty array iteration
 do ->
@@ -37,12 +42,14 @@ do ->
 
 # Test 4: Single element array
 do ->
-  result = null
-  $forEach [42], (value) -> result = value * 2
+  result = {
+    value: 0
+  }
+  $forEach [42], (value) -> result.value = value * 2
 
   # Should process single element correctly
-  unless result == 84
-    throw new Error "Single element forEach failed: expected 84, got #{result}"
+  unless result.value == 84
+    throw new Error "Single element forEach failed: expected 84, got #{result.value}"
 
 # 退出测试用例
 import $exit from '../dist/exit'

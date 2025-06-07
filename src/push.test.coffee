@@ -6,30 +6,30 @@ import $push from '../dist/push'
 # Test 1: Basic functionality - push single element
 list = [0]
 newLength = $push list, 1
-unless newLength == 2 then throw new Error 'Should return new length'
-unless list[1] == 1 then throw new Error 'Should add element at correct index'
+unless newLength == 2 then throw new Error 'P001: Should return new length'
+unless list[1] == 1 then throw new Error 'P002: Should add element at correct index'
 
 # Test 2: Push multiple elements at once
 result = $push list, 2, 3, 4
-unless result == 5 then throw new Error 'Should return correct length after multiple push'
+unless result == 5 then throw new Error 'P003: Should return correct length after multiple push'
 unless list[2] == 2 and
     list[3] == 3 and
     list[4] == 4
-  throw new Error 'Should add all elements in order'
+  throw new Error 'P004: Should add all elements in order'
 
 # Test 3: Push to empty array
 ###* @type string[] ###
 emptyList = []
 length = $push emptyList, 'first'
-unless length == 1 then throw new Error 'Should handle empty array'
-unless emptyList[0] == 'first' then throw new Error 'Should add element to empty array'
+unless length == 1 then throw new Error 'P005: Should handle empty array'
+unless emptyList[0] == 'first' then throw new Error 'P006: Should add element to empty array'
 
 # Test 4: Push with no elements (edge case)
 originalList = [1, 2]
-originalLength = originalList.length
+originalLength = originalList.Length()
 noChangeLength = $push originalList
 unless noChangeLength == originalLength
-  throw new Error 'Should return same length when no elements added'
+  throw new Error 'P007: Should return same length when no elements added'
 
 # 退出测试用例
 import $exit from '../dist/exit'

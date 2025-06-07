@@ -2,8 +2,6 @@
 
 import $click from './click'
 import $includes from './includes'
-import $length from './length'
-import $push from './push'
 import $replace from './replace'
 import $split from './split'
 import $toLowerCase from './toLowerCase'
@@ -22,7 +20,7 @@ $formatInputPress =
     $ipt = $replace $ipt, ' ', ''
     $ipt = $replace $ipt, '-', ''
 
-    $push $listKey, ($split $ipt, '+')...
+    $listKey.Push ($split $ipt, '+')...
 
   return $listKey
 
@@ -30,7 +28,7 @@ $validateInputPress =
 ###* @type import('./press').Press2 ###
 (listInput) ->
 
-  unless $length listInput
+  unless listInput.Length()
     return false
 
   $key = listInput[0]
@@ -52,7 +50,7 @@ export default (listInput...) ->
 
   # unfold
   $listResult = []
-  $len = $length $listKey
+  $len = $listKey.Length()
   for $key, $i in $listKey
     # last
     if $i == $len - 1

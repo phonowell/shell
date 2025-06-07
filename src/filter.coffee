@@ -1,7 +1,5 @@
 # @ts-check
 
-import $push from './push'
-
 ###* @type import('./filter').Filter ###
 export default (list, callback) ->
 
@@ -10,6 +8,6 @@ export default (list, callback) ->
 
   for $item, $i in list
     unless callback $item, $i then continue
-    $push $listResult, $item
+    $listResult.Push $item
 
   return $listResult

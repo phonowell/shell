@@ -1,6 +1,4 @@
 # @ts-check
 
-import $length from './length'
-
 ###* @type import('./last').Last ###
-export default (list) -> list[($length list) - 1]
+export default (list) -> list[list.Length() - 1]

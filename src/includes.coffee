@@ -20,4 +20,4 @@ export default (ipt, needle) ->
       if $it == needle then return true
     return false
 
-  throw new Error "$.includes: invalid type '#{$type}'"
+  throw new Error "includes: invalid type '#{$type}'"

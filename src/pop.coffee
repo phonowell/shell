@@ -7,6 +7,6 @@ import $isArray from './isArray'
 export default (list) ->
 
   unless $isArray list
-    throw new Error "$.pop: invalid type '#{$getType list}'"
+    throw new Error "pop: Expected an array, got #{ $getType list }"
 
   return list.Pop()

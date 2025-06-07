@@ -17,4 +17,4 @@ export default (ipt) ->
       $mapNew[$key] = $value
     return $mapNew
 
-  throw new Error "$.clone: invalid type '#{$getType ipt}'"
+  throw new Error "clone: invalid type '#{$getType ipt}'"

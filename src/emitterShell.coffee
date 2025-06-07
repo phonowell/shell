@@ -3,7 +3,6 @@
 import $each from './each'
 import $filter from './filter'
 import $noop from './noop'
-import $push from './push'
 import $split from './split'
 
 class EmitterShell
@@ -49,13 +48,13 @@ class EmitterShell
   ###* @type import('./emitterShell').EmitterShell['on'] ###
   on: (key, callback) ->
     [$type, $name] = $split key, '.'
-    $push @bus, [$type, $name, callback, 'always']
+    @bus.Push [$type, $name, callback, 'always']
     return
 
   ###* @type import('./emitterShell').EmitterShell['once'] ###
   once: (key, callback) ->
     [$type, $name] = $split key, '.'
-    $push @bus, [$type, $name, callback, 'once']
+    @bus.Push [$type, $name, callback, 'once']
     return
 
 $noop EmitterShell

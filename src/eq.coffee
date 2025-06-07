@@ -4,7 +4,6 @@ import $getType from './getType'
 import $includes from './includes'
 import $isArray from './isArray'
 import $isObject from './isObject'
-import $length from './length'
 
 $eq =
 ###* @type import('./eq').Eq ###
@@ -18,8 +17,8 @@ $eq =
   if $includes ['function', 'number', 'string'], $typeA
     return value == other
 
-  $lengthA = $length value
-  $lengthB = $length other
+  $lengthA = value.Length()
+  $lengthB = other.Length()
 
   unless $lengthA == $lengthB then return false
 
@@ -34,6 +33,6 @@ $eq =
       unless $eq $v, other[$k] then return false
     return true
 
-  throw new Error "$.eq: invalid type '#{$typeA}'"
+  throw new Error "eq: invalid type '#{$typeA}'"
 
 export default $eq

@@ -1,12 +1,11 @@
 # @ts-check
 
-import $length from './length'
 import $tail from './tail'
 
 ###* @type import('./mixin').Mixin ###
 export default (args...) ->
 
-  unless $length args
+  unless args.Length()
     throw new Error '$.mixin: invalid arguments'
 
   $result = args[0]
