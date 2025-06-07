@@ -1,4 +1,3 @@
-export type Fn = (...args: unknown[]) => unknown
 export type Point = [number, number]
 
 type StrReplace = (
@@ -33,7 +32,7 @@ declare global {
   const Floor: (n: number) => number
   const GetKeyState: (key: string, mode: 'P') => boolean
   const InStr: (text: string, target: string) => number
-  const IsFunc: (ipt: unknown) => ipt is Fn
+  const IsFunc: (ipt: unknown) => ipt is Function
   const IsObject: (ipt: unknown) => ipt is object
   const LTrim: (text: string, omit?: string) => string
   const Max: (...numbers: number[]) => number
@@ -53,10 +52,10 @@ declare global {
   const WinExist: (target: string) => boolean
 
   const ComObjCreate: (target: string) => {
-    Open: Fn
+    Open: Function
     ResponseText: string
-    Send: Fn
-    WaitForResponse: Fn
+    Send: Function
+    WaitForResponse: Function
   }
 }
 

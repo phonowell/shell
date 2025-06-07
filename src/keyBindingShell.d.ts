@@ -1,16 +1,14 @@
-import type { Fn } from './types'
-
-type Item = [Name, Fn]
+type Item = [Name, Function]
 type KeyMixed = string
 type Key = string
 type Name = string
 
 export class KeyBindingShell {
-  mapBound: Record<Key, Fn>
+  mapBound: Record<Key, Function>
   mapCallback: Record<Key, Item[]>
   mapPrevented: Record<Key, boolean>
   constructor()
-  add(keyMixed: KeyMixed, callback: Fn): void
+  add(keyMixed: KeyMixed, callback: Function): void
   fire(keyMixed: KeyMixed): void
   private formatKey(key: Key, prefix?: '~' | ''): Key
   getListItem(keyMixed: KeyMixed): Item[]

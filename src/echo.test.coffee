@@ -11,3 +11,7 @@ message = 'hello world'
 result = $echo message
 unless result == message
   throw new Error 'echo did not return the expected message'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

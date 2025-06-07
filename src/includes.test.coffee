@@ -24,3 +24,7 @@ do -> # string tests
   # Test character not in string
   result = $includes string, 'a'
   if result then throw new Error 'Expected "string" to not include "a"'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

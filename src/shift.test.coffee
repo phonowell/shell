@@ -32,3 +32,7 @@ emptyResult = $shift emptyList
 unless emptyResult == undefined
   throw new Error "Expected undefined from empty array, got #{emptyResult}"
 unless emptyList.Length() == 0 then throw new Error "Expected array to remain empty"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

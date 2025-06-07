@@ -27,3 +27,7 @@ do ->
   n = $length map
   unless n == 3
     throw new Error 'Object length test failed'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

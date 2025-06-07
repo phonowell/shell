@@ -18,3 +18,6 @@ emptySorted = $sort emptyList
 unless emptySorted.Length() == 0
   throw new Error "Expected empty array, got length #{emptySorted.length}"
 
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

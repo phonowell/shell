@@ -30,3 +30,7 @@ do ->
   # Should return undefined for empty array
   unless result == undefined
     throw new Error "Empty array first failed: expected undefined, got #{result}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

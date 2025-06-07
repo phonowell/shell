@@ -14,9 +14,7 @@ const replaceDollars = async (source: string) => {
 
   const basename = getBasename(source)
 
-  const content = buffer
-    .toString()
-    .replace(/\$([\w\d]+)/g, `__${basename}_$1__`)
+  const content = buffer.toString().replace(/\$([\w\d]+)/g, `${basename}_$1`)
   await write(`./dist/${basename}.coffee`, content)
 }
 

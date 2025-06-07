@@ -35,3 +35,7 @@ unless mixedList[0] == 'string' then throw new Error "Expected 'string' at index
 unless mixedList[1] == true then throw new Error "Expected true at index 1, got #{mixedList[1]}"
 unless mixedList[2] == null then throw new Error "Expected null at index 2, got #{mixedList[2]}"
 unless mixedList[3] == 1 then throw new Error "Expected 1 at index 3, got #{mixedList[3]}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

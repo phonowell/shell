@@ -34,3 +34,7 @@ unless result == ''
 result = $join $keys { x: 'value' }
 unless result == 'x'
   throw new Error 'Expected keys of {x: "value"} to be "x"'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

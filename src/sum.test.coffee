@@ -45,3 +45,7 @@ negatives = [-1, -2, -3]
 negativesResult = $sum negatives
 
 unless negativesResult == -6 then throw new Error "Expected -6, got #{negativesResult}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

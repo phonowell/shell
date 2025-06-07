@@ -15,3 +15,6 @@ unless result is 42 then throw new Error 'Expected head([42]) to return 42'
 result = $head []
 unless result is undefined then throw new Error 'Expected head([]) to return undefined'
 
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

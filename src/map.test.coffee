@@ -27,3 +27,7 @@ unless $join(stringResult) == $join(expected)
 singleResult = $map [5], (n) -> n * 2
 unless singleResult.Length() == 1 and singleResult[0] == 10
   throw new Error "Single element test failed"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

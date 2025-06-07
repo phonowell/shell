@@ -36,3 +36,7 @@ unless result then throw new Error "Expected empty string to start with empty pr
 # Test 8: Edge case - empty string with non-empty prefix
 result = $startsWith '', 'a'
 if result then throw new Error "Expected empty string to NOT start with 'a'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

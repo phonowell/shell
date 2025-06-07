@@ -40,3 +40,7 @@ mixedResult = $tail mixed
 
 unless mixedResult.Length() == 3 then throw new Error "Expected length 3, got #{mixedResult.length}"
 unless mixedResult[0] == 'hello' and mixedResult[2] == null then throw new Error "Expected ['hello', true, null], got [#{mixedResult}]"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

@@ -44,3 +44,7 @@ unless duplicateReversed[0] == 1 and
     duplicateReversed[2] == 2 and
     duplicateReversed[3] == 1
   throw new Error "Expected [1,2,2,1], got [#{duplicateReversed}]"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

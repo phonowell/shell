@@ -30,3 +30,7 @@ if result then throw new Error 'Expected object to not be identified as string'
 
 result = $isString null
 if result then throw new Error 'Expected null to not be identified as string'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

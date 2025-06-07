@@ -22,3 +22,7 @@ emptyList = []
 emptyResult = $pop emptyList
 unless emptyResult == undefined then throw new Error 'Should return undefined for empty array'
 unless emptyList.Length() == 0 then throw new Error 'Should remain empty'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

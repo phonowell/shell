@@ -39,3 +39,7 @@ unless singleLower == 'z' then throw new Error "Expected 'z', got '#{singleLower
 spaces = '   '
 spacesResult = $toLowerCase spaces
 unless spacesResult == '   ' then throw new Error "Expected '   ', got '#{spacesResult}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

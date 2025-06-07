@@ -27,3 +27,7 @@ unless result == 42
 result = $min [-1, 0, 1]
 unless result == -1
   throw new Error 'min([-1, 0, 1]) should return -1'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

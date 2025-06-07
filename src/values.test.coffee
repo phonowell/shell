@@ -41,3 +41,6 @@ emptyArr = []
 emptyArrResult = $values emptyArr
 unless emptyArrResult.Length() == 0 then throw new Error "Expected empty array, got length #{emptyArrResult.length}"
 
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

@@ -32,3 +32,7 @@ spaceResult = $split 'hello world test', ' '
 
 unless spaceResult.Length() == 3 then throw new Error "Expected 3 words, got #{spaceResult.length}"
 unless spaceResult[0] == 'hello' and spaceResult[2] == 'test' then throw new Error "Expected ['hello','world','test'], got [#{spaceResult}]"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

@@ -14,3 +14,7 @@ unless result then throw new Error 'Expected 1 >= 1 to be true'
 # Test less than case
 result = $gte 1, 2
 if result then throw new Error 'Expected 1 >= 2 to be false'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

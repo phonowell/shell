@@ -22,3 +22,7 @@ unless n == 2 then throw new Error 'Expected nth(list, -2) to return 2'
 # Test out of bounds access
 n = $nth list, 10
 unless n == undefined then throw new Error 'Expected nth(list, 10) to return undefined'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

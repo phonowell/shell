@@ -34,3 +34,7 @@ do ->
   # Should result in: [1, 2]
   unless result.Length() == 2 and result[0] == 1 and result[1] == 2
     throw new Error "Empty arrays concat failed: expected [1, 2], got #{result}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

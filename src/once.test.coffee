@@ -23,3 +23,7 @@ result2 = getValue()
 
 unless result1 == 42 and result2 == 42
   throw new Error 'Expected cached return value to be consistent'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

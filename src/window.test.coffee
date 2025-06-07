@@ -63,3 +63,7 @@ do ->
     w.focus()
 
     w.close()
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

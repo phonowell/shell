@@ -31,3 +31,7 @@ if result then throw new Error 'Expected array to not be identified as number'
 
 result = $isNumber null
 if result then throw new Error 'Expected null to not be identified as number'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

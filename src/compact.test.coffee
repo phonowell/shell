@@ -29,3 +29,7 @@ do ->
   # Should keep all values
   unless result.Length() == 5
     throw new Error "All truthy compact failed: expected length 5, got #{result.length}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

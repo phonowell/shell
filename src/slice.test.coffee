@@ -49,3 +49,7 @@ invalidRange = $slice list, 3, 1
 
 unless invalidRange.Length() == 0
   throw new Error "Expected empty array for invalid range, got length #{invalidRange.length}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

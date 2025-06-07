@@ -41,3 +41,6 @@ unless ($toString []) == '[]'
 unless ($toString {}) == '{}'
   throw new Error "Expected '{}', got '#{$toString {}}'"
 
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

@@ -42,3 +42,7 @@ unless takeSingle[0] == 1 then throw new Error "Expected [1], got [#{takeSingle}
 takeNegative = $take list, -2
 
 unless takeNegative.Length() == 0 then throw new Error "Expected empty array for negative count, got length #{takeNegative.length}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

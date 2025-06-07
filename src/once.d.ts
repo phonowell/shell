@@ -1,6 +1,4 @@
-import type { Fn } from './types'
-
-export type Once = (callback: Fn) => Fn
+export type Once = (callback: Function) => Function
 
 declare module './once' {
   /** Creates a function that is restricted to invoking func once */

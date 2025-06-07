@@ -44,3 +44,7 @@ unless nullResult == 0 then throw new Error "Expected 0 for null, got #{nullResu
 
 undefinedResult = $toNumber undefined
 unless isNaN(undefinedResult) then throw new Error "Expected NaN for undefined, got #{undefinedResult}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

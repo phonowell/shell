@@ -29,3 +29,7 @@ if result then throw new Error 'Expected array to not be identified as function'
 
 result = $isFunction null
 if result then throw new Error 'Expected null to not be identified as function'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

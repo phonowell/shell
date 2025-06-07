@@ -26,3 +26,7 @@ unless expanded == 'hello' then throw new Error 'Should handle replacement with 
 # Test 6: Empty string cases
 emptySource = $replace '', 'a', 'b'
 unless emptySource == '' then throw new Error 'Should handle empty source string'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

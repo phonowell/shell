@@ -40,3 +40,7 @@ do ->
   f.remove()
   if f.isExists()
     throw new Error 'test.txt should not exist - 2'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

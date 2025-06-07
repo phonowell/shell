@@ -39,3 +39,7 @@ unless result == '' then throw new Error "Expected empty string for invalid rang
 # Test 8: Edge case - empty string
 emptyResult = $subString '', 0
 unless emptyResult == '' then throw new Error "Expected empty string, got '#{emptyResult}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

@@ -1,6 +1,4 @@
-import type { Fn } from './types'
-
-export type On = (key: string, callback: Fn) => void
+export type On = (key: string, callback: Function) => void
 
 declare module './on' {
   /** Binds a key event handler */

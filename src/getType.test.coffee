@@ -33,3 +33,7 @@ do ->
   type = $getType { a: 1, b: 2, c: 3 }
   unless type == 'object'
     throw new Error "Object type failed: expected 'object', got '#{type}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

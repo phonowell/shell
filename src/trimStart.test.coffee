@@ -42,3 +42,7 @@ unless emptyResult == '' then throw new Error "Expected empty string, got '#{emp
 mixedWhitespace = '\t\n  hello'
 mixedResult = $trimStart mixedWhitespace
 unless mixedResult == 'hello' then throw new Error "Expected 'hello', got '#{mixedResult}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

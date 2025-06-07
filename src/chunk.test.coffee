@@ -35,3 +35,7 @@ exactChunk = $chunk [1, 2, 3, 4], 2
 exactResult = $join ($map exactChunk, (it) -> $join it, ''), ','
 unless exactResult == '12,34'
   throw new Error "Exact division test failed"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

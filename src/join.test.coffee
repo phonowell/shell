@@ -28,3 +28,7 @@ unless result == ''
 result = $join [42]
 unless result == '42'
   throw new Error 'Expected [42] to join as "42"'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

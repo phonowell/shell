@@ -39,3 +39,7 @@ do ->
   # Should not call callback for empty array
   unless callCount == 0
     throw new Error "Empty array iteration failed: callback called #{callCount} times"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

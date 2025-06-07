@@ -7,3 +7,7 @@ import $tip from '../dist/tip'
 message = 'hello world'
 result = $tip message
 unless result == message then throw new Error "Expected '#{message}', got '#{result}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

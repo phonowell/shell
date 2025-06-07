@@ -25,3 +25,7 @@ if result then throw new Error 'Expected null to not be identified as array'
 
 result = $isArray undefined
 if result then throw new Error 'Expected undefined to not be identified as array'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

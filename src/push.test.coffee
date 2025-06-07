@@ -30,3 +30,7 @@ originalLength = originalList.length
 noChangeLength = $push originalList
 unless noChangeLength == originalLength
   throw new Error 'Should return same length when no elements added'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

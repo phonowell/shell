@@ -22,3 +22,7 @@ unless result == 5
 result = $add 1, -2, 3
 unless result == 2
   throw new Error "Negative number failed: #{result}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

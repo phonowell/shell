@@ -14,3 +14,7 @@ if result then throw new Error 'Expected 1 < 1 to be false'
 # Test greater than: 2 < 1 should be false
 result = $lt 2, 1
 if result then throw new Error 'Expected 2 < 1 to be false'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

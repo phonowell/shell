@@ -34,3 +34,7 @@ do ->
   result = $formatHotkey 'alt + ctrl + shift + win + esc'
   unless result == '!^+#esc'
     throw new Error "Multiple modifiers failed: expected '!^+#esc', got '#{result}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

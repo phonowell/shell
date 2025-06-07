@@ -39,3 +39,7 @@ unless singleUpper == 'Z' then throw new Error "Expected 'Z', got '#{singleUpper
 spaces = '   '
 spacesResult = $toUpper spaces
 unless spacesResult == '   ' then throw new Error "Expected '   ', got '#{spacesResult}'"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

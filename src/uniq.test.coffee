@@ -8,3 +8,7 @@ strings = ['a', 'b', 'a', 'c', 'b']
 stringResult = $uniq strings
 unless stringResult.Length() == 3 then throw new Error "Expected length 3, got #{stringResult.length}"
 unless stringResult[0] == 'a' and stringResult[1] == 'b' and stringResult[2] == 'c' then throw new Error "Expected ['a','b','c'], got [#{stringResult}]"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

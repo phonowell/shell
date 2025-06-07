@@ -43,3 +43,7 @@ do ->
   # Should process single element correctly
   unless result == 84
     throw new Error "Single element forEach failed: expected 84, got #{result}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

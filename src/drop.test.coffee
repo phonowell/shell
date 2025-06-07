@@ -28,3 +28,7 @@ listD = $drop list, 0
 # Should return original array (or copy)
 unless listD.Length() == 5 and listD[0] == 1
   throw new Error "Drop 0 elements failed: expected original array, got #{listD}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

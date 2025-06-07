@@ -36,3 +36,7 @@ do ->
   unless negative.Length() == 4 then throw new Error 'Should handle negative start'
   unless negative[0] == -2 and negative[3] == 1
     throw new Error 'Should generate negative to positive range'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

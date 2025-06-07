@@ -38,3 +38,7 @@ do ->
   # Should return empty array
   unless result.Length() == 0
     throw new Error "Filter none failed: expected [], got #{result}"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

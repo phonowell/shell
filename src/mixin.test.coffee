@@ -32,3 +32,7 @@ $mixin source, target
 
 unless source.x == 999 and source.y == 2
   throw new Error 'Expected mixin to overwrite existing properties'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

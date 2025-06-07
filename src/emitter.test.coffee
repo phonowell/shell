@@ -79,3 +79,7 @@ do ->
       unless map.a == 1 then throw new Error 'once - 2'
 
       emitter.off()
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

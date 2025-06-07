@@ -22,3 +22,7 @@ unless n == 0
 n = $mod -5, 3
 unless n == 1 or n == -2  # Handle different implementations
   throw new Error 'Expected -5 % 3 to follow consistent modulo behavior'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

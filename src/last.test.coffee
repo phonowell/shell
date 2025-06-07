@@ -18,3 +18,7 @@ unless item == 42
 item = $last []
 unless item is undefined
   throw new Error 'Expected last([]) to return undefined'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

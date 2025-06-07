@@ -36,3 +36,7 @@ do ->
   # Should not throw error, original property should remain
   unless obj.a == 1
     throw new Error "Deleting non-existent property affected existing properties"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

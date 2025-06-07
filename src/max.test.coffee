@@ -6,7 +6,7 @@ import $max from '../dist/max'
 
 # Test function existence
 unless $isFunction $max
-  throw new Error '$.max is not a function'
+  throw new Error 'max should be a function'
 
 # Test basic functionality with positive numbers
 result = $max [1, 2, 3]
@@ -27,3 +27,7 @@ unless result == 42
 result = $max [-1, 0, 1]
 unless result == 1
   throw new Error 'max([-1, 0, 1]) should return 1'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

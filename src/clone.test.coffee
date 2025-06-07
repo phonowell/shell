@@ -32,3 +32,7 @@ do ->
   # Verify it's a new reference
   unless cloned != original
     throw new Error "Object not properly cloned - same reference"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

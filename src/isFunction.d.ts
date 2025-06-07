@@ -1,6 +1,4 @@
-import type { Fn } from './types'
-
-export type IsFunction = (ipt: unknown) => ipt is Fn
+export type IsFunction = (ipt: unknown) => ipt is Function
 
 declare module './isFunction' {
   /** Checks if value is a function */

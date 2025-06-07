@@ -41,3 +41,7 @@ unless $math.max(1, 3, 2) == 3
 # Test min function
 unless $math.min(1, 3, 2) == 1
   throw new Error 'min(1, 3, 2) should equal 1'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

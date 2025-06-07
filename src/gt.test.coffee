@@ -14,3 +14,7 @@ if result then throw new Error 'Expected 1 > 2 to be false'
 # Test equality case
 result = $gt 1, 1
 if result then throw new Error 'Expected 1 > 1 to be false'
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()

@@ -42,3 +42,7 @@ do ->
   # Objects with different properties should not be equal
   if $eq { a: 1, b: 2 }, { a: 1, b: 2, c: 3 }
     throw new Error "Different objects should not be equal"
+
+# 退出测试用例
+import $exit from '../dist/exit'
+$exit()
