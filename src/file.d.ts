@@ -1,4 +1,4 @@
-import type { FileShell } from './types/fileShell'
+import type { FileShell } from './fileShell'
 
 export type File = (source: string) => FileShell
 

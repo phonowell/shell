@@ -27,7 +27,7 @@ class KeyBindingShell
 
     @register $key
 
-    # Item: [Name, Fn]
+    # Item: [Name, Function]
     @mapCallback[$key].Push [$name, callback]
     return
 

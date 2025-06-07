@@ -1,4 +1,4 @@
-export type SetInterval = (callback: Fn, time: number) => number
+export type SetInterval = (callback: Function, time: number) => number
 
 declare module './setInterval' {
   /** Schedules a function to be called repeatedly at specified intervals */

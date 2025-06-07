@@ -1,4 +1,4 @@
-import type { WindowShell } from './types/windowShell'
+import type { WindowShell } from './windowShell'
 
 export type Window = (source: string) => WindowShell
 

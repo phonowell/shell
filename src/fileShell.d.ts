@@ -10,6 +10,13 @@ export class FileShell {
   write(content: string): void
 }
 
+declare global {
+  interface FileShellConstructor {
+    new (source: string): FileShell
+  }
+  const FileShell: FileShellConstructor
+}
+
 declare module './fileShell' {
   /** File operations shell class */
   export default FileShell

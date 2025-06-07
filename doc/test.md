@@ -7,9 +7,9 @@
 - [x] drop
 - [x] each
 - [x] echo
-- [ ] emitter
+- [x] emitter
 - [x] eq
-- [ ] file
+- [x] file
 - [x] filter
 - [x] first
 - [x] forEach
@@ -67,4 +67,4 @@
 - [x] uniq
 - [x] unshift
 - [x] values
-- [ ] window
+- [x] window

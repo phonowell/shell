@@ -4,18 +4,20 @@ import '../scripts/head.ahk'
 import $isFunction from '../dist/isFunction'
 import $isObject from '../dist/isObject'
 import $open from '../dist/open'
+import $sleep from '../dist/sleep'
 import $window from '../dist/window'
 
 do ->
 
   unless $isFunction $window
-    throw new Error '$window is not a function'
+    throw new Error 'window should be a function'
 
-  w = $window 'notepad.exe'
-  unless $isObject w
-    throw new Error '$window("notepad.exe") is not an object'
+  win = $window 'notepad.exe'
+  unless $isObject win
+    throw new Error "window('notepad.exe') should return an object"
 
-  for fn in [
+  ###* @type (keyof import('../dist/windowShell').WindowShell)[] ###
+  names = [
     'blur'
     'close'
     'focus'
@@ -33,36 +35,40 @@ do ->
     'show'
     'wait'
   ]
-    unless $isFunction w[fn]
-      throw new Error "$window('notepad.exe').#{fn} is not a function"
+
+  for name in names
+    unless $isFunction win[name]
+      throw new Error "window('notepad.exe').#{name} should be a function"
 
 do ->
 
-  exe = 'notepad.exe'
-  w = $window exe
+  exe = 'msedge.exe'
+  win = $window exe
 
-  w.close()
+  win.close()
 
-  if w.isExists()
+  if win.isExists()
     throw new Error "#{exe} is already running"
 
   $open exe
 
-  w.wait ->
-    unless w.isExists()
+  win.wait ->
+    unless win.isExists()
       throw new Error "#{exe} is not running"
 
-    unless w.isActive()
+    unless win.isActive()
       throw new Error "#{exe} is not active"
 
-    w.blur()
+    win.blur()
 
-    if w.isActive()
+    if win.isActive()
       throw new Error "#{exe} is still active"
 
-    w.focus()
+    win.focus()
 
-    w.close()
+    win.close()
+
+$sleep 5e3
 
 # 退出测试用例
 import $exit from '../dist/exit'

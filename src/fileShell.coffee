@@ -11,6 +11,8 @@ class FileShell
     ###* @type import('./fileShell').FileShell['source'] ###
     @source = source
 
+    return @
+
   ###* @type import('./fileShell').FileShell['append'] ###
   append: (content) ->
     $noop content

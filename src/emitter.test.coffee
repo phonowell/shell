@@ -1,84 +1,86 @@
 # @ts-check
 import '../scripts/head.ahk'
 
-import $defer from '../dist/defer'
 import $emitter from '../dist/emitter'
 import $isFunction from '../dist/isFunction'
 import $isObject from '../dist/isObject'
-import $getType from '../dist/getType'
+import $sleep from '../dist/sleep'
 
 do ->
 
-  unless $isFunction $emitter then throw 0
+  unless $isFunction $emitter
+    throw new Error 'E001: emitter should be a function'
 
   emitter = $emitter()
-  unless $isObject emitter then throw 1
+  unless $isObject emitter
+    throw new Error 'E002: emitter() should return an object'
 
-  for name in ['emit', 'off', 'on', 'once']
+  ###* @type (keyof import('../dist/emitterShell').EmitterShell)[] ###
+  names = [
+    'emit'
+    'off'
+    'on'
+    'once'
+  ]
+
+  for name in names
     unless $isFunction emitter[name]
-      throw new Error "#{name}/#{$getType emitter[name]}"
+      throw new Error "E003: emitter().#{name} should be a function"
 
 # on & off
 do ->
 
   emitter = $emitter()
-  map = { a: 0 }
-  emitter.on 'test', -> map.a++
+  data = { value: 0 }
+  emitter.on 'test', -> data.value++
 
   emitter.emit 'test'
-  $defer ->
-    unless map.a == 1 then throw new Error "on/#{map.a}"
+  unless data.value == 1 then throw new Error "E004: on/#{data.value}"
 
-    emitter.off 'test'
+  emitter.off 'test'
+  emitter.emit 'test'
+  unless data.value == 1 then throw new Error 'E005: off'
 
-    emitter.emit 'test'
-    $defer ->
-      unless map.a == 1 then throw new Error 'off'
-
-      emitter.off()
+  emitter.off()
 
 # on & off with name
 do ->
 
   emitter = $emitter()
-  map = { a: 0 }
-  emitter.on 'test.a', -> map.a++
+  data = { value: 0 }
+  emitter.on 'test.a', -> data.value++
 
   emitter.emit 'test'
-  $defer ->
-    unless map.a == 1 then throw new Error "on with name - 1/#{map.a}"
+  unless data.value == 1 then throw new Error "E006: on with name - 1/#{data.value}"
 
-    emitter.emit 'test.a'
-    $defer ->
-      unless map.a == 2 then throw new Error "on with name - 2/#{map.a}"
+  emitter.emit 'test.a'
+  unless data.value == 2 then throw new Error "E007: on with name - 2/#{data.value}"
 
-      emitter.emit 'test.b'
-      $defer ->
-        unless map.a == 2 then throw new Error "on with name - 3/#{map.a}"
+  emitter.emit 'test.b'
+  unless data.value == 2 then throw new Error "E008: on with name - 3/#{data.value}"
 
-        emitter.off 'test.a'
+  emitter.off 'test.a'
+  emitter.emit 'test.a'
+  unless data.value == 2 then throw new Error "E009: off with name/#{data.value}"
 
-        emitter.emit 'test.a'
-        $defer ->
-          unless map.a == 2 then throw new Error "off with name/#{map.a}"
-          emitter.off()
+  emitter.off()
 
 # once
 do ->
 
   emitter = $emitter()
-  map = { a: 0 }
-  emitter.once 'test', -> map.a++
+  data = { value: 0 }
+  emitter.once 'test', -> data.value++
 
   emitter.emit 'test'
-  $defer ->
-    unless map.a == 1 then throw new Error 'once - 1'
+  unless data.value == 1 then throw new Error 'E010: once - 1'
 
-    emitter.emit 'test'
-    $defer ->
-      unless map.a == 1 then throw new Error 'once - 2'
+  emitter.emit 'test'
+  unless data.value == 1 then throw new Error 'E011: once - 2'
 
-      emitter.off()
+  emitter.off()
+
+$sleep 5e3
 
 # 退出测试用例
 import $exit from '../dist/exit'

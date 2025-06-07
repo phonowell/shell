@@ -1,4 +1,4 @@
-export type SetTimeout = (callback: Fn, time: number) => number
+export type SetTimeout = (callback: Function, time: number) => number
 
 declare module './setTimeout' {
   /** Schedules a function to be called after a specified delay */

@@ -1,17 +1,18 @@
 type Level = 'high' | 'low' | 'normal'
 
 export type Constructor = (exe: string) => void
+
 export class WindowShell {
   exe: string
   constructor(exe: string)
   blur(): void
   close(): void
   focus(): void
+  getBounds(): { x: number; y: number; width: number; height: number }
   hide(): void
   isActive(): boolean
   isExists(): boolean
   isFullScreen(): boolean
-  getBounds(): { x: number; y: number; width: number; height: number }
   kill(): void
   maximize(): void
   minimize(): void
@@ -19,7 +20,14 @@ export class WindowShell {
   setPriority(level: Level): void
   setStyle(style: string | number): void
   show(): void
-  wait(callback: Fn): void
+  wait(callback?: Function): void
+}
+
+declare global {
+  interface WindowShellConstructor {
+    new (exe: string): WindowShell
+  }
+  const WindowShell: WindowShellConstructor
 }
 
 declare module './windowShell' {

@@ -1,4 +1,4 @@
-import type { EmitterShell } from './types/emitterShell'
+import type { EmitterShell } from './emitterShell'
 
 export type Emitter = () => EmitterShell
 
