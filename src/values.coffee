@@ -1,14 +1,12 @@
 # @ts-check
 
-import $getType from './getType'
+import $isObject from './isObject'
 import $keys from './keys'
 
 ###* @type import('./values').Values ###
 export default (ipt) ->
 
-  $type = $getType ipt
-  unless $type == 'object'
-    throw new Error "values: invalid type '#{$type}'"
+  unless $isObject ipt then return []
 
   ###* @type (typeof ipt)[keyof typeof ipt][] ###
   $listResult = []

@@ -1,4 +1,4 @@
-export type SubString = (text: string, iStart: number, iEnd?: number) => string
+export type SubString = (text: string, start?: number, end?: number) => string
 
 declare module './subString' {
   /** Returns a substring of the given string */

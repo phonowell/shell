@@ -1,25 +1,25 @@
 - [x] add
-- [ ] chunk
-- [ ] clone
-- [ ] compact
+- [x] chunk
+- [x] clone
+- [x] compact
 - [x] concat
 - [x] delete
-- [ ] drop
+- [x] drop
 - [x] each
 - [ ] echo
 - [ ] emitter
-- [ ] eq
+- [x] eq
 - [ ] file
-- [ ] filter
-- [ ] first
+- [x] filter
+- [x] first
 - [x] forEach
-- [ ] formatHotkey
+- [x] formatHotkey
 - [ ] getPosition
 - [x] getType
 - [x] gt
 - [x] gte
 - [x] head
-- [ ] includes
+- [x] includes
 - [x] isArray
 - [x] isFunction
 - [x] isNumber
@@ -31,29 +31,29 @@
 - [x] length
 - [x] lt
 - [x] lte
-- [ ] map
-- [ ] math
+- [x] map
+- [x] math
 - [x] max
 - [x] min
-- [ ] mixin
-- [ ] mod
+- [x] mixin
+- [x] mod
 - [ ] move
 - [x] nth
-- [ ] once
+- [x] once
 - [x] pop
 - [x] push
 - [ ] range
 - [ ] replace
-- [ ] reverse
-- [ ] shift
+- [x] reverse
+- [x] shift
 - [x] slice
 - [ ] sort
-- [ ] split
-- [ ] startsWith
-- [ ] subString
-- [ ] sum
-- [ ] tail
-- [ ] take
+- [x] split
+- [x] startsWith
+- [x] subString
+- [x] sum
+- [x] tail
+- [x] take
 - [ ] tip
 - [x] toLower
 - [x] toLowerCase
@@ -65,6 +65,6 @@
 - [x] trimEnd
 - [x] trimStart
 - [ ] uniq
-- [ ] unshift
-- [ ] values
+- [x] unshift
+- [x] values
 - [ ] window

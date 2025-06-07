@@ -2,6 +2,7 @@
 import '../scripts/head.ahk'
 
 import $filter from '../dist/filter'
+import $mod from '../dist/mod'
 
 # Test 1: Basic filtering (exclude specific value)
 do ->
@@ -15,7 +16,7 @@ do ->
 # Test 2: Filter with index parameter
 do ->
   list = [10, 20, 30, 40]
-  result = $filter list, (_value, index) -> index % 2 == 0
+  result = $filter list, (_value, index) -> ($mod index, 2) == 0
 
   # Should keep elements at even indices: [10, 30]
   unless result.Length() == 2 and result[0] == 10 and result[1] == 30

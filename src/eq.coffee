@@ -2,37 +2,29 @@
 
 import $getType from './getType'
 import $includes from './includes'
-import $isArray from './isArray'
-import $isObject from './isObject'
 
-$eq =
 ###* @type import('./eq').Eq ###
-(value, other) ->
+export default (a, b) ->
 
-  $typeA = $getType value
-  $typeB = $getType other
+  $typeA = $getType a
+  $typeB = $getType b
 
   unless $typeA == $typeB then return false
 
   if $includes ['function', 'number', 'string'], $typeA
-    return value == other
+    return a == b
 
-  $lengthA = value.Length()
-  $lengthB = other.Length()
-
-  unless $lengthA == $lengthB then return false
-
-  if $isArray value
-    for $it, $i in value
-      unless $eq $it, other[$i] then return false
+  if $typeA == 'array'
+    unless a.Length() == b.Length() then return false
+    for $it, $i in a
+      unless $it == b[$i] then return false
     return true
 
   # object
-  if $isObject value
-    for $k, $v of value
-      unless $eq $v, other[$k] then return false
+  if $typeA == 'object'
+    unless a.Count() == b.Count() then return false
+    for $k, $v of a
+      unless $v == b[$k] then return false
     return true
 
-  throw new Error "eq: invalid type '#{$typeA}'"
-
-export default $eq
+  return false

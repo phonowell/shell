@@ -4,9 +4,8 @@ import $isArray from './isArray'
 import $isObject from './isObject'
 import $trim from './trim'
 
-$toString =
 ###* @type import('./toString').ToString ###
-(ipt) ->
+export default (ipt) ->
 
   if $isArray ipt
     $result = ''
@@ -21,5 +20,3 @@ $toString =
     return "{#{$trim $result, ' ,'}}"
 
   return ipt
-
-export default $toString

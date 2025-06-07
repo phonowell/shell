@@ -1,6 +1,7 @@
 # @ts-check
 import '../scripts/head.ahk'
 
+import $math from '../dist/math'
 import $sum from '../dist/sum'
 
 # Test 1: Basic functionality - sum of positive numbers
@@ -19,7 +20,7 @@ unless mixedResult == 6 then throw new Error "Expected 6, got #{mixedResult}"
 decimals = [1.5, 2.3, 0.2]
 decimalResult = $sum decimals
 
-unless Math.abs(decimalResult - 4.0) < 0.0001 then throw new Error "Expected 4.0, got #{decimalResult}"
+unless $math.abs(decimalResult - 4.0) < 0.0001 then throw new Error "Expected 4.0, got #{decimalResult}"
 
 # Test 4: Edge case - single element array
 single = [42]

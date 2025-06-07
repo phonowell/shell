@@ -1,13 +1,13 @@
 # @ts-check
 
 ###* @type import('./filter').Filter ###
-export default (list, callback) ->
+export default (list, cb) ->
 
   ###* @type typeof list ###
-  $listResult = []
+  $listNew = []
 
   for $item, $i in list
-    unless callback $item, $i then continue
-    $listResult.Push $item
+    unless cb $item, $i then continue
+    $listNew.Push $item
 
-  return $listResult
+  return $listNew

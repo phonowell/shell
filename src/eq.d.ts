@@ -1,4 +1,4 @@
-export type Eq = (value: unknown, other: unknown) => boolean
+export type Eq = (a: unknown, b: unknown) => boolean
 
 declare module './eq' {
   /** Performs a deep comparison between two values to determine if they are equivalent */
