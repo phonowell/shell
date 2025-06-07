@@ -5,7 +5,8 @@ import $isNumber from './isNumber'
 ###* @type import('./setTimeout').SetTimeout ###
 export default (callback, time) ->
 
-  unless $isNumber time then throw new Error '$.setTimeout: invalid type'
+  unless $isNumber time
+    throw new Error 'setTimeout requires a number as the second argument'
 
   if time < 1 then time = 1
 

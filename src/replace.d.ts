@@ -1,8 +1,8 @@
 export type Replace = (
-  ipt: string,
+  original: string,
   searchment: string,
   replacement: string,
-  limit?: number,
+  count?: number,
 ) => string
 
 declare module './replace' {

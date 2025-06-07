@@ -1,5 +1,5 @@
 # @ts-check
 
 ###* @type import('./replace').Replace ###
-export default (ipt, searchment, replacement, limit = -1) ->
-  StrReplace ipt, searchment, replacement, limit
+export default (original, searchment, replacement, count = -1) ->
+  StrReplace original, searchment, replacement, count

@@ -6,7 +6,7 @@
 - [x] delete
 - [x] drop
 - [x] each
-- [ ] echo
+- [x] echo
 - [ ] emitter
 - [x] eq
 - [ ] file
@@ -14,7 +14,7 @@
 - [x] first
 - [x] forEach
 - [x] formatHotkey
-- [ ] getPosition
+- [x] getPosition
 - [x] getType
 - [x] gt
 - [x] gte
@@ -37,24 +37,24 @@
 - [x] min
 - [x] mixin
 - [x] mod
-- [ ] move
+- [x] move
 - [x] nth
 - [x] once
 - [x] pop
 - [x] push
-- [ ] range
-- [ ] replace
+- [x] range
+- [x] replace
 - [x] reverse
 - [x] shift
 - [x] slice
-- [ ] sort
+- [x] sort
 - [x] split
 - [x] startsWith
 - [x] subString
 - [x] sum
 - [x] tail
 - [x] take
-- [ ] tip
+- [x] tip
 - [x] toLower
 - [x] toLowerCase
 - [x] toNumber
@@ -64,7 +64,7 @@
 - [x] trim
 - [x] trimEnd
 - [x] trimStart
-- [ ] uniq
+- [x] uniq
 - [x] unshift
 - [x] values
 - [ ] window

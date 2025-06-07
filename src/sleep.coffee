@@ -1,7 +1,9 @@
 # @ts-check
 
+import $noop from './noop'
+
 ###* @type import('./sleep').Sleep ###
-export default (time) ->
-  unless time > 0 then throw new Error '$.sleep: time is required'
+export default (time = 1e3) ->
+  $noop time
   Native 'Sleep, % time'
   return

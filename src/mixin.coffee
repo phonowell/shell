@@ -6,7 +6,7 @@ import $tail from './tail'
 export default (args...) ->
 
   unless args.Length()
-    throw new Error '$.mixin: invalid arguments'
+    throw new Error 'mixin requires at least one argument'
 
   $result = args[0]
 

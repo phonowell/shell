@@ -1,4 +1,4 @@
-export type Sleep = (time: number) => void
+export type Sleep = (time?: number) => void
 
 declare module './sleep' {
   /** Pauses execution for a specified time */

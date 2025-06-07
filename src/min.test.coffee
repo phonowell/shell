@@ -6,7 +6,7 @@ import $min from '../dist/min'
 
 # Test function existence
 unless $isFunction $min
-  throw new Error '$.min is not a function'
+  throw new Error 'min should be a function'
 
 # Test basic functionality with positive numbers
 result = $min [1, 2, 3]

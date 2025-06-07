@@ -1,18 +1,19 @@
 # @ts-check
 import '../scripts/head.ahk'
 
-import $isFunction from '../dist/isFunction'
-import $move from '../dist/move'
 import $getPosition from '../dist/getPosition'
+import $isFunction from '../dist/isFunction'
+import $join from '../dist/join'
+import $move from '../dist/move'
 
 unless $isFunction $move
   throw new Error 'move should be a function'
 
 $move [50, 100]
-p = $getPosition()
+result = $join $getPosition()
 
-unless p[0] == 50 and p[1] == 100
-  throw new Error 'Expected position to be [50, 100] after move'
+unless result == '50,100'
+  throw new Error "[Test 1] Expected '50,100', got '#{result}'"
 
 # 退出测试用例
 import $exit from '../dist/exit'

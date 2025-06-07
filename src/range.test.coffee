@@ -1,26 +1,19 @@
 # @ts-check
 import '../scripts/head.ahk'
 
-import $isArray from '../dist/isArray'
+import $join from '../dist/join'
 import $range from '../dist/range'
 
+# Test 1: Basic functionality - simple range
 do ->
-  # Test 1: Basic functionality - simple range
-  result = $range 0, 3
-  unless $isArray(result) then throw new Error 'R001: Should return an array'
-  unless result.Length() == 3 then throw new Error 'R002: Should have correct length'
-  unless result[0] == 0 and
-      result[1] == 1 and
-      result[2] == 2
-    throw new Error 'R003: Should generate correct sequence'
+  result = $join $range 0, 3
+  unless result == '0,1,2' then throw new Error "R001: Expected '0,1,2', got '#{result}"
 
-  # Test 2: Range with step parameter
-  stepped = $range 0, 10, 2
-  unless stepped.Length() == 5 then throw new Error 'R004: Should handle step parameter'
-  unless stepped[0] == 0 and
-      stepped[1] == 2 and
-      stepped[4] == 8
-    throw new Error 'R005: Should use step correctly'
+# Test 2: Range with step parameter
+do ->
+  result = $join $range 0, 10, 2
+  unless result == '0,2,4,6,8'
+    throw new Error "R002: Expected '0,2,4,6,8', got '#{result}'"
 
 do ->
   # Test 3: Single parameter (0 to n)
@@ -30,7 +23,8 @@ do ->
 
   # Test 4: Empty range
   empty = $range 0, 0
-  unless empty.Length() == 0 then throw new Error 'R008: Should return empty array for equal start/end'
+  unless empty.Length() == 0
+    throw new Error 'R008: Should return empty array for equal start/end'
 
   # Test 5: Negative numbers
   negative = $range -2, 2
