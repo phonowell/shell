@@ -52,7 +52,7 @@
   },
   "scripts": {
     "build": "pnpm task build",
-    "task": "ts-node --project task/tsconfig.json --swc task/index.ts",
+    "task": "ts-node --swc task/index.ts",
     "test": "pnpm task test",
     "watch": "pnpm task watch"
   },
