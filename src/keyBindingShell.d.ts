@@ -19,6 +19,13 @@ export class KeyBindingShell {
   remove(keyMixed: KeyMixed): void
 }
 
+declare global {
+  interface KeyBindingShellConstructor {
+    new (): KeyBindingShell
+  }
+  const KeyBindingShell: KeyBindingShellConstructor
+}
+
 declare module './keyBindingShell' {
   /** Key binding operations shell class */
   export default KeyBindingShell

@@ -1,6 +1,6 @@
 # @ts-check
 
-import $keyBindingXShell from './keyBindingXShell'
+import $keyBinding from './keyBinding'
 
 ###* @type import('./isKeyBound').IsKeyBound ###
-export default (key) -> ($keyBindingXShell.getListItem key).Length() > 0
+export default (key) -> ($keyBinding.getListItem key).Length() > 0

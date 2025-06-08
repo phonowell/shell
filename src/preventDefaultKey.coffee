@@ -1,6 +1,6 @@
 # @ts-check
 
-import $keyBindingXShell from './keyBindingXShell'
+import $keyBinding from './keyBinding'
 
 ###* @type import('./preventDefaultKey').PreventDefaultKey ###
-export default $keyBindingXShell.prevent
+export default $keyBinding.prevent

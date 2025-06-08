@@ -3,6 +3,9 @@
   "bugs": {
     "url": "https://github.com/phonowell/shell/issues"
   },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
   "description": "",
   "devDependencies": {
     "@swc/core": "^1.11.31",
@@ -50,11 +53,9 @@
   "scripts": {
     "build": "pnpm task build",
     "task": "ts-node --project task/tsconfig.json --swc task/index.ts",
-    "test": "pnpm task test"
+    "test": "pnpm task test",
+    "watch": "pnpm task watch"
   },
   "url": "https://github.com/phonowell/shell",
-  "version": "0.0.36",
-  "dependencies": {
-    "clsx": "^2.1.1"
-  }
+  "version": "0.0.36"
 }

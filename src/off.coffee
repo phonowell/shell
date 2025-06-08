@@ -1,6 +1,6 @@
 # @ts-check
 
-import $keyBindingXShell from './keyBindingXShell'
+import $keyBinding from './keyBinding'
 
 ###* @type import('./off').Off ###
-export default $keyBindingXShell.remove
+export default $keyBinding.remove

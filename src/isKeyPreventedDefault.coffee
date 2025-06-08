@@ -1,6 +1,6 @@
 # @ts-check
 
-import $keyBindingXShell from './keyBindingXShell'
+import $keyBinding from './keyBinding'
 
 ###* @type import('./isKeyPreventedDefault').IsKeyPreventedDefault ###
-export default (key) -> $keyBindingXShell.isPrevented key
+export default (key) -> $keyBinding.isPrevented key
