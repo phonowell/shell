@@ -8,14 +8,13 @@
   },
   "description": "",
   "devDependencies": {
-    "@swc/core": "^1.11.31",
     "@types/node": "^22.15.30",
     "@types/react": "^17.0.59",
     "@types/react-dom": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "@typescript-eslint/parser": "^8.33.1",
     "@vitejs/plugin-react-swc": "^3.10.1",
-    "coffee-ahk": "^0.0.55",
+    "coffee-ahk": "^0.0.56",
     "eslint": "^9.28.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.4.1",
@@ -23,13 +22,13 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "fire-keeper": "^0.0.223",
+    "fire-keeper": "^0.0.226",
     "globals": "^16.2.0",
     "prettier": "^3.5.3",
     "radash": "^12.1.0",
     "terser": "^5.41.0",
     "ts-morph": "^26.0.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "unplugin-auto-import": "^19.3.0",
     "web-vitals": "^5.0.2"
@@ -52,10 +51,12 @@
   },
   "scripts": {
     "build": "pnpm task build",
-    "task": "ts-node --swc task/index.ts",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" \"task/**/*.ts\" --fix",
+    "task": "tsx task/index.ts",
     "test": "pnpm task test",
     "watch": "pnpm task watch"
   },
+  "type": "module",
   "url": "https://github.com/phonowell/shell",
   "version": "0.0.36"
 }

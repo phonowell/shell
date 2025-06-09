@@ -2,7 +2,7 @@ import c2a from 'coffee-ahk'
 import { watch } from 'fire-keeper'
 import { debounce } from 'radash'
 
-import build from './build'
+import build from './build.js'
 
 const main = () => {
   watch(
