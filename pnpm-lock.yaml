@@ -31,8 +31,8 @@ importers:
         specifier: ^3.10.2
         version: 3.10.2(vite@6.3.5(@types/node@24.0.0)(terser@5.42.0)(tsx@4.19.4))
       coffee-ahk:
-        specifier: ^0.0.58
-        version: 0.0.58
+        specifier: ^0.0.59
+        version: 0.0.59
       eslint:
         specifier: ^9.28.0
         version: 9.28.0
@@ -809,8 +809,8 @@ packages:
   code-block-writer@13.0.3:
     resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
 
-  coffee-ahk@0.0.58:
-    resolution: {integrity: sha512-pfwf0ra/u5/XNsZacpdoGblkCm2QDXF4Hf2CDb06e88ZYuGFiFvZdXyeP+LwdojzokM+07msT9QEyfKNTdROHA==}
+  coffee-ahk@0.0.59:
+    resolution: {integrity: sha512-mK69ooQy9CbBPt18X2TsLf72fhBjh7pfGEceJ81fi8u6asVCorUIq0y5THrw/TBaNw1dEjuPbgdxRB2oOeJokA==}
 
   coffeescript@1.12.7:
     resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
@@ -3129,7 +3129,7 @@ snapshots:
 
   code-block-writer@13.0.3: {}
 
-  coffee-ahk@0.0.58:
+  coffee-ahk@0.0.59:
     dependencies:
       clsx: 2.1.1
       coffeescript: 2.7.0
