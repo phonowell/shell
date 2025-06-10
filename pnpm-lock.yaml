@@ -31,8 +31,8 @@ importers:
         specifier: ^3.10.2
         version: 3.10.2(vite@6.3.5(@types/node@24.0.0)(terser@5.42.0)(tsx@4.19.4))
       coffee-ahk:
-        specifier: ^0.0.56
-        version: 0.0.56
+        specifier: ^0.0.58
+        version: 0.0.58
       eslint:
         specifier: ^9.28.0
         version: 9.28.0
@@ -809,8 +809,8 @@ packages:
   code-block-writer@13.0.3:
     resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
 
-  coffee-ahk@0.0.56:
-    resolution: {integrity: sha512-GAIRmQcqRCrAldSL8dN1V34bGIqWDCJhqQXXEpU34GnBXMp6S1WSaoC489d7W5CFyfHm7+upzVYrY94BVeh5RA==}
+  coffee-ahk@0.0.58:
+    resolution: {integrity: sha512-pfwf0ra/u5/XNsZacpdoGblkCm2QDXF4Hf2CDb06e88ZYuGFiFvZdXyeP+LwdojzokM+07msT9QEyfKNTdROHA==}
 
   coffeescript@1.12.7:
     resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
@@ -1203,8 +1203,8 @@ packages:
   fd-slicer@1.1.0:
     resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
 
-  fdir@6.4.5:
-    resolution: {integrity: sha512-4BG7puHpVsIYxZUbiUE3RqGloLaSSwzYie5jvasC4LWuBWzZawynvYouhjbQKw2JuIGYdm0DzIxl8iVidKlUEw==}
+  fdir@6.4.6:
+    resolution: {integrity: sha512-hiFoqpyZcfNm1yc4u8oWCf9A2c4D3QjCrks3zmoVKVxpQRzmPNar1hUJcBG2RQHvEVGDN+Jm81ZheVLAQMK6+w==}
     peerDependencies:
       picomatch: ^3 || ^4
     peerDependenciesMeta:
@@ -1250,9 +1250,6 @@ packages:
   find-up@5.0.0:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
-
-  fire-keeper@0.0.226:
-    resolution: {integrity: sha512-2PU2DE7VBtxYwow4PytWBaDm5GfSQ+ih70RieATHL3r76JOsImtvpJeuLTfm/Cj9mQFHl+uUKoMNkxoAbQja7A==}
 
   fire-keeper@0.0.227:
     resolution: {integrity: sha512-kj5cH71D/mHi9lTlJZsxIytY1IfHvqoAAmfNB32sUokjoTmszjEeP3Gm1XzeEU+XzstCFndH8jaCbLLBQsSJFA==}
@@ -3132,12 +3129,12 @@ snapshots:
 
   code-block-writer@13.0.3: {}
 
-  coffee-ahk@0.0.56:
+  coffee-ahk@0.0.58:
     dependencies:
       clsx: 2.1.1
       coffeescript: 2.7.0
       cson: 8.4.0
-      fire-keeper: 0.0.226
+      fire-keeper: 0.0.227
       iconv-lite: 0.6.3
       kleur: 4.1.5
       radash: 12.1.0
@@ -3676,7 +3673,7 @@ snapshots:
     dependencies:
       pend: 1.2.0
 
-  fdir@6.4.5(picomatch@4.0.2):
+  fdir@6.4.6(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
 
@@ -3710,19 +3707,6 @@ snapshots:
     dependencies:
       locate-path: 6.0.0
       path-exists: 4.0.0
-
-  fire-keeper@0.0.226:
-    dependencies:
-      archiver: 7.0.1
-      chokidar: 4.0.3
-      download: 8.0.0
-      fast-glob: 3.3.3
-      fs-extra: 11.3.0
-      js-yaml: 4.1.0
-      kleur: 4.1.5
-      prompts: 2.4.2
-      radash: 12.1.0
-      yargs: 18.0.0
 
   fire-keeper@0.0.227:
     dependencies:
@@ -4793,7 +4777,7 @@ snapshots:
 
   tinyglobby@0.2.14:
     dependencies:
-      fdir: 6.4.5(picomatch@4.0.2)
+      fdir: 6.4.6(picomatch@4.0.2)
       picomatch: 4.0.2
 
   to-buffer@1.1.1: {}
@@ -4948,7 +4932,7 @@ snapshots:
   vite@6.3.5(@types/node@24.0.0)(terser@5.42.0)(tsx@4.19.4):
     dependencies:
       esbuild: 0.25.5
-      fdir: 6.4.5(picomatch@4.0.2)
+      fdir: 6.4.6(picomatch@4.0.2)
       picomatch: 4.0.2
       postcss: 8.5.4
       rollup: 4.42.0

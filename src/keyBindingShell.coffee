@@ -21,8 +21,6 @@ class KeyBindingShell
     ###* @type import('./keyBindingShell').KeyBindingShell['mapPrevented'] ###
     @mapPrevented = {}
 
-    return @
-
   ###* @type import('./keyBindingShell').KeyBindingShell['add'] ###
   add: (keyMixed, callback) ->
 
@@ -41,10 +39,6 @@ class KeyBindingShell
   ###* @type import('./keyBindingShell').KeyBindingShell['fire'] ###
   fire: (keyMixed) ->
     $forEach (@getListItem keyMixed), (it) ->
-      # 此处存在一个编译器Bug
-      # 首个it[1]的下标在处理时会出现-1偏移
-      # 未来将会在编译器中修复
-      $noop it[1]
       unless $isFunction it[1]
         throw new Error "KeyBindingShell.fire: Callback is not a function for key: #{keyMixed}"
       it[1]()

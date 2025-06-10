@@ -10,8 +10,6 @@ class WindowShell
     ###* @type import('./windowShell').WindowShell['exe'] ###
     @exe = "ahk_exe #{exe}"
 
-    return @
-
   ###* @type import('./windowShell').WindowShell['blur'] ###
   blur: ->
     name = 'ahk_class Shell_TrayWnd'
