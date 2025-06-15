@@ -8,7 +8,12 @@ import $toString from './toString'
 export default (message, p = undefined) ->
 
   unless message then return message
-  unless p then p = $getPosition()
+  unless p then p = do ->
+    a = $getPosition()
+    return [
+      a[0] + 1,
+      a[1] + 1
+    ]
 
   $msg = $toString message
   $noop $msg

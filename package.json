@@ -8,14 +8,14 @@
   },
   "description": "",
   "devDependencies": {
-    "@types/node": "^24.0.0",
+    "@types/node": "^24.0.1",
     "@types/react": "^17.0.59",
     "@types/react-dom": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^8.34.0",
     "@typescript-eslint/parser": "^8.34.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "coffee-ahk": "^0.0.59",
-    "eslint": "^9.28.0",
+    "eslint": "^9.29.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-react": "^7.33.2",
@@ -28,10 +28,10 @@
     "radash": "^12.1.0",
     "terser": "^5.42.0",
     "ts-morph": "^26.0.0",
-    "tsx": "^4.19.4",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "unplugin-auto-import": "^19.3.0",
-    "web-vitals": "^5.0.2"
+    "web-vitals": "^5.0.3"
   },
   "homepage": "https://github.com/phonowell/shell",
   "keywords": [

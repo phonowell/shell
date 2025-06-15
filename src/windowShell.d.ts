@@ -9,6 +9,7 @@ export class WindowShell {
   close(): void
   focus(): void
   getBounds(): { x: number; y: number; width: number; height: number }
+  getTitle(): string
   hide(): void
   isActive(): boolean
   isExists(): boolean

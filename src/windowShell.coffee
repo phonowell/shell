@@ -36,6 +36,12 @@ class WindowShell
     Native 'WinGetPos, $x, $y, $w, $h, % this.exe'
     return { x: $x, y: $y, width: $w, height: $h }
 
+  ###* @type import('./windowShell').WindowShell['getTitle'] ###
+  getTitle: ->
+    $title = ''
+    Native 'WinGetTitle, $title, % this.exe'
+    return $title
+
   ###* @type import('./windowShell').WindowShell['hide'] ###
   hide: ->
     unless @isExists() then return
