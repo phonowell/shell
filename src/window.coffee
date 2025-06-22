@@ -3,4 +3,4 @@
 import './windowShell'
 
 ###* @type import('./window').Window ###
-export default (exe) -> new WindowShell exe
+export default (exe, title = '') -> new WindowShell exe, title

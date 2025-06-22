@@ -1,4 +1,4 @@
-export type StartsWith = (text: string, string: string) => boolean
+export type StartsWith = (haystack: string, needle: string) => boolean
 
 declare module './startsWith' {
   /** Checks if string starts with the given target string */

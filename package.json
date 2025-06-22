@@ -3,21 +3,18 @@
   "bugs": {
     "url": "https://github.com/phonowell/shell/issues"
   },
-  "dependencies": {
-    "clsx": "^2.1.1"
-  },
+  "dependencies": {},
   "description": "",
   "devDependencies": {
-    "@types/node": "^24.0.1",
+    "@types/node": "^24.0.3",
     "@types/react": "^17.0.59",
     "@types/react-dom": "^17.0.20",
-    "@typescript-eslint/eslint-plugin": "^8.34.0",
-    "@typescript-eslint/parser": "^8.34.0",
-    "@vitejs/plugin-react-swc": "^3.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
     "coffee-ahk": "^0.0.59",
     "eslint": "^9.29.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -25,13 +22,9 @@
     "fire-keeper": "^0.0.227",
     "globals": "^16.2.0",
     "prettier": "^3.5.3",
-    "radash": "^12.1.0",
-    "terser": "^5.42.0",
-    "ts-morph": "^26.0.0",
+    "radash": "^12.1.1",
     "tsx": "^4.20.3",
-    "typescript": "^5.8.3",
-    "unplugin-auto-import": "^19.3.0",
-    "web-vitals": "^5.0.3"
+    "typescript": "^5.8.3"
   },
   "homepage": "https://github.com/phonowell/shell",
   "keywords": [

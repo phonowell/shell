@@ -17,119 +17,137 @@ SetKeyDelay, 0, 50
 SetMouseDelay, 0, 50
 StringCaseSense, On
 
-global __z_module_14299__ := (Func("z_118")).Call()
-global __z_module_14300__ := (Func("z_116")).Call()
-global __z_module_14301__ := (Func("z_114")).Call()
-global __z_module_14302__ := (Func("z_112")).Call()
-global __z_module_14305__ := (Func("z_110")).Call()
-global __z_module_14309__ := (Func("z_108")).Call()
-global __z_module_14310__ := (Func("z_106")).Call()
-global __z_module_14317__ := (Func("z_104")).Call()
-global __z_module_14318__ := (Func("z_102")).Call()
-global __z_module_14319__ := (Func("z_100")).Call()
-global __z_module_14320__ := (Func("z_98")).Call()
-global __z_module_14322__ := (Func("z_96")).Call()
-global __z_module_14327__ := (Func("z_94")).Call()
-global __z_module_14331__ := (Func("z_92")).Call()
-global __z_module_14298__ := (Func("z_90")).Call()
-global __z_module_14304__ := (Func("z_88")).Call()
-global __z_module_14311__ := (Func("z_86")).Call()
-global mathShell_noop := __z_module_14305__
+
+if (A_IsAdmin != true) {
+  Run *RunAs "%A_ScriptFullPath%"
+  ExitApp
+}
+
+global __z_module_4142__ := (Func("z_118")).Call()
+global __z_module_4143__ := (Func("z_116")).Call()
+global __z_module_4144__ := (Func("z_114")).Call()
+global __z_module_4147__ := (Func("z_112")).Call()
+global __z_module_4151__ := (Func("z_110")).Call()
+global __z_module_4158__ := (Func("z_108")).Call()
+global __z_module_4159__ := (Func("z_106")).Call()
+global __z_module_4160__ := (Func("z_104")).Call()
+global __z_module_4161__ := (Func("z_102")).Call()
+global __z_module_4163__ := (Func("z_100")).Call()
+global __z_module_4168__ := (Func("z_98")).Call()
+global __z_module_4169__ := (Func("z_96")).Call()
+global __z_module_4173__ := (Func("z_94")).Call()
+global __z_module_4141__ := (Func("z_92")).Call()
+global __z_module_4146__ := (Func("z_90")).Call()
+global __z_module_4152__ := (Func("z_88")).Call()
+global mathShell_noop := __z_module_4147__
 class MathShell {
-  abs := Func("z_84").Bind(this)
-  ceil := Func("z_83").Bind(this)
-  floor := Func("z_82").Bind(this)
-  max := Func("z_81").Bind(this)
-  min := Func("z_80").Bind(this)
-  round := Func("z_79").Bind(this)
+  abs := Func("z_86").Bind(this)
+  ceil := Func("z_85").Bind(this)
+  floor := Func("z_84").Bind(this)
+  max := Func("z_83").Bind(this)
+  min := Func("z_82").Bind(this)
+  round := Func("z_81").Bind(this)
 }
 mathShell_noop.Call(MathShell)
-global __z_module_14315__ := (Func("z_78")).Call()
-global windowShell_noop := __z_module_14305__
+global __z_module_4156__ := (Func("z_80")).Call()
+global windowShell_endsWith := __z_module_4168__
+global windowShell_noop := __z_module_4147__
 class WindowShell {
-  __New(exe) {
-    this.exe := "ahk_exe " . (exe) . ""
+  __New(exe, title := "") {
+    this.exe := ""
+    if (windowShell_endsWith.Call(exe, ".exe")) {
+      this.exe := exe
+    } else {
+      this.exe := "" . (exe) . ".exe"
+    }
+    this.title := ""
+    if (title) {
+      this.title := title
+    }
   }
-  blur := Func("z_76").Bind(this)
-  close := Func("z_75").Bind(this)
-  focus := Func("z_74").Bind(this)
-  getBounds := Func("z_73").Bind(this)
+  getWindowIdString := Func("z_78").Bind(this)
+  blur := Func("z_77").Bind(this)
+  close := Func("z_76").Bind(this)
+  focus := Func("z_75").Bind(this)
+  getBounds := Func("z_74").Bind(this)
+  getProcessId := Func("z_73").Bind(this)
   getTitle := Func("z_72").Bind(this)
-  hide := Func("z_71").Bind(this)
-  isActive := Func("z_70").Bind(this)
-  isExists := Func("z_69").Bind(this)
-  isFullScreen := Func("z_68").Bind(this)
-  kill := Func("z_67").Bind(this)
-  maximize := Func("z_66").Bind(this)
-  minimize := Func("z_65").Bind(this)
-  restore := Func("z_64").Bind(this)
-  setPriority := Func("z_63").Bind(this)
-  setStyle := Func("z_62").Bind(this)
-  show := Func("z_61").Bind(this)
-  wait := Func("z_60").Bind(this)
+  getWindowId := Func("z_71").Bind(this)
+  hide := Func("z_70").Bind(this)
+  isActive := Func("z_69").Bind(this)
+  isExists := Func("z_68").Bind(this)
+  isFullScreen := Func("z_67").Bind(this)
+  kill := Func("z_66").Bind(this)
+  maximize := Func("z_65").Bind(this)
+  minimize := Func("z_64").Bind(this)
+  restore := Func("z_63").Bind(this)
+  setPriority := Func("z_62").Bind(this)
+  setStyle := Func("z_61").Bind(this)
+  show := Func("z_60").Bind(this)
+  wait := Func("z_59").Bind(this)
 }
 windowShell_noop.Call(WindowShell)
-global __z_module_14323__ := (Func("z_59")).Call()
-global __z_module_14324__ := (Func("z_57")).Call()
-global __z_module_14325__ := (Func("z_55")).Call()
-global __z_module_14326__ := (Func("z_53")).Call()
-global __z_module_14328__ := (Func("z_51")).Call()
-global __z_module_14329__ := (Func("z_50")).Call()
-global __z_module_14330__ := (Func("z_46")).Call()
-global __z_module_14303__ := (Func("z_44")).Call()
-global __z_module_14313__ := (Func("z_43")).Call()
-global __z_module_14321__ := (Func("z_41")).Call()
-global keyBindingShell_filter := __z_module_14327__
-global keyBindingShell_forEach := __z_module_14328__
-global keyBindingShell_formatHotkey := __z_module_14329__
-global keyBindingShell_isFunction := __z_module_14330__
-global keyBindingShell_noop := __z_module_14305__
-global keyBindingShell_replace := __z_module_14317__
-global keyBindingShell_split := __z_module_14318__
+global __z_module_4164__ := (Func("z_58")).Call()
+global __z_module_4165__ := (Func("z_56")).Call()
+global __z_module_4166__ := (Func("z_54")).Call()
+global __z_module_4167__ := (Func("z_52")).Call()
+global __z_module_4170__ := (Func("z_50")).Call()
+global __z_module_4171__ := (Func("z_49")).Call()
+global __z_module_4172__ := (Func("z_45")).Call()
+global __z_module_4145__ := (Func("z_43")).Call()
+global __z_module_4154__ := (Func("z_42")).Call()
+global __z_module_4162__ := (Func("z_40")).Call()
+global keyBindingShell_filter := __z_module_4169__
+global keyBindingShell_forEach := __z_module_4170__
+global keyBindingShell_formatHotkey := __z_module_4171__
+global keyBindingShell_isFunction := __z_module_4172__
+global keyBindingShell_noop := __z_module_4147__
+global keyBindingShell_replace := __z_module_4158__
+global keyBindingShell_split := __z_module_4159__
 class KeyBindingShell {
   __New() {
     this.mapBound := {}
     this.mapCallback := {}
     this.mapPrevented := {}
   }
-  add := Func("z_39").Bind(this)
-  fire := Func("z_38").Bind(this)
-  formatKey := Func("z_36").Bind(this)
-  getListItem := Func("z_35").Bind(this)
-  isPrevented := Func("z_33").Bind(this)
-  prepare := Func("z_32").Bind(this)
-  prevent := Func("z_30").Bind(this)
-  register := Func("z_29").Bind(this)
-  remove := Func("z_28").Bind(this)
+  add := Func("z_38").Bind(this)
+  fire := Func("z_37").Bind(this)
+  formatKey := Func("z_35").Bind(this)
+  getListItem := Func("z_34").Bind(this)
+  isPrevented := Func("z_32").Bind(this)
+  prepare := Func("z_31").Bind(this)
+  prevent := Func("z_29").Bind(this)
+  register := Func("z_28").Bind(this)
+  remove := Func("z_27").Bind(this)
 }
 keyBindingShell_noop.Call(KeyBindingShell)
-global __z_module_14312__ := (Func("z_26")).Call()
-global __z_module_14314__ := (Func("z_23")).Call()
-global __z_module_14316__ := (Func("z_22")).Call()
-global __z_module_14306__ := (Func("z_20")).Call()
-global __z_module_14307__ := (Func("z_19")).Call()
-global __z_module_14308__ := (Func("z_18")).Call()
-global $alert := __z_module_14298__
-global $beep := __z_module_14299__
-global $clearInterval := __z_module_14300__
-global $exit := __z_module_14301__
-global $getPosition := __z_module_14302__
-global $math := __z_module_14303__
-global $move := __z_module_14304__
-global $noop := __z_module_14305__
-global $off := __z_module_14306__
-global $on := __z_module_14307__
-global $press := __z_module_14308__
-global $reload := __z_module_14309__
-global $setInterval := __z_module_14310__
-global $sleep := __z_module_14311__
-global $tip := __z_module_14312__
-global $window := __z_module_14313__
-global win := $window.Call("QQScreenShot.exe")
-global checkProcessExists := Func("z_14")
-global clickOCRButton := Func("z_13")
-global waitForOCRResult := Func("z_10")
-global clickCopyButton := Func("z_8")
+global __z_module_4153__ := (Func("z_25")).Call()
+global __z_module_4155__ := (Func("z_22")).Call()
+global __z_module_4157__ := (Func("z_21")).Call()
+global __z_module_4148__ := (Func("z_19")).Call()
+global __z_module_4149__ := (Func("z_18")).Call()
+global __z_module_4150__ := (Func("z_17")).Call()
+global $alert := __z_module_4141__
+global $beep := __z_module_4142__
+global $exit := __z_module_4143__
+global $getPosition := __z_module_4144__
+global $math := __z_module_4145__
+global $move := __z_module_4146__
+global $noop := __z_module_4147__
+global $off := __z_module_4148__
+global $on := __z_module_4149__
+global $press := __z_module_4150__
+global $reload := __z_module_4151__
+global $sleep := __z_module_4152__
+global $tip := __z_module_4153__
+global $window := __z_module_4154__
+global ps := $window.Call("Photoshop")
+global qst := $window.Call("QQScreenShot")
+global qsr := $window.Call("QQScreenShot", "屏幕识图")
+global checkProcessExists := Func("z_13")
+global clickOCRButton := Func("z_12")
+global clickCopyButton := Func("z_9")
+global addPhotoshopLayer := Func("z_8")
 global main := Func("z_7")
 $on.Call("alt + 1", Func("z_3"))
 $on.Call("esc", Func("z_2"))
@@ -145,17 +163,18 @@ z_2() {
 z_3() {
   return main.Call()
 }
-z_4() {
-  return $tip.Call("DONE")
+z_4(d) {
+  return addPhotoshopLayer.Call(d.points)
 }
-z_5() {
-  return clickCopyButton.Call(Func("z_4"))
+z_5(d) {
+  return clickCopyButton.Call(Func("z_4").Bind(d))
 }
-z_6() {
-  return waitForOCRResult.Call(Func("z_5"))
+z_6(points) {
+  d := {points: points}
+  qsr.wait.Call(Func("z_5").Bind(d))
 }
 z_7() {
-  if !(checkProcessExists.Call("Photoshop.exe")) {
+  if !(ps.isExists.Call()) {
     $alert.Call("请先打开 Photoshop")
     return
   }
@@ -163,11 +182,37 @@ z_7() {
     $alert.Call("请先打开截图工具")
     return
   }
-  $press.Call("ctrl + alt + o")
+  ps.focus.Call()
+  $sleep.Call(100)
+  $press.Call("ctrl + alt + f9")
+  $sleep.Call(100)
   clickOCRButton.Call(Func("z_6"))
 }
-z_8(callback) {
-  __object__ := win.getBounds.Call()
+z_8(points) {
+  ps.focus.Call()
+  $sleep.Call(100)
+  $move.Call(points[1])
+  $sleep.Call(100)
+  $press.Call("space")
+  SetCapsLockState, On
+  $press.Call("t")
+  $sleep.Call(100)
+  $press.Call("l-button:down")
+  $sleep.Call(100)
+  $move.Call(points[2])
+  $sleep.Call(100)
+  $press.Call("l-button:up")
+  $sleep.Call(100)
+  $press.Call("ctrl + v")
+  $sleep.Call(100)
+  $press.Call("esc")
+  $sleep.Call(100)
+  $press.Call("v")
+  SetCapsLockState, Off
+  return
+}
+z_9(callback) {
+  __object__ := qst.getBounds.Call()
   x := __object__["x"]
   y := __object__["y"]
   width := __object__["width"]
@@ -177,20 +222,10 @@ z_8(callback) {
   $press.Call("l-button")
   $press.Call("l-button")
   $sleep.Call(100)
+  qsr.close.Call()
   callback.Call()
 }
-z_9(d, callback) {
-  if !(win.isExists.Call() && win.getTitle.Call() == "屏幕识图") {
-    return
-  }
-  $clearInterval.Call(d.timer)
-  callback.Call()
-}
-z_10(callback) {
-  d := {timer: 0}
-  d.timer := $setInterval.Call(Func("z_9").Bind(d, callback), 100)
-}
-z_11(p, callback) {
+z_10(p, callback) {
   $off.Call("l-button:down")
   $off.Call("l-button:up")
   p.b := $getPosition.Call()
@@ -200,27 +235,31 @@ z_11(p, callback) {
   }
   a := [$math.min.Call(p.a[1], p.b[1]), $math.min.Call(p.a[2], p.b[2])]
   b := [$math.max.Call(p.a[1], p.b[1]), $math.max.Call(p.a[2], p.b[2])]
-  $move.Call([b[1] - 190, b[2] + 20])
+  if (b[1] >= 482) {
+    $move.Call([b[1] - 190, b[2] + 20])
+  } else {
+    $move.Call([290, b[2] + 20])
+  }
   $sleep.Call(100)
   $press.Call("l-button")
   $sleep.Call(100)
   callback.Call([a, b])
 }
-z_12(p) {
+z_11(p) {
   return p.a := $getPosition.Call()
 }
-z_13(callback) {
+z_12(callback) {
   p := {a: [0, 0], b: [0, 0]}
-  $on.Call("l-button:down", Func("z_12").Bind(p))
-  $on.Call("l-button:up", Func("z_11").Bind(p, callback))
+  $on.Call("l-button:down", Func("z_11").Bind(p))
+  $on.Call("l-button:up", Func("z_10").Bind(p, callback))
 }
-z_14(exe) {
+z_13(exe) {
   Process, Exist, % exe
   return, % ErrorLevel
   $noop.Call(exe)
   return false
 }
-z_15(press_validateInputPress, press_formatInputPress, press_split, press_includes, press_trim, listInput*) {
+z_14(press_validateInputPress, press_formatInputPress, press_split, press_includes, press_trim, listInput*) {
   if !(press_validateInputPress.Call(listInput)) {
     return
   }
@@ -255,7 +294,7 @@ z_15(press_validateInputPress, press_formatInputPress, press_split, press_includ
   Send, % press_result
   return
 }
-z_16(press_includes, press_replace, press_click, listInput) {
+z_15(press_includes, press_replace, press_click, listInput) {
   if !(listInput.Length()) {
     return false
   }
@@ -269,7 +308,7 @@ z_16(press_includes, press_replace, press_click, listInput) {
   }
   return true
 }
-z_17(press_toLowerCase, press_replace, press_split, listInput) {
+z_16(press_toLowerCase, press_replace, press_split, listInput) {
   press_listKey := []
   for __index_for__, press_input in listInput {
     press_ipt := press_toLowerCase.Call(press_input)
@@ -279,26 +318,26 @@ z_17(press_toLowerCase, press_replace, press_split, listInput) {
   }
   return press_listKey
 }
-z_18() {
-  press_click := __z_module_14315__
-  press_includes := __z_module_14316__
-  press_replace := __z_module_14317__
-  press_split := __z_module_14318__
-  press_toLowerCase := __z_module_14319__
-  press_trim := __z_module_14320__
-  press_formatInputPress := Func("z_17").Bind(press_toLowerCase, press_replace, press_split)
-  press_validateInputPress := Func("z_16").Bind(press_includes, press_replace, press_click)
-  return Func("z_15").Bind(press_validateInputPress, press_formatInputPress, press_split, press_includes, press_trim)
+z_17() {
+  press_click := __z_module_4156__
+  press_includes := __z_module_4157__
+  press_replace := __z_module_4158__
+  press_split := __z_module_4159__
+  press_toLowerCase := __z_module_4160__
+  press_trim := __z_module_4161__
+  press_formatInputPress := Func("z_16").Bind(press_toLowerCase, press_replace, press_split)
+  press_validateInputPress := Func("z_15").Bind(press_includes, press_replace, press_click)
+  return Func("z_14").Bind(press_validateInputPress, press_formatInputPress, press_split, press_includes, press_trim)
 }
-z_19() {
-  on_keyBinding := __z_module_14314__
+z_18() {
+  on_keyBinding := __z_module_4155__
   return on_keyBinding.add
 }
-z_20() {
-  off_keyBinding := __z_module_14314__
+z_19() {
+  off_keyBinding := __z_module_4155__
   return off_keyBinding.remove
 }
-z_21(includes_getType, includes_isString, includes_isNumber, includes_toString, includes_isArray, ipt, needle) {
+z_20(includes_getType, includes_isString, includes_isNumber, includes_toString, includes_isArray, ipt, needle) {
   includes_type := includes_getType.Call(ipt)
   if ((includes_isString.Call(ipt)) || includes_isNumber.Call(ipt)) {
     if !(includes_isString.Call(needle)) {
@@ -316,43 +355,43 @@ z_21(includes_getType, includes_isString, includes_isNumber, includes_toString, 
   }
   throw Exception("includes: invalid type '" . (includes_type) . "'")
 }
-z_22() {
-  includes_getType := __z_module_14322__
-  includes_isArray := __z_module_14323__
-  includes_isNumber := __z_module_14324__
-  includes_isString := __z_module_14325__
-  includes_toString := __z_module_14321__
-  return Func("z_21").Bind(includes_getType, includes_isString, includes_isNumber, includes_toString, includes_isArray)
+z_21() {
+  includes_getType := __z_module_4163__
+  includes_isArray := __z_module_4164__
+  includes_isNumber := __z_module_4165__
+  includes_isString := __z_module_4166__
+  includes_toString := __z_module_4162__
+  return Func("z_20").Bind(includes_getType, includes_isString, includes_isNumber, includes_toString, includes_isArray)
 }
-z_23() {
+z_22() {
   return new KeyBindingShell()
 }
-z_24(tip_getPosition) {
+z_23(tip_getPosition) {
   a := tip_getPosition.Call()
   return [a[1] + 1, a[2] + 1]
 }
-z_25(tip_getPosition, tip_toString, tip_noop, message, p := "") {
+z_24(tip_getPosition, tip_toString, tip_noop, message, p := "") {
   if !(message) {
     return message
   }
   if !(p) {
-    p := (Func("z_24").Bind(tip_getPosition)).Call()
+    p := (Func("z_23").Bind(tip_getPosition)).Call()
   }
   tip_msg := tip_toString.Call(message)
   tip_noop.Call(tip_msg)
   ToolTip, % tip_msg, % p[1], % p[2]
   return message
 }
-z_26() {
-  tip_getPosition := __z_module_14302__
-  tip_noop := __z_module_14305__
-  tip_toString := __z_module_14321__
-  return Func("z_25").Bind(tip_getPosition, tip_toString, tip_noop)
+z_25() {
+  tip_getPosition := __z_module_4144__
+  tip_noop := __z_module_4147__
+  tip_toString := __z_module_4162__
+  return Func("z_24").Bind(tip_getPosition, tip_toString, tip_noop)
 }
-z_27(keyBindingShell_name, it) {
+z_26(keyBindingShell_name, it) {
   return it[1] != keyBindingShell_name
 }
-z_28(this, keyMixed) {
+z_27(this, keyMixed) {
   __array__ := keyBindingShell_split.Call((keyBindingShell_replace.Call(keyMixed, ":down", "")), ".")
   keyBindingShell_key := __array__[1]
   keyBindingShell_name := __array__[2]
@@ -360,11 +399,11 @@ z_28(this, keyMixed) {
     this.mapCallback[__ci_z__.Call(keyBindingShell_key)] := []
     return
   }
-  keyBindingShell_listNew := keyBindingShell_filter.Call(this.mapCallback[__ci_z__.Call(keyBindingShell_key)], Func("z_27").Bind(keyBindingShell_name))
+  keyBindingShell_listNew := keyBindingShell_filter.Call(this.mapCallback[__ci_z__.Call(keyBindingShell_key)], Func("z_26").Bind(keyBindingShell_name))
   this.mapCallback[__ci_z__.Call(keyBindingShell_key)] := keyBindingShell_listNew
   return
 }
-z_29(this, key) {
+z_28(this, key) {
   this.prepare.Call(key)
   keyBindingShell_callback := this.mapBound[__ci_z__.Call(key)]
   keyBindingShell_key := this.formatKey.Call(key, "~")
@@ -375,7 +414,7 @@ z_29(this, key) {
   Hotkey, % keyBindingShell_key, % keyBindingShell_callback, On
   return
 }
-z_30(this, key, isPrevented) {
+z_29(this, key, isPrevented) {
   this.prepare.Call(key)
   this.mapPrevented[__ci_z__.Call(key)] := isPrevented
   keyBindingShell_callback := this.mapBound[__ci_z__.Call(key)]
@@ -387,25 +426,25 @@ z_30(this, key, isPrevented) {
   Hotkey, % keyBindingShell_key, % keyBindingShell_callback, On
   return
 }
-z_31(key, this) {
+z_30(key, this) {
   return this.fire.Call(key)
 }
-z_32(this, key) {
+z_31(this, key) {
   if (this.mapCallback[__ci_z__.Call(key)]) {
     return
   }
-  this.mapBound[__ci_z__.Call(key)] := Func("z_31").Bind(key, this)
+  this.mapBound[__ci_z__.Call(key)] := Func("z_30").Bind(key, this)
   this.mapCallback[__ci_z__.Call(key)] := []
   this.mapPrevented[__ci_z__.Call(key)] := false
   return
 }
-z_33(this, key) {
+z_32(this, key) {
   return this.mapPrevented[__ci_z__.Call(key)] == true
 }
-z_34(keyBindingShell_name, it) {
+z_33(keyBindingShell_name, it) {
   return it[1] == keyBindingShell_name
 }
-z_35(this, keyMixed) {
+z_34(this, keyMixed) {
   __array__ := keyBindingShell_split.Call((keyBindingShell_replace.Call(keyMixed, ":down", "")), ".")
   keyBindingShell_key := __array__[1]
   keyBindingShell_name := __array__[2]
@@ -414,29 +453,29 @@ z_35(this, keyMixed) {
     return []
   }
   if (keyBindingShell_name) {
-    keyBindingShell_list := keyBindingShell_filter.Call(keyBindingShell_list, Func("z_34").Bind(keyBindingShell_name))
+    keyBindingShell_list := keyBindingShell_filter.Call(keyBindingShell_list, Func("z_33").Bind(keyBindingShell_name))
   }
   return keyBindingShell_list
 }
-z_36(this, key, prefix := "") {
+z_35(this, key, prefix := "") {
   keyBindingShell_key := keyBindingShell_formatHotkey.Call(keyBindingShell_replace.Call(key, ":down", ""))
   if !(prefix) {
     return keyBindingShell_key
   }
   return "" . (prefix) . "" . (keyBindingShell_key) . ""
 }
-z_37(keyMixed, it) {
+z_36(keyMixed, it) {
   if !(keyBindingShell_isFunction.Call(it[2])) {
     throw Exception("KeyBindingShell.fire: Callback is not a function for key: " . (keyMixed) . "")
   }
   it[2].Call()
   return
 }
-z_38(this, keyMixed) {
-  keyBindingShell_forEach.Call((this.getListItem.Call(keyMixed)), Func("z_37").Bind(keyMixed))
+z_37(this, keyMixed) {
+  keyBindingShell_forEach.Call((this.getListItem.Call(keyMixed)), Func("z_36").Bind(keyMixed))
   return
 }
-z_39(this, keyMixed, callback) {
+z_38(this, keyMixed, callback) {
   if !(keyBindingShell_isFunction.Call(callback)) {
     throw Exception("KeyBindingShell.add: Callback is not a function for key: " . (keyMixed) . "")
   }
@@ -450,7 +489,7 @@ z_39(this, keyMixed, callback) {
   this.mapCallback[__ci_z__.Call(keyBindingShell_key)].Push([keyBindingShell_name, callback])
   return
 }
-z_40(toString_isArray, toString_trim, toString_isObject, ipt) {
+z_39(toString_isArray, toString_trim, toString_isObject, ipt) {
   if (toString_isArray.Call(ipt)) {
     toString_result := ""
     for __index_for__, toString_it in ipt {
@@ -467,29 +506,29 @@ z_40(toString_isArray, toString_trim, toString_isObject, ipt) {
   }
   return ipt
 }
-z_41() {
-  toString_isArray := __z_module_14323__
-  toString_isObject := __z_module_14326__
-  toString_trim := __z_module_14320__
-  return Func("z_40").Bind(toString_isArray, toString_trim, toString_isObject)
+z_40() {
+  toString_isArray := __z_module_4164__
+  toString_isObject := __z_module_4167__
+  toString_trim := __z_module_4161__
+  return Func("z_39").Bind(toString_isArray, toString_trim, toString_isObject)
 }
-z_42(exe) {
-  return new WindowShell(exe)
+z_41(exe, title := "") {
+  return new WindowShell(exe, title)
+}
+z_42() {
+  return Func("z_41")
 }
 z_43() {
-  return Func("z_42")
-}
-z_44() {
   return new MathShell()
 }
-z_45(isFunction_getType, ipt) {
+z_44(isFunction_getType, ipt) {
   return (isFunction_getType.Call(ipt)) == "function"
 }
-z_46() {
-  isFunction_getType := __z_module_14322__
-  return Func("z_45").Bind(isFunction_getType)
+z_45() {
+  isFunction_getType := __z_module_4163__
+  return Func("z_44").Bind(isFunction_getType)
 }
-z_47(formatHotkey_formatKeyFormatHotkey, formatHotkey_pickPrefixFormatHotkey, formatHotkey_replace, formatHotkey_trim, key) {
+z_46(formatHotkey_formatKeyFormatHotkey, formatHotkey_pickPrefixFormatHotkey, formatHotkey_replace, formatHotkey_trim, key) {
   formatHotkey_listKey := formatHotkey_formatKeyFormatHotkey.Call(key)
   __array__ := formatHotkey_pickPrefixFormatHotkey.Call(formatHotkey_listKey)
   formatHotkey_prefix := __array__[1]
@@ -500,7 +539,7 @@ z_47(formatHotkey_formatKeyFormatHotkey, formatHotkey_pickPrefixFormatHotkey, fo
   }
   return formatHotkey_replace.Call("" . (formatHotkey_prefix) . "" . (formatHotkey_trim.Call(formatHotkey_result, " &")) . "", ":", " ")
 }
-z_48(listKey) {
+z_47(listKey) {
   if (listKey.Length() == 1) {
     return ["", listKey]
   }
@@ -527,7 +566,7 @@ z_48(listKey) {
   }
   return [formatHotkey_prefix, formatHotkey_listNew]
 }
-z_49(formatHotkey_toLowerCase, formatHotkey_replace, formatHotkey_split, key) {
+z_48(formatHotkey_toLowerCase, formatHotkey_replace, formatHotkey_split, key) {
   formatHotkey_listKey := []
   formatHotkey_key := formatHotkey_toLowerCase.Call(key)
   formatHotkey_key := formatHotkey_replace.Call(formatHotkey_key, " ", "")
@@ -538,123 +577,138 @@ z_49(formatHotkey_toLowerCase, formatHotkey_replace, formatHotkey_split, key) {
   }
   return formatHotkey_listKey
 }
-z_50() {
-  formatHotkey_replace := __z_module_14317__
-  formatHotkey_split := __z_module_14318__
-  formatHotkey_toLowerCase := __z_module_14319__
-  formatHotkey_trim := __z_module_14320__
-  formatHotkey_formatKeyFormatHotkey := Func("z_49").Bind(formatHotkey_toLowerCase, formatHotkey_replace, formatHotkey_split)
-  formatHotkey_pickPrefixFormatHotkey := Func("z_48")
-  return Func("z_47").Bind(formatHotkey_formatKeyFormatHotkey, formatHotkey_pickPrefixFormatHotkey, formatHotkey_replace, formatHotkey_trim)
+z_49() {
+  formatHotkey_replace := __z_module_4158__
+  formatHotkey_split := __z_module_4159__
+  formatHotkey_toLowerCase := __z_module_4160__
+  formatHotkey_trim := __z_module_4161__
+  formatHotkey_formatKeyFormatHotkey := Func("z_48").Bind(formatHotkey_toLowerCase, formatHotkey_replace, formatHotkey_split)
+  formatHotkey_pickPrefixFormatHotkey := Func("z_47")
+  return Func("z_46").Bind(formatHotkey_formatKeyFormatHotkey, formatHotkey_pickPrefixFormatHotkey, formatHotkey_replace, formatHotkey_trim)
 }
-z_51() {
-  forEach_each := __z_module_14331__
+z_50() {
+  forEach_each := __z_module_4173__
   return forEach_each
 }
-z_52(isObject_getType, ipt) {
+z_51(isObject_getType, ipt) {
   isObject_type := isObject_getType.Call(ipt)
   if !(isObject_type == "object") {
     return false
   }
   return true
 }
-z_53() {
-  isObject_getType := __z_module_14322__
-  return Func("z_52").Bind(isObject_getType)
+z_52() {
+  isObject_getType := __z_module_4163__
+  return Func("z_51").Bind(isObject_getType)
 }
-z_54(isString_getType, ipt) {
+z_53(isString_getType, ipt) {
   isString_type := isString_getType.Call(ipt)
   if !(isString_type == "string") {
     return false
   }
   return true
 }
-z_55() {
-  isString_getType := __z_module_14322__
-  return Func("z_54").Bind(isString_getType)
+z_54() {
+  isString_getType := __z_module_4163__
+  return Func("z_53").Bind(isString_getType)
 }
-z_56(isNumber_getType, ipt) {
+z_55(isNumber_getType, ipt) {
   isNumber_type := isNumber_getType.Call(ipt)
   if !(isNumber_type == "number") {
     return false
   }
   return true
 }
-z_57() {
-  isNumber_getType := __z_module_14322__
-  return Func("z_56").Bind(isNumber_getType)
+z_56() {
+  isNumber_getType := __z_module_4163__
+  return Func("z_55").Bind(isNumber_getType)
 }
-z_58(isArray_getType, ipt) {
+z_57(isArray_getType, ipt) {
   isArray_type := isArray_getType.Call(ipt)
   if !(isArray_type == "array") {
     return false
   }
   return true
 }
-z_59() {
-  isArray_getType := __z_module_14322__
-  return Func("z_58").Bind(isArray_getType)
+z_58() {
+  isArray_getType := __z_module_4163__
+  return Func("z_57").Bind(isArray_getType)
 }
-z_60(this, callback) {
-  WinWait, % this.exe
+z_59(this, callback) {
+  windowShell_selector := ""
+  windowShell_noop.Call(windowShell_selector)
+  if (this.title) {
+    windowShell_selector := "" . (this.title) . " ahk_exe " . (this.exe) . ""
+  } else {
+    windowShell_selector := "ahk_exe " . (this.exe) . ""
+  }
+  WinWait, % windowShell_selector
   if (callback) {
     callback.Call()
   }
   return
 }
-z_61(this) {
-  if !(this.isExists.Call()) {
+z_60(this) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
-  WinShow, % this.exe
+  WinShow, % windowShell_idString
   return
 }
-z_62(this, style) {
-  if !(this.isExists.Call()) {
+z_61(this, style) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
   windowShell_noop.Call(style)
-  WinSet, Style, % style, % this.exe
+  WinSet, Style, % style, % windowShell_idString
   return
 }
-z_63(this, level) {
-  if !(this.isExists.Call()) {
+z_62(this, level) {
+  windowShell_id := this.getWindowId.Call()
+  if !(windowShell_id) {
     return
   }
   windowShell_noop.Call(level)
   Process, Priority, % this.exe, % level
   return
 }
-z_64(this) {
-  if !(this.isExists.Call()) {
+z_63(this) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
-  WinRestore, % this.exe
+  WinRestore, % windowShell_idString
+  return
+}
+z_64(this) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
+    return
+  }
+  WinMinimize, % windowShell_idString
   return
 }
 z_65(this) {
-  if !(this.isExists.Call()) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
-  WinMinimize, % this.exe
+  WinMaximize, % windowShell_idString
   return
 }
 z_66(this) {
-  if !(this.isExists.Call()) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
-  WinMaximize, % this.exe
+  WinKill, % windowShell_idString
   return
 }
 z_67(this) {
-  if !(this.isExists.Call()) {
-    return
-  }
-  WinKill, % this.exe
-  return
-}
-z_68(this) {
-  if !(this.isExists.Call()) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return false
   }
   __object__ := this.getBounds.Call()
@@ -664,94 +718,143 @@ z_68(this) {
   height := __object__["height"]
   return x == 0 && y == 0 && width == A_ScreenWidth && height == A_ScreenHeight
 }
+z_68(this) {
+  windowShell_id := this.getWindowId.Call()
+  return windowShell_id > 0
+}
 z_69(this) {
-  return WinExist(this.exe)
+  windowShell_id := this.getWindowId.Call()
+  if !(windowShell_id) {
+    return false
+  }
+  windowShell_activeId := WinActive("ahk_id " . (windowShell_id) . "")
+  return windowShell_activeId == windowShell_id
 }
 z_70(this) {
-  return WinActive(this.exe)
-}
-z_71(this) {
-  if !(this.isExists.Call()) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
-  WinHide, % this.exe
+  WinHide, % windowShell_idString
   return
 }
+z_71(this) {
+  windowShell_id := 0
+  windowShell_selector := ""
+  windowShell_noop.Call(windowShell_selector)
+  if (this.title) {
+    windowShell_selector := "" . (this.title) . " ahk_exe " . (this.exe) . ""
+  } else {
+    windowShell_selector := "ahk_exe " . (this.exe) . ""
+  }
+  WinGet, windowShell_id, ID, % windowShell_selector
+  return windowShell_id
+}
 z_72(this) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
+    return ""
+  }
+  if (this.title) {
+    return this.title
+  }
   windowShell_title := ""
-  WinGetTitle, windowShell_title, % this.exe
+  WinGetTitle, windowShell_title, % windowShell_idString
   return windowShell_title
 }
 z_73(this) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
+    return 0
+  }
+  windowShell_pid := 0
+  WinGet, windowShell_pid, PID, % windowShell_idString
+  return windowShell_pid
+}
+z_74(this) {
   __array__ := [0, 0, 0, 0]
   windowShell_x := __array__[1]
   windowShell_y := __array__[2]
   windowShell_w := __array__[3]
   windowShell_h := __array__[4]
-  if !(this.isExists.Call()) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return {x: windowShell_x, y: windowShell_y, width: windowShell_w, height: windowShell_h}
   }
-  WinGetPos, windowShell_x, windowShell_y, windowShell_w, windowShell_h, % this.exe
+  WinGetPos, windowShell_x, windowShell_y, windowShell_w, windowShell_h, % windowShell_idString
   return {x: windowShell_x, y: windowShell_y, width: windowShell_w, height: windowShell_h}
 }
-z_74(this) {
-  if !(this.isExists.Call()) {
-    return
-  }
-  WinActivate, % this.exe
-  return
-}
 z_75(this) {
-  if !(this.isExists.Call()) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
     return
   }
-  WinClose, % this.exe
+  WinActivate, % windowShell_idString
   return
 }
 z_76(this) {
-  name := "ahk_class Shell_TrayWnd"
-  windowShell_noop.Call(name)
-  WinActivate, % name
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
+    return
+  }
+  WinClose, % windowShell_idString
   return
 }
-z_77(click_replace, key := "left") {
+z_77(this) {
+  windowShell_idString := this.getWindowIdString.Call()
+  if !(windowShell_idString) {
+    return
+  }
+  name := "ahk_class Shell_TrayWnd"
+  windowShell_noop.Call(name)
+  WinActivate, %name%
+  return
+}
+z_78(this) {
+  windowShell_id := this.getWindowId.Call()
+  if !(windowShell_id) {
+    return ""
+  }
+  return "ahk_id " . (windowShell_id) . ""
+}
+z_79(click_replace, key := "left") {
   key := click_replace.Call(key, "-", "")
   key := click_replace.Call(key, ":", " ")
   Click, % key
   return
 }
-z_78() {
-  click_replace := __z_module_14317__
-  return Func("z_77").Bind(click_replace)
+z_80() {
+  click_replace := __z_module_4158__
+  return Func("z_79").Bind(click_replace)
 }
-z_79(this, n) {
+z_81(this, n) {
   return Round(n)
 }
-z_80(this, numbers*) {
+z_82(this, numbers*) {
   return Min(numbers*)
 }
-z_81(this, numbers*) {
+z_83(this, numbers*) {
   return Max(numbers*)
 }
-z_82(this, n) {
+z_84(this, n) {
   return Floor(n)
 }
-z_83(this, n) {
+z_85(this, n) {
   return Ceil(n)
 }
-z_84(this, n) {
+z_86(this, n) {
   return Abs(n)
 }
-z_85(sleep_noop, time := 1000) {
+z_87(sleep_noop, time := 1000) {
   sleep_noop.Call(time)
   Sleep, % time
   return
 }
-z_86() {
-  sleep_noop := __z_module_14305__
-  return Func("z_85").Bind(sleep_noop)
+z_88() {
+  sleep_noop := __z_module_4147__
+  return Func("z_87").Bind(sleep_noop)
 }
-z_87(move_noop, p := "", speed := 0) {
+z_89(move_noop, p := "", speed := 0) {
   if !(p) {
     return
   }
@@ -759,30 +862,30 @@ z_87(move_noop, p := "", speed := 0) {
   MouseMove, p[1], p[2], speed
   return
 }
-z_88() {
-  move_noop := __z_module_14305__
-  return Func("z_87").Bind(move_noop)
+z_90() {
+  move_noop := __z_module_4147__
+  return Func("z_89").Bind(move_noop)
 }
-z_89(alert_noop, message) {
+z_91(alert_noop, message) {
   alert_noop.Call(message)
   MsgBox, % message
   return
 }
-z_90() {
-  alert_noop := __z_module_14305__
-  return Func("z_89").Bind(alert_noop)
+z_92() {
+  alert_noop := __z_module_4147__
+  return Func("z_91").Bind(alert_noop)
 }
-z_91(list, cb) {
+z_93(list, cb) {
   for each_i, each_item in list {
     each_i := each_i - 1
     cb.Call(each_item, each_i)
   }
   return
 }
-z_92() {
-  return Func("z_91")
+z_94() {
+  return Func("z_93")
 }
-z_93(list, cb) {
+z_95(list, cb) {
   filter_listNew := []
   for filter_i, filter_item in list {
     filter_i := filter_i - 1
@@ -793,10 +896,16 @@ z_93(list, cb) {
   }
   return filter_listNew
 }
-z_94() {
-  return Func("z_93")
+z_96() {
+  return Func("z_95")
 }
-z_95(ipt) {
+z_97(haystack, needle) {
+  return SubStr(haystack, StrLen(haystack) - StrLen(needle) + 1) == needle
+}
+z_98() {
+  return Func("z_97")
+}
+z_99(ipt) {
   if ipt is Number
     return "number"
   if (IsFunc(ipt)) {
@@ -813,79 +922,59 @@ z_95(ipt) {
   }
   return "string"
 }
-z_96() {
-  return Func("z_95")
-}
-z_97(ipt, omitting := " `n`r`t") {
-  return Trim(ipt, omitting)
-}
-z_98() {
-  return Func("z_97")
-}
-z_99(ipt) {
-  toLowerCase_result := ipt
-  StringLower, toLowerCase_result, ipt
-  return toLowerCase_result
-}
 z_100() {
   return Func("z_99")
 }
-z_101(ipt, delimiter) {
-  return StrSplit(ipt, delimiter)
+z_101(ipt, omitting := " `n`r`t") {
+  return Trim(ipt, omitting)
 }
 z_102() {
   return Func("z_101")
 }
-z_103(original, searchment, replacement, count := -1) {
-  return StrReplace(original, searchment, replacement, count)
+z_103(ipt) {
+  toLowerCase_result := ipt
+  StringLower, toLowerCase_result, ipt
+  return toLowerCase_result
 }
 z_104() {
   return Func("z_103")
 }
-z_105(callback, time) {
-  if !(time > 0) {
-    throw Exception("setInterval requires a positive time value")
-  }
-  SetTimer, % callback, % time
-  return callback
+z_105(ipt, delimiter) {
+  return StrSplit(ipt, delimiter)
 }
 z_106() {
   return Func("z_105")
 }
-z_107() {
-  Reload
-  return
+z_107(original, searchment, replacement, count := -1) {
+  return StrReplace(original, searchment, replacement, count)
 }
 z_108() {
   return Func("z_107")
 }
-z_109(_args*) {
+z_109() {
+  Reload
   return
 }
 z_110() {
   return Func("z_109")
 }
-z_111() {
-  getPosition_x := 0
-  getPosition_y := 0
-  MouseGetPos, getPosition_x, getPosition_y
-  return [getPosition_x, getPosition_y]
+z_111(_args*) {
+  return
 }
 z_112() {
   return Func("z_111")
 }
 z_113() {
-  ExitApp
-  return
+  getPosition_x := 0
+  getPosition_y := 0
+  MouseGetPos, getPosition_x, getPosition_y
+  return [getPosition_x, getPosition_y]
 }
 z_114() {
   return Func("z_113")
 }
-z_115(timer) {
-  if !(timer) {
-    return
-  }
-  SetTimer, % timer, Delete
+z_115() {
+  ExitApp
   return
 }
 z_116() {

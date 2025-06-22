@@ -1,10 +1,10 @@
 # @ts-check
 
 import './head.ahk'
+import './admin.ahk'
 
 import $alert from '../dist/alert'
 import $beep from '../dist/beep'
-import $clearInterval from '../dist/clearInterval'
 import $exit from '../dist/exit'
 import $getPosition from '../dist/getPosition'
 import $math from '../dist/math'
@@ -14,13 +14,18 @@ import $off from '../dist/off'
 import $on from '../dist/on'
 import $press from '../dist/press'
 import $reload from '../dist/reload'
-import $setInterval from '../dist/setInterval'
 import $sleep from '../dist/sleep'
 import $tip from '../dist/tip'
 import $window from '../dist/window'
 
+# Photoshop 窗口
+ps = $window 'Photoshop'
+
 # 截图工具窗口
-win = $window 'QQScreenShot.exe'
+# 工具条
+qst = $window 'QQScreenShot'
+# 识图结果
+qsr = $window 'QQScreenShot', '屏幕识图'
 
 # 检查进程是否存在
 ###* @type (exe: string) => boolean ###
@@ -31,7 +36,7 @@ checkProcessExists = (exe) ->
   return false
 
 # 点击 OCR 按钮
-###* @type (callback: (ps: [[number, number], [number, number]]) => void) => void ###
+###* @type (callback: (points: [[number, number], [number, number]]) => void) => void ###
 clickOCRButton = (callback) ->
   # $tip 'click OCR button'
 
@@ -67,10 +72,17 @@ clickOCRButton = (callback) ->
     ]
 
     # 点击 OCR 按钮
-    $move [
-      b[0] - 190
-      b[1] + 20
-    ]
+    if b[0] >= 482
+      $move [
+        b[0] - 190
+        b[1] + 20
+      ]
+    else
+      $move [
+        290
+        b[1] + 20
+      ]
+
     $sleep 100
     $press 'l-button'
     $sleep 100
@@ -78,43 +90,64 @@ clickOCRButton = (callback) ->
     # 回调传递坐标
     callback [a, b]
 
-# 等待 OCR 识别结果
-###* @type (callback: Function) => void ###
-waitForOCRResult = (callback) ->
-  # $tip 'wait for OCR result'
-
-  d = {
-    timer: 0
-  }
-  d.timer = $setInterval ->
-    unless win.isExists() and win.getTitle() == '屏幕识图' then return
-    $clearInterval d.timer
-    callback()
-  , 100
-
 # 点击复制按钮
 ###* @type (callback: Function) => void ###
 clickCopyButton = (callback) ->
   {
     x, y, width, height
-  } = win.getBounds()
+  } = qst.getBounds()
 
   $move [
     x + width - 85
     y + height - 35
   ]
+
   $sleep 100
   $press 'l-button'
   $press 'l-button'
   $sleep 100
 
-  # win.kill()
+  # 关闭
+  qsr.close()
+
   callback()
+
+# 在 Photoshop 中创建新图层
+###* @type (points: [[number, number], [number, number]]) => void ###
+addPhotoshopLayer = (points) ->
+  ps.focus()
+  $sleep 100
+
+  $move points[0]
+  $sleep 100
+
+  $press 'space'
+  Native 'SetCapsLockState, On'
+
+  $press 't'
+  $sleep 100
+  $press 'l-button:down'
+  $sleep 100
+
+  $move points[1]
+  $sleep 100
+  $press 'l-button:up'
+  $sleep 100
+
+  $press 'ctrl + v'
+  $sleep 100
+  $press 'esc'
+  $sleep 100
+
+  $press 'v'
+  Native 'SetCapsLockState, Off'
+  return
+
 
 # 主函数
 main = ->
   # 检查 Photoshop 是否打开
-  unless checkProcessExists 'Photoshop.exe'
+  unless ps.isExists()
     $alert '请先打开 Photoshop'
     return
 
@@ -123,11 +156,19 @@ main = ->
     $alert '请先打开截图工具'
     return
 
-  # 按下截图热键
-  $press 'ctrl + alt + o'
+  # 将 Photoshop 窗口置顶
+  ps.focus()
+  $sleep 100
 
-  clickOCRButton -> waitForOCRResult -> clickCopyButton ->
-    $tip 'DONE'
+  # 按下截图热键
+  $press 'ctrl + alt + f9'
+  $sleep 100
+
+  clickOCRButton (points) ->
+    d = {
+      points: points
+    }
+    qsr.wait -> clickCopyButton -> addPhotoshopLayer d.points
 
 # 按下 Ctrl + 1 键时执行主函数
 $on 'alt + 1', -> main()
@@ -144,8 +185,7 @@ $on 'ctrl + q', ->
 
 # 判断PS是否打开
 # 判断独立截图工具
-# 按下ctrl + alt + o
-# ---
+# 按下截图快捷键
 # 鼠标按下时监听起始点位置
 # 鼠标弹起时找图，位置根据弹起坐标和起始坐标决定
 # 找到图之后点击
@@ -153,6 +193,7 @@ $on 'ctrl + q', ->
 # 找到图之后点击
 # 找关闭弹窗位置
 # 找到之后关闭
+# ---
 # 鼠标移动到4记录的位置
 # 按下space，清除输入法输入队列
 # 按下Caps

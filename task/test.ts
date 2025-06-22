@@ -18,5 +18,4 @@ const main = async () => {
   await exec(`start ./temp/${target}.test.ahk`)
 }
 
-// export
 export default main
