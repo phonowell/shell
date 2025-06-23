@@ -15,7 +15,6 @@ import $on from '../dist/on'
 import $press from '../dist/press'
 import $reload from '../dist/reload'
 import $sleep from '../dist/sleep'
-import $tip from '../dist/tip'
 import $window from '../dist/window'
 
 # Photoshop 窗口

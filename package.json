@@ -3,7 +3,6 @@
   "bugs": {
     "url": "https://github.com/phonowell/shell/issues"
   },
-  "dependencies": {},
   "description": "",
   "devDependencies": {
     "@types/node": "^24.0.3",
@@ -11,7 +10,7 @@
     "@types/react-dom": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
-    "coffee-ahk": "^0.0.59",
+    "coffee-ahk": "^0.0.60",
     "eslint": "^9.29.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.0",
@@ -21,7 +20,7 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "fire-keeper": "^0.0.227",
     "globals": "^16.2.0",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.0",
     "radash": "^12.1.1",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
