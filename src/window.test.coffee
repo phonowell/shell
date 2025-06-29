@@ -7,8 +7,6 @@ import $open from '../dist/open'
 import $sleep from '../dist/sleep'
 import $window from '../dist/window'
 
-import $alert from '../dist/alert'
-
 do ->
 
   unless $isFunction $window
