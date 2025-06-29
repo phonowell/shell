@@ -24,8 +24,8 @@ importers:
         specifier: ^8.35.0
         version: 8.35.0(eslint@9.30.0)(typescript@5.8.3)
       coffee-ahk:
-        specifier: ^0.0.67
-        version: 0.0.67
+        specifier: ^0.0.69
+        version: 0.0.69
       eslint:
         specifier: ^9.30.0
         version: 9.30.0
@@ -574,8 +574,8 @@ packages:
   clone-response@1.0.2:
     resolution: {integrity: sha512-yjLXh88P599UOyPTFX0POsd7WxnbsVsGohcwzHOLspIhhpalPw1BcqED8NblyZLKcGrL8dTgMlcaZxV2jAD41Q==}
 
-  coffee-ahk@0.0.67:
-    resolution: {integrity: sha512-UUAlFyEr18khJq0PyB4gAZ0xXitxLJxLiCv6tsiEhgdVVSec6MCihZkVDeTZ30/mJeacUOWkd9FIf/f+9J5vOA==}
+  coffee-ahk@0.0.69:
+    resolution: {integrity: sha512-XAhz0xjQqbL2Ig2vMjKMIE066BWfJTI4G47h5wGE5ZapdwyCg8UKn1EVA7eQ7JnnKtsPn0WPh3xXXMytbBeTwQ==}
 
   coffeescript@1.12.7:
     resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
@@ -2562,7 +2562,7 @@ snapshots:
     dependencies:
       mimic-response: 1.0.1
 
-  coffee-ahk@0.0.67:
+  coffee-ahk@0.0.69:
     dependencies:
       coffeescript: 2.7.0
       cson: 8.4.0
