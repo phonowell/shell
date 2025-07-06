@@ -5,9 +5,9 @@
 #SingleInstance, Force
 #UseHook, On
 
-CoordMode, Mouse, Client
-CoordMode, Pixel, Client
-CoordMode, ToolTip, Client
+CoordMode, Mouse, Screen
+CoordMode, Pixel, Screen
+CoordMode, ToolTip, Screen
 SendMode, Event
 SetBatchLines, 100ms
 SetKeyDelay, 0, 50
