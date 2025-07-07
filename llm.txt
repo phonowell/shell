@@ -1,0 +1,94 @@
+PROJECT: shell-ahk
+
+MODULE_COUNT: 101
+SHELL_CLASSES: 5
+TEST_COVERAGE: 71/101
+
+STRUCTURE:
+/Users/mimiko/Project/shell/
+├── src/                    # 101 CoffeeScript modules + .d.ts + .test.coffee
+├── scripts/                # AHK/CoffeeScript automation helpers
+├── doc/                    # functions.md, test.md, prompts.md
+├── data/sync/              # Config/sync data
+├── task/                   # TypeScript build automation
+├── temp/                   # Test compilation output
+└── package.json            # Dependencies, scripts
+
+CORE_FUNCTIONS: [add, alert, beep, bind, blockInput, chunk, clearInterval, clearTimeout, click, clone, compact, concat, confirm, createList, debounce, defer, delay, delete, drop, each, echo, emitter, eq, exec, exit, file, filter, findColor, findImage, first, forEach, formatHotkey, getColor, getPosition, getType, gt, gte, head, httpGet, includes, isArray, isFunction, isKeyBound, isKeyPreventedDefault, isNumber, isObject, isPressing, isString, join, keys, last, length, lt, lte, map, math, max, min, mixin, mod, move, noop, now, nth, off, on, once, open, play, pop, press, preventDefaultKey, push, random, range, reload, replace, reverse, setFixed, setInterval, setTimeout, shift, shuffle, sleep, slice, sort, split, startsWith, subString, sum, suspend, tail, take, throttle, tip, toLower, toLowerCase, toNumber, toString, toTuple, toUpper, toUpperCase, trigger, trim, trimEnd, trimStart, uniq, unshift, values, window]
+
+SHELL_CLASSES:
+- EmitterShell: bus[type,name,callback,state], emit(key,...args), on/once/off(key,callback)
+- FileShell: source, append/read/write/remove/isExists(content)
+- KeyBindingShell: mapCallback, add/remove/fire/prevent/formatKey/getListItem/isPrevented
+- MathShell: abs/ceil/floor/max/min/round(number)
+- WindowShell: exe/title, activate/close/exists/kill/maximize/minimize
+
+IMPLEMENTATION_PATTERNS:
+- export default (args...) -> implementation
+- ###* @type import('./module').Type ### annotation
+- Native 'AHK_COMMAND' for AutoHotkey calls
+- $filter/$each/$map for array operations
+- throw "$.function: invalid type '#{$getType input}'" for errors
+- return closure for module export simulation
+
+BUILD_SYSTEM:
+- coffee-ahk compiler: src/*.coffee → dist/*.coffee (dollarsign replacement)
+- TypeScript tasks: build/test/watch/lint automation
+- Test runner: compile specific module to temp/*.ahk, execute via 'start'
+- Dependencies: coffee-ahk@0.0.69, fire-keeper@0.0.227, tsx@4.20.3
+
+TYPE_SYSTEM:
+- All modules have .d.ts declarations
+- Function types: Each<T>, Map<T,U>, Filter<T>, etc
+- Class types: EmitterShell, FileShell, KeyBindingShell, MathShell, WindowShell
+- Global namespace injection via declare global
+
+ENTRY_POINT:
+src/index.coffee imports all 101 modules, mixes into $ object:
+$ = {}
+$mixin $, add: $add
+$mixin $, alert: $alert
+...
+$mixin $, window: $window
+
+TESTING:
+- test/include/*.coffee: Individual module tests
+- test/index.coffee: Imports all tests
+- doc/test.md: Checklist tracking 71/101 tested modules
+- Command: pnpm task test <module>
+
+AHK_CONSTRAINTS:
+- Target: AutoHotkey v1
+- No boolean type (use truthy/falsy)
+- No property accessors
+- No real modules (simulated via closure/return)
+- No optional chaining, getter/setter, implicit return
+- Case-sensitive class names via Unicode
+
+DEPENDENCIES:
+- coffee-ahk: CoffeeScript→AutoHotkey compiler
+- fire-keeper: File system utilities
+- radash: Lodash alternative
+- tsx: TypeScript execution
+- eslint/prettier: Code quality
+
+SCRIPTS:
+- build: pnpm task build
+- test: pnpm task test
+- watch: pnpm task watch
+- lint: eslint src/**/*.{ts,tsx} task/**/*.ts --fix
+
+COMPILATION_FLOW:
+1. src/*.coffee → coffee-ahk compiler
+2. Replace $(function) → filename_$(function)
+3. Output to dist/*.coffee
+4. Tests compile to temp/*.ahk and execute
+
+ERROR_HANDLING:
+throw "$.function: invalid type '#{$getType input}'"
+throw "$.function: invalid arguments"
+
+USAGE_PATTERN:
+import 'shell-ahk'
+$.alert 'hello world'
+$.each [1,2,3], (item, index) -> $.echo item
