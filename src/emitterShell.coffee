@@ -52,7 +52,7 @@ class EmitterShell
   ###* @type import('./emitterShell').EmitterShell['once'] ###
   once: (key, callback) ->
     [$type, $name] = $split key, '.'
-    unless $type then throw new Error 'EmitterShell.on: key must be a string with type'
+    unless $type then throw new Error 'EmitterShell.once: key must be a string with type'
     @bus.Push [$type, $name, callback, 'once']
     return
 

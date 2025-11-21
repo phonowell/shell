@@ -10,7 +10,7 @@ import $reload from '../dist/reload'
 import $sleep from '../dist/sleep'
 
 # 重置所有按键
-resetKyes = ->
+resetKeys = ->
   $press 'a:up'
   $press 'e:up'
   $press 'g:up'
@@ -68,11 +68,11 @@ $on 'f1', main
 # 按下 F4 键退出
 $on 'f4', ->
   $beep()
-  resetKyes()
+  resetKeys()
   $exit()
 
 # 按下 F5 键重新加载
 $on 'f5', ->
   $beep()
-  resetKyes()
+  resetKeys()
   $reload()
