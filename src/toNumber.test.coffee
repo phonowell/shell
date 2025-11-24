@@ -20,9 +20,9 @@ negativeResult = $toNumber negativeString
 unless negativeResult == -15 then throw new Error "T003: Expected -15, got #{negativeResult}"
 
 # Test 4: Number input should return as-is
-number = 100
-numberResult = $toNumber number
-unless numberResult == 100 then throw new Error "T004: Expected 100, got #{numberResult}"
+n = 100
+result = $toNumber n
+unless result == 100 then throw new Error "T004: Expected 100, got #{result}"
 
 # Test 5: Boolean conversions
 trueResult = $toNumber true

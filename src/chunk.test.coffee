@@ -10,9 +10,9 @@ import $map from '../dist/map'
 # Test chunking array into groups of 4
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 listA = $chunk list, 4
-string = $join ($map listA, (it) -> $join it, ''), ','
-unless string == '1234,5678,910'
-  throw new Error "C001: Basic chunk test failed: expected '1234,5678,910', got '#{string}'"
+str = $join ($map listA, (it) -> $join it, ''), ','
+unless str == '1234,5678,910'
+  throw new Error "C001: Basic chunk test failed: expected '1234,5678,910', got '#{str}'"
 
 # Edge case tests
 # Test with chunk size 1

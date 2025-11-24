@@ -12,19 +12,19 @@ do ->
 
 # Test basic string length
 do ->
-  string = 'wow'
-  n = $length string
+  str = 'wow'
+  n = $length str
   unless n == 3
     throw new Error 'String length test failed'
 
 # Test basic object property count
 do ->
-  map = {
+  m = {
     a: 1
     b: 2
     c: 3
   }
-  n = $length map
+  n = $length m
   unless n == 3
     throw new Error 'Object length test failed'
 

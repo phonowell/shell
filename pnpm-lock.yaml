@@ -24,8 +24,8 @@ importers:
         specifier: ^8.47.0
         version: 8.47.0(eslint@9.39.1)(typescript@5.9.3)
       coffee-ahk:
-        specifier: ^0.0.71
-        version: 0.0.71
+        specifier: ^0.0.73
+        version: 0.0.73
       eslint:
         specifier: ^9.39.1
         version: 9.39.1
@@ -639,8 +639,8 @@ packages:
     resolution: {integrity: sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==}
     engines: {node: '>=20'}
 
-  coffee-ahk@0.0.71:
-    resolution: {integrity: sha512-maGfCGigan+E/IM2CjGptsofdlCjYAcSfEKOpbnsXqPook3A39WBTJxdzPHpZGU99yWBOi3BQg6lFmqncvfWMA==}
+  coffee-ahk@0.0.73:
+    resolution: {integrity: sha512-r9eT15YBtVl1Ss4/SLAv6SVC+MUnuwTdWZbqerLsZnYgbliOZeryTgJHSZg07caGjop/1iCKocafvm2KlC2pmw==}
 
   coffeescript@1.12.7:
     resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
@@ -2461,7 +2461,7 @@ snapshots:
       strip-ansi: 7.1.2
       wrap-ansi: 9.0.2
 
-  coffee-ahk@0.0.71:
+  coffee-ahk@0.0.73:
     dependencies:
       coffeescript: 2.7.0
       cson: 8.4.0

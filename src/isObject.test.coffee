@@ -4,8 +4,8 @@ import '../scripts/head.ahk'
 import $isObject from '../dist/isObject'
 
 # Test basic object
-map = { a: 1 }
-result = $isObject map
+m = { a: 1 }
+result = $isObject m
 unless result then throw new Error 'Expected {a: 1} to be identified as object'
 
 # Test empty object

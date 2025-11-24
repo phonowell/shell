@@ -1,5 +1,5 @@
 import c2a from 'coffee-ahk'
-import { argv, exec, move, remove } from 'fire-keeper'
+import { argv, exec, getBasename, glob, move, os, remove } from 'fire-keeper'
 
 const compile = async (source: string) => {
   await c2a(`./src/${source}.test.coffee`, {
@@ -10,12 +10,22 @@ const compile = async (source: string) => {
 
 const main = async () => {
   const target = ((await argv())._[1] ?? '').toString().trim()
-  if (!target) throw new Error('Please specify a target, e.g. `pnpm test add`')
+  if (!target) {
+    const allTestFiles = await glob('./src/*.test.coffee')
+    for (const file of allTestFiles) {
+      const target = getBasename(file).split('.')[0]
+      await test(target)
+    }
+    return
+  }
 
+  await test(target)
+}
+
+const test = async (target: string) => {
   await remove('./temp')
-
   await compile(target)
-  await exec(`start ./temp/${target}.test.ahk`)
+  if (os() === 'windows') await exec(`start ./temp/${target}.test.ahk`)
 }
 
 export default main

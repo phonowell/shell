@@ -6,33 +6,33 @@ import $getType from '../dist/getType'
 # Test 1: Primitive types (most common)
 do ->
   # Number type
-  type = $getType 42
-  unless type == 'number'
-    throw new Error "Number type failed: expected 'number', got '#{type}'"
+  t = $getType 42
+  unless t == 'number'
+    throw new Error "Number type failed: expected 'number', got '#{t}'"
 
 do ->
   # String type
-  type = $getType 'hello'
-  unless type == 'string'
-    throw new Error "String type failed: expected 'string', got '#{type}'"
+  t = $getType 'hello'
+  unless t == 'string'
+    throw new Error "String type failed: expected 'string', got '#{t}'"
 
 # Test 2: Function type
 do ->
-  type = $getType $getType
-  unless type == 'function'
-    throw new Error "Function type failed: expected 'function', got '#{type}'"
+  t = $getType $getType
+  unless t == 'function'
+    throw new Error "Function type failed: expected 'function', got '#{t}'"
 
 # Test 3: Array type (distinguishes from object)
 do ->
-  type = $getType [1, 2, 3]
-  unless type == 'array'
-    throw new Error "Array type failed: expected 'array', got '#{type}'"
+  t = $getType [1, 2, 3]
+  unless t == 'array'
+    throw new Error "Array type failed: expected 'array', got '#{t}'"
 
 # Test 4: Object type
 do ->
-  type = $getType { a: 1, b: 2, c: 3 }
-  unless type == 'object'
-    throw new Error "Object type failed: expected 'object', got '#{type}'"
+  t = $getType { a: 1, b: 2, c: 3 }
+  unless t == 'object'
+    throw new Error "Object type failed: expected 'object', got '#{t}'"
 
 # 退出测试用例
 import $exit from '../dist/exit'

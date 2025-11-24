@@ -4,16 +4,16 @@ import '../scripts/head.ahk'
 import $once from '../dist/once'
 
 # Test basic once functionality - function executes only once
-map = { n: 0 }
-add = $once -> map.n += 1
+m = { n: 0 }
+add = $once -> m.n += 1
 
 # First call should execute
 add()
-unless map.n == 1 then throw new Error 'Expected function to execute on first call'
+unless m.n == 1 then throw new Error 'Expected function to execute on first call'
 
 # Second call should not execute
 add()
-unless map.n == 1 then throw new Error 'Expected function to not execute on second call'
+unless m.n == 1 then throw new Error 'Expected function to not execute on second call'
 
 # Test return value is cached
 getValue = $once -> 42

@@ -5,23 +5,23 @@ import $join from '../dist/join'
 import $keys from '../dist/keys'
 
 # Test basic object with string keys
-map = {
+m = {
   a: 1
   b: 2
   c: 3
 }
-result = $join $keys map
+result = $join $keys m
 unless result == 'a,b,c'
   throw new Error 'Expected keys of {a:1, b:2, c:3} to be "a,b,c"'
 
 # Test object with numeric keys
-map2 = {
+m2 = {
   0: ''
   1: 'a'
   2: 'b'
   3: 'c'
 }
-result = $join $keys map2
+result = $join $keys m2
 unless result == '0,1,2,3'
   throw new Error 'Expected keys of numeric object to be "0,1,2,3"'
 

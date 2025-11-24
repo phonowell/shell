@@ -15,14 +15,14 @@ do -> # array tests - most common use case
   if result then throw new Error 'Expected [1,2,3] to not include 4'
 
 do -> # string tests
-  string = 'string'
+  str = 'string'
 
   # Test finding existing character in string
-  result = $includes string, 's'
+  result = $includes str, 's'
   unless result then throw new Error 'Expected "string" to include "s"'
 
   # Test character not in string
-  result = $includes string, 'a'
+  result = $includes str, 'a'
   if result then throw new Error 'Expected "string" to not include "a"'
 
 # 退出测试用例
