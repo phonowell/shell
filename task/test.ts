@@ -1,11 +1,34 @@
 import c2a from 'coffee-ahk'
-import { argv, exec, getBasename, glob, move, os, remove } from 'fire-keeper'
+import {
+  argv,
+  exec,
+  getBasename,
+  glob,
+  os,
+  read,
+  remove,
+  sleep,
+  write,
+} from 'fire-keeper'
 
 const compile = async (source: string) => {
-  await c2a(`./src/${source}.test.coffee`, {
+  // Read the test file
+  const buffer = await read(`./src/${source}.test.coffee`)
+  if (!buffer) return
+
+  // Replace $ prefix with testname_
+  const content = buffer.toString().replace(/\$([\w\d]+)/g, `${source}_$1`)
+
+  // Write transformed file to temp location
+  await write(`./temp/${source}.test.coffee`, content)
+
+  // Compile the transformed file
+  await c2a(`./temp/${source}.test.coffee`, {
     salt: 'shell',
   })
-  await move(`./src/${source}.test.ahk`, './temp')
+
+  // Clean up the temporary coffee file
+  await remove(`./temp/${source}.test.coffee`)
 }
 
 const main = async () => {
@@ -15,6 +38,7 @@ const main = async () => {
     for (const file of allTestFiles) {
       const target = getBasename(file).split('.')[0]
       await test(target)
+      await sleep(1e3)
     }
     return
   }
