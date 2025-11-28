@@ -4,7 +4,9 @@
 export default (ipt) ->
 
   Native 'if ipt is Number'
+  Native '{'
   Native '  return "number"'
+  Native '}'
 
   if IsFunc ipt then return 'function'
 
