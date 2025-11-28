@@ -10,7 +10,7 @@
     "@types/react-dom": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^8.48.0",
     "@typescript-eslint/parser": "^8.48.0",
-    "coffee-ahk": "^0.0.88",
+    "coffee-ahk": "^0.0.89",
     "eslint": "^9.39.1",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
@@ -20,7 +20,7 @@
     "eslint-plugin-unused-imports": "^4.3.0",
     "fire-keeper": "^0.0.231",
     "globals": "^16.5.0",
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.1",
     "radash": "^12.1.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"

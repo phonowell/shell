@@ -24,8 +24,8 @@ importers:
         specifier: ^8.48.0
         version: 8.48.0(eslint@9.39.1)(typescript@5.9.3)
       coffee-ahk:
-        specifier: ^0.0.88
-        version: 0.0.88
+        specifier: ^0.0.89
+        version: 0.0.89
       eslint:
         specifier: ^9.39.1
         version: 9.39.1
@@ -34,7 +34,7 @@ importers:
         version: 2.32.0(@typescript-eslint/parser@8.48.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)
       eslint-plugin-prettier:
         specifier: ^5.5.4
-        version: 5.5.4(eslint@9.39.1)(prettier@3.6.2)
+        version: 5.5.4(eslint@9.39.1)(prettier@3.7.1)
       eslint-plugin-react:
         specifier: ^7.33.2
         version: 7.37.5(eslint@9.39.1)
@@ -54,8 +54,8 @@ importers:
         specifier: ^16.5.0
         version: 16.5.0
       prettier:
-        specifier: ^3.6.2
-        version: 3.6.2
+        specifier: ^3.7.1
+        version: 3.7.1
       radash:
         specifier: ^12.1.1
         version: 12.1.1
@@ -639,8 +639,8 @@ packages:
     resolution: {integrity: sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==}
     engines: {node: '>=20'}
 
-  coffee-ahk@0.0.88:
-    resolution: {integrity: sha512-tqNJmyd8r+kWpfj6pXWVsFtsMiLzBLEhpO4+0T92Za7oi6EU5kXLh5dAPG+Z4XG7Lu/Ved1OhM/DhuZW8sevLg==}
+  coffee-ahk@0.0.89:
+    resolution: {integrity: sha512-JTSjzfq9HguLQRAYU4t7tgpCIBNJaHyLra2bqmSnmcX6cQ9b8w5wsWlBWKIfhm8PnpqfxdOSKIsSdVqCpZoLBg==}
 
   coffeescript@2.7.0:
     resolution: {integrity: sha512-hzWp6TUE2d/jCcN67LrW1eh5b/rSDKQK6oD6VMLlggYVUUFexgTH9z3dNYihzX4RMhze5FTUsUmOXViJKFQR/A==}
@@ -1462,8 +1462,8 @@ packages:
     resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
     engines: {node: '>=6.0.0'}
 
-  prettier@3.6.2:
-    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+  prettier@3.7.1:
+    resolution: {integrity: sha512-RWKXE4qB3u5Z6yz7omJkjWwmTfLdcbv44jUVHC5NpfXwFGzvpQM798FGv/6WNK879tc+Cn0AAyherCl1KjbyZQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2431,7 +2431,7 @@ snapshots:
       strip-ansi: 7.1.2
       wrap-ansi: 9.0.2
 
-  coffee-ahk@0.0.88:
+  coffee-ahk@0.0.89:
     dependencies:
       coffeescript: 2.7.0
       fire-keeper: 0.0.230
@@ -2719,10 +2719,10 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-prettier@5.5.4(eslint@9.39.1)(prettier@3.6.2):
+  eslint-plugin-prettier@5.5.4(eslint@9.39.1)(prettier@3.7.1):
     dependencies:
       eslint: 9.39.1
-      prettier: 3.6.2
+      prettier: 3.7.1
       prettier-linter-helpers: 1.0.0
       synckit: 0.11.11
 
@@ -3400,7 +3400,7 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier@3.6.2: {}
+  prettier@3.7.1: {}
 
   process-nextick-args@2.0.1: {}
 
