@@ -13,6 +13,6 @@ import 'shell-ahk'
 $.alert 'hello world'
 ```
 
-## Functions
+## Documentation
 
-[Document](./doc/functions.md)
+- [使用指南 / Usage Guide](./USAGE.md) - 完整的 API 参考和使用示例

@@ -162,6 +162,12 @@ The library provides utilities across several domains:
 ## Dependencies
 
 - **coffee-ahk**: CoffeeScript-to-AHK transpiler (core build tool)
+  - 源码位置: `../coffee-ahk`
+  - 使用文档: `../coffee-ahk/usage.md` — CoffeeScript → AHK 语法指南，包含：
+    - AHK v1 特性（大小写不敏感、数组索引从1开始）
+    - 禁止语法列表（可选链、范围操作符、后置if、async/await等）
+    - 支持的语法参考（变量、函数、类、模块、循环、异常处理等）
+    - 已知限制与解决方案（for循环解构、嵌套解构、Class与Export冲突）
 - **fire-keeper**: File I/O, glob, concurrent execution, prompts (used extensively in `task/`)
 - **radash**: Lightweight utility library (debounce, etc.)
   - **Important**: Use freely in `task/` scripts, but AVOID in `src/` to keep library pure
