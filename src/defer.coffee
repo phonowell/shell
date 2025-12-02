@@ -3,8 +3,8 @@
 import $delay from './delay'
 
 ###* @type import('./defer').Defer ###
-export default (func, args...) ->
+export default (fn, args...) ->
 
   return $delay ->
-    func args...
+    fn args...
   , 1

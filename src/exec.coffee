@@ -5,11 +5,11 @@ import $join from './join'
 import $noop from './noop'
 
 ###* @type import('./exec').Exec ###
-export default (input, callback = $noop) ->
+export default (cmd, callback = $noop) ->
 
-  if $isString input then input = [input]
-  input = $join input, ' && '
+  if $isString cmd then cmd = [cmd]
+  cmd = $join cmd, ' && '
 
-  Native 'RunWait, %comSpec% /c %input%,, Hide UseErrorLevel'
+  Native 'RunWait, %comSpec% /c %cmd%,, Hide UseErrorLevel'
 
   callback ErrorLevel

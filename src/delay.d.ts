@@ -1,5 +1,5 @@
 export type Delay = (
-  func: Function,
+  fn: Function,
   wait: number,
   ...args: unknown[]
 ) => Function
