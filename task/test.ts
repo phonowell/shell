@@ -11,6 +11,8 @@ import {
   write,
 } from 'fire-keeper'
 
+const IS_WINDOWS = os() === 'windows'
+
 const compile = async (source: string) => {
   // Read the test file
   const buffer = await read(`./src/${source}.test.coffee`)
@@ -38,7 +40,7 @@ const main = async () => {
     for (const file of allTestFiles) {
       const target = getBasename(file).split('.')[0]
       await test(target)
-      await sleep(1e3)
+      if (IS_WINDOWS) await sleep(1e3)
     }
     return
   }
@@ -49,7 +51,7 @@ const main = async () => {
 const test = async (target: string) => {
   await remove('./temp')
   await compile(target)
-  if (os() === 'windows') await exec(`start ./temp/${target}.test.ahk`)
+  if (IS_WINDOWS) await exec(`start ./temp/${target}.test.ahk`)
 }
 
 export default main
