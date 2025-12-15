@@ -1,6 +1,6 @@
-# shell-ahk 使用指南
+# shell-ahk
 
-> Lodash/jQuery 风格的 AHK 工具库
+> Lodash/jQuery 风格 AHK 库
 
 ## 快速开始
 
@@ -13,12 +13,10 @@ import 'shell-ahk'
 $.alert 'hello world'
 ```
 
-## 编写约束
+## 约束
 
-| 特性      | 说明                                      |
-| --------- | ----------------------------------------- |
-| 大小写    | **不敏感**，`Foo` 和 `foo` 是同一个变量   |
-| 数组索引  | **从 1 开始**，`arr[0]` 自动转为 `arr[1]` |
+**大小写不敏感**：`Foo` = `foo`
+**数组从 1 开始**：`arr[0]` → `arr[1]`
 
 ### 禁止语法
 
@@ -26,11 +24,11 @@ $.alert 'hello world'
 x?.y              # ❌ 可选链
 [1..10]           # ❌ 范围操作符
 return 1 if cond  # ❌ 后置 if（用 if cond then 1）
-x in [1, 2, 3]    # ❌ 关系操作符 in（只支持 for...in）
+x in [1, 2, 3]    # ❌ in 关系（仅 for...in）
 await fetch()     # ❌ async/await
 ```
 
-## 使用示例
+## 示例
 
 ```coffeescript
 import 'shell-ahk'
@@ -48,13 +46,13 @@ $.clone {a: 1}                         # {a: 1}
 $.split 'a,b,c', ','                   # ['a', 'b', 'c']
 $.replace 'hello', 'l', 'L'            # 'heLLo'
 
-# AHK 交互
+# AHK
 $.alert 'Hello!'
 $.click()
 $.press 'ctrl+c'
 $.keyBinding 'f1', -> $.alert 'pressed'
 
-# 定时器
+# 定时
 $.delay 1000, -> $.alert 'delayed'
 $.sleep 500
 ```
@@ -68,28 +66,28 @@ import filter from 'shell-ahk/dist/filter'
 result = map [1, 2, 3], (x) -> x * 2
 ```
 
-## 函数列表
+## 函数
 
-**数组**: at, chunk, compact, concat, drop, each, filter, first, forEach, head, includes, join, last, length, map, nth, pop, push, range, reverse, shift, shuffle, slice, sort, tail, take, uniq, unshift
+**数组**: at · chunk · compact · concat · drop · each · filter · first · forEach · head · includes · join · last · length · map · nth · pop · push · range · reverse · shift · shuffle · slice · sort · tail · take · uniq · unshift
 
-**对象**: clone, delete, keys, mixin, values
+**对象**: clone · delete · keys · mixin · values
 
-**字符串**: endsWith, join, replace, split, startsWith, subString, toLower, toLowerCase, toUpper, toUpperCase, toString, trim, trimEnd, trimStart
+**字符串**: endsWith · join · replace · split · startsWith · subString · toLower · toLowerCase · toUpper · toUpperCase · toString · trim · trimEnd · trimStart
 
-**类型检查**: getType, isArray, isFunction, isNumber, isObject, isString
+**类型**: getType · isArray · isFunction · isNumber · isObject · isString
 
-**比较**: eq, gt, gte, lt, lte
+**比较**: eq · gt · gte · lt · lte
 
-**数学**: add, math, max, min, mod, random, setFixed, sum, toNumber
+**数学**: add · math · max · min · mod · random · setFixed · sum · toNumber
 
-**AHK 交互**: alert, beep, blockInput, click, confirm, echo, exec, exit, move, open, play, press, reload, suspend, tip
+**AHK**: alert · beep · blockInput · click · confirm · echo · exec · exit · move · open · play · press · reload · suspend · tip
 
-**事件**: emitter, off, on, once, trigger
+**事件**: emitter · off · on · once · trigger
 
-**按键绑定**: formatHotkey, isKeyBound, isKeyPreventedDefault, isPressing, keyBinding, preventDefaultKey
+**按键**: formatHotkey · isKeyBound · isKeyPreventedDefault · isPressing · keyBinding · preventDefaultKey
 
-**定时器**: clearInterval, clearTimeout, defer, delay, setInterval, setTimeout, sleep
+**定时**: clearInterval · clearTimeout · defer · delay · setInterval · setTimeout · sleep
 
-**视觉**: findColor, findImage, getColor, getPosition
+**视觉**: findColor · findImage · getColor · getPosition
 
-**其他**: file, window, httpGet, noop, now
+**其他**: file · window · httpGet · noop · now

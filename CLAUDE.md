@@ -1,74 +1,80 @@
 # CLAUDE.md
 
-> **元原则**：代码优先于文档 · 渐进式披露 · 并行工具调用 · 人工要求的信息不可轻易移除 · 对话中发现的重要信息主动记录到本文件
+> **元原则**：代码优先文档 · 渐进披露 · 并行工具 · 人工要求信息不可删 · 对话发现重要信息主动记录本文件 · 输出 tokens 5x 价格惜字如金
+>
+> **Skill 使用**：调用 `Skill` 工具后**必须等待其完成**再执行其他操作 · 不得在 skill 运行时并行执行相同任务
+>
+> **客观诚实**：不主观评价 · 不因用户情绪转移立场 · 不编造事实 · 立刻暴露不确定信息
+>
+> **TodoWrite 使用**：≥3 步骤任务必须建 todo · 实时更新状态 · 完成立即标记
 
-## 项目概述
-
-shell-ahk 是 Lodash/jQuery 风格的 AutoHotkey 工具库，使用 CoffeeScript 编写并通过 coffee-ahk 编译。
+shell-ahk：Lodash/jQuery 风格 AHK 库 · CoffeeScript 编写 · coffee-ahk 编译
 
 ## 核心约束
 
-### 代码质量
-- **文件长度限制**：所有项目文件不得超过 200 行；CLAUDE.md 不得超过 100 行
-- **单一职责**：每个 `.coffee` 文件只导出一个默认导出
-- **保持纯函数**：同步、无副作用、无全局状态修改
+**文件长度**：≤200 行 · CLAUDE.md ≤100 行
+**单一职责**：每个 `.coffee` 仅一个默认导出
+**纯函数**：同步 · 无副作用 · 无全局状态修改
 
-### 命名空间隔离（关键）
-- **所有可变局部变量必须加 `$` 前缀**（例：`$result = 0`，而非 `result = 0`）
-- **禁止手写 `<basename>_variable`**，让构建系统自动转换 `$variable`
-- 构建时使用正则 `/\$([\w\d]+)/` 将变量转换为 `<basename>_$1` 防止 AHK 全局污染
+## 命名空间隔离（关键）
 
-### 工作流
-- **编辑 → 构建 → 测试**：修改 `src/` 后必须 `pnpm build`，然后 `pnpm test <name>`
-- **禁止直接编辑 `dist/`**：`dist/` 由构建生成
-- **测试必须导入 `dist/`**：测试文件从 `../dist/` 导入，而非 `../src/`
+- 可变局部变量**必须** `$` 前缀：`$result = 0` 非 `result = 0`
+- 禁止手写 `<basename>_variable`，由构建转换 `$variable`
+- 正则 `/\$([\w\d]+)/` → `<basename>_$1` 防 AHK 全局污染
 
-### 导入规则
-- `src/*.coffee`：禁止导入 `dist/`（只能导入 `src/` 或外部包）
-- `*.test.coffee` 和 `scripts/`：可以导入 `dist/`
+## 工作流
 
-### 类型系统
-每个函数需配对的 `.d.ts` 文件，参考 `src/add.d.ts` 和 `src/add.coffee` 的模式：
-- 第 1 行：`# @ts-check`
-- 第 2 行：`###* @type import('./functionName').TypeName ###`
-- `.d.ts` 使用 `export type` + `declare module` 模式
+`src/` 修改后：`pnpm build` → `pnpm test <name>`
+**禁编辑** `dist/`（构建生成） · 测试从 `../dist/` 导入非 `../src/`
 
-### 测试结构
-测试文件必须遵循：
-1. 首行导入 `../scripts/head.ahk`（AHK 运行时配置）
-2. 从 `../dist/` 导入待测函数
-3. 使用 `throw new Error` 断言失败
-4. 末尾调用 `$exit()` 终止进程
-5. 单次只测一个函数（无批量测试）
+## 导入规则
 
-## 常用命令
+`src/*.coffee`：禁导入 `dist/`（仅 `src/` 或外部包）
+`*.test.coffee` + `scripts/`：可导入 `dist/`
+
+## 类型系统
+
+`.coffee` 配对 `.d.ts`（参考 `src/add.*`）：
+- L1: `# @ts-check`
+- L2: `###* @type import('./functionName').TypeName ###`
+- `.d.ts`: `export type` + `declare module`
+
+## 测试结构
+
+1. 首行 `#import '../scripts/head.ahk'`
+2. `#import` 函数从 `../dist/`
+3. 断言失败：`throw new Error`
+4. 末尾 `$exit()`
+5. 单函数测试
+
+## 命令
 
 ```bash
-pnpm build              # 构建 dist/（清理、转换 $变量、复制 .d.ts）
-pnpm watch              # 监听 src/ 自动构建 + 编译 scripts/*.coffee
-pnpm test <name>        # 编译并运行 src/<name>.test.coffee
-pnpm task <taskName>    # 运行 task/*.ts 中的任务
+pnpm build         # 清理 dist · 转换 $变量 · 复制 .d.ts
+pnpm watch         # 监听 src/ 自动构建 + 编译 scripts/*.coffee
+pnpm test <name>   # 编译运行 src/<name>.test.coffee
+pnpm task <name>   # 运行 task/<name>.ts
 ```
 
-## 信息查找指引
+## 信息查找
 
-- **构建流程详情**：查看 `task/build.ts`（三步：清理 dist、转换 $变量、复制 .d.ts）
-- **测试执行流程**：查看 `task/test.ts`（编译 test.coffee → temp/ → 执行 AHK）
-- **CoffeeScript → AHK 语法**：参考 `../coffee-ahk/usage.md`（禁止语法、已知限制、解决方案）
-- **新增函数模板**：参考现有函数（如 `src/add.coffee` 和 `src/add.d.ts`）
-- **运行时配置**：查看 `scripts/head.ahk`（CoordMode、SendMode 等）
-- **函数分类清单**：查看 `src/` 目录（数组、对象、字符串、类型检查、AHK 交互、事件、文件、按键绑定、定时、视觉）
+`task/build.ts`：构建流程（清理 · 转换 · 复制）
+`task/test.ts`：测试流程（编译 → temp/ → 执行）
+`../coffee-ahk/usage.md`：语法规则 · 禁止语法 · 限制
+`src/add.*`：新函数模板
+`scripts/head.ahk`：运行时配置
+`src/`：函数分类
 
-## 核心依赖
+## 依赖
 
-- **coffee-ahk**：CoffeeScript → AHK 编译器（源码：`../coffee-ahk`，文档：`../coffee-ahk/usage.md`）
-- **fire-keeper**：文件 I/O、glob、并发执行（在 `task/` 中使用）
-- **radash**：轻量工具库（仅在 `task/` 中使用，`src/` 保持纯净）
+**coffee-ahk**：CS → AHK 编译（`../coffee-ahk` · `../coffee-ahk/usage.md`）
+**fire-keeper**：文件 I/O · glob · 并发（`task/` 使用）
+**radash**：工具库（`task/` 使用 · `src/` 禁用）
 
-## 修改最佳实践
+## 修改流程
 
-1. 修改前运行 `pnpm build` 确保干净状态
-2. 修改后立即 `pnpm build` + `pnpm test <name>`
-3. 修改函数签名时同步更新 `.coffee` 和 `.d.ts`
-4. 不确定时参考现有函数的成熟模式
-5. 超过 200 行的文件需拆分或优化
+1. `pnpm build` 确保干净
+2. 修改 → `pnpm build` + `pnpm test <name>`
+3. 签名改动同步 `.coffee` + `.d.ts`
+4. 参考现有函数
+5. 超 200 行需拆分
