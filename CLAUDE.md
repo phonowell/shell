@@ -52,9 +52,11 @@ shell-ahk：Lodash/jQuery 风格 AHK 库 · CoffeeScript 编写 · coffee-ahk �
 ```bash
 pnpm build         # 清理 dist · 转换 $变量 · 复制 .d.ts
 pnpm watch         # 监听 src/ 自动构建 + 编译 scripts/*.coffee
-pnpm test <name>   # 编译运行 src/<name>.test.coffee
+pnpm test <name>   # 编译运行 src/<name>.test.coffee（macOS 不支持 AHK，仅构建验证）
 pnpm task <name>   # 运行 task/<name>.ts
 ```
+
+**测试限制**：macOS 无法运行 AHK · 仅验证编译 · 完整测试需 Windows 环境
 
 ## 信息查找
 

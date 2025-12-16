@@ -13,7 +13,7 @@ class EmitterShell
     @bus = []
 
   ###* @type import('./emitterShell').EmitterShell['emit'] ###
-  emit: (key, args...) ->
+  emit: (key, $argsEmit...) ->
 
     [$type, $name] = $split key, '.'
     unless $type then return
@@ -22,7 +22,7 @@ class EmitterShell
     else $list = $filter @bus, (it) -> it[0] == $type
 
     $each $list, (it) ->
-      it[2] args...
+      it[2] $argsEmit...
       if it[3] == 'once' then it[3] = 'expired'
       return
 
