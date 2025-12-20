@@ -40,7 +40,7 @@ const main = async () => {
     for (const file of allTestFiles) {
       const target = getBasename(file).split('.')[0]
       await test(target)
-      if (IS_WINDOWS) await sleep(1e3)
+      if (IS_WINDOWS) await sleep(200)
     }
     return
   }
