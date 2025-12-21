@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm add:*)",
+      "Bash(node -e \"\nconst transpile = require\\(''./dist/index.js''\\).default;\nconst code = \\\\`\nclass KeyBindingShell\n  constructor: ->\n    @mapBound = {}\n    @mapCallback = {}\n    @mapPrevented = {}\n\n  prepare: \\(key\\) ->\n    if @mapCallback[key] then return\n    @mapBound[key] = => @fire key\n    @mapCallback[key] = []\n    @mapPrevented[key] = false\n    return\n\n  fire: \\(key\\) ->\n    console.log ''Firing: '' + key\n\\\\`;\ntranspile\\(code, { string: true, verbose: true }\\).then\\(result => {\n  console.log\\(''\\\\n=== Generated AHK ===''\\);\n  console.log\\(result\\);\n}\\).catch\\(err => {\n  console.error\\(''Error:'', err.message\\);\n}\\);\n\")"
+    ]
+  }
+}
