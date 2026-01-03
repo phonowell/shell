@@ -22,7 +22,9 @@ const generateIndex = async (listCoffee: string[]) => {
   const basenames = listCoffee.map((source) => getBasename(source)).sort()
 
   // Generate index.coffee (using CoffeeScript indentation syntax)
-  const coffeeImports = basenames.map((name) => `import $${name} from './${name}'`).join('\n')
+  const coffeeImports = basenames
+    .map((name) => `import $${name} from './${name}'`)
+    .join('\n')
   const coffeeExports = `export default\n  ${basenames.map((name) => `${name}: $${name}`).join('\n  ')}`
   await write('./dist/index.coffee', `${coffeeImports}\n\n${coffeeExports}\n`)
 

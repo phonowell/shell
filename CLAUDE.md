@@ -55,15 +55,15 @@ L2: `###* @type import('./functionName').TypeName ###`
 pnpm build         # 清理 dist · 转换 $变量 · 复制 .d.ts
 pnpm watch         # 监听 src/ 自动构建 + 编译 scripts/*.coffee
 pnpm test <name>   # 编译运行 src/<name>.test.coffee（macOS 仅构建验证）
-pnpm task <name>   # 运行 task/<name>.ts
+pnpm task <name>   # 运行 tasks/<name>.ts
 ```
 
 **测试限制**：macOS 无法运行 AHK · 仅验证编译 · 完整测试需 Windows
 
 ## 信息查找
 
-`task/build.ts`：构建流程
-`task/test.ts`：测试流程
+`tasks/build.ts`：构建流程
+`tasks/test.ts`：测试流程
 `../coffee-ahk/usage.md`：语法规则 · 禁止语法 · 限制
 `src/add.*`：新函数模板
 `scripts/head.ahk`：运行时配置
@@ -72,8 +72,8 @@ pnpm task <name>   # 运行 task/<name>.ts
 ## 依赖
 
 **coffee-ahk**：CS → AHK（`../coffee-ahk/usage.md`）
-**fire-keeper**：文件 I/O · glob · 并发（`task/`）
-**radash**：工具库（`task/` · `src/` 禁用）
+**fire-keeper**：文件 I/O · glob · 并发（`tasks/`）
+**radash**：工具库（`tasks/` · `src/` 禁用）
 
 ## 修改流程
 

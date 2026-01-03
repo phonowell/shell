@@ -5,8 +5,8 @@
   },
   "description": "",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.50.0",
-    "@typescript-eslint/parser": "^8.50.0",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
     "eslint": "^9.39.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
@@ -15,7 +15,7 @@
     "eslint-plugin-react-refresh": "^0.4.26",
     "eslint-plugin-unused-imports": "^4.3.0",
     "fire-keeper": "^0.0.233",
-    "globals": "^16.5.0",
+    "globals": "^17.0.0",
     "prettier": "^3.7.4",
     "radash": "^12.1.1",
     "tsx": "^4.21.0",
@@ -39,8 +39,8 @@
   },
   "scripts": {
     "build": "pnpm task build",
-    "lint": "eslint \"src/**/*.{ts,tsx}\" \"task/**/*.ts\" --fix",
-    "task": "tsx task/index.ts",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" \"tasks/**/*.ts\" --fix",
+    "task": "tsx tasks/index.ts",
     "test": "pnpm task test",
     "watch": "pnpm task watch"
   },
@@ -49,6 +49,6 @@
   "version": "0.0.37",
   "main": "./dist/index.coffee",
   "dependencies": {
-    "coffee-ahk": "link:..\\coffee-ahk"
+    "coffee-ahk": "^0.0.99"
   }
 }

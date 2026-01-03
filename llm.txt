@@ -10,7 +10,7 @@ STRUCTURE:
 ├── scripts/                # AHK/CoffeeScript automation helpers
 ├── doc/                    # functions.md, test.md, prompts.md
 ├── data/sync/              # Config/sync data
-├── task/                   # TypeScript build automation
+├── tasks/                   # TypeScript build automation
 ├── temp/                   # Test compilation output
 └── package.json            # Dependencies, scripts
 
@@ -76,7 +76,7 @@ SCRIPTS:
 - build: pnpm task build
 - test: pnpm task test
 - watch: pnpm task watch
-- lint: eslint src/**/*.{ts,tsx} task/**/*.ts --fix
+- lint: eslint src/**/*.{ts,tsx} tasks/**/*.ts --fix
 
 COMPILATION_FLOW:
 1. src/*.coffee → coffee-ahk compiler

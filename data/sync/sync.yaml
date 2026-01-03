@@ -7,5 +7,5 @@
 - license.md
 
 # task
-- task/alice.ts
-- task/sync.ts
+- tasks/alice.ts
+- tasks/sync.ts

@@ -27,5 +27,5 @@
     "verbatimModuleSyntax": false
   },
   "exclude": ["src/__generated__"],
-  "include": ["src", "task", "test", "vite.config.ts", "eslint.config.mjs"]
+  "include": ["src", "tasks", "test", "vite.config.ts", "eslint.config.mjs"]
 }
